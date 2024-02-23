@@ -6,17 +6,23 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import itemControllers module for handling item-related operations
-const itemControllers = require("./controllers/itemControllers");
+// Import personalitiesControllers module for handling personalities-related operations
+const personalitiesControllers = require("./controllers/personalitiesControllers");
 
-// Route to get a list of items
-router.get("/items", itemControllers.browse);
+// Route to get a list of personalitiess
+router.get("/personalities", personalitiesControllers.browse);
 
-// Route to get a specific item by ID
-router.get("/items/:id", itemControllers.read);
+// Route to get a specific personality by ID
+router.get("/personalities/:id", personalitiesControllers.read);
 
-// Route to add a new item
-router.post("/items", itemControllers.add);
+// Route to add a new personality
+router.post("/personalities", personalitiesControllers.add);
+
+// Route to update a personality
+router.put("/personalities/:id", personalitiesControllers.edit);
+
+// Route to delete a personality
+router.delete("/personalities/:id", personalitiesControllers.destroy);
 
 /* ************************************************************************* */
 
