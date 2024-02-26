@@ -106,4 +106,24 @@ router.put("/profils/:id", profilsControllers.edit);
 // Route to delete a profil
 router.delete("/profils/:id", profilsControllers.destroy);
 
+/* *******************************ARTICLES***************************************** */
+
+// Import articlesControllers module for handling personalities-related operations
+const articlesControllers = require("./controllers/articlesControllers");
+
+// Route to get a list of articles
+router.get("/articles", articlesControllers.browse);
+
+// Route to get a specific article by ID
+router.get("/articles/:id", articlesControllers.read);
+
+// Route to add a new article
+router.post("/articles", articlesControllers.add);
+
+// Route to update a article
+router.put("/articles/:id", articlesControllers.edit);
+
+// Route to delete a article
+router.delete("/articles/:id", articlesControllers.destroy);
+
 module.exports = router;
