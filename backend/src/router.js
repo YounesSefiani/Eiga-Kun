@@ -26,4 +26,22 @@ router.delete("/personalities/:id", personalitiesControllers.destroy);
 
 /* ************************************************************************* */
 
+// Import moviesControllers module for handling personalities-related operations
+const moviesControllers = require("./controllers/moviesControllers");
+
+// Route to get a list of movies
+router.get("/movies", moviesControllers.browse);
+
+// Route to get a specific movie by ID
+router.get("/movies/:id", moviesControllers.read);
+
+// Route to add a new movie
+router.post("/movies", moviesControllers.add);
+
+// Route to update a movie
+router.put("/movies/:id", moviesControllers.edit);
+
+// Route to delete a movie
+router.delete("/movies/:id", moviesControllers.destroy);
+
 module.exports = router;
