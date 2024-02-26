@@ -17,6 +17,9 @@ CREATE TABLE movies (
   universe VARCHAR(255)
 );
 
+INSERT INTO movies (title, poster, background, logo, trailer, synopsis, director, genre, theme, release_date, screen, streaming, duration, country, universe)
+VALUES ("Silent Hill", "https://image.tmdb.org/t/p/original/ypm4vjs1x8w1GRidpTE3udLZCnS.jpg", "https://image.tmdb.org/t/p/original/fVxGOuEtac6By43qoVArpER2JCS.jpg", "https://image.tmdb.org/t/p/original/lzC2mzjGp09SbWyGf868tlrJ7Xs.png", "https://youtu.be/EEuEavdbmhY", "De plus en plus souvent, la petite Sharon rêve d'une ville abandonnée, Silent Hill. Sa mère, Rose, décidée à comprendre l'étrange mal dont souffre son enfant, décide de l'accompagner sur place. Alors qu'elles pénètrent dans cet univers lugubre, Sharon disparaît. Rose se lance à sa poursuite, mais se rend vite compte que ce lieu étrange ne ressemble à rien de normal. Noyée dans le brouillard, peuplée d'étranges créatures, hantée par des ténèbres vivantes qui dévorent littéralement tout ce qu'elles touchent, cette dimension va peu à peu livrer ses terrifiants secrets... Avec l'aide de Cybil, de la police locale, Rose se jette dans une quête éperdue pour arracher sa fille au monde de Silent Hill. D'indices en épreuves, elle va découvrir tout ce que Sharon risque et ce qu'elle représente dans une malédiction qui dépasse tout...", "Christophe Gans", "Horreur", "Jeux Vidéo", "2006-04-26", "Cinéma", null, "2h05", "USA", null );
+
 CREATE TABLE personalities (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   firstname VARCHAR(255) NOT NULL,
@@ -31,14 +34,23 @@ CREATE TABLE personalities (
 INSERT INTO personalities (firstname, lastname, image_src, birthdate, bio, statut)
 VALUES ("Jodelle", "Ferland", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jodelle_Ferland_%28medium_crop%29.jpg/600px-Jodelle%20Ferland%20%28medium%20crop%29.jpg", STR_TO_DATE("09-10-1994", "%d-%m-%Y"), "Actrice Canadienne", "Actif.ve");
 
+INSERT INTO personalities (firstname, lastname, image_src, birthdate, bio, statut)
+VALUES ("Sean", "Bean", "https://fr.web.img2.acsta.net/pictures/15/07/20/17/45/031961.jpg", STR_TO_DATE("17-04-1969", "%d-%m-%Y"), "Mort plusieurs fois", 'Actif.ve');
+
 CREATE TABLE moviePersonalities (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   movie_id INT,
   personality_id INT,
   role VARCHAR(255) NOT NULL,
-  FOREIGN KEY (movie_id) REFERENCES movies(id),
+  FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
   FOREIGN KEY (personality_id) REFERENCES personalities(id)
 );
+
+INSERT INTO moviepersonalities (movie_id, personality_id, role)
+VALUES (1, 1, 'Sharon/Alessa');
+
+INSERT INTO moviepersonalities(movie_id, personality_id, role)
+VALUES (1, 2, 'Christopher Da Silva');
 
 CREATE TABLE series (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
