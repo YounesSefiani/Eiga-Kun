@@ -5,10 +5,12 @@
 // Import the manager modules responsible for handling data operations on the tables
 const PersonalitiesManager = require("./models/PersonalitiesManager");
 const MoviesManager = require("./models/MoviesManager");
+const SeriesManager = require("./models/SeriesManager");
 
 const managers = [
   PersonalitiesManager,
   MoviesManager,
+  SeriesManager,
   // Add other managers here
 ];
 

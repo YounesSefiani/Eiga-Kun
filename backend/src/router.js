@@ -44,4 +44,24 @@ router.put("/movies/:id", moviesControllers.edit);
 // Route to delete a movie
 router.delete("/movies/:id", moviesControllers.destroy);
 
+/* ************************************************************************* */
+
+// Import seriesControllers module for handling personalities-related operations
+const seriesControllers = require("./controllers/seriesControllers");
+
+// Route to get a list of series
+router.get("/series", seriesControllers.browse);
+
+// Route to get a specific serie by ID
+router.get("/series/:id", seriesControllers.read);
+
+// Route to add a new serie
+router.post("/series", seriesControllers.add);
+
+// Route to update a serie
+router.put("/series/:id", seriesControllers.edit);
+
+// Route to delete a serie
+router.delete("/series/:id", seriesControllers.destroy);
+
 module.exports = router;
