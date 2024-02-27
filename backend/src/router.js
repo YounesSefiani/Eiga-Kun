@@ -126,4 +126,24 @@ router.put("/articles/:id", articlesControllers.edit);
 // Route to delete a article
 router.delete("/articles/:id", articlesControllers.destroy);
 
+/* *******************************CINEMAS***************************************** */
+
+// Import articlesControllers module for handling personalities-related operations
+const cinemasControllers = require("./controllers/cinemasControllers");
+
+// Route to get a list of cinemas
+router.get("/cinemas", cinemasControllers.browse);
+
+// Route to get a specific cinema by ID
+router.get("/cinemas/:id", cinemasControllers.read);
+
+// Route to add a new cinema
+router.post("/cinemas", cinemasControllers.add);
+
+// Route to update a cinema
+router.put("/cinemas/:id", cinemasControllers.edit);
+
+// Route to delete a cinema
+router.delete("/cinemas/:id", cinemasControllers.destroy);
+
 module.exports = router;
