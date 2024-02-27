@@ -26,16 +26,21 @@ CREATE TABLE personalities (
   lastname VARCHAR(255) NOT NULL,
   image_src VARCHAR(255) NOT NULL,
   birthdate DATE NOT NULL,
+  origin VARCHAR(255) NOT NULL,
   deathdate DATE,
   bio TEXT,
   statut ENUM('Actif.ve', 'Retraité.e', 'Décédé.e'),
   profession ENUM('Acteur', 'Actrice', 'Réalisateur', 'Réalisatrice', 'Scénariste', 'Producteur', 'Productrice')
 );
 
-INSERT INTO personalities (firstname, lastname, image_src, birthdate, bio, statut, profession)
-VALUES ("Jodelle", "Ferland", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jodelle_Ferland_%28medium_crop%29.jpg/600px-Jodelle%20Ferland%20%28medium%20crop%29.jpg", STR_TO_DATE("09-10-1994", "%d-%m-%Y"), "Actrice Canadienne", "Actif.ve", "Actrice");
-INSERT INTO personalities(firstname, lastname, image_src, birthdate, bio, statut, profession)
-VALUES ("Christophe", "Gans", "https://upload.wikimedia.org/wikipedia/commons/5/52/Christophe_Gans_2010.JPG", STR_TO_DATE("11-03-1960", "%d-%m-%Y"), "Réalisateur français", "Actif.ve", "Réalisateur");
+INSERT INTO personalities (firstname, lastname, image_src, birthdate, origin, bio, statut, profession)
+VALUES ("Jodelle", "Ferland", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jodelle_Ferland_%28medium_crop%29.jpg/600px-Jodelle%20Ferland%20%28medium%20crop%29.jpg", STR_TO_DATE("09-10-1994", "%d-%m-%Y"), "Canada", "Actrice Canadienne", "Actif.ve", "Actrice");
+INSERT INTO personalities(firstname, lastname, image_src, birthdate, origin, bio, statut, profession)
+VALUES ("Christophe", "Gans", "https://upload.wikimedia.org/wikipedia/commons/5/52/Christophe_Gans_2010.JPG", STR_TO_DATE("11-03-1960", "%d-%m-%Y"), "France", "Réalisateur français", "Actif.ve", "Réalisateur");
+INSERT INTO personalities(firstname, lastname, image_src, birthdate, origin, bio, statut, profession)
+VALUES ("Sean", "Bean", "https://fr.web.img2.acsta.net/pictures/15/07/20/17/45/031961.jpg", STR_TO_DATE("17-04-1959", "%d-%m-%Y"), "Angleterre", "Acteur Britannique", "Actif.ve", "Acteur" );
+INSERT INTO personalities(firstname, lastname, image_src, birthdate, origin, bio, statut, profession)
+VALUES ("Radha", "Mitchell", "https://image.tmdb.org/t/p/original/ctC7epg65XgUol62d1UAoyGvNKm.jpg", STR_TO_DATE("12-11-1973", "%d-%m-%Y"), "Australie", "Actrice australienne", "Actif.ve", "Actrice");
 CREATE TABLE movieCasting (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   movie_id INT,
@@ -47,6 +52,10 @@ CREATE TABLE movieCasting (
 
 INSERT INTO movieCasting (movie_id, personality_id, role)
 VALUES (1, 1, "Sharon / Alessa");
+INSERT INTO movieCasting (movie_id, personality_id, role)
+VALUES (1, 3, "Christopher Da Silva");
+INSERT INTO moviecasting (movie_id, personality_id, role)
+VALUES (1, 4, "Rose Da Silva");
 
 CREATE TABLE directorMovie (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
