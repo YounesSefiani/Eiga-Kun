@@ -1,0 +1,21 @@
+.moviesContainer {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.card {
+  width: auto;
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.borderimg {
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+}
