@@ -1,0 +1,26 @@
+.series-carousel {
+  width: 80%;
+  margin-top: 105px;
+  margin-left: 10%;
+}
+
+.carouselImage {
+  width: 100%;
+  height: auto;
+}
+
+.serieLogo {
+  max-width: 100%;
+  max-height: 100px;
+  margin-top: 10px;
+}
+
+.serieContainer {
+  padding: 10px;
+  margin-top: 100px;
+}
+
+.serieContainer h1 {
+  background-color: black;
+  color: #ffb20c;
+}

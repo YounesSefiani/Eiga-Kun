@@ -6,6 +6,8 @@ import axios from "axios";
 import App from "./App";
 import MoviesPage from "./pages/MoviesPage";
 import OneMovie from "./components/OneMovie";
+import SeriesPage from "./pages/SeriesPage";
+import OneSerie from "./components/OneSerie";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,32 @@ const router = createBrowserRouter([
     loader: async ({ params }) => {
       return axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/api/movies/${params.id}`)
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/series",
+    element: <SeriesPage />,
+    loader: () => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/series`)
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/series/:id",
+    element: <OneSerie />,
+    loader: async ({ params }) => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/series/${params.id}`)
         .then((res) => res.data)
         .catch((err) => {
           console.error(err);
