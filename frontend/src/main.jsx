@@ -1,4 +1,3 @@
-// Main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,6 +7,21 @@ import MoviesPage from "./pages/MoviesPage";
 import OneMovie from "./components/OneMovie";
 import SeriesPage from "./pages/SeriesPage";
 import OneSerie from "./components/OneSerie";
+import PersonalitiesPage from "./pages/PersonalitiesPage";
+import OnePersonality from "./components/OnePersonality";
+import Authentification from "./pages/Authentification";
+import InscriptionUser from "./pages/InscriptionUser";
+import Login from "./pages/Login";
+
+const fetchMovieWithCasting = async ({ params }) => {
+  const response = await fetch(
+    `http://localhost:3310/api/movies/${params.id}/movieCasting`
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch movie data");
+  }
+  return response.json();
+};
 
 const router = createBrowserRouter([
   {
@@ -27,15 +41,7 @@ const router = createBrowserRouter([
   {
     path: "/films/:id",
     element: <OneMovie />,
-    loader: async ({ params }) => {
-      return axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/api/movies/${params.id}`)
-        .then((res) => res.data)
-        .catch((err) => {
-          console.error(err);
-          return null;
-        });
-    },
+    loader: fetchMovieWithCasting,
   },
   {
     path: "/series",
@@ -62,6 +68,46 @@ const router = createBrowserRouter([
           return null;
         });
     },
+  },
+  {
+    path: "/personnalités",
+    element: <PersonalitiesPage />,
+    loader: () => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/personalities`)
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/personnalités/:id",
+    element: <OnePersonality />,
+    loader: async ({ params }) => {
+      return axios
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/personalities/${params.id}`
+        )
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/authentification",
+    element: <Authentification />,
+  },
+  {
+    path: "/inscriptionUser",
+    element: <InscriptionUser />,
+  },
+  {
+    path: "/connexion",
+    element: <Login />,
   },
 ]);
 

@@ -3,20 +3,16 @@ const tables = require("../tables");
 
 const MovieCastingManager = require("../models/MovieCastingManager");
 
-const MoviesManager = require("../models/MoviesManager");
-
 const movieCastingManager = new MovieCastingManager();
-
-const moviesManager = new MoviesManager();
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
-    // Fetch all movies from the database
-    const movies = await tables.movies.readAll();
+    // Fetch all movieCastings from the database
+    const movieCastings = await tables.movieCasting.readAll();
 
-    // Respond with the movies in JSON format
-    res.json(movies);
+    // Respond with the movieCastings in JSON format
+    res.json(movieCastings);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -26,15 +22,15 @@ const browse = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific personality from the database based on the provided ID
-    const movie = await tables.movies.read(req.params.id);
+    // Fetch a specific movieCasting from the database based on the provided ID
+    const movieCasting = await tables.movieCasting.read(req.params.id);
 
-    // If the movie is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the movie in JSON format
-    if (movie == null) {
+    // If the movieCasting is not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the movieCasting in JSON format
+    if (movieCasting == null) {
       res.sendStatus(404);
     } else {
-      res.json(movie);
+      res.json(movieCasting);
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -42,18 +38,13 @@ const read = async (req, res, next) => {
   }
 };
 
-const getMovieWithCasting = async (req, res, next) => {
+const getCastingByMovieId = async (req, res) => {
   try {
-    const movieId = req.params.id;
-    const movie = await moviesManager.read(movieId);
-    if (movie == null) {
-      return res.sendStatus(404);
-    }
-    const casting = await movieCastingManager.readByMovieId(movieId);
-    movie.casting = casting;
-    return res.json(movie);
+    const { movieId } = req.params;
+    const movieCasting = await movieCastingManager.readbyMovieId(movieId);
+    res.json(movieCasting);
   } catch (err) {
-    return next(err);
+    res.status(500).send(err);
   }
 };
 
@@ -69,14 +60,14 @@ const edit = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
-  // Extract the personality data from the request body
-  const movies = req.body;
+  // Extract the movieCasting data from the request body
+  const movieCasting = req.body;
 
   try {
-    // Insert the personality into the database
-    const insertId = await tables.movies.create(movies);
+    // Insert the movieCasting into the database
+    const insertId = await tables.movieCasting.create(movieCasting);
 
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted movies
+    // Respond with HTTP 201 (Created) and the ID of the newly inserted movieCasting
     res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -98,7 +89,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
-  getMovieWithCasting,
+  getCastingByMovieId,
   edit,
   add,
   destroy,

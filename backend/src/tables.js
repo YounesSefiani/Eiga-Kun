@@ -10,6 +10,7 @@ const UsersManager = require("./models/UsersManager");
 const ProfilsManager = require("./models/ProfilsManager");
 const ArticlesManager = require("./models/ArticlesManager");
 const CinemasManager = require("./models/CinemasManager");
+const MovieCastingManager = require("./models/MovieCastingManager");
 
 const managers = [
   PersonalitiesManager,
@@ -19,6 +20,7 @@ const managers = [
   ProfilsManager,
   ArticlesManager,
   CinemasManager,
+  MovieCastingManager,
   // Add other managers here
 ];
 
