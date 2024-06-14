@@ -37,6 +37,8 @@ router.get("/movies", moviesControllers.browse);
 // Route to get a specific movie by ID
 router.get("/movies/:id", moviesControllers.read);
 
+router.get("/movies/:id/movieCasting", moviesControllers.getMovieWithCasting);
+
 // Route to add a new movie
 router.post("/movies", moviesControllers.add);
 
@@ -45,6 +47,31 @@ router.put("/movies/:id", moviesControllers.edit);
 
 // Route to delete a movie
 router.delete("/movies/:id", moviesControllers.destroy);
+
+/* *******************************MOVIE CASTING***************************************** */
+
+// Import moviesControllers module for handling personalities-related operations
+const movieCastingControllers = require("./controllers/movieCastingControllers");
+
+// Route to get a list of movies
+router.get("/movieCasting", movieCastingControllers.browse);
+
+// Route to get a specific movie by ID
+router.get("/movieCasting/:id", movieCastingControllers.read);
+
+router.get(
+  "/movieCasting/movies/:movieId",
+  movieCastingControllers.getCastingByMovieId
+);
+
+// Route to add a new movie
+router.post("/movieCasting", movieCastingControllers.add);
+
+// Route to update a movie
+router.put("/movieCasting/:id", movieCastingControllers.edit);
+
+// Route to delete a movie
+router.delete("/movieCasting/:id", movieCastingControllers.destroy);
 
 /* *******************************SERIES***************************************** */
 
