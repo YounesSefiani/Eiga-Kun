@@ -1,6 +1,14 @@
 // Import access to database tables
 const tables = require("../tables");
 
+const MovieCastingManager = require("../models/MovieCastingManager");
+
+const MoviesManager = require("../models/MovieManager");
+
+const movieCastingManager = new MovieCastingManager();
+
+const moviesManager = new MoviesManager();
+
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
@@ -31,6 +39,21 @@ const read = async (req, res, next) => {
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
+  }
+};
+
+const getMovieWithCasting = async (req, res, next) => {
+  try {
+    const movieId = req.params.id;
+    const movie = await moviesManager.read(movieId);
+    if (movie == null) {
+      return res.sendStatus(404);
+    }
+    const casting = await movieCastingManager.readByMovieId(movieId);
+    movie.casting = casting;
+    return res.json(movie);
+  } catch (err) {
+    return next(err);
   }
 };
 
@@ -73,6 +96,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  getMovieWithCasting,
   edit,
   add,
   destroy,
