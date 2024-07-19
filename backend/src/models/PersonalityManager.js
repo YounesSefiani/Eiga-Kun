@@ -12,10 +12,9 @@ class personalitiesManager extends AbstractManager {
   async create(personalities) {
     // Execute the SQL INSERT query to add a new personalities to the "personalities" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (firstname, lastname, image_src, birthdate, origin, deathdate, statut, bio) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (fullname, image_src, birthdate, origin, deathdate, statut, bio) values (?, ?, ?, ?, ?, ?, ?)`,
       [
-        personalities.firstname,
-        personalities.lastname,
+        personalities.fullname,
         personalities.image_src,
         personalities.birthdate,
         personalities.origin,
