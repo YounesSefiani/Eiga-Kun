@@ -1,56 +1,61 @@
 body {
   margin: 0;
+  position: relative;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/EigaKunBackground.png);
+  background-position: auto;
+  background-repeat: repeat-x;
+  background-size: fill;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.carousel-item img {
+  object-fit: fill;
+  filter: brightness(80%);
+  transition: filter 0.5s ease;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homeCarousel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 50px auto;
+  border: 9px solid black;
+  width: 100%;
+  max-width: 70vw;
 }
 
-.App-link {
-  color: #61dafb;
+.carousel-item img:hover {
+  filter: brightness(100%);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.5s ease;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.carousel-caption p {
+  color: #fff;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba (0, 0, 0, 0.8);
+}
+
+.top {
+  display: flex;
+  background-color: #ffb20c;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 5px solid black;
+  color: black;
 }
