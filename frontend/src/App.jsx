@@ -24,7 +24,7 @@ function App() {
             />
             <Carousel.Caption>
               <h5>Deadpool & Wolverine</h5>
-              <p>Deadpool est de retour, et il n'est pas le seul !</p>
+              <p>Le duo le plus attendu à la rescousse du multiverse.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -38,10 +38,7 @@ function App() {
             />
             <Carousel.Caption>
               <h5>The Boys, saison 4</h5>
-              <p>
-                La saison 4 de The Boys est disponible, dans son intégralité sur
-                Amazon Prime Vidéo.
-              </p>
+              <p>La saison 4 de The Boys est disponible.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -51,10 +48,7 @@ function App() {
             <img className="d-block w-100" src={Maxxxine} alt="Third slide" />
             <Carousel.Caption>
               <h5>Maxxxine</h5>
-              <p>
-                Cette superstar vivra une horreur, et il ne s'agit pas d'un
-                film.
-              </p>
+              <p>Elle a connue l'horreur, elle est devenue superstar.</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
