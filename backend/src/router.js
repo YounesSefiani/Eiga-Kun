@@ -85,4 +85,24 @@ router.put("/movieCasting/:id", movieCastingControllers.edit);
 // Route to delete a movie
 router.delete("/movieCasting/:id", movieCastingControllers.destroy);
 
+/* *********************************SERIES**************************************** */
+
+// Import itemControllers module for handling item-related operations
+const serieControllers = require("./controllers/seriesControllers");
+
+// Route to get a list of items
+router.get("/series", serieControllers.browse);
+
+// Route to get a specific item by ID
+router.get("/series/:id", serieControllers.read);
+
+// Route to add a new movie
+router.post("/series", serieControllers.add);
+
+// Route to update a movie
+router.put("/series/:id", serieControllers.edit);
+
+// Route to delete a movie
+router.delete("/series/:id", serieControllers.destroy);
+
 module.exports = router;

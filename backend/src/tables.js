@@ -7,12 +7,14 @@ const ItemManager = require("./models/ItemManager");
 const MovieManager = require("./models/MovieManager");
 const PersonalityManager = require("./models/PersonalityManager");
 const MovieCastingManager = require("./models/MovieCastingManager");
+const SerieManager = require("./models/SerieManager");
 
 const managers = [
   ItemManager,
   MovieManager,
   PersonalityManager,
   MovieCastingManager,
+  SerieManager,
   // Add other managers here
 ];
 

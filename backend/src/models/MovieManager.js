@@ -12,7 +12,7 @@ class moviesManager extends AbstractManager {
   async create(movies) {
     // Execute the SQL INSERT query to add a new movie to the "movies" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, screen, streaming, duration, country, universe) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, screen, streaming, duration, country, universe, subUniverse) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         movies.title,
         movies.poster,
@@ -28,6 +28,7 @@ class moviesManager extends AbstractManager {
         movies.duration,
         movies.country,
         movies.universe,
+        movies.subUniverse,
       ]
     );
 
