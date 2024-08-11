@@ -1,0 +1,46 @@
+/* VERSION PC */
+@media (min-width: 1441px) {
+  .seriesContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    width: auto;
+    margin: 0 20px;
+  }
+
+  .seriesList h1 {
+    margin: 20px 20px;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+  }
+
+  .serieCard {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .serieImg {
+    width: 15vw;
+    height: 40vh;
+    object-fit: fill;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .seriesPage h1 {
+    background-color: black;
+    color: #ffb20c;
+    width: fit-content;
+  }
+}
