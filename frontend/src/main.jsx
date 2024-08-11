@@ -7,6 +7,8 @@ import axios from "axios";
 import App from "./App";
 import MoviesPage from "./pages/Movies/MoviesPage/MoviesPage";
 import OneMoviePage from "./pages/Movies/OneMovie/OneMovie";
+import SeriesPage from "./pages/Series/SeriesPage/SeriesPage";
+import OneSeriePage from "./pages/Series/OneSerie/OneSerie";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,29 @@ const router = createBrowserRouter([
             params.id
           }/movieCasting`
         )
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/séries",
+    element: <SeriesPage />,
+    loader: () => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/series`)
+        .then((res) => res.data)
+        .catch((err) => console.error(err));
+    },
+  },
+  {
+    path: "/séries/:id",
+    element: <OneSeriePage />,
+    loader: async ({ params }) => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/series/${params.id}`)
         .then((res) => res.data)
         .catch((err) => {
           console.error(err);
