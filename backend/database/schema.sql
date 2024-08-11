@@ -58,17 +58,20 @@ CREATE TABLE movieCasting (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   movie_id INT,
   personality_id INT,
+  side ENUM("Acting", "Realisation") NOT NULL,
   role VARCHAR(255) NOT NULL,
   FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
   FOREIGN KEY (personality_id) REFERENCES personalities(id)
 );
 
-INSERT INTO movieCasting (movie_id, personality_id, role)
-VALUES (1, 1, "Sharon / Alessa");
-INSERT INTO movieCasting (movie_id, personality_id, role)
-VALUES (1, 3, "Christopher Da Silva");
-INSERT INTO moviecasting (movie_id, personality_id, role)
-VALUES (1, 4, "Rose Da Silva");
+INSERT INTO movieCasting (movie_id, personality_id, side, role)
+VALUES (1, 2, "Realisation", "Réalisateur");
+INSERT INTO movieCasting (movie_id, personality_id, side, role)
+VALUES (1, 3, "Acting", "Christopher Da Silva");
+INSERT INTO moviecasting (movie_id, personality_id, side, role)
+VALUES (1, 4, "Acting", "Rose Da Silva");
+INSERT INTO movieCasting (movie_id, personality_id, side, role)
+VALUES (1, 1, "Acting", "Sharon / Alessa");
 
 CREATE TABLE series (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
