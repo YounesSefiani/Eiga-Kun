@@ -2,7 +2,7 @@
 @media (min-width: 1441px) {
   .seriesContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 30px;
     align-items: center;
     width: auto;
@@ -32,8 +32,8 @@
 
   .serieImg {
     width: 15vw;
-    height: 40vh;
-    object-fit: fill;
+    height: 100%;
+    object-fit: contain;
     border-radius: 20px;
     border: 3px solid black;
   }

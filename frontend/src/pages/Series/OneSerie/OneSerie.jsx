@@ -64,15 +64,15 @@ function OneSerie() {
               </p>
               <p>
                 Statut de la série : <br />
-                {serie.statut} au bout de {serie.seasons} saisons
+                {serie.statut} au bout de {serie.seasons} saison(s)
               </p>
             </div>
             <div className="detailsAndSynopsisSerie">
               <div className="oneSerieDetails">
                 <li>
                   <p>Genre : {serie.genre}</p>
-                  <p>Thèmes : {serie.theme}</p>
-                  {serie.universe ? <p>Universe : {serie.universe}</p> : <p />}
+                  <p>Thème(s) : {serie.theme}</p>
+                  {serie.universe ? <p>Univers : {serie.universe}</p> : <p />}
                   <p>Provenance : {serie.country}</p>
                   <p>Diffusion : {serie.screen}</p>
                   <p>Disponible sur : {serie.streaming}</p>
