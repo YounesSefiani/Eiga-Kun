@@ -1,6 +1,22 @@
 // Import access to database tables
 const tables = require("../tables");
 
+const SeriesManager = require("../models/SerieManager");
+
+const SeasonsManager = require("../models/SeasonManager");
+
+const EpisodesManager = require("../models/EpisodeManager");
+
+const SerieCastingManager = require("../models/SerieCastingManager");
+
+const serieCastingManager = new SerieCastingManager();
+
+const seriesManager = new SeriesManager();
+
+const seasonsManager = new SeasonsManager();
+
+const episodesManager = new EpisodesManager();
+
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
@@ -31,6 +47,25 @@ const read = async (req, res, next) => {
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
+  }
+};
+
+const getFullSerie = async (req, res, next) => {
+  try {
+    const serieId = req.params.id;
+    const serie = await seriesManager.read(serieId);
+    if (serie == null) {
+      return res.sendStatus(404);
+    }
+    const casting = await serieCastingManager.readBySerieId(serieId);
+    serie.casting = casting;
+    const seasons = await seasonsManager.readSerieAndSeasons(serieId);
+    serie.seasons = seasons;
+    const episodes = await episodesManager.readSerieSeasonsAndEpisodes(serieId);
+    serie.episodes = episodes;
+    return res.json(serie);
+  } catch (err) {
+    return next(err);
   }
 };
 
@@ -75,6 +110,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  getFullSerie,
   edit,
   add,
   destroy,

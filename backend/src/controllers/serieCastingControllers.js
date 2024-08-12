@@ -1,17 +1,17 @@
 // Import access to database tables
 const tables = require("../tables");
-const MovieCastingManager = require("../models/MovieCastingManager");
+const SerieCastingManager = require("../models/SerieCastingManager");
 
-const movieCastingManager = new MovieCastingManager();
+const serieCastingManager = new SerieCastingManager();
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
   try {
-    // Fetch all movieCastings from the database
-    const movieCastings = await tables.movieCasting.readAll();
+    // Fetch all serieCasting from the database
+    const serieCasting = await tables.serieCasting.readAll();
 
-    // Respond with the movieCastings in JSON format
-    res.json(movieCastings);
+    // Respond with the serieCasting in JSON format
+    res.json(serieCasting);
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
@@ -21,15 +21,15 @@ const browse = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific movieCasting from the database based on the provided ID
-    const movieCasting = await tables.movieCastingManager.read(req.params.id);
+    // Fetch a specific serie casting from the database based on the provided ID
+    const serieCasting = await tables.serieCasting.read(req.params.id);
 
-    // If the movieCasting is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the movieCasting in JSON format
-    if (movieCasting == null) {
+    // If the serieCastingis not found, respond with HTTP 404 (Not Found)
+    // Otherwise, respond with the serieCasting JSON format
+    if (serieCasting == null) {
       res.sendStatus(404);
     } else {
-      res.json(movieCasting);
+      res.json(serieCasting);
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -38,11 +38,11 @@ const read = async (req, res, next) => {
 };
 
 // Get Casting By Movie ID
-const getCastingByMovieId = async (req, res, next) => {
+const getCastingBySerieId = async (req, res, next) => {
   try {
-    const { movieId } = req.params;
-    const movieCasting = await movieCastingManager.readByMovieId(movieId);
-    res.json(movieCasting);
+    const { serieId } = req.params;
+    const serieCasting = await serieCastingManager.readBySerieId(serieId);
+    res.json(serieCasting);
   } catch (err) {
     next(err);
   }
@@ -52,8 +52,8 @@ const getCastingByMovieId = async (req, res, next) => {
 const edit = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const movieCasting = req.body;
-    const updatedRows = await movieCastingManager.update(id, movieCasting);
+    const serieCasting = req.body;
+    const updatedRows = await serieCastingManager.update(id, serieCasting);
 
     if (updatedRows > 0) {
       res.sendStatus(200);
@@ -68,13 +68,13 @@ const edit = async (req, res, next) => {
 // The A of BREAD - Add (Create) operation
 const add = async (req, res, next) => {
   try {
-    // Extract the movieCasting data from the request body
-    const movieCasting = req.body;
+    // Extract the serieCastingdata from the request body
+    const serieCasting = req.body;
 
-    // Insert the movieCasting into the database
-    const insertId = await movieCastingManager.create(movieCasting);
+    // Insert the serieCasting into the database
+    const insertId = await serieCastingManager.create(serieCasting);
 
-    // Respond with HTTP 201 (Created) and the ID of the newly inserted movieCasting
+    // Respond with HTTP 201 (Created) and the ID of the newly inserted serieCasting
     res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
@@ -86,7 +86,7 @@ const add = async (req, res, next) => {
 const destroy = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const deletedRows = await movieCastingManager.delete(id);
+    const deletedRows = await serieCastingManager.delete(id);
 
     if (deletedRows > 0) {
       res.sendStatus(204);
@@ -102,7 +102,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
-  getCastingByMovieId,
+  getCastingBySerieId,
   edit,
   add,
   destroy,
