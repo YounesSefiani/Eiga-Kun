@@ -1,4 +1,5 @@
 // Import access to database tables
+const tables = require("../tables");
 const MovieCastingManager = require("../models/MovieCastingManager");
 
 const movieCastingManager = new MovieCastingManager();
@@ -7,7 +8,7 @@ const movieCastingManager = new MovieCastingManager();
 const browse = async (req, res, next) => {
   try {
     // Fetch all movieCastings from the database
-    const movieCastings = await movieCastingManager.readAll();
+    const movieCastings = await tables.movieCasting.readAll();
 
     // Respond with the movieCastings in JSON format
     res.json(movieCastings);
@@ -21,7 +22,7 @@ const browse = async (req, res, next) => {
 const read = async (req, res, next) => {
   try {
     // Fetch a specific movieCasting from the database based on the provided ID
-    const movieCasting = await movieCastingManager.read(req.params.id);
+    const movieCasting = await tables.movieCastingManager.read(req.params.id);
 
     // If the movieCasting is not found, respond with HTTP 404 (Not Found)
     // Otherwise, respond with the movieCasting in JSON format
