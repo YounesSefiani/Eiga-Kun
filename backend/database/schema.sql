@@ -93,14 +93,14 @@ CREATE TABLE series (
 
 CREATE TABLE seasons (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  series_id INT,
+  serie_id INT,
   season_number INT,
   poster VARCHAR(255),
   first_episode_date DATE,
   last_episode_date DATE,
   synopsis TEXT,
   episodes INT,
-  FOREIGN KEY (series_id) REFERENCES series(id)
+  FOREIGN KEY (serie_id) REFERENCES series(id)
 );
 
 CREATE TABLE episodes (
@@ -129,7 +129,7 @@ CREATE TABLE serieCasting (
 
 INSERT INTO series (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, ending_date, statut, seasons, episodes, country, screen, streaming, universe)
 VALUES ("Dark Matter", "https://image.tmdb.org/t/p/original/15ixZmlRK7klRC84oLKUw6WehMa.jpg", "https://image.tmdb.org/t/p/original/4wwWDjLfJVMt2hh8DIa2rzEx5VS.jpg", "https://image.tmdb.org/t/p/original/w8IeXqvHQ85sAWWx7LYbzwJH7xI.png", "https://www.youtube.com/embed/1TqwBlTQfTg?si=Yj50d5jF0udzMV17", "Six personnes se réveillent à bord d'un vaisseau spatial livré à lui-même. Elles n'ont aucun souvenir de leur passé, ni de leur identité. Aidés par un androïde, ces six nouveaux membres d'équipage vont tenter de survivre à travers l'espace et de comprendre pourquoi ils sont là et surtout, connaître qui ils sont...", "Science-Fiction", "Voyages", STR_TO_DATE("09-06-2017", "%d-%m-%Y"), STR_TO_DATE("25-08-2017", "%d-%m-%Y"), "Inachevée", 3, 39, "USA", "TV", null, null);
-INSERT INTO seasons (series_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
+INSERT INTO seasons (serie_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
 VALUES (1, 1, "https://image.tmdb.org/t/p/original/aUSrqHdIEtPWEjn8WPtqabn0g91.jpg", STR_TO_DATE("12-06-2015", "%d-%m-%Y"), STR_TO_DATE("28-08-2015", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13),
 (1, 2, "https://image.tmdb.org/t/p/original/xzezF9uMh2TviyXeMmewJ9rPgSp.jpg", STR_TO_DATE("01-07-2016", "%d-%m-%Y"), STR_TO_DATE("16-09-2016", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13),
 (1, 3, "https://image.tmdb.org/t/p/original/t5cN1LwdTeRe76kfnOpaCp3mvNV.jpg", STR_TO_DATE("09-06-2017", "%d-%m-%Y"), STR_TO_DATE("25-08-2017", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13);
@@ -142,7 +142,7 @@ VALUES (1, 1, "Acting", "Five", "Saison 1 à 3");
 
 INSERT INTO series (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, ending_date, statut, seasons, episodes, country, screen, streaming, universe)
 VALUES ("Moon Knight", "https://image.tmdb.org/t/p/original/YksR65as1ppF2N48TJAh2PLamX.jpg", "https://image.tmdb.org/t/p/original/ktNwklnBTGRf6eHUEATLsVch2ZZ.jpg", "https://image.tmdb.org/t/p/original/mLN1xD2VogrfT1WD1Ipg6wReHXR.png", "https://www.youtube.com/embed/Vb4Y8strcaI?si=zJO1pM3gYRKufBja", "Steven Grant, un simple employé de musée est confronté à un trouble dissociatif de l'identité, dont son double, Mark Spector, est un avatar du Dieu de la lune qui a fait de lui le super-héros : Moon Knight. Accompagnés du Dieu de la Lune, Khonshu, Marc Spector & Steven Grant doivent faire face à une menace d'un culte et de leur leader malfaisant.", "Science-Fiction", "Super-Héros", STR_TO_DATE("30-03-2022", "%d-%m-%Y"), STR_TO_DATE("04-05-2022", "%d-%m-%Y"), "Achevée", 1, 6, "USA", "Streaming", "Disney +", "Marvel");
-INSERT INTO seasons (series_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
+INSERT INTO seasons (serie_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
 VALUES (2, 1, "https://image.tmdb.org/t/p/original/11keFudto4QrgrXChukexJwdHPe.jpg", STR_TO_DATE("30-03-2022", "%d-%m-%Y"), STR_TO_DATE("04-05-2022", "%d-%m-%Y"), "Steven Grant, un simple employé de musée est confronté à un trouble dissociatif de l'identité, dont son double, Mark Spector, est un avatar du Dieu de la lune qui a fait de lui le super-héros : Moon Knight. Accompagnés du Dieu de la Lune, Khonshu, Marc Spector & Steven Grant doivent faire face à une menace d'un culte et de leur leader malfaisant.", 6);
 INSERT INTO episodes (serie_id, season_id, episode_number, title, image, release_date, synopsis)
 VALUES (2, 1, 1, "Le mystère du poisson rouge", "https://image.tmdb.org/t/p/original/h88DZpKIDo66Tvt556HCvq2BdR0.jpg", "2022-03-30", "Steven découvre qu'il est peut-être un super-héros, mais qu'il est aussi habité par un mercenaire."),
