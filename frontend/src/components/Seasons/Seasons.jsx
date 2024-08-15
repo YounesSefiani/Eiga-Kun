@@ -5,6 +5,15 @@ import Episodes from "../Episodes/Episodes";
 import "./Seasons.css";
 
 function Seasons({ seasons }) {
+  const formatDate = (date) => {
+    const zero = (number) => (number < 10 ? `0${number}` : number);
+    const d = new Date(date);
+    const day = zero(d.getDate());
+    const month = zero(d.getMonth() + 1);
+    const year = d.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
   return (
     <div className="seasonContainer">
       <HorizontalScroll>
@@ -17,6 +26,17 @@ function Seasons({ seasons }) {
                   src={season.poster}
                   alt={`Poster de la saison ${season.season_number}`}
                 />
+              </div>
+              <div className="seasonDetails">
+                <p>
+                  Dates de diffusion :<br />{" "}
+                  {formatDate(season.first_episode_date)} -{" "}
+                  {formatDate(season.last_episode_date)}
+                </p>
+                <p>
+                  Nombre d'épisodes :<br />
+                  {season.episodes.length} épisodes
+                </p>
               </div>
               <Episodes episodes={season.episodes} />
             </div>
