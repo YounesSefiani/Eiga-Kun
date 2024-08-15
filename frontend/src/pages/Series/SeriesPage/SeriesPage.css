@@ -44,3 +44,194 @@
     width: fit-content;
   }
 }
+
+/* VERSION DESKTOP */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .seriesContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+    width: auto;
+    margin: 0 20px;
+  }
+
+  .seriesList h1 {
+    margin: 20px 20px;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+  }
+
+  .serieCard {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+  }
+
+  .serieImg {
+    width: 15rem;
+    height: 20rem;
+    object-fit: fill;
+    border-radius: 20px;
+    border: 5px solid black;
+  }
+
+  .serieImg:hover {
+    border: 5px solid #ffb20c;
+  }
+
+  .seriesPage h1 {
+    background-color: black;
+    color: #ffb20c;
+    width: fit-content;
+  }
+}
+
+/* VERSION PHONE */
+@media (max-width: 600px) {
+  .seriesPage {
+    position: relative;
+    top: 90px;
+    margin-bottom: 15rem;
+  }
+
+  .seriesContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    margin: 0 25px;
+    width: auto;
+  }
+
+  .seriesList h1 {
+    margin: 20px 20px;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+
+  .serieCard {
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .seriesContainer .scroll-btn {
+    position: absolute;
+    margin-top: 25px;
+  }
+
+  .serieImg {
+    width: 10rem;
+    height: 15rem;
+    object-fit: fill;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .daysLeft p {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffb20c;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .seriesPage h1 {
+    background-color: black;
+    color: #ffb20c;
+    width: fit-content;
+    text-align: center;
+    margin: 10px auto;
+  }
+}
+
+/* VERSION TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .seriesPage {
+    position: relative;
+    top: 10rem;
+    margin-bottom: 15rem;
+  }
+
+  .seriesContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    margin: 0 25px;
+    width: auto;
+  }
+
+  .seriesList h1 {
+    margin: 20px 20px;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+
+  .serieCard {
+    width: auto;
+    position: relative;
+  }
+
+  .seriesContainer .scroll-btn {
+    position: absolute;
+    margin-top: 25px;
+  }
+
+  .serieImg {
+    width: 15rem;
+    height: 25rem;
+    object-fit: fill;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .daysLeft p {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffb20c;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .seriesPage h1 {
+    background-color: black;
+    color: #ffb20c;
+    width: fit-content;
+    text-align: center;
+    margin: 10px auto;
+  }
+}

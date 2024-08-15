@@ -1,0 +1,232 @@
+/* VERSION PC */
+@media (min-width: 1441px) {
+  .seasonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+
+  .seasons {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+    color: #ffb20c;
+    margin: 0 20px;
+  }
+
+  .seasons h2 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+  }
+
+  .seasonPoster {
+    width: 20vw;
+    height: 50vh;
+  }
+
+  .seasonPoster img {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #ffb20c;
+    object-fit: fill;
+  }
+
+  .seasonDetails {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    border: 4px solid #ffb20c;
+    background-color: black;
+    padding: 10px;
+  }
+}
+
+/* VERSION DESKTOP */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .seasonContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .seasons {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+    color: #ffb20c;
+    margin: 20px 20px;
+  }
+
+  .seasons h2 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    padding: 10px;
+  }
+
+  .seasonPoster {
+    width: auto;
+    height: 100%;
+  }
+
+  .seasonPoster img {
+    width: 15rem;
+    height: 20rem;
+    border: 5px solid #ffb20c;
+    object-fit: fill;
+  }
+
+  .seasonDetails {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    border: 4px solid #ffb20c;
+    background-color: black;
+    padding: 10px;
+  }
+}
+
+/* VERSION PHONE */
+@media (max-width: 600px) {
+  .seasonContainer {
+    margin: 10px 5px;
+  }
+
+  .seasons {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    color: #ffb20c;
+    margin: 10px 10px;
+  }
+
+  .seasons h2 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    padding: 5px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .seasonPoster {
+    width: auto;
+    height: 100%;
+  }
+
+  .seasonPoster img {
+    width: 15rem;
+    height: 20rem;
+    border: 5px solid #ffb20c;
+    object-fit: fill;
+  }
+
+  .seasonDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+    background-color: black;
+  }
+
+  .seasonDetails p {
+    margin-bottom: 0;
+  }
+}
+
+/* VERSION TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .seasonContainer {
+    margin: 10px 5px;
+  }
+
+  .seasons {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    color: #ffb20c;
+    margin: 10px 10px;
+  }
+
+  .seasons h2 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    padding: 5px;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 35px;
+  }
+
+  .seasonPoster {
+    width: auto;
+    height: 100%;
+  }
+
+  .seasonPoster img {
+    width: 20rem;
+    height: 25rem;
+    border: 5px solid #ffb20c;
+    object-fit: fill;
+  }
+
+  .seasonDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+    border: 4px solid #ffb20c;
+    background-color: black;
+    padding: 5px;
+  }
+
+  .seasonDetails p {
+    margin-bottom: 0;
+  }
+}
