@@ -41,7 +41,7 @@ const read = async (req, res, next) => {
 const getCastingBySerieId = async (req, res, next) => {
   try {
     const { serieId } = req.params;
-    const serieCasting = await serieCastingManager.readBySerieId(serieId);
+    const serieCasting = await serieCastingManager.castingBySerieId(serieId);
     res.json(serieCasting);
   } catch (err) {
     next(err);
