@@ -46,22 +46,23 @@ CREATE TABLE personalities (
 );
 
 INSERT INTO personalities (fullname, image_src, birthdate, deathdate, origin, bio, profession)
-VALUES ("Jodelle Ferland", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jodelle_Ferland_%28medium_crop%29.jpg/600px-Jodelle%20Ferland%20%28medium%20crop%29.jpg", STR_TO_DATE("09-10-1994", "%d-%m-%Y"), null, "Canada", "Actrice Canadienne", "Actrice");
+VALUES ("Jodelle Ferland", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Jodelle_Ferland_%28medium_crop%29.jpg/600px-Jodelle%20Ferland%20%28medium%20crop%29.jpg", "1994-10-09", null, "Canada", "Actrice Canadienne", "Actrice");
 INSERT INTO personalities (fullname, image_src, birthdate, deathdate, origin, bio, profession)
-VALUES ("Christophe Gans", "https://upload.wikimedia.org/wikipedia/commons/5/52/Christophe_Gans_2010.JPG", STR_TO_DATE("11-03-1960", "%d-%m-%Y"), null, "France", "Réalisateur français", "Réalisateur");
+VALUES ("Christophe Gans", "https://upload.wikimedia.org/wikipedia/commons/5/52/Christophe_Gans_2010.JPG", "1960-03-11", null, "France", "Réalisateur français", "Réalisateur");
 INSERT INTO personalities (fullname, image_src, birthdate, deathdate, origin, bio, profession)
-VALUES ("Sean Bean", "https://fr.web.img2.acsta.net/pictures/15/07/20/17/45/031961.jpg", STR_TO_DATE("17-04-1959", "%d-%m-%Y"), null, "Angleterre", "Acteur Britannique", "Acteur");
+VALUES ("Sean Bean", "https://fr.web.img2.acsta.net/pictures/15/07/20/17/45/031961.jpg", "1959-04-17", null, "Angleterre", "Acteur Britannique", "Acteur");
 INSERT INTO personalities (fullname, image_src, birthdate, deathdate, origin, bio, profession)
-VALUES ("Radha Mitchell", "https://image.tmdb.org/t/p/original/ctC7epg65XgUol62d1UAoyGvNKm.jpg", STR_TO_DATE("12-11-1973", "%d-%m-%Y"), null, "Australie", "Actrice australienne", "Actrice");
+VALUES ("Radha Mitchell", "https://image.tmdb.org/t/p/original/ctC7epg65XgUol62d1UAoyGvNKm.jpg", "1973-11-12", null, "Australie", "Actrice australienne", "Actrice");
 
 CREATE TABLE movieCasting (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  movie_id INT,
-  personality_id INT,
+  movie_id INT NOT NULL,
+  personality_id INT NOT NULL,
   side ENUM("Acting", "Realisation") NOT NULL,
   role VARCHAR(255) NOT NULL,
   FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
-  FOREIGN KEY (personality_id) REFERENCES personalities(id)
+  FOREIGN KEY (personality_id) REFERENCES personalities(id) ON DELETE CASCADE,
+  CONSTRAINT unique_personality_movie UNIQUE(movie_id, personality_id)
 );
 
 INSERT INTO movieCasting (movie_id, personality_id, side, role)
@@ -83,37 +84,39 @@ CREATE TABLE series (
   universe VARCHAR(255),
   release_date DATE,
   ending_date DATE,
-  statut ENUM('En cours', 'Achevée', 'Inachevée'),
+  statut ENUM('En cours', 'Terminée', 'Annulée') NULL,
   seasons INT,
   episodes INT,
   country VARCHAR(255),
   screen ENUM('TV', 'Streaming'),
-  streaming ENUM('Netflix', 'Disney +', 'Amazon Prime Vidéo', 'Paramount +', 'Apple TV', 'Salto', 'OCS', 'Canal +')
-);
+  streaming ENUM('Netflix', 'Disney +', 'Amazon Prime Vidéo', 'Paramount +', 'Apple TV', 'Salto', 'OCS', 'Canal +') NULL
+  );
 
 CREATE TABLE seasons (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  serie_id INT,
-  season_number INT,
+  serie_id INT NOT NULL,
+  season_number INT NOT NULL,
   poster VARCHAR(255),
   first_episode_date DATE,
   last_episode_date DATE,
   synopsis TEXT,
   episodes INT,
-  FOREIGN KEY (serie_id) REFERENCES series(id)
+  FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
+  CONSTRAINT unique_season UNIQUE (serie_id, season_number)
 );
 
 CREATE TABLE episodes (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  serie_id INT,
-  season_id INT,
-  episode_number INT,
-  title VARCHAR(255) NOT NULL,
-  image VARCHAR(255) NOT NULL,
+  serie_id INT NOT NULL,
+  season_id INT NOT NULL,
+  episode_number INT NOT NULL,
+  title VARCHAR(255),
+  image VARCHAR(255),
   release_date DATE,
   synopsis TEXT,
-  FOREIGN KEY (season_id) REFERENCES seasons(id),
-  FOREIGN KEY (serie_id) REFERENCES series(id)
+  FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
+  FOREIGN KEY (season_id) REFERENCES seasons(id) ON DELETE CASCADE,
+  CONSTRAINT unique_episode_per_season_and_series UNIQUE(serie_id, season_id, episode_number)
 );
 
 CREATE TABLE serieCasting (
@@ -124,15 +127,16 @@ CREATE TABLE serieCasting (
   role VARCHAR(255) NOT NULL,
   presence VARCHAR(255) NOT NULL,
   FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
-  FOREIGN KEY (personality_id) REFERENCES personalities(id)
+  FOREIGN KEY (personality_id) REFERENCES personalities(id) ON DELETE CASCADE
 );
 
+-- Série : Dark Matter
 INSERT INTO series (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, ending_date, statut, seasons, episodes, country, screen, streaming, universe)
-VALUES ("Dark Matter", "https://image.tmdb.org/t/p/original/15ixZmlRK7klRC84oLKUw6WehMa.jpg", "https://image.tmdb.org/t/p/original/4wwWDjLfJVMt2hh8DIa2rzEx5VS.jpg", "https://image.tmdb.org/t/p/original/w8IeXqvHQ85sAWWx7LYbzwJH7xI.png", "https://www.youtube.com/embed/1TqwBlTQfTg?si=Yj50d5jF0udzMV17", "Six personnes se réveillent à bord d'un vaisseau spatial livré à lui-même. Elles n'ont aucun souvenir de leur passé, ni de leur identité. Aidés par un androïde, ces six nouveaux membres d'équipage vont tenter de survivre à travers l'espace et de comprendre pourquoi ils sont là et surtout, connaître qui ils sont...", "Science-Fiction", "Voyages", STR_TO_DATE("09-06-2017", "%d-%m-%Y"), STR_TO_DATE("25-08-2017", "%d-%m-%Y"), "Inachevée", 3, 39, "USA", "TV", null, null);
+VALUES ("Dark Matter", "https://image.tmdb.org/t/p/original/15ixZmlRK7klRC84oLKUw6WehMa.jpg", "https://image.tmdb.org/t/p/original/4wwWDjLfJVMt2hh8DIa2rzEx5VS.jpg", "https://image.tmdb.org/t/p/original/w8IeXqvHQ85sAWWx7LYbzwJH7xI.png", "https://www.youtube.com/embed/1TqwBlTQfTg?si=Yj50d5jF0udzMV17", "Six personnes se réveillent à bord d'un vaisseau spatial livré à lui-même. Elles n'ont aucun souvenir de leur passé, ni de leur identité. Aidés par un androïde, ces six nouveaux membres d'équipage vont tenter de survivre à travers l'espace et de comprendre pourquoi ils sont là et surtout, connaître qui ils sont...", "Science-Fiction", "Voyages", "2017-06-09", "2017-08-25", "Annulée", 3, 39, "USA", "TV", null, null);
 INSERT INTO seasons (serie_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
-VALUES (1, 1, "https://image.tmdb.org/t/p/original/aUSrqHdIEtPWEjn8WPtqabn0g91.jpg", STR_TO_DATE("12-06-2015", "%d-%m-%Y"), STR_TO_DATE("28-08-2015", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13),
-(1, 2, "https://image.tmdb.org/t/p/original/xzezF9uMh2TviyXeMmewJ9rPgSp.jpg", STR_TO_DATE("01-07-2016", "%d-%m-%Y"), STR_TO_DATE("16-09-2016", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13),
-(1, 3, "https://image.tmdb.org/t/p/original/t5cN1LwdTeRe76kfnOpaCp3mvNV.jpg", STR_TO_DATE("09-06-2017", "%d-%m-%Y"), STR_TO_DATE("25-08-2017", "%d-%m-%Y"), "Six personnes se réveillent dans un vaisseau spatial...", 13);
+VALUES (1, 1, "https://image.tmdb.org/t/p/original/aUSrqHdIEtPWEjn8WPtqabn0g91.jpg", "2015-06-12", "2015-08-28", "Six personnes se réveillent dans un vaisseau spatial...", 13),
+(1, 2, "https://image.tmdb.org/t/p/original/xzezF9uMh2TviyXeMmewJ9rPgSp.jpg", "2016-07-01", "2016-09-16", "Six personnes se réveillent dans un vaisseau spatial...", 13),
+(1, 3, "https://image.tmdb.org/t/p/original/t5cN1LwdTeRe76kfnOpaCp3mvNV.jpg", "2017-06-09", "2017-08-25", "Six personnes se réveillent dans un vaisseau spatial...", 13);
 
 INSERT INTO episodes (serie_id, season_id, episode_number, title, image, release_date, synopsis)
 VALUES (1, 1, 1, "Episode 1", "https://image.tmdb.org/t/p/original/d5QdWO1thZ1FqiotLpBnXOsp1MI.jpg", "2015-06-12", "Six personnes sortent de stase pour constater qu'ils sont sur un vaisseau dans l'espace, mais ils n'ont aucune idée de qui ils sont. Ils sont ensuite attaqués par un androïde et plus tard par un autre vaisseau. Après s'être échappés, ils arrivent à la destination prévue du vaisseau : une colonie sur une planète en attente d'une cargaison d'armes comme celle qu'ils portent, pour se défendre contre une menace qui approche. Ils apprennent ensuite à partir des dossiers décryptés du vaisseau que cinq d'entre eux sont des meurtriers et ils ne sont pas, comme ils l'avaient cru, là pour aider les personnes en question : ils sont là pour les tuer.");
@@ -140,17 +144,18 @@ VALUES (1, 1, 1, "Episode 1", "https://image.tmdb.org/t/p/original/d5QdWO1thZ1Fq
 INSERT INTO serieCasting (serie_id, personality_id, side, role, presence)
 VALUES (1, 1, "Acting", "Five", "Saison 1 à 3");
 
+-- Serie : Moon Knight --
 INSERT INTO series (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, ending_date, statut, seasons, episodes, country, screen, streaming, universe)
-VALUES ("Moon Knight", "https://image.tmdb.org/t/p/original/YksR65as1ppF2N48TJAh2PLamX.jpg", "https://image.tmdb.org/t/p/original/ktNwklnBTGRf6eHUEATLsVch2ZZ.jpg", "https://image.tmdb.org/t/p/original/mLN1xD2VogrfT1WD1Ipg6wReHXR.png", "https://www.youtube.com/embed/Vb4Y8strcaI?si=zJO1pM3gYRKufBja", "Steven Grant, un simple employé de musée est confronté à un trouble dissociatif de l'identité, dont son double, Mark Spector, est un avatar du Dieu de la lune qui a fait de lui le super-héros : Moon Knight. Accompagnés du Dieu de la Lune, Khonshu, Marc Spector & Steven Grant doivent faire face à une menace d'un culte et de leur leader malfaisant.", "Science-Fiction", "Super-Héros", STR_TO_DATE("30-03-2022", "%d-%m-%Y"), STR_TO_DATE("04-05-2022", "%d-%m-%Y"), "Achevée", 1, 6, "USA", "Streaming", "Disney +", "Marvel");
+VALUES ("Moon Knight", "https://image.tmdb.org/t/p/original/YksR65as1ppF2N48TJAh2PLamX.jpg", "https://image.tmdb.org/t/p/original/ktNwklnBTGRf6eHUEATLsVch2ZZ.jpg", "https://image.tmdb.org/t/p/original/mLN1xD2VogrfT1WD1Ipg6wReHXR.png", "https://www.youtube.com/embed/Vb4Y8strcaI?si=zJO1pM3gYRKufBja", "Steven Grant, un simple employé de musée est confronté à un trouble dissociatif de l'identité, dont son double, Mark Spector, est un avatar du Dieu de la lune qui a fait de lui le super-héros : Moon Knight. Accompagnés du Dieu de la Lune, Khonshu, Marc Spector & Steven Grant doivent faire face à une menace d'un culte et de leur leader malfaisant.", "Science-Fiction", "Super-Héros", STR_TO_DATE("30-03-2022", "%d-%m-%Y"), STR_TO_DATE("04-05-2022", "%d-%m-%Y"), "Terminée", 1, 6, "USA", "Streaming", "Disney +", "Marvel");
 INSERT INTO seasons (serie_id, season_number, poster, first_episode_date, last_episode_date, synopsis, episodes)
 VALUES (2, 1, "https://image.tmdb.org/t/p/original/11keFudto4QrgrXChukexJwdHPe.jpg", STR_TO_DATE("30-03-2022", "%d-%m-%Y"), STR_TO_DATE("04-05-2022", "%d-%m-%Y"), "Steven Grant, un simple employé de musée est confronté à un trouble dissociatif de l'identité, dont son double, Mark Spector, est un avatar du Dieu de la lune qui a fait de lui le super-héros : Moon Knight. Accompagnés du Dieu de la Lune, Khonshu, Marc Spector & Steven Grant doivent faire face à une menace d'un culte et de leur leader malfaisant.", 6);
 INSERT INTO episodes (serie_id, season_id, episode_number, title, image, release_date, synopsis)
-VALUES (2, 1, 1, "Le mystère du poisson rouge", "https://image.tmdb.org/t/p/original/h88DZpKIDo66Tvt556HCvq2BdR0.jpg", "2022-03-30", "Steven découvre qu'il est peut-être un super-héros, mais qu'il est aussi habité par un mercenaire."),
-(2, 1, 2, "Invoque le costume", "https://media.themoviedb.org/t/p/w160_and_h90_bestv2/6TIFQdMSSwpXORoRy3P3InoopJY.jpg", "2022-04-06", "Steven se retrouve vite embarqué dans la guerre des dieux avec une mystérieuse compagne."),
-(2, 1, 3, "En toute amitié", "https://media.themoviedb.org/t/p/w160_and_h90_bestv2/eg1ENRRBsWj4Xxxaz0sXwkTeVN6.jpg", "2022-04-13", "Harrow a pris de l'avance, Marc et Layla se rendent au Caire en quête d'informations."),
-(2, 1, 4, "Le tombeau", "https://media.themoviedb.org/t/p/w160_and_h90_bestv2/kneOHUwZVhwhaqPJmKO39dUJMCE.jpg", "2022-04-20", "Marc et Steven doivent trouver un équilibre face aux menaces surnaturelles qui les attendent."),
-(2, 1, 5, "L'asile", "https://media.themoviedb.org/t/p/w160_and_h90_bestv2/3PRA4Ir76Js1VW41vSWqvdUicNw.jpg", "2022-04-27", "Marc et Steven revisitent leurs souvenirs afin de découvrir la vérité et avancer ensemble."),
-(2, 1, 6, "Des dieux et des monstres", "https://media.themoviedb.org/t/p/w160_and_h90_bestv2/oYZWV7QuyqyWYgWvPjA26wM4bTQ.jpg", "2022-05-04", "Moon Knight se mêle à la bataille. Marc, Steven et Khonshu tentent ensemble d'arrêter Ammit.");
+VALUES (2, 4, 1, "Le mystère du poisson rouge", "https://image.tmdb.org/t/p/original/h88DZpKIDo66Tvt556HCvq2BdR0.jpg", "2022-03-30", "Steven découvre qu'il est peut-être un super-héros, mais qu'il est aussi habité par un mercenaire."),
+(2, 4, 2, "Invoque le costume", "https://image.tmdb.org/t/p/original/6TIFQdMSSwpXORoRy3P3InoopJY.jpg", "2022-04-06", "Steven se retrouve vite embarqué dans la guerre des dieux avec une mystérieuse compagne."),
+(2, 4, 3, "En toute amitié", "https://image.tmdb.org/t/p/original/xMiab3gxnz9XJpcadVZLkqdrkSu.jpg", "2022-04-13", "Harrow a pris de l'avance, Marc et Layla se rendent au Caire en quête d'informations."),
+(2, 4, 4, "Le tombeau", "https://image.tmdb.org/t/p/original/hm4u8k5OF4cQOXTP4ytxlEcjpVW.jpg", "2022-04-20", "Marc et Steven doivent trouver un équilibre face aux menaces surnaturelles qui les attendent."),
+(2, 4, 5, "L'asile", "https://image.tmdb.org/t/p/original/3PRA4Ir76Js1VW41vSWqvdUicNw.jpg", "2022-04-27", "Marc et Steven revisitent leurs souvenirs afin de découvrir la vérité et avancer ensemble."),
+(2, 4, 6, "Des dieux et des monstres", "https://image.tmdb.org/t/p/original/v74FiiBNWgOlkJ30PVmpEBDElYo.jpg", "2022-05-04", "Moon Knight se mêle à la bataille. Marc, Steven et Khonshu tentent ensemble d'arrêter Ammit.");
 
 
 
