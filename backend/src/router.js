@@ -94,12 +94,7 @@ const serieControllers = require("./controllers/seriesControllers");
 router.get("/series", serieControllers.browse);
 
 // Route to get a specific item by ID
-router.get("/series/:id", serieControllers.read);
-
-router.get(
-  "/series/:id/seasons/episodes/serieCasting",
-  serieControllers.getFullSerie
-);
+router.get("/series/:id", serieControllers.getFullSerie);
 
 // Route to add a new movie
 router.post("/series", serieControllers.add);
@@ -121,6 +116,8 @@ router.get("/seasons", seasonsControllers.browse);
 // Route to get a specific season by ID
 router.get("/seasons/:id", seasonsControllers.read);
 
+router.get("/seasons/series/:serieId", seasonsControllers.getSeasonsBySerieId);
+
 // Route to add a new season
 router.post("/seasons", seasonsControllers.add);
 
@@ -140,6 +137,8 @@ router.get("/episodes", episodesControllers.browse);
 
 // Route to get a specific season by ID
 router.get("/episodes/:id", episodesControllers.read);
+
+router.get("/episodes/seasons/:id", episodesControllers.getEpisodesBySeasonId);
 
 // Route to add a new season
 router.post("/episodes", episodesControllers.add);
