@@ -42,6 +42,17 @@ class MovieCastingManager extends AbstractManager {
     return rows;
   }
 
+  async moviesByPersonalityId(personalityId) {
+    const [casting] = await this.database.query(
+      `SELECT movies.*, movieCasting.role
+      FROM ${this.table}
+      JOIN movies ON movieCasting.movie_id = movies.id
+      WHERE movieCasting.personality_id = ?`,
+      [personalityId]
+    );
+    return casting;
+  }
+
   async readAll() {
     // Execute the SQL SELECT query to retrieve all movieCastings from the "movieCasting" table
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);

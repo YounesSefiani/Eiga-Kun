@@ -1,4 +1,17 @@
 // Import access to database tables
+
+const MovieCastingManager = require("../models/MovieCastingManager");
+
+const movieCastingManager = new MovieCastingManager();
+
+const SerieCastingManager = require("../models/SerieCastingManager");
+
+const serieCastingManager = new SerieCastingManager();
+
+const PersonalitiesManager = require("../models/PersonalityManager");
+
+const personalityManager = new PersonalitiesManager();
+
 const tables = require("../tables");
 
 // The B of BREAD - Browse (Read All) operation
@@ -31,6 +44,31 @@ const read = async (req, res, next) => {
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);
+  }
+};
+
+// eslint-disable-next-line consistent-return
+const getFilmography = async (req, res) => {
+  try {
+    const personalityId = req.params.id;
+    const personality = await personalityManager.read(personalityId);
+    if (!personality) {
+      return res.status(404).send("Personnalité non trouvée");
+    }
+
+    const movies = await movieCastingManager.moviesByPersonalityId(
+      personalityId
+    );
+
+    const series = await serieCastingManager.seriesByPersonalityId(
+      personalityId
+    );
+
+    const fullFilmography = { personality, movies, series };
+
+    res.json(fullFilmography);
+  } catch (err) {
+    res.status(500).send("Erreur serveur");
   }
 };
 
@@ -75,6 +113,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  getFilmography,
   edit,
   add,
   destroy,
