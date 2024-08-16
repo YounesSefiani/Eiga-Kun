@@ -2,8 +2,10 @@
 const tables = require("../tables");
 
 const EpisodesManager = require("../models/EpisodeManager");
+const SeasonsManager = require("../models/SeasonManager");
 
 const episodesManager = new EpisodesManager();
+const seasonsManager = new SeasonsManager();
 
 // The B of BREAD - Browse (Read All) operation
 const browse = async (req, res, next) => {
@@ -34,6 +36,22 @@ const read = async (req, res, next) => {
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
+
+const getEpisodesBySeasonId = async (req, res, next) => {
+  try {
+    const seasonId = req.params.id;
+    const seasons = await seasonsManager.read(seasonId);
+    if (seasons === null) {
+      res.sendStatus(404);
+      return;
+    }
+    const episodes = await episodesManager.readBySeasonId(seasonId);
+    seasons.episodes = episodes;
+    res.json({ seasons, episodes });
+  } catch (err) {
     next(err);
   }
 };
@@ -86,6 +104,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  getEpisodesBySeasonId,
   edit,
   add,
   destroy,

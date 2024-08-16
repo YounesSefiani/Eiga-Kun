@@ -1,100 +1,157 @@
 const AbstractManager = require("./AbstractManager");
 
-class episodesManager extends AbstractManager {
+class EpisodesManager extends AbstractManager {
   constructor() {
-    // Call the constructor of the parent class (AbstractManager)
-    // and pass the table name "episodes" as configuration
     super({ table: "episodes" });
   }
 
-  // The C of CRUD - Create operation
+  async create(episode) {
+    try {
+      const [season] = await this.database.query(
+        `SELECT * FROM seasons WHERE id = ? AND serie_id = ?`,
+        [episode.season_id, episode.serie_id]
+      );
 
-  async create(episodes) {
-    // Execute the SQL INSERT query to add a new movie to the "episodes" table
-    const {
-      serieId,
-      seasonId,
-      episodeNumber,
-      title,
-      image,
-      releaseDate,
-      synopsis,
-    } = episodes;
-    const [result] = await this.database.query(
-      `insert into ${this.table} (serie_id, season_id, episode_number, title, image, release_date, synopsis) values (?, ?, ?, ?, ?, ?, ?)`,
-      [serieId, seasonId, episodeNumber, title, image, releaseDate, synopsis]
-    );
+      const [serie] = await this.database.query(
+        `SELECT * FROM series WHERE id = ?`,
+        [episode.serie_id]
+      );
 
-    // Return the ID of the newly inserted episode
-    return result.insertId;
+      if (season.length === 0) {
+        throw new Error("Saison non trouvée dans cette série");
+      }
+
+      if (serie.length === 0) {
+        throw new Error("Série non trouvée");
+      }
+
+      const [existingEpisode] = await this.database.query(
+        `SELECT * FROM episodes WHERE serie_id = ? AND season_id = ? AND episode_number = ?`,
+        [episode.serie_id, episode.season_id, episode.episode_number]
+      );
+
+      if (existingEpisode.length > 0) {
+        throw new Error("Cet épisode existe déjà pour cette saison");
+      }
+
+      if (episode.episode_number > 1) {
+        const [previousEpisodes] = await this.database.query(
+          `SELECT episode_number FROM episodes WHERE serie_id = ? AND season_id = ? AND episode_number < ?`,
+          [episode.serie_id, episode.season_id, episode.episode_number]
+        );
+
+        if (previousEpisodes.length < episode.episode_number - 1) {
+          return {
+            success: false,
+            message:
+              "Un ou plusieurs épisodes précédant celui-ci n'existe(nt) pas, veuillez insérez cet épisode ou ces épisodes avant !",
+          };
+        }
+      }
+
+      const [tooManyEpisodes] = await this.database.query(
+        `SELECT episodes FROM seasons WHERE id = ?`,
+        [episode.season_id]
+      );
+
+      const maxEpisodes = tooManyEpisodes[0].episodes;
+
+      const [currentEpisodes] = await this.database.query(
+        `SELECT COUNT(*) as count FROM episodes where serie_id = ? AND season_id = ?`,
+        [episode.serie_id, episode.season_id]
+      );
+
+      const episodeCount = currentEpisodes[0].count;
+
+      if (episodeCount >= maxEpisodes) {
+        return {
+          success: false,
+          message: `Selon les infos de cette saison, le nombre d'épisodes de celle-ci est de (${maxEpisodes}). Vous avez inséré un épisode de trop, veuillez mettre à jour vos données et réessayez.`,
+        };
+      }
+
+      const [result] = await this.database.query(
+        `INSERT INTO ${this.table} (serie_id, season_id, episode_number, title, image, release_date, synopsis) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [
+          episode.serie_id,
+          episode.season_id,
+          episode.episode_number,
+          episode.title,
+          episode.image,
+          episode.release_date,
+          episode.synopsis,
+        ]
+      );
+
+      return {
+        success: true,
+        message: "Episode crée avec succès",
+        episode: {
+          id: result.insertId,
+          serie_id: episode.serie_id,
+          season_id: episode.season_id,
+          episode_number: episode.episode_number,
+          title: episode.title,
+          image: episode.image,
+          release_date: episode.release_date,
+          synopsis: episode.synopsis,
+        },
+      };
+    } catch (err) {
+      throw new Error(
+        `Erreur lors de l'insertion de l'épisode : ${err.message}`
+      );
+    }
   }
 
-  // The Rs of CRUD - Read operations
-
   async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific episode by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT * FROM ${this.table} WHERE id = ?`,
       [id]
     );
-
-    // Return the first row of the result, which represents the episode
     return rows[0];
   }
 
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all episodes from the "episodes" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of episodes
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
     return rows;
   }
 
-  async readSerieSeasonsAndEpisodes(serieId) {
+  async readBySeasonId(seasonId) {
     const [rows] = await this.database.query(
-      `SELECT series.id AS series_id, seasons.id AS seasons_id, ${this.table}.*
-        FROM ${this.table}
-        JOIN series ON ${this.table}.serie_id = series.id
-        JOIN seasons ON ${this.table}.season_id = seasons.id
-        WHERE ${this.table}.serie_id = ?`,
+      `SELECT seasons.id AS seasons_id, ${this.table}.*
+      FROM ${this.table} 
+      JOIN seasons on ${this.table}.season_id = seasons.id
+      WHERE season_id = ?`,
+      [seasonId]
+    );
+    return rows;
+  }
+
+  async readEpisodesBySerieId(serieId) {
+    const [rows] = await this.database.query(
+      `SELECT * FROM episodes WHERE serie_id = ?`,
       [serieId]
     );
-
     return rows;
   }
 
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing movie
-
-  async update(id, episodes) {
-    const {
-      serieId,
-      seasonId,
-      episodeNumber,
-      title,
-      image,
-      releaseDate,
-      synopsis,
-    } = episodes;
-
+  async update(id, episode) {
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET serie_id = ?, season_id = ?, episode_number = ?, title = ?, image = ?, release_date = ?, synopsis = ? WHERE id = ?`,
       [
-        serieId,
-        seasonId,
-        episodeNumber,
-        title,
-        image,
-        releaseDate,
-        synopsis,
+        episode.serie_id,
+        episode.season_id,
+        episode.episode_number,
+        episode.title,
+        episode.image,
+        episode.release_date,
+        episode.synopsis,
         id,
       ]
     );
     return result.affectedRows;
   }
-
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove an movie by its ID
 
   async delete(id) {
     const result = await this.database.query(
@@ -105,4 +162,4 @@ class episodesManager extends AbstractManager {
   }
 }
 
-module.exports = episodesManager;
+module.exports = EpisodesManager;
