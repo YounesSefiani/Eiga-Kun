@@ -1,78 +1,75 @@
 const AbstractManager = require("./AbstractManager");
 
-class seriesManager extends AbstractManager {
+class SeriesManager extends AbstractManager {
   constructor() {
-    // Call the constructor of the parent class (AbstractManager)
-    // and pass the table name "series" as configuration
     super({ table: "series" });
   }
 
-  // The C of CRUD - Create operation
-
-  async create(series) {
-    // Execute the SQL INSERT query to add a new movie to the "series" table
+  async create(serie) {
     const [result] = await this.database.query(
-      `insert into ${this.table} (title, poster, background, logo, trailer, synopsis, genre, theme, universe, release_date, ending_date, statut, seasons, episodes, country, director, screen, streaming) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (title, poster, background, logo, trailer, synopsis, genre, theme, release_date, ending_date, statut, seasons, episodes, country, screen, streaming, universe) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
-        series.title,
-        series.poster,
-        series.background,
-        series.logo,
-        series.trailer,
-        series.synopsis,
-        series.genre,
-        series.theme,
-        series.universe,
-        series.release_date,
-        series.ending_date,
-        series.statut,
-        series.seasons,
-        series.episodes,
-        series.country,
-        series.director,
-        series.screen,
-        series.streaming,
+        serie.title,
+        serie.poster,
+        serie.background,
+        serie.logo,
+        serie.trailer,
+        serie.synopsis,
+        serie.genre,
+        serie.theme,
+        serie.release_date,
+        serie.ending_date,
+        serie.statut,
+        serie.seasons,
+        serie.episodes,
+        serie.country,
+        serie.screen,
+        serie.streaming,
+        serie.universe,
       ]
     );
-
-    // Return the ID of the newly inserted serie
     return result.insertId;
   }
 
-  // The Rs of CRUD - Read operations
-
   async read(id) {
-    // Execute the SQL SELECT query to retrieve a specific serie by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT * FROM ${this.table} WHERE id = ?`,
       [id]
     );
-
-    // Return the first row of the result, which represents the serie
     return rows[0];
   }
 
   async readAll() {
-    // Execute the SQL SELECT query to retrieve all series from the "series" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of series
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
     return rows;
   }
 
-  // The U of CRUD - Update operation
-  // TODO: Implement the update operation to modify an existing serie
-
-  async update(id, series) {
+  async update(id, serie) {
     const [result] = await this.database.query(
-      `UPDATE ${this.table} SET ? WHERE id = ?`,
-      [series, id]
+      `UPDATE ${this.table} SET title = ?, poster = ?, background = ?, logo = ?, trailer = ?, synopsis = ?, genre = ?, theme = ?, release_date = ?, ending_date = ?, statut = ?, seasons = ?, episodes = ?, country = ?, screen = ?, streaming = ?, universe = ? WHERE id = ?`,
+      [
+        serie.title,
+        serie.poster,
+        serie.background,
+        serie.logo,
+        serie.trailer,
+        serie.synopsis,
+        serie.genre,
+        serie.theme,
+        serie.release_date,
+        serie.ending_date,
+        serie.statut,
+        serie.seasons,
+        serie.episodes,
+        serie.country,
+        serie.screen,
+        serie.streaming,
+        serie.universe,
+        id,
+      ]
     );
-    return result.insertId;
+    return result.affectedRows;
   }
-
-  // The D of CRUD - Delete operation
-  // TODO: Implement the delete operation to remove a serie by its ID
 
   async delete(id) {
     const result = await this.database.query(
@@ -83,4 +80,4 @@ class seriesManager extends AbstractManager {
   }
 }
 
-module.exports = seriesManager;
+module.exports = SeriesManager;
