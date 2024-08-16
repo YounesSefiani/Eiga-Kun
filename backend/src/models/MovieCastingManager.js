@@ -31,7 +31,7 @@ class MovieCastingManager extends AbstractManager {
 
   async readByMovieId(movieId) {
     const [rows] = await this.database.query(
-      `SELECT movies.id AS movies_id, ${this.table}.*, personalities.id AS personalities_id, personalities.image_src AS personalities_image, personalities.fullname AS personalities_fullname
+      `SELECT movies.id AS movies_id, movies.title AS movies_title, ${this.table}.*, personalities.id AS personalities_id, personalities.image_src AS personalities_image, personalities.fullname AS personalities_fullname
           FROM ${this.table}
           JOIN movies ON ${this.table}.movie_id = movies.id
           JOIN personalities ON ${this.table}.personality_id = personalities.id
