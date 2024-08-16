@@ -9,10 +9,15 @@ class serieCastingManager extends AbstractManager {
 
   // The C of CRUD - Create operation
   async create(serieCasting) {
-    const { serieId, personalityId, side, role, presence } = serieCasting;
     const [result] = await this.database.query(
       `INSERT INTO ${this.table} (serie_id, personality_id, side, role, presence) VALUES (?, ?, ?, ?, ?)`,
-      [serieId, personalityId, side, role, presence]
+      [
+        serieCasting.serie_id,
+        serieCasting.personality_id,
+        serieCasting.side,
+        serieCasting.role,
+        serieCasting.presence,
+      ]
     );
     return result.insertId;
   }
@@ -29,9 +34,9 @@ class serieCastingManager extends AbstractManager {
     return rows[0];
   }
 
-  async readBySerieId(serieId) {
+  async castingBySerieId(serieId) {
     const [rows] = await this.database.query(
-      `SELECT series.id AS series_id, ${this.table}.*, personalities.id AS personalities_id, personalities.image_src AS personalities_image, personalities.fullname AS personalities_fullname
+      `SELECT series.id AS series_id, series.title AS series_title, personalities.fullname AS personalities_fullname, ${this.table}.*, personalities.id AS personalities_id, personalities.image_src AS personalities_image
           FROM ${this.table}
           JOIN series ON ${this.table}.serie_id = series.id
           JOIN personalities ON ${this.table}.personality_id = personalities.id
@@ -52,10 +57,16 @@ class serieCastingManager extends AbstractManager {
 
   // The U of CRUD - Update operation
   async update(id, serieCasting) {
-    const { serieId, personalityId, side, role, presence } = serieCasting;
     const [result] = await this.database.query(
       `UPDATE ${this.table} SET serie_id = ?, personality_id = ?, side = ?, role = ?, presence = ? WHERE id = ?`,
-      [serieId, personalityId, side, role, presence, id]
+      [
+        serieCasting.serie.id,
+        serieCasting.personality.id,
+        serieCasting.side,
+        serieCasting.role,
+        serieCasting.presence,
+        id,
+      ]
     );
     return result.affectedRows; // Use affectedRows to check how many rows were updated
   }
