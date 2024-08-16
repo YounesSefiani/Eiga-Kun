@@ -51,6 +51,10 @@ router.get("/personalities", personalitiesControllers.browse);
 // Route to get a specific item by ID
 router.get("/personalities/:id", personalitiesControllers.read);
 
+router.get(
+  "/personalities/:id/career",
+  personalitiesControllers.getFilmography
+);
 // Route to add a new movie
 router.post("/personalities", personalitiesControllers.add);
 

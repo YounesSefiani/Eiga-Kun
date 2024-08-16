@@ -47,6 +47,17 @@ class serieCastingManager extends AbstractManager {
     return rows;
   }
 
+  async seriesByPersonalityId(personalityId) {
+    const [casting] = await this.database.query(
+      `SELECT series.*, serieCasting.role, serieCasting.presence
+      FROM ${this.table}
+      JOIN series ON serieCasting.serie_id = series.id
+      WHERE serieCasting.personality_id = ?`,
+      [personalityId]
+    );
+    return casting;
+  }
+
   async readAll() {
     // Execute the SQL SELECT query to retrieve all serieCastings from the "serieCasting" table
     const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
