@@ -38,6 +38,16 @@ const read = async (req, res, next) => {
   }
 };
 
+const getSeasonsBySerieId = async (req, res, next) => {
+  try {
+    const { serieId } = req.params;
+    const seasons = await seasonsManager.readBySerieId(serieId);
+    res.json(seasons);
+  } catch (err) {
+    next(err);
+  }
+};
+
 // The E of BREAD - Edit (Update) operation
 const edit = async (req, res, next) => {
   try {
@@ -86,6 +96,7 @@ const destroy = async (req, res, next) => {
 module.exports = {
   browse,
   read,
+  getSeasonsBySerieId,
   edit,
   add,
   destroy,

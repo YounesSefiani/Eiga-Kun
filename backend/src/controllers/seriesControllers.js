@@ -50,22 +50,39 @@ const read = async (req, res, next) => {
   }
 };
 
-const getFullSerie = async (req, res, next) => {
+// eslint-disable-next-line consistent-return
+const getFullSerie = async (req, res) => {
   try {
     const serieId = req.params.id;
-    const serie = await seriesManager.read(serieId);
-    if (serie == null) {
-      return res.sendStatus(404);
+
+    if (!serieId) {
+      return res.status(400).send("L'id de la série est requis");
     }
-    const casting = await serieCastingManager.readBySerieId(serieId);
-    serie.casting = casting;
-    const seasons = await seasonsManager.readSerieAndSeasons(serieId);
-    serie.seasons = seasons;
-    const episodes = await episodesManager.readSerieSeasonsAndEpisodes(serieId);
-    serie.episodes = episodes;
-    return res.json(serie);
+
+    const serie = await seriesManager.read(serieId);
+
+    if (!serie) {
+      return res.status(404).send("Série non trouvée");
+    }
+
+    const serieCasting = await serieCastingManager.castingBySerieId(serie.id);
+
+    serie.serieCasting = serieCasting;
+
+    const seasons = await seasonsManager.readBySerieId(serie.id);
+
+    const seasonsWithEpisodes = await Promise.all(
+      seasons.map(async (season) => {
+        const episodes = await episodesManager.readBySeasonId(season.id);
+        return { ...season, episodes };
+      })
+    );
+
+    const serieWithDetails = { ...serie, seasons: seasonsWithEpisodes };
+
+    res.json(serieWithDetails);
   } catch (err) {
-    return next(err);
+    res.status(500).send("Erreur Serveur");
   }
 };
 
