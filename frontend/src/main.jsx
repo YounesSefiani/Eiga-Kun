@@ -9,6 +9,8 @@ import MoviesPage from "./pages/Movies/MoviesPage/MoviesPage";
 import OneMoviePage from "./pages/Movies/OneMovie/OneMovie";
 import SeriesPage from "./pages/Series/SeriesPage/SeriesPage";
 import OneSeriePage from "./pages/Series/OneSerie/OneSerie";
+import PersonalitiesPage from "./pages/Personalities/PersonalitiesPage/PersonalitiesPage";
+import OnePersonality from "./pages/Personalities/OnePersonality/OnePersonality";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +60,33 @@ const router = createBrowserRouter([
     loader: async ({ params }) => {
       return axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/api/series/${params.id}`)
+        .then((res) => res.data)
+        .catch((err) => {
+          console.error(err);
+          return null;
+        });
+    },
+  },
+  {
+    path: "/personnalités",
+    element: <PersonalitiesPage />,
+    loader: () => {
+      return axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/personalities`)
+        .then((res) => res.data)
+        .catch((err) => console.error(err));
+    },
+  },
+  {
+    path: "/personnalités/:id",
+    element: <OnePersonality />,
+    loader: async ({ params }) => {
+      return axios
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/personalities/${
+            params.id
+          }/career`
+        )
         .then((res) => res.data)
         .catch((err) => {
           console.error(err);
