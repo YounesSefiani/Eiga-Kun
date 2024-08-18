@@ -11,6 +11,8 @@ const SerieManager = require("./models/SerieManager");
 const SeasonManager = require("./models/SeasonManager");
 const EpisodeManager = require("./models/EpisodeManager");
 const SerieCastingManager = require("./models/SerieCastingManager");
+const UserManager = require("./models/UserManager");
+const ProfilManager = require("./models/ProfilManager");
 
 const managers = [
   ItemManager,
@@ -21,6 +23,8 @@ const managers = [
   SeasonManager,
   EpisodeManager,
   SerieCastingManager,
+  UserManager,
+  ProfilManager,
   // Add other managers here
 ];
 
