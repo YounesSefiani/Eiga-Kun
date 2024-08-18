@@ -49,7 +49,7 @@ class serieCastingManager extends AbstractManager {
 
   async seriesByPersonalityId(personalityId) {
     const [casting] = await this.database.query(
-      `SELECT series.*, serieCasting.role, serieCasting.presence
+      `SELECT series.*, series.id AS series_id, serieCasting.role, serieCasting.presence
       FROM ${this.table}
       JOIN series ON serieCasting.serie_id = series.id
       WHERE serieCasting.personality_id = ?`,
