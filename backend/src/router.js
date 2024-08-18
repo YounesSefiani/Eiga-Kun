@@ -155,7 +155,7 @@ router.delete("/episodes/:id", episodesControllers.destroy);
 
 /* *********************************SERIE*CASTING*************************************** */
 
-// Import moviesControllers module for handling personalities-related operations
+// Import moviesControllers module for handling users-related operations
 const serieCastingControllers = require("./controllers/serieCastingControllers");
 
 // Route to get a list of movies
@@ -177,5 +177,45 @@ router.put("/serieCasting/:id", serieCastingControllers.edit);
 
 // Route to delete a movie
 router.delete("/serieCasting/:id", serieCastingControllers.destroy);
+
+/* *********************************USERS**************************************** */
+
+// Import itemControllers module for handling item-related operations
+const usersControllers = require("./controllers/usersControllers");
+
+// Route to get a list of users
+router.get("/users", usersControllers.browse);
+
+// Route to get a specific user by ID
+router.get("/users/:id", usersControllers.read);
+
+// Route to add a new user
+router.post("/users", usersControllers.add);
+
+// Route to update a user
+router.put("/users/:id", usersControllers.edit);
+
+// Route to delete a user
+router.delete("/users/:id", usersControllers.destroy);
+
+/* *********************************PROFILES**************************************** */
+
+// Import itemControllers module for handling item-related operations
+const profilesControllers = require("./controllers/profilesControllers");
+
+// Route to get a list of profiles
+router.get("/profiles", profilesControllers.browse);
+
+// Route to get a specific profil by ID
+router.get("/profiles/:id", profilesControllers.read);
+
+// Route to add a new profil
+router.post("/profiles", profilesControllers.add);
+
+// Route to update a profile
+router.put("/profiles/:id", profilesControllers.edit);
+
+// Route to delete a profile
+router.delete("/profiles/:id", profilesControllers.destroy);
 
 module.exports = router;
