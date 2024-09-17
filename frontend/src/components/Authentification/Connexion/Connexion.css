@@ -1,0 +1,246 @@
+/* VERSION PC */
+@media (min-width: 1441px) {
+  .connexion {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    background-color: white;
+  }
+
+  .connexionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin: 15%;
+    gap: 20px;
+    padding: 100px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 10px;
+  }
+
+  .connexionLabel {
+    width: auto;
+  }
+
+  .connexionInput {
+    width: 25rem;
+    height: 3rem;
+    text-align: center;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .connexionButton,
+  .passwordButton,
+  .cancelButton {
+    width: 80%;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 20px;
+    transition: ease 0.5s;
+  }
+
+  .connexionButton:hover,
+  .passwordButton:hover,
+  .cancelButton:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+}
+
+/* VERSION LAPTOP */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .connexion {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: white;
+  }
+
+  .connexionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin: 10%;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 10px;
+  }
+
+  .connexionLabel {
+    width: auto;
+  }
+
+  .connexionInput {
+    width: 20rem;
+    height: 3rem;
+    text-align: center;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .connexionButton,
+  .passwordButton,
+  .cancelButton {
+    width: 50%;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 20px;
+    transition: ease 0.5s;
+  }
+
+  .connexionButton:hover,
+  .passwordButton:hover,
+  .cancelButton:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+}
+
+/* VERSION MOBILE */
+@media (max-width: 600px) {
+  .connexion {
+    width: 100%;
+    height: 50%;
+    background-color: white;
+  }
+
+  .connexionForm {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 15px;
+    padding: 10px;
+  }
+
+  .connexionLabel {
+    width: auto;
+  }
+
+  .connexionInput {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: 3px solid black;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .connexionButton,
+  .passwordButton,
+  .cancelButton {
+    width: auto;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    font-size: 15px;
+    transition: ease 0.5s;
+  }
+
+  .connexionButton:active,
+  .passwordButton:active,
+  .cancelButton:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+}
+
+/* VERSION TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .connexion {
+    width: 100%;
+    height: 50%;
+    background-color: white;
+  }
+
+  .connexionForm {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 10% auto;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px 15px;
+    padding: 10px;
+  }
+
+  .connexionLabel {
+    width: auto;
+  }
+
+  .connexionInput {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border: 3px solid black;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .connexionButton,
+  .passwordButton,
+  .cancelButton {
+    width: auto;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    font-size: 20px;
+    transition: ease 0.5s;
+  }
+
+  .connexionButton:active,
+  .passwordButton:active,
+  .cancelButton:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid black;
+  }
+}

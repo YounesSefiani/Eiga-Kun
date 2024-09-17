@@ -1,0 +1,308 @@
+/* VERSION PC */
+@media (min-width: 1441px) {
+  .authentificationPage {
+    width: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .authContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    width: 50%;
+    height: auto;
+    background-color: black;
+    opacity: 80%;
+    border-right: 5px solid #ffb20c;
+  }
+
+  .initialView {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    gap: 100px;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    text-align: center;
+  }
+
+  .logo {
+    width: 20rem;
+    object-fit: contain;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: 5px solid orange;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50px;
+  }
+
+  .btnContainer p {
+    color: #ffb20c;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .authButton {
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    width: 60%;
+    height: auto;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    transition: ease 0.5s;
+  }
+
+  .authButton:hover {
+    border: 5px solid black;
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .authentificationPage {
+    width: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .authContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: auto 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    width: 50%;
+    height: auto;
+    background-color: black;
+    opacity: 80%;
+    border-right: 5px solid #ffb20c;
+  }
+
+  .initialView {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    text-align: center;
+  }
+
+  .initialView h2 {
+    font-size: 30px;
+  }
+
+  .logo {
+    width: 15rem;
+    object-fit: contain;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 5px solid orange;
+    background-color: black;
+    padding: 10px;
+    border-radius: 50px;
+  }
+
+  .btnContainer p {
+    color: #ffb20c;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .authButton {
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    width: 60%;
+    height: auto;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    transition: ease 0.5s;
+  }
+
+  .authButton:hover {
+    border: 5px solid black;
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media (max-width: 600px) {
+  .authentificationPage {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .authContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    opacity: 90%;
+    border-bottom: 5px solid #ffb20c;
+  }
+
+  .initialView {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background-color: white;
+  }
+
+  .initialView h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: auto;
+    gap: 10px;
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .authButton {
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    width: 60%;
+  }
+}
+
+/* VERSION TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .authentificationPage {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+  .authContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    opacity: 90%;
+    border-bottom: 5px solid #ffb20c;
+  }
+
+  .initialView {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background-color: white;
+  }
+
+  .initialView h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .logo {
+    max-width: 250px;
+  }
+
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+    height: 50%;
+    gap: 10px;
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .authButton {
+    border: 5px solid #ffb20c;
+    background-color: black;
+    color: #ffb20c;
+    width: 60%;
+  }
+}

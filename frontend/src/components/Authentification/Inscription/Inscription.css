@@ -1,0 +1,255 @@
+/* VERSION PC */
+@media (min-width: 1441px) {
+  .inscription {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    background-color: white;
+  }
+
+  .inscriptionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin: 10%;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 10px;
+  }
+
+  .inscriptionLabel {
+    width: auto;
+  }
+
+  .inscriptionInput {
+    width: 25rem;
+    height: 3rem;
+    text-align: center;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .inscriptionButton,
+  .passwordButton,
+  .cancelButton {
+    width: 80%;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 20px;
+    transition: ease 0.5s;
+  }
+
+  .inscriptionButton:hover,
+  .passwordButton:hover,
+  .cancelButton:hover {
+    background-color: #ffb20c;
+    border: 5px solid black;
+    color: black;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid #ffb20c;
+  }
+}
+
+/* VERSION DESKTOP */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .inscription {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    background-color: white;
+  }
+
+  .inscriptionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35rem;
+    height: auto;
+    margin: 10px auto;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 20px 10px;
+  }
+
+  .inscriptionLabel {
+    align-items: center;
+  }
+
+  .inscriptionInput {
+    width: 15rem;
+    height: auto;
+    text-align: center;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .inscriptionButton,
+  .passwordButton button,
+  .cancelButton {
+    width: 50%;
+    background-color: black;
+    color: #ffb20c;
+    border: 5px solid #ffb20c;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 18px;
+    transition: ease 0.5s;
+  }
+
+  .inscriptionButton:hover,
+  .passwordButton:hover,
+  .cancelButton:hover {
+    background-color: #ffb20c;
+    border: 5px solid black;
+    color: black;
+    border-radius: 15px;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    color: black;
+    border: 5px solid #ffb20c;
+    width: 50%;
+    border-radius: 15px;
+  }
+
+  .showText {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hideText {
+    font-size: 18px;
+  }
+}
+
+/* VERSION MOBILE */
+@media (max-width: 600px) {
+  .inscription {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+  }
+
+  .inscriptionForm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: auto;
+    height: 70%;
+    align-items: center;
+    margin: 0 auto;
+    gap: 10px;
+    border-radius: 30px;
+  }
+
+  .inscriptionInput {
+    width: 10rem;
+    font-size: 13px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .inscriptionButton,
+  .passwordButton,
+  .cancelButton {
+    width: auto;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    color: #ffb20c;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .inscriptionButton:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    border: 3px solid black;
+    color: black;
+    border-radius: 10px;
+  }
+}
+
+/* VERSION TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .inscription {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 100%;
+    height: 50%;
+  }
+
+  .inscriptionForm {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 40rem;
+    height: 70px;
+    justify-content: center;
+    margin: 50px auto;
+    gap: 30px;
+    border-radius: 30px;
+  }
+
+  .inscriptionInput {
+    width: 20rem;
+    font-size: 15px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgba(250, 228, 31, 0.712);
+  }
+
+  .inscriptionButton,
+  .passwordButton,
+  .cancelButton {
+    width: auto;
+    background-color: black;
+    border: 3px solid #ffb20c;
+    color: #ffb20c;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .inscriptionButton:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+  }
+
+  .passwordButton.active {
+    background-color: #ffb20c;
+    border: 3px solid black;
+    color: black;
+    border-radius: 10px;
+  }
+}
