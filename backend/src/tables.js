@@ -1,4 +1,7 @@
+const MovieManager = require("./models/MovieManager");
+
 const managers = [
+    MovieManager,
 ];
 
 const tables = {};
