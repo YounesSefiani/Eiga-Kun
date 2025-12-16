@@ -259,6 +259,31 @@ VALUES
         "Actrice de la série Silent Hill"
     );
 
+    INSERT INTO
+    personalities (
+        fullname,
+        picture,
+        birthdate,
+        deathdate,
+        nationality,
+        profession,
+        notable_works,
+        sexe,
+        biography
+    )
+VALUES
+    (
+        "Charlie Cox",
+        "https://image.tmdb.org/t/p/original/gljtAYH5wzyrHRI87eHn6RoqTHo.jpg",
+        "1982-12-15",
+        NULL,
+        "Britannique",
+        "Acteur",
+        "Marvel's Daredevil, Daredevil : Born Again, Marvel's Defenders",
+        "Male",
+        "Acteur de la série Marvel's Daredevil"
+    );
+
 CREATE TABLE
     castings (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -290,6 +315,25 @@ VALUES
         "Sharon DaSilva / Alessa Gillespie",
         "Acting",
         NULL
+    );
+
+    INSERT INTO
+    castings (
+        personality_id,
+        movie_id,
+        serie_id,
+        role,
+        side,
+        presence
+    )
+VALUES
+    (
+        2,
+        NULL,
+        1,
+        "Matt Murdock / Daredevil",
+        "Acting",
+        "Saison 1 à 3"
     );
 
 CREATE TABLE
