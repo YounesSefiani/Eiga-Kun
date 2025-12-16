@@ -20,6 +20,22 @@ const readOneMovie = async (req, res) => {
     }
 }
 
+const readFullMovie = async (req, res, next) => {
+    try {
+        const movieId = req.params.id
+        const movie = await tables.movies.readMovieId(movieId);
+        if (!movie) {
+            return res.status(404).json({ error: "Movie not found" });
+        }
+
+        const casting = await tables.castings.readCastingMovie(movieId);
+        movie.casting = casting || [],
+        res.status(200).json(movie);
+    } catch (error) {
+        next(error);
+    }
+}
+
 // E - BREAD - EDIT
 const editMovie = async (req, res, next) => {
     const updateMovie = req.body;
@@ -57,6 +73,7 @@ const destroyMovie = async (req, res, next) => {
 module.exports = {
     browseMovies,
     readOneMovie,
+    readFullMovie,
     addMovie,
     editMovie,
     destroyMovie,
