@@ -73,6 +73,7 @@ CREATE TABLE
         subUniverse VARCHAR(255),
         beginning_date DATE,
         ending_date DATE,
+        serie_average_duration VARCHAR(255),
         statut ENUM (
             'En cours',
             'Terminée',
@@ -104,6 +105,7 @@ INSERT INTO
         subUniverse,
         beginning_date,
         ending_date,
+        serie_average_duration,
         statut,
         nbSeasons,
         seasons,
@@ -128,6 +130,7 @@ VALUES
         "Daredevil",
         "2015-04-10",
         "2018-10-19",
+        "~ 45 - 60 minutes",
         "Terminée",
         "3",
         null,
@@ -138,3 +141,219 @@ VALUES
         "Disney +",
         "Netflix"
     );
+
+CREATE TABLE
+    seasons (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        serie_id INT NOT NULL,
+        season_number INT NOT NULL,
+        poster VARCHAR(255) NULL,
+        nbEpisodesSeason INT NULL,
+        episodes INT,
+        first_episode_date DATE NULL,
+        last_episode_date DATE NULL,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    seasons (
+        serie_id,
+        season_number,
+        poster,
+        nbEpisodesSeason,
+        episodes,
+        first_episode_date,
+        last_episode_date
+    )
+VALUES
+    (
+        1,
+        1,
+        "https://image.tmdb.org/t/p/original/mFg28Xslo8sMMRft7gxqVudCwkj.jpg",
+        13,
+        null,
+        "2015-04-10",
+        "2015-04-10"
+    );
+
+CREATE TABLE
+    episodes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        serie_id INT NOT NULL,
+        season_id INT NOT NULL,
+        episode_number INT NOT NULL,
+        title VARCHAR(255) NOT NULL,
+        episode_image VARCHAR(255) NULL,
+        synopsis TEXT NULL,
+        release_date DATE NULL,
+        duration TIME NULL,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (season_id) REFERENCES seasons (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    episodes (
+        serie_id,
+        season_id,
+        episode_number,
+        title,
+        episode_image,
+        synopsis,
+        release_date,
+        duration
+    )
+VALUES
+    (
+        1,
+        1,
+        1,
+        "Sur le ring",
+        "https://image.tmdb.org/t/p/original/kmZIhYleXiEFzy9olqMMSoQ0a72.jpg",
+        "Matt Murdock et Foggy Nelson prennent la défense d'une femme accusée d'un meurtre.",
+        "2015-04-10",
+        "00:53:00"
+    );
+
+CREATE TABLE
+    personalities (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        fullname VARCHAR(255) NOT NULL,
+        picture VARCHAR(255) NULL,
+        birthdate DATE NOT NULL,
+        deathdate DATE NULL,
+        nationality VARCHAR(255) NULL,
+        profession VARCHAR(255) NULL,
+        notable_works TEXT NULL,
+        sexe ENUM (
+            'Male',
+            'Female',
+            'Non-binary',
+            'Transgender',
+            'Other'
+        ) NOT NULL,
+        biography TEXT NULL
+    );
+
+INSERT INTO
+    personalities (
+        fullname,
+        picture,
+        birthdate,
+        deathdate,
+        nationality,
+        profession,
+        notable_works,
+        sexe,
+        biography
+    )
+VALUES
+    (
+        "Jodelle Ferland",
+        "https://image.tmdb.org/t/p/original/6rO3WF9VWfQOpVA7LtbriJmHH7N.jpg",
+        "1994-10-09",
+        NULL,
+        "Canadienne",
+        "Actrice",
+        "Silent Hill, Tideland, Twilight, chapitre 3 : Hésitation",
+        "Female",
+        "Actrice de la série Silent Hill"
+    );
+
+CREATE TABLE
+    castings (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        personality_id INT NOT NULL,
+        movie_id INT NULL,
+        serie_id INT NULL,
+        role VARCHAR(255) NOT NULL,
+        side ENUM ('Acting', 'Directing') NOT NULL,
+        presence VARCHAR(255) NULL,
+        FOREIGN KEY (personality_id) REFERENCES personalities (id) ON DELETE CASCADE,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    castings (
+        personality_id,
+        movie_id,
+        serie_id,
+        role,
+        side,
+        presence
+    )
+VALUES
+    (
+        1,
+        1,
+        NULL,
+        "Sharon DaSilva / Alessa Gillespie",
+        "Acting",
+        NULL
+    );
+
+CREATE TABLE
+    users (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        avatar VARCHAR(255) NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        password_hash VARCHAR(255) NOT NULL,
+        role ENUM ('user', 'admin') DEFAULT 'user',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );
+
+INSERT INTO
+    users (username, avatar, email, password_hash, role)
+VALUES
+    (
+        "User123",
+        "https://m.media-amazon.com/images/M/MV5BNzg5YzY4YmYtNWQ2OC00M2U5LWI1YWQtYmU0NmIwZjJhZmIzXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_.jpg",
+        "7BzjI@example.com",
+        "hashed_password_here",
+        null
+    );
+
+CREATE TABLE
+    userFavorites (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        user_id INT NOT NULL,
+        favorite_id INT NOT NULL,
+        favorite_type ENUM ("movie", "serie", "personality") NOT NULL,
+        status ENUM (
+            "liked",
+            "favorite",
+            "seen",
+            "toWatch",
+            "isWatching"
+        ) NOT NULL,
+        UNIQUE (user_id, favorite_id, favorite_type, status),
+        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+    );
+
+CREATE TABLE
+    userReviews (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        user_id INT NOT NULL,
+        movie_id INT NULL,
+        serie_id INT NULL,
+        personality_id INT NULL,
+        rating INT CHECK (
+            rating >= 1
+            AND rating <= 10
+        ) NULL,
+        review TEXT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (personality_id) REFERENCES personalities (id) ON DELETE CASCADE
+    );
+
+/* --- MOVIES INSERTS --- */
+INSERT INTO
+    userReviews (user_id, movie_id, rating, review)
+VALUES
+    ("1", "1", "10", "Un film fantastique !");
