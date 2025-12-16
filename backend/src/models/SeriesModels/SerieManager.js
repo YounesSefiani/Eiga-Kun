@@ -1,4 +1,4 @@
-const AbstractManager = require("./AbstractManager");
+const AbstractManager = require("../AbstractManager");
 
 class SerieManager extends AbstractManager {
   constructor() {
@@ -50,6 +50,9 @@ class SerieManager extends AbstractManager {
     );
     return serie[0];
   }
+
+
+
 
   // U - CRUD - Update
   async updateSerie(id, serie) {
