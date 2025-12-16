@@ -27,6 +27,8 @@ const readFullSerie = async (req, res, next) => {
       return res.status(404).json({ error: "Serie not found" });
     }
 
+    const casting = await tables.castings.readCastingSerie(serie.id);
+
     const seasons = await tables.seasons.readSeasonsSerie(serie.id);
 
     const seasonsWithEpisodes = await Promise.all(
@@ -39,6 +41,7 @@ const readFullSerie = async (req, res, next) => {
     const fullSerie = {
       ...serie,
       seasons: seasonsWithEpisodes,
+      casting: casting || [],
     };
 
     res.json(fullSerie);
