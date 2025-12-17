@@ -344,6 +344,7 @@ CREATE TABLE
         email VARCHAR(100) NOT NULL UNIQUE,
         password_hash VARCHAR(255) NOT NULL,
         role ENUM ('user', 'admin') DEFAULT 'user',
+        isValidated BOOLEAN DEFAULT FALSE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     );
@@ -375,6 +376,11 @@ CREATE TABLE
         UNIQUE (user_id, favorite_id, favorite_type, status),
         FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
     );
+
+    INSERT INTO 
+    userFavorites (user_id, favorite_id, favorite_type, status)
+VALUES
+    ("1", "1", "movie", "favorite");
 
 CREATE TABLE
     userReviews (
