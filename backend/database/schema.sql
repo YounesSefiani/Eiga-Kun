@@ -364,8 +364,9 @@ CREATE TABLE
     userFavorites (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         user_id INT NOT NULL,
-        favorite_id INT NOT NULL,
-        favorite_type ENUM ("movie", "serie", "personality") NOT NULL,
+        movie_id INT NULL,
+        serie_id INT NULL,
+        personality_id INT NULL,
         status ENUM (
             "liked",
             "favorite",
@@ -373,14 +374,19 @@ CREATE TABLE
             "toWatch",
             "isWatching"
         ) NOT NULL,
-        UNIQUE (user_id, favorite_id, favorite_type, status),
-        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+        UNIQUE (user_id, movie_id, status),
+        UNIQUE (user_id, serie_id, status),
+        UNIQUE (user_id, personality_id, status),
+        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+        FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
+        FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
+        FOREIGN KEY (personality_id) REFERENCES personalities(id) ON DELETE CASCADE
     );
 
     INSERT INTO 
-    userFavorites (user_id, favorite_id, favorite_type, status)
+    userFavorites (user_id, movie_id, status)
 VALUES
-    ("1", "1", "movie", "favorite");
+    ("1", "1", "favorite");
 
 CREATE TABLE
     userReviews (
