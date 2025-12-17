@@ -5,6 +5,7 @@ const EpisodeManager = require("./models/SeriesModels/EpisodeManager");
 const PersonalityManager = require("./models/PersonalityManager");
 const CastingManager = require("./models/CastingManager");
 const UserManager = require("./models/UsersModels/UserManager");
+const UserFavoritesManager = require("./models/UsersModels/UserFavoritesManager");
 
 const managers = [
     MovieManager,
@@ -14,6 +15,7 @@ const managers = [
     PersonalityManager,
     CastingManager,
     UserManager,
+    UserFavoritesManager,
 ];
 
 const tables = {};
