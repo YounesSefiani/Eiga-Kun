@@ -58,4 +58,13 @@ router.post("/castings", castingControllers.addCasting);
 router.put("/castings/:id", castingControllers.editCasting);
 router.delete("/castings/:id", castingControllers.destroyCasting);
 
+// USERS //
+const usersControllers = require("./controllers/usersControllers/usersControllers");
+
+router.get("/users", usersControllers.browseUsers);
+router.get("/users/:id", usersControllers.readOneUser);
+router.post("/users", usersControllers.addUser);
+router.put("/users/:id", usersControllers.editUser);
+router.delete("/users/:id", usersControllers.deleteUser);
+
 module.exports = router;
