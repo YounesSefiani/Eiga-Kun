@@ -67,4 +67,34 @@ router.post("/users", usersControllers.addUser);
 router.put("/users/:id", usersControllers.editUser);
 router.delete("/users/:id", usersControllers.deleteUser);
 
+// USERS FAVORITES / INTERACTIONS //
+const usersFavoritesControllers = require("./controllers/usersControllers/usersFavoritesControllers");
+
+// Toggle (ajouter/supprimer en un seul appel)
+// router.post("/users/:userId/favorites", usersFavoritesControllers.toggleInteraction);
+
+// Lecture
+// router.get("/users/:userId/favorites", usersFavoritesControllers.getAllInteractions);
+// router.get("/users/:userId/favorites/type/:type", usersFavoritesControllers.getInteractionsByType);
+// router.get("/users/:userId/favorites/status/:status", usersFavoritesControllers.getInteractionsByStatus);
+// router.get("/users/:userId/favorites/type/:type/status/:status", usersFavoritesControllers.getInteractionsByTypeAndStatus);
+
+// // Ajout/Suppression explicites (optionnel)
+// router.post("/users/:userId/favorites/add", usersFavoritesControllers.addInteraction);
+// router.delete("/users/:userId/favorites/delete", usersFavoritesControllers.removeInteraction);
+
+router.get("/users/:userId/favorites/movies", usersFavoritesControllers.readFavoriteMovies);
+router.post("/users/:userId/favorites/movie/add", usersFavoritesControllers.addingFavoriteMovie);
+router.delete("/users/:userId/favorites/movie/remove", usersFavoritesControllers.removingFavoriteMovie);
+
+// USER FAVORITES SERIES //
+router.get("/users/:userId/favorites/series", usersFavoritesControllers.readFavoriteSeries);
+router.post("/users/:userId/favorites/serie/add", usersFavoritesControllers.addingFavoriteSerie);
+router.delete("/users/:userId/favorites/serie/remove", usersFavoritesControllers.removingFavoriteSerie);
+
+// USER FAVORITES PERSONALITIES //
+router.get("/users/:userId/favorites/personalities", usersFavoritesControllers.readFavoritePersonalities);
+router.post("/users/:userId/favorites/personality/add", usersFavoritesControllers.addingFavoritePersonality);
+router.delete("/users/:userId/favorites/personality/remove", usersFavoritesControllers.removingFavoritePersonality);
+
 module.exports = router;
