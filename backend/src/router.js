@@ -97,4 +97,26 @@ router.get("/users/:userId/favorites/personalities", usersFavoritesControllers.r
 router.post("/users/:userId/favorites/personality/add", usersFavoritesControllers.addingFavoritePersonality);
 router.delete("/users/:userId/favorites/personality/remove", usersFavoritesControllers.removingFavoritePersonality);
 
+// USERS REVIEWS //
+
+// USER MOVIES REVIEWS //
+const usersReviewsControllers = require("./controllers/usersControllers/usersReviewsControllers");
+
+router.get("/reviews/movies/:movieId", usersReviewsControllers.browseMovieReviews);
+router.get("/reviews/users/:userId/movies", usersReviewsControllers.readUserMoviesReviews);
+router.post("/reviews/users/:userId/movies/:movieId/add", usersReviewsControllers.addMovieReview);
+router.put("/reviews/users/:userId/movies/:movieId/edit", usersReviewsControllers.editMovieReview);
+
+// USER SERIES REVIEWS //
+router.get("/reviews/series/:serieId", usersReviewsControllers.browseSerieReviews);
+router.get("/reviews/users/:userId/series", usersReviewsControllers.readUserSeriesReviews);
+router.post("/reviews/users/:userId/series/:serieId/add", usersReviewsControllers.addSerieReview);
+router.put("/reviews/users/:userId/series/:serieId/edit", usersReviewsControllers.editSerieReview);
+
+// USER PERSONALITIES REVIEWS //
+router.get("/reviews/personalities/:personalityId", usersReviewsControllers.browsePersonalityReviews);
+router.get("/reviews/users/:userId/personalities", usersReviewsControllers.readUserPersonalitiesReviews);
+router.post("/reviews/users/:userId/personalities/:personalityId/add", usersReviewsControllers.addPersonalityReview);
+router.put("/reviews/users/:userId/personalities/:personalityId/edit", usersReviewsControllers.editPersonalityReview);
+
 module.exports = router;
