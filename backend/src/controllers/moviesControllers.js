@@ -38,22 +38,76 @@ const readFullMovie = async (req, res, next) => {
 
 // E - BREAD - EDIT
 const editMovie = async (req, res, next) => {
-    const updateMovie = req.body;
+ try {
     const { id } = req.params;
-    try {
-        await tables.movies.updateMovie(id, updateMovie);
-        res.status(200).json({ ...updateMovie, id: parseInt(id, 10) });
-    } catch (error) {
-        next(error);
+    const updateMovie = req.body;
+    const { files } = req;
+    
+    const movie = await tables.movies.readMovieId(id);
+
+    if (!movie) {
+      return res.status(404).json({ message: 'Film non trouvé.' });
     }
+
+    const updatedMovieDatas = {
+        id,
+      title: updateMovie.title || movie.title,
+      release_date: updateMovie.release_date || movie.release_date || null,
+      genre: updateMovie.genre || movie.genre || null,
+      theme: updateMovie.theme || movie.theme || null,
+      universe: updateMovie.universe || movie.universe || null,
+      subUniverse: updateMovie.subUniverse || movie.subUniverse || null,
+      synopsis: updateMovie.synopsis || movie.synopsis || null,
+      poster: files?.poster
+        ? files.poster[0].filename
+        : updateMovie.poster || movie.poster || null,
+      logo: files?.logo ? files.logo[0].filename : updateMovie.logo || movie.logo || null,
+      background: files?.background
+        ? files.background[0].filename
+        : updateMovie.background || movie.background || null,
+      trailer: updateMovie.trailer || movie.trailer || null,
+      country: updateMovie.country || movie.country || null,
+      duration: updateMovie.duration || movie.duration || null,
+      screen: updateMovie.screen || movie.screen || null,
+      streaming: updateMovie.streaming || movie.streaming || null,
+      original: updateMovie.original || movie.original || null
+    };
+
+    await tables.movies.updateMovie(id, updatedMovieDatas);
+
+    const updatedMovie = await tables.movies.readMovieId(id);
+
+    if (!updatedMovie) {
+      return res
+        .status(404)
+        .json({ message: 'Film non trouvé ou mise à jour échouée.' });
+    }
+
+    return res.status(200).json({
+      message: 'Film mis à jour avec succès',
+      updateMovie: updatedMovie,
+    });
+  } catch (err) {
+    console.error('Erreur lors de la mise à jour du film:', err);
+    next(err);
+    return res.status(500).json({ message: 'Erreur interne du serveur' });
+  }
 }
 
 // A - BREAD - ADD
 const addMovie = async (req, res, next) => {
     const movie = req.body;
+    const { files } = req;
+    
+    const movieDatas = {
+        ...movie,
+        poster: files?.poster ? files.poster[0].filename: null,
+        background: files?.background ? files.background[0].filename: null,
+        logo: files?.logo ? files.logo[0].filename: null,
+    }
     try {
-        const createdMovie =  await tables.movies.createMovie(movie);
-        res.status(201).json({ ...movie, id: createdMovie.insertId });
+        const createdMovie =  await tables.movies.createMovie(movieDatas);
+        res.status(201).json({id: createdMovie, movieDatas});
     } catch (error) {
         next(error);
     }

@@ -64,13 +64,22 @@ const editSerie = async (req, res, next) => {
 
 // A - BREAD - ADD
 const addSerie = async (req, res, next) => {
-  const serie = req.body;
-  try {
-    const createdSerie = await tables.series.createSerie(serie);
-    res.status(201).json({ ...serie, id: createdSerie.insertId });
-  } catch (error) {
-    next(error);
-  }
+      const serie = req.body;
+      const { files } = req;
+      
+      const serieDatas = {
+          ...serie,
+          poster: files?.poster ? files.poster[0].filename: null,
+          background: files?.background ? files.background[0].filename: null,
+          logo: files?.logo ? files.logo[0].filename: null,
+      }
+      try {
+          const createdSerie =  await tables.series.createSerie(serieDatas);
+          res.status(201).json({id: createdSerie, serieDatas});
+      } catch (error) {
+          next(error);
+      }
+  
 };
 
 // D - BREAD - DELETE
