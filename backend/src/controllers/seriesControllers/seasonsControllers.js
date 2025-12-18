@@ -1,4 +1,6 @@
 const tables = require("../../tables");
+const fs = require('fs');
+const path = require('path');
 
 // B - BREAD - BROWSE (READ ALL SEASONS)
 const browseSeasons = async (req, res, next) => {
@@ -38,16 +40,28 @@ const editSeason = async (req, res, next) => {
 
 // A - BREAD - ADD (CREATE SEASON)
 const addSeason = async (req, res, next) => {
-    const season = req.body;
     try {
-        const createdSeason = await tables.seasons.createSeason(season);
-        if (!createdSeason.success) {
-            return res.status(400).json(createdSeason);
-        }
-        res.status(201).json({ ...season, id: createdSeason.id });
-    } catch (error) {
-        next(error);
+    const seasonDatas = req.body;
+    seasonDatas.poster = req.file ? req.file.filename : null;
+
+    const result = await tables.seasons.createSeason(seasonDatas);
+
+    if (result && result.success === false) {
+      // Supprime l'image si elle a été uploadée
+      if (req.file) {
+        const filePath = path.join(__dirname, '../assets/Series/Seasons/', req.file.filename);
+        fs.unlink(filePath, (err) => {
+          if (err) console.error('Erreur lors de la suppression du fichier:', err);
+        });
+      }
+      return res.status(400).json(result);
     }
+
+    return res.status(201).json({ id: result, seasonDatas });
+  } catch (err) {
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
+  }
 }
 
 // D - BREAD - DELETE (DELETE SEASON)

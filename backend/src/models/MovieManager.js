@@ -28,7 +28,7 @@ class MovieManager extends AbstractManager {
         movie.subUniverse,
       ]
     );
-    return movieCreated;
+    return movieCreated.insertId;
   }
 
   // R - CRUD - Read
