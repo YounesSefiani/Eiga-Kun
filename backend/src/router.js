@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const { hashPassword, updateHashPassword, validateUserForm, verifyToken } = require("./Middlewares/auth");
 // MOVIES //
 const moviesControllers = require("./controllers/moviesControllers");
 const uploadMovies = require("./Middlewares/Multer/MulterMovies");
@@ -10,6 +11,7 @@ router.get("/movies/:id", moviesControllers.readOneMovie);
 router.get("/movies/:id/full", moviesControllers.readFullMovie);
 router.post(
   "/movies",
+  verifyToken,
   uploadMovies.fields([
     { name: "poster", maxCount: 1 },
     { name: "logo", maxCount: 1 },
@@ -19,6 +21,7 @@ router.post(
 );
 router.put(
   "/movies/:id",
+  verifyToken,
   uploadMovies.fields([
     { name: "poster", maxCount: 1 },
     { name: "logo", maxCount: 1 },
@@ -26,7 +29,7 @@ router.put(
   ]),
   moviesControllers.editMovie
 );
-router.delete("/movies/:id", moviesControllers.destroyMovie);
+router.delete("/movies/:id", verifyToken, moviesControllers.destroyMovie);
 
 // SERIES //
 const seriesControllers = require("./controllers/seriesControllers/seriesControllers");
@@ -37,6 +40,7 @@ router.get("/series/:id/full", seriesControllers.readFullSerie);
 router.get("/series/:id", seriesControllers.readOneSerie);
 router.post(
   "/series",
+  verifyToken,
   uploadSeries.fields([
     { name: "poster", maxCount: 1 },
     { name: "logo", maxCount: 1 },
@@ -46,6 +50,7 @@ router.post(
 );
 router.put(
   "/series/:id",
+  verifyToken,
   uploadSeries.fields([
     { name: "poster", maxCount: 1 },
     { name: "logo", maxCount: 1 },
@@ -53,7 +58,7 @@ router.put(
   ]),
   seriesControllers.editSerie
 );
-router.delete("/series/:id", seriesControllers.destroySerie);
+router.delete("/series/:id", verifyToken, seriesControllers.destroySerie);
 
 // SEASONS //
 const seasonsControllers = require("./controllers/seriesControllers/seasonsControllers");
@@ -61,9 +66,9 @@ const uploadSeasons = require("./Middlewares/Multer/MulterSeasons");
 
 router.get("/seasons", seasonsControllers.browseSeasons);
 router.get("/seasons/:id", seasonsControllers.readSeason);
-router.post("/seasons", uploadSeasons.single("poster"), seasonsControllers.addSeason);
-router.put("/seasons/:id", uploadSeasons.single("poster"), seasonsControllers.editSeason);
-router.delete("/seasons/:id", seasonsControllers.destroySeason);
+router.post("/seasons", verifyToken, uploadSeasons.single("poster"), seasonsControllers.addSeason);
+router.put("/seasons/:id", verifyToken, uploadSeasons.single("poster"), seasonsControllers.editSeason);
+router.delete("/seasons/:id", verifyToken, seasonsControllers.destroySeason);
 
 // EPISODES //
 const episodesControllers = require("./controllers/seriesControllers/episodesControllers");
@@ -71,9 +76,9 @@ const uploadEpisodes = require("./Middlewares/Multer/MulterEpisodes");
 
 router.get("/episodes", episodesControllers.browseEpisodes);
 router.get("/episodes/:id", episodesControllers.readEpisode);
-router.post("/episodes", uploadEpisodes.single("episode_image"), episodesControllers.addEpisode);
-router.put("/episodes/:id",uploadEpisodes.single("episode_image"), episodesControllers.editEpisode);
-router.delete("/episodes/:id", episodesControllers.destroyEpisode);
+router.post("/episodes", verifyToken, uploadEpisodes.single("episode_image"), episodesControllers.addEpisode);
+router.put("/episodes/:id", verifyToken, uploadEpisodes.single("episode_image"), episodesControllers.editEpisode);
+router.delete("/episodes/:id", verifyToken,episodesControllers.destroyEpisode);
 
 // PERSONALITIES //
 const personalitiesControllers = require("./controllers/personalitiesControllers");
@@ -85,10 +90,10 @@ router.get(
   "/personalities/:id/filmography",
   personalitiesControllers.readPersonalityFilmography
 );
-router.post("/personalities", uploadPersonalities.single("picture"), personalitiesControllers.addPersonality);
-router.put("/personalities/:id", uploadPersonalities.single("picture"), personalitiesControllers.editPersonality);
+router.post("/personalities", verifyToken, uploadPersonalities.single("picture"), personalitiesControllers.addPersonality);
+router.put("/personalities/:id", verifyToken, uploadPersonalities.single("picture"), personalitiesControllers.editPersonality);
 router.delete(
-  "/personalities/:id",
+  "/personalities/:id", verifyToken,
   personalitiesControllers.destroyPersonality
 );
 
@@ -97,73 +102,74 @@ const castingControllers = require("./controllers/castingsControllers");
 
 router.get("/castings", castingControllers.browseCastings);
 router.get("/castings/:id", castingControllers.readOneCasting);
-router.post("/castings", castingControllers.addCasting);
-router.put("/castings/:id", castingControllers.editCasting);
-router.delete("/castings/:id", castingControllers.destroyCasting);
+router.post("/castings", verifyToken, castingControllers.addCasting);
+router.put("/castings/:id", verifyToken, castingControllers.editCasting);
+router.delete("/castings/:id", verifyToken, castingControllers.destroyCasting);
 
 // USERS //
 const usersControllers = require("./controllers/usersControllers/usersControllers");
 
-router.get("/users", usersControllers.browseUsers);
-router.get("/users/:id", usersControllers.readOneUser);
-router.post("/users", usersControllers.addUser);
-router.put("/users/:id", usersControllers.editUser);
-router.delete("/users/:id", usersControllers.deleteUser);
+
+router.get("/users", verifyToken, usersControllers.browseUsers);
+router.get("/users/:id", verifyToken, usersControllers.readOneUser);
+router.post("/users", validateUserForm, hashPassword, usersControllers.addUser);
+router.put("/users/:id", updateHashPassword, usersControllers.editUser);
+router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
+router.post("/users/login", usersControllers.login);
+router.get("/users/verify/:token", usersControllers.validateUser);
+router.post("/users/forgot-password", usersControllers.forgotPassword);
+router.post("/users/reset-password/:resetToken", usersControllers.resetPassword);
 
 // USERS FAVORITES / INTERACTIONS //
 const usersFavoritesControllers = require("./controllers/usersControllers/usersFavoritesControllers");
 
-// Toggle (ajouter/supprimer en un seul appel)
-// router.post("/users/:userId/favorites", usersFavoritesControllers.toggleInteraction);
-
-// Lecture
-// router.get("/users/:userId/favorites", usersFavoritesControllers.getAllInteractions);
-// router.get("/users/:userId/favorites/type/:type", usersFavoritesControllers.getInteractionsByType);
-// router.get("/users/:userId/favorites/status/:status", usersFavoritesControllers.getInteractionsByStatus);
-// router.get("/users/:userId/favorites/type/:type/status/:status", usersFavoritesControllers.getInteractionsByTypeAndStatus);
-
-// // Ajout/Suppression explicites (optionnel)
-// router.post("/users/:userId/favorites/add", usersFavoritesControllers.addInteraction);
-// router.delete("/users/:userId/favorites/delete", usersFavoritesControllers.removeInteraction);
-
 router.get(
   "/users/:userId/favorites/movies",
+  verifyToken,
   usersFavoritesControllers.readFavoriteMovies
 );
 router.post(
   "/users/:userId/favorites/movie/add",
+  verifyToken,
   usersFavoritesControllers.addingFavoriteMovie
 );
 router.delete(
   "/users/:userId/favorites/movie/remove",
+  verifyToken,
   usersFavoritesControllers.removingFavoriteMovie
 );
 
 // USER FAVORITES SERIES //
 router.get(
   "/users/:userId/favorites/series",
+  verifyToken,
   usersFavoritesControllers.readFavoriteSeries
 );
 router.post(
   "/users/:userId/favorites/serie/add",
+  verifyToken,
   usersFavoritesControllers.addingFavoriteSerie
 );
 router.delete(
   "/users/:userId/favorites/serie/remove",
+  verifyToken,
   usersFavoritesControllers.removingFavoriteSerie
 );
 
 // USER FAVORITES PERSONALITIES //
 router.get(
   "/users/:userId/favorites/personalities",
+  verifyToken,
   usersFavoritesControllers.readFavoritePersonalities
 );
 router.post(
   "/users/:userId/favorites/personality/add",
+  verifyToken,
   usersFavoritesControllers.addingFavoritePersonality
 );
 router.delete(
   "/users/:userId/favorites/personality/remove",
+  verifyToken,
   usersFavoritesControllers.removingFavoritePersonality
 );
 
@@ -178,14 +184,17 @@ router.get(
 );
 router.get(
   "/reviews/users/:userId/movies",
+  verifyToken,
   usersReviewsControllers.readUserMoviesReviews
 );
 router.post(
   "/reviews/users/:userId/movies/:movieId/add",
+  verifyToken,
   usersReviewsControllers.addMovieReview
 );
 router.put(
   "/reviews/users/:userId/movies/:movieId/edit",
+  verifyToken,
   usersReviewsControllers.editMovieReview
 );
 
@@ -196,14 +205,17 @@ router.get(
 );
 router.get(
   "/reviews/users/:userId/series",
+  verifyToken,
   usersReviewsControllers.readUserSeriesReviews
 );
 router.post(
   "/reviews/users/:userId/series/:serieId/add",
+  verifyToken,
   usersReviewsControllers.addSerieReview
 );
 router.put(
   "/reviews/users/:userId/series/:serieId/edit",
+  verifyToken,
   usersReviewsControllers.editSerieReview
 );
 
@@ -214,14 +226,17 @@ router.get(
 );
 router.get(
   "/reviews/users/:userId/personalities",
+  verifyToken,
   usersReviewsControllers.readUserPersonalitiesReviews
 );
 router.post(
   "/reviews/users/:userId/personalities/:personalityId/add",
+  verifyToken,
   usersReviewsControllers.addPersonalityReview
 );
 router.put(
   "/reviews/users/:userId/personalities/:personalityId/edit",
+  verifyToken,
   usersReviewsControllers.editPersonalityReview
 );
 
