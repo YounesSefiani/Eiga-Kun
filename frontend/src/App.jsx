@@ -1,41 +1,63 @@
-import { useState } from 'react';
-import Header from './components/Header/Header';
-import HeaderPhone from './components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import FooterPhone from './components/Header/HeaderFooterPhone/FooterPhone/FooterPhone';
+import React, { useState } from "react";
+import Header from "./components/Header/Header";
+import HeaderPhone from "./components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
+import FooterPhone from "./components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
+import Carousel from "react-bootstrap/Carousel";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AvengersDoomsdayCountdown from "./assets/AvengersDoomsdayCountdown.jpg";
+import TheBoysSeason5 from "./assets/TheBoysSeason5.webp";
+import Michael from "./assets/Michael.webp";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [index, setIndex] = useState(0);
 
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
   return (
     <>
       <Header />
       <HeaderPhone />
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="homePage">
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <img
+              src={AvengersDoomsdayCountdown}
+              alt="Avengers Doomsday Countdown"
+            />
+            <Carousel.Caption>
+              <h3>Le compte à rebours a commencé</h3>
+              <p>
+                Le prochain film Avengers : Doomsday sort le 16 Décembre 2026
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={TheBoysSeason5} alt="The Boys - Saison 5" />
+            <Carousel.Caption>
+              <h3>The Boys, la bataille finale</h3>
+              <p>
+                La cinquième et dernière saison de la série "The Boys" arrive
+                sur Amazon Prime Vidéo, le 8 Avril 2026.{" "}
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={Michael} alt="Michael" />
+            <Carousel.Caption>
+              <h3>Michael : La légende au cinéma</h3>
+              <p>
+                Découvrez le biopic du King of the Pop, Michael Jackson, au
+                cinéma le 22 Avril 2026.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 10)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-          <FooterPhone />
+      <FooterPhone />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
