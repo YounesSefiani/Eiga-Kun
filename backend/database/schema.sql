@@ -340,9 +340,10 @@ CREATE TABLE
     users (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         username VARCHAR(50) NOT NULL UNIQUE,
+        birthdate DATE NOT NULL,
         avatar VARCHAR(255) NULL,
         email VARCHAR(100) NOT NULL UNIQUE,
-        password_hash VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL,
         role ENUM ('user', 'admin') DEFAULT 'user',
         isValidated BOOLEAN DEFAULT FALSE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -350,14 +351,14 @@ CREATE TABLE
     );
 
 INSERT INTO
-    users (username, avatar, email, password_hash, role)
+    users (username, birthdate, avatar, email, password)
 VALUES
     (
         "User123",
+        "1990-05-15",
         "https://m.media-amazon.com/images/M/MV5BNzg5YzY4YmYtNWQ2OC00M2U5LWI1YWQtYmU0NmIwZjJhZmIzXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_.jpg",
         "7BzjI@example.com",
-        "hashed_password_here",
-        null
+        "hashed_password_here"
     );
 
 CREATE TABLE
