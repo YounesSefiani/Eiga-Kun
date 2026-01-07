@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: auto;
-  height: 100vh;
+  height: 100%;
   background-image: url("assets/EigaKunBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
