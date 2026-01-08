@@ -17,6 +17,7 @@ function App() {
   };
   return (
     <div className="appContainer">
+    <div className="appContainer">
       <Header />
       <HeaderPhone />
       <main className="mainContent">
@@ -58,6 +59,7 @@ function App() {
         </div>
       </main>
       <FooterPhone />
+    </div>
     </div>
   );
 }

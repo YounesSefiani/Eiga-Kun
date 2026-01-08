@@ -46,6 +46,7 @@ footer, .footerPhone {
   flex-direction: column;
   width: auto;
   height: 100% !important;
+  height: 100% !important;
   background-image: url("assets/EigaKunBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
