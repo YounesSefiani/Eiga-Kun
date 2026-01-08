@@ -13,7 +13,7 @@
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
-    width: auto;
+    width: 100%;
     height: 40rem;
     z-index: 2;
     border: 4px solid #ffb20c;
@@ -31,7 +31,7 @@
   .oneMovieBackground img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     object-position: right;
     right: 0;
     z-index: 1;
@@ -40,13 +40,13 @@
   .oneMovieHeaderContent {
     display: flex;
     flex-direction: row;
-    width: auto;
+    width: 100%;
     height: auto;
     gap: 10px;
     padding: 10px;
     z-index: 2;
     color: #ffb20c;
-    background: linear-gradient(to right, black 50%, transparent 70%);
+    background: linear-gradient(to right, black 50%, transparent 90%);
   }
 
   .oneMovieHeaderLeft {
@@ -331,7 +331,7 @@
 
   .oneMovieBackground {
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 100%;
     right: 0;
     z-index: 1;
@@ -349,13 +349,13 @@
   .oneMovieHeaderContent {
     display: flex;
     flex-direction: row;
-    width: auto;
+    width: 100%;
     height: auto;
     gap: 10px;
     padding: 10px;
     z-index: 2;
     color: #ffb20c;
-    background: linear-gradient(to right, black 45%, transparent 80%);
+    background: linear-gradient(to right, black 50%, transparent 80%);
   }
 
   .oneMovieHeaderLeft {
@@ -423,7 +423,7 @@
 
   .oneMovieLogo {
     width: 30rem;
-    height: 7rem;
+    height: 9rem;
     padding: 5px;
     object-fit: contain;
     background-color: rgba(0, 0, 0, 0.8);
@@ -737,9 +737,9 @@
 
   .oneMovieLogo {
     width: 100%;
-    height: 4rem;
+    height: 10rem;
     object-fit: contain;
-    padding: 5px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     border-top: 4px solid #ffb20c;
     border-bottom: 4px solid #ffb20c;
@@ -1187,6 +1187,7 @@
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     border: 4px solid #ffb20c;
+    border-bottom: none;
   }
 
   .oneMovieTrailer h4 {
