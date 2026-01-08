@@ -1,9 +1,51 @@
+/* Layout principal pour header en haut, footer en bas, contenu qui prend tout l'espace */
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.mainContent {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.homePage {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header, .headerPhone {
+  width: 100%;
+  z-index: 10;
+}
+
+footer, .footerPhone {
+  width: 100%;
+  z-index: 10;
+  margin-top: auto;
+}
+
+@media (max-width: 1023px) {
+  .appContainer {
+    min-height: 100vh;
+  }
+  main.mainContent {
+    min-height: 0;
+  }
+}
 #root {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: auto;
-  height: 100%;
+  height: 100% !important;
   background-image: url("assets/EigaKunBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
