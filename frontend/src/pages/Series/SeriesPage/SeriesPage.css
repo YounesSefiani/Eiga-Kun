@@ -1,0 +1,314 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .seriesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .serieCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .seriePoster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    padding: 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePoster img {
+    width: 250px;
+    height: 350px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePosterHolder img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: none;
+  }
+
+  .serieCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 60px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .seriesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .serieCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .seriePoster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    background-color: black;
+    color: #ffb20c;
+  }
+
+  .seriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePoster img {
+    width: 200px;
+    height: 300px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePosterHolder img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: none;
+  }
+
+  .serieCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 60px;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .seriesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .serieCard a {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .seriePoster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 250px;
+    background-color: black;
+    color: #ffb20c;
+  }
+
+  .seriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px !important;
+    height: 250px !important;
+    padding: 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePoster img {
+    width: 180px;
+    height: 250px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePosterHolder img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+
+  .serieCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+}
+
+/* VERSION PHONE */
+@media screen and (max-width: 767px) {
+  .seriesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .seriesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .serieCard a {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .seriePoster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 200px;
+    background-color: black;
+    color: #ffb20c;
+  }
+
+  .seriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px !important;
+    height: 200px !important;
+    padding: 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePoster img {
+    width: 150px;
+    height: 200px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .seriePosterHolder img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+
+  .serieCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+}

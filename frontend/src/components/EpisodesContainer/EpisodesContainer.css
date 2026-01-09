@@ -1,0 +1,648 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .episodesContainer button {
+    width: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .episodesContainer button:hover {
+    color: black;
+    background-color: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .episodesModalContent .modal-dialog {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .episodesModalContent .modal-header {
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-header .btn-close {
+    background-color: #ffb20c !important;
+    opacity: 1;
+    font-size: 25px;
+    transition: 0.5s ease;
+  }
+
+  .episodesModalContent .modal-header .btn-close:hover {
+    color: #ffb20c !important;
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  .episodesModalContent .modal-content {
+    width: 80%;
+    background-color: black;
+    color: #ffb20c;
+    margin: 0 auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-body {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    padding: 10px !important;
+  }
+
+  .episodesList {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 80vh;
+    gap: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+
+  .episodesList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodesList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .episodesList::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeCard {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 30vh;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeCardLeft {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: auto;
+  }
+
+  .episodeCardLeft img {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    font-size: 20px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder svg {
+    font-size: 60px;
+  }
+
+  .episodeCardRight {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: auto;
+    gap: 20px;
+    padding: 0 10px;
+    text-align: justify;
+    border-left: 4px solid #ffb20c;
+  }
+
+  .episodeSynopsis {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 3px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .episodesContainer button {
+    width: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .episodesContainer button:hover {
+    color: black;
+    background-color: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .episodesModalContent .modal-dialog {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .episodesModalContent .modal-header {
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-header .btn-close {
+    background-color: #ffb20c !important;
+    opacity: 1;
+    font-size: 25px;
+    transition: 0.5s ease;
+  }
+
+  .episodesModalContent .modal-header .btn-close:hover {
+    color: #ffb20c !important;
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  .episodesModalContent .modal-content {
+    width: 70%;
+    background-color: black;
+    color: #ffb20c;
+    margin: 0 auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-body {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    padding: 10px !important;
+  }
+
+  .episodesList {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 80vh;
+    gap: 20px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .episodesList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodesList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .episodesList::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeCard {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeCardLeft {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+  }
+
+  .episodeCardLeft img {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    font-size: 18px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .episodeCardRight {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    gap: 20px;
+    padding: 0 10px;
+    text-align: justify;
+    border-left: 4px solid #ffb20c;
+  }
+
+  .episodeSynopsis {
+    height: 20vh;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #ffb20c;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 3px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+      .episodesContainer button {
+    width: 100%;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .episodesContainer button:active {
+    color: black;
+    background-color: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .episodesModalContent .modal-dialog {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .episodesModalContent .modal-header {
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-header .btn-close {
+    background-color: #ffb20c !important;
+    opacity: 1;
+    font-size: 20px;
+    transition: 0.5s ease;
+  }
+
+  .episodesModalContent .modal-header .btn-close:active {
+    color: #ffb20c !important;
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  .episodesModalContent .modal-content {
+    width: 90%;
+    background-color: black;
+    color: #ffb20c;
+    margin: 0 auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-body {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    padding: 0;
+  }
+
+  .episodesList {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90vh;
+    gap: 20px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .episodesList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodesList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .episodesList::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeCard {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeCardLeft {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+
+  .episodeCardLeft img {
+    width: 70%;
+    height: 25vh;
+    object-fit: fill;
+    margin: 0 auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 25vh;
+    margin: 0 auto;
+    gap: 20px;
+    font-size: 18px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .episodeCardRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    padding: 10px 0;
+    text-align: justify;
+    border-top: 4px solid #ffb20c;
+  }
+
+  .episodeSynopsis {
+    height: 12vh;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 17px;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 3px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 17px;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .episodesContainer button {
+    width: 100%;
+    height: 5vh;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 0 5px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .episodesContainer button:active {
+    color: black;
+    background-color: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .episodesModalContent .modal-dialog {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .episodesModalContent .modal-header {
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-header .btn-close {
+    background-color: #ffb20c !important;
+    opacity: 1;
+    font-size: 25px;
+    transition: 0.5s ease;
+  }
+
+  .episodesModalContent .modal-header .btn-close:active {
+    color: #ffb20c !important;
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+
+  .episodesModalContent .modal-content {
+    width: 90%;
+    background-color: black;
+    color: #ffb20c;
+    margin: 0 auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodesModalContent .modal-body {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  .episodesList {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 90vh;
+    gap: 20px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .episodesList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodesList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .episodesList::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeCard {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeCardLeft {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
+
+  .episodeCardLeft img {
+    width: 100%;
+    height: 16vh;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 16vh;
+    gap: 20px;
+    font-size: 18px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .episodeImagePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .episodeCardRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    padding: 10px 0;
+    text-align: justify;
+    border-top: 4px solid #ffb20c;
+  }
+
+  .episodeSynopsis {
+    height: 12vh;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 13px;
+    border: 2px solid #ffb20c;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 3px;
+  }
+
+  .episodeSynopsis::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .episodeDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 14px;
+  }
+}

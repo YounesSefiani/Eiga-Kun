@@ -17,6 +17,7 @@ function App() {
   };
   return (
     <div className="appContainer">
+    <div className="appContainer">
       <Header />
       <HeaderPhone />
       <main className="mainContent">
@@ -40,7 +41,7 @@ function App() {
                 <h3>The Boys, la bataille finale</h3>
                 <p>
                   La cinquième et dernière saison de la série "The Boys" arrive
-                  sur Amazon Prime Vidéo, le 8 Avril 2026.{" "}
+                  sur Amazon Prime Vidéo, le 8 Avril 2026. {" "}
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -58,6 +59,7 @@ function App() {
         </div>
       </main>
       <FooterPhone />
+    </div>
     </div>
   );
 }

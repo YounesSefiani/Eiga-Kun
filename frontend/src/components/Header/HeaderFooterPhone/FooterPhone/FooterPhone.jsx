@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFilm,
@@ -13,8 +14,10 @@ function FooterPhone() {
     <div className="footerPhone">
       <ul>
         <li>
-          <FontAwesomeIcon icon={faFilm} />
-          Films
+          <Link to="/films">
+            <FontAwesomeIcon icon={faFilm} />
+            Films
+          </Link>
         </li>
         <li>
           <FontAwesomeIcon icon={faTv} />

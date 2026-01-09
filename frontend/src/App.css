@@ -22,14 +22,12 @@ main.mainContent {
   align-items: center;
 }
 
-header,
-.headerPhone {
+header, .headerPhone {
   width: 100%;
   z-index: 10;
 }
 
-footer,
-.footerPhone {
+footer, .footerPhone {
   width: 100%;
   z-index: 10;
   margin-top: auto;
@@ -47,6 +45,7 @@ footer,
   display: flex;
   flex-direction: column;
   width: auto;
+  height: 100% !important;
   height: 100% !important;
   background-image: url("assets/EigaKunBackground.png");
   background-size: cover;
