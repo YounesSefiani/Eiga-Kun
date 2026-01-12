@@ -1,0 +1,266 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .personalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .personalitiesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .personalityCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .personalityCard img {
+    width: 250px;
+    height: 350px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 60px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 350px;
+    color: #ffb20c;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .personalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .personalitiesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .personalityCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .personalityCard img {
+    width: 200px;
+    height: 300px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 60px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    color: #ffb20c;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .personalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .personalitiesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .personalityCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .personalityCard img {
+    width: 180px;
+    height: 250px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px !important;
+    height: 250px !important;
+    padding: 10px;
+    color: #ffb20c;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+}
+
+/* VERSION PHONE */
+@media screen and (max-width: 767px) {
+  .personalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .personalitiesList {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .personalityCard a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .personalityCard img {
+    width: 150px;
+    height: 200px;
+    object-fit: fill;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityCard h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 50px;
+    font-size: 16px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px !important;
+    height: 200px !important;
+    padding: 10px;
+    color: #ffb20c;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .personalityPictureHolder img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    padding: 10px;
+    border: none;
+  }
+}
