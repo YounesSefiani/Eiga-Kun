@@ -5,6 +5,8 @@ import MoviesPage from './pages/Movies/MoviesPage/MoviesPage.jsx';
 import OneMoviePage from './pages/Movies/OneMoviePage/OneMoviePage.jsx';
 import SeriesPage from './pages/Series/SeriesPage/SeriesPage.jsx';
 import OneSeriePage from './pages/Series/OneSeriePage/OneSeriePage.jsx';
+import PersonalitiesPage from './pages/Personalities/PersonalitiesPage/PersonalitiesPage.jsx';
+import OnePersonalityPage from './pages/Personalities/OnePersonalityPage/OnePersonalityPage.jsx';
 import connexion from "./services/connexion.js";
 import './index.css';
 
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/films",
+    path: "/movies",
     element: <MoviesPage />,
     loader: async () => {
       try {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
     },
   },
   {
-    path: "/films/:id",
+    path: "/movies/:id",
     element: <OneMoviePage />,
     loader: async ({ params }) => {
       try {
@@ -66,8 +68,31 @@ const router = createBrowserRouter([
         console.error(error);
       }
     },
+  },
+  {
+    path: "/personalities",
+    element: <PersonalitiesPage />,
+    loader: async () => {
+      try {
+        const res = await connexion.get('/personalities');
+        return res.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+  {
+    path: "/personalities/:id",
+    element: <OnePersonalityPage />,
+    loader: async ({ params }) => {
+      try {
+        const res = await connexion.get(`/personalities/${params.id}`);
+        return res.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
   }
-
 ]);
 
 
