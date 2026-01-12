@@ -20,16 +20,22 @@ function FooterPhone() {
           </Link>
         </li>
         <li>
-          <FontAwesomeIcon icon={faTv} />
-          Séries
+          <Link to="/series">
+            <FontAwesomeIcon icon={faTv} />
+            Séries
+          </Link>
         </li>
         <li>
-          <FontAwesomeIcon icon={faStar} />
-          Personnalités
+          <Link to="/personalities">
+            <FontAwesomeIcon icon={faStar} />
+            Personnalités
+          </Link>
         </li>
         <li>
-          <FontAwesomeIcon icon={faNewspaper} />
-          Blog
+          <Link to="/blog">
+            <FontAwesomeIcon icon={faNewspaper} />
+            Blog
+          </Link>
         </li>
       </ul>
     </div>
