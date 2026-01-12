@@ -1,25 +1,25 @@
 const tables = require("../../tables");
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 // B - BREAD - BROWSE (READ ALL EPISODES)
 const browseEpisodes = async (req, res) => {
-    try {
-        const episodes = await tables.episodes.readEpisodes();
-        res.status(200).json(episodes);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+  try {
+    const episodes = await tables.episodes.readEpisodes();
+    res.status(200).json(episodes);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
 // R - BREAD - READ (READ ONE EPISODE)
 const readEpisode = async (req, res) => {
-    const episode = await tables.episodes.readEpisodeId(req.params.id);
-    if (!episode) {
-        return res.status(404).json({ error: "Episode not found" });
-    } else {
-        res.status(200).json(episode);
-    }
+  const episode = await tables.episodes.readEpisodeId(req.params.id);
+  if (!episode) {
+    return res.status(404).json({ error: "Episode not found" });
+  } else {
+    res.status(200).json(episode);
+  }
 };
 
 // E - BREAD - EDIT (UPDATE EPISODE)
@@ -34,13 +34,16 @@ const editEpisode = async (req, res, next) => {
     const updatedEpisodeDatas = {
       id,
       serie_id: updateEpisode.serie_id || episode.serie_id || null,
-        season_id: updateEpisode.season_id || episode.season_id || null,
-              episode_number: updateEpisode.episode_number || episode.episode_number || null,
+      season_id: updateEpisode.season_id || episode.season_id || null,
+      episode_number:
+        updateEpisode.episode_number || episode.episode_number || null,
       title: updateEpisode.title || episode.title || null,
       synopsis: updateEpisode.synopsis || episode.synopsis || null,
-        episode_image: file ? file.filename : updateEpisode.episode_image || episode.episode_image || null,
-        release_date: updateEpisode.release_date || episode.release_date || null,
-        duration: updateEpisode.duration || episode.duration || null
+      episode_image: file
+        ? file.filename
+        : updateEpisode.episode_image || episode.episode_image || null,
+      release_date: updateEpisode.release_date || episode.release_date || null,
+      duration: updateEpisode.duration || episode.duration || null,
     };
 
     await tables.episodes.updateEpisode(id, updatedEpisodeDatas);
@@ -71,9 +74,14 @@ const addEpisode = async (req, res, next) => {
     if (!result.success) {
       // Si un fichier a été uploadé, on le supprime
       if (req.file) {
-        const filePath = path.join(__dirname, '../assets/Series/Episodes', req.file.filename);
+        const filePath = path.join(
+          __dirname,
+          "../assets/Series/Episodes",
+          req.file.filename
+        );
         fs.unlink(filePath, (err) => {
-          if (err) console.error('Erreur lors de la suppression du fichier:', err);
+          if (err)
+            console.error("Erreur lors de la suppression du fichier:", err);
         });
       }
       return res.status(400).json(result); // <-- Correction ici
@@ -88,13 +96,19 @@ const addEpisode = async (req, res, next) => {
 
 // D - BREAD - DELETE (DELETE EPISODE)
 const destroyEpisode = async (req, res, next) => {
-    const { id } = req.params;
-    try {
-        await tables.episodes.deleteEpisode(id);
-        res.status(204).json();
-    } catch (error) {
-        next(error);
-    }
+  const { id } = req.params;
+  try {
+    await tables.episodes.deleteEpisode(id);
+    res.status(204).json();
+  } catch (error) {
+    next(error);
+  }
 };
 
-module.exports = { browseEpisodes, readEpisode, editEpisode, addEpisode, destroyEpisode };
+module.exports = {
+  browseEpisodes,
+  readEpisode,
+  editEpisode,
+  addEpisode,
+  destroyEpisode,
+};

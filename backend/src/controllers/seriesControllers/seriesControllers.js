@@ -52,13 +52,66 @@ const readFullSerie = async (req, res, next) => {
 
 // E - BREAD - EDIT
 const editSerie = async (req, res, next) => {
-  const updateSerie = req.body;
-  const { id } = req.params;
   try {
-    await tables.series.updateSerie(id, updateSerie);
-    res.status(200).json({ ...updateSerie, id: parseInt(id, 10) });
-  } catch (error) {
-    next(error);
+    const { id } = req.params;
+    const updateSerie = req.body;
+    const { files } = req;
+
+    const serie = await tables.series.readSerieId(id);
+    if (!serie) {
+      return res.status(404).json({ message: "Serie non trouvée." });
+    }
+
+    const updatedSerieDatas = {
+      id,
+      title: updateSerie.title || serie.title,
+      release_date: updateSerie.release_date || serie.release_date || null,
+      ending_date: updateSerie.ending_date || serie.ending_date || null,
+      genre: updateSerie.genre || serie.genre || null,
+      theme: updateSerie.theme || serie.theme || null,
+      universe: updateSerie.universe || serie.universe || null,
+      subUniverse: updateSerie.subUniverse || serie.subUniverse || null,
+      synopsis: updateSerie.synopsis || serie.synopsis || null,
+      poster: files?.poster
+        ? files.poster[0].filename
+        : updateSerie.poster || serie.poster || null,
+      logo: files?.logo
+        ? files.logo[0].filename
+        : updateSerie.logo || serie.logo || null,
+      background: files?.background
+        ? files.background[0].filename
+        : updateSerie.background || serie.background || null,
+      statut: updateSerie.statut || serie.statut || null,
+      nbSeasons: updateSerie.nbSeasons || serie.nbSeasons || null,
+      seasons: updateSerie.seasons || serie.seasons || null,
+      nbEpisodesSerie: updateSerie.nbEpisodesSerie || serie.nbEpisodesSerie || null,
+      episodes: updateSerie.episodes || serie.episodes || null,
+      trailer: updateSerie.trailer || serie.trailer || null,
+      country: updateSerie.country || serie.country || null,
+      serie_average_duration: updateSerie.serie_average_duration || serie.serie_average_duration || null,
+      screen: updateSerie.screen || serie.screen || null,
+      streaming: updateSerie.streaming || serie.streaming || null,
+      original: updateSerie.original || serie.original || null,
+    };
+
+    await tables.series.updateSerie(id, updatedSerieDatas);
+
+    const updatedSerie = await tables.series.readSerieId(id);
+
+    if (!updatedSerie) {
+      return res
+        .status(404)
+        .json({ message: "Serie non trouvée ou misee à jour échouée." });
+    }
+
+    return res.status(200).json({
+      message: "Serie mise à jour avec succès",
+      updateSerie: updatedSerie,
+    });
+  } catch (err) {
+    console.error("Erreur lors de la misee à jour du série:", err);
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
   }
 };
 
