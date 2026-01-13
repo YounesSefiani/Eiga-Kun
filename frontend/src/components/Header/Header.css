@@ -110,6 +110,11 @@
     color: purple;
   }
 
+   .header li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .header input {
     width: 25vw;
     height: 40px;
