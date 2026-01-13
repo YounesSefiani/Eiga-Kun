@@ -14,44 +14,44 @@ function MoviesPage() {
     <div className="moviesPage">
       <Header />
       <HeaderPhone />
-        <div className="moviesList">
-          {movies && movies.length > 0 ? (
-            <HorizontalScroll>
-              {movies.map((movie) => (
-                <div className="movieCard" key={movie.id}>
-                  <Link to={`/films/${movie.id}`}>
-                                        {movie.poster ? (
+      <div className="moviesList">
+        {movies && movies.length > 0 ? (
+          <HorizontalScroll>
+            {movies.map((movie) => (
+              <div className="movieCard" key={movie.id}>
+                <Link to={`/movies/${movie.id}`}>
+                  {movie.poster ? (
                     <div className="moviePoster">
-                        <img
-                          src={
-                            movie.poster && movie.poster.startsWith("http")
-                              ? movie.poster
-                              : movie.poster
-                              ? `http://localhost:3994/src/assets/Movies/Posters/${movie.poster}`
-                              : ""
-                          }
-                          alt={movie.title}
-                        />
+                      <img
+                        src={
+                          movie.poster && movie.poster.startsWith("http")
+                            ? movie.poster
+                            : movie.poster
+                            ? `http://localhost:3994/src/assets/Movies/Posters/${movie.poster}`
+                            : ""
+                        }
+                        alt={movie.title}
+                      />
                     </div>
-                      ) : (
-                        <div className="moviePosterHolder">
-                          <img
-                            src={EigaKunLogo}
-                            className="moviePosterHolder"
-                            alt="Logo Eiga-Kun"
-                          />
-                          <p>Aucune affiche pour le moment.</p>
-                        </div>
-                      )}
-                    <h3>{movie.title}</h3>
-                  </Link>
-                </div>
-              ))}
-            </HorizontalScroll>
-          ) : (
-            <p>No movies found.</p>
-          )}
-        </div>
+                  ) : (
+                    <div className="moviePosterHolder">
+                      <img
+                        src={EigaKunLogo}
+                        className="moviePosterHolder"
+                        alt="Logo Eiga-Kun"
+                      />
+                      <p>Aucune affiche pour le moment.</p>
+                    </div>
+                  )}
+                  <h3>{movie.title}</h3>
+                </Link>
+              </div>
+            ))}
+          </HorizontalScroll>
+        ) : (
+          <p>No movies found.</p>
+        )}
+      </div>
       <FooterPhone />
     </div>
   );
