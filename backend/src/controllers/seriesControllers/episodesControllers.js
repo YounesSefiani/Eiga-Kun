@@ -65,32 +65,22 @@ const editEpisode = async (req, res, next) => {
 
 // A - BREAD - ADD (CREATE EPISODE)
 const addEpisode = async (req, res, next) => {
+  const episode = req.body;
+  const { file } = req;
+
+  const episodeDatas = {
+    ...episode,
+    episode_image: file?.episode_image ? file.episode_image[0].filename : episode.episode_image || null,
+  }
+
   try {
-    const episodeDatas = req.body;
-    episodeDatas.episode_image = req.file ? req.file.filename : null;
-
-    const result = await tables.episodes.createEpisode(episodeDatas);
-
-    if (!result.success) {
-      // Si un fichier a été uploadé, on le supprime
-      if (req.file) {
-        const filePath = path.join(
-          __dirname,
-          "../assets/Series/Episodes",
-          req.file.filename
-        );
-        fs.unlink(filePath, (err) => {
-          if (err)
-            console.error("Erreur lors de la suppression du fichier:", err);
-        });
-      }
-      return res.status(400).json(result); // <-- Correction ici
-    }
-
-    return res.status(201).json(result);
-  } catch (err) {
-    next(err);
-    return res.status(500).json({ message: "Erreur interne du serveur" });
+    const createdEpisode = await tables.episodes.createEpisode(episodeDatas);
+    res.status(201).json({
+      id: createdEpisode,
+      episodeDatas,
+    });
+  } catch (error) {
+    next(error);
   }
 };
 

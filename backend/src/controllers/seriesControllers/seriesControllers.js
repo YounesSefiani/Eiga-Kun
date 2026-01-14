@@ -122,9 +122,9 @@ const addSerie = async (req, res, next) => {
       
       const serieDatas = {
           ...serie,
-          poster: files?.poster ? files.poster[0].filename: null,
-          background: files?.background ? files.background[0].filename: null,
-          logo: files?.logo ? files.logo[0].filename: null,
+          poster: files?.poster ? files.poster[0].filename: serie.poster || null,
+          background: files?.background ? files.background[0].filename: serie.background || null,
+          logo: files?.logo ? files.logo[0].filename: serie.logo || null,
       }
       try {
           const createdSerie =  await tables.series.createSerie(serieDatas);

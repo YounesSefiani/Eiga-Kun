@@ -39,6 +39,13 @@ const editUser = async (req, res, next) => {
 // A - BREAD - ADD USER
 const addUser = async (req, res, next) => {
   const user = req.body;
+  const {file} = req;
+
+  const userDatas = {
+    ...user,
+    avatar: file.avatar ? file.avatar[0].filename : user.avatar || null,
+  }
+
   try {
     const createdUser = await tables.users.createUser(user);
 
@@ -66,7 +73,7 @@ const addUser = async (req, res, next) => {
     };
 
     await transporter.sendMail(mailOptions);
-    res.status(201).json({ id: createdUser.insertId, ...user });
+    res.status(201).json({id: createdUser, userDatas});
   } catch (error) {
     next(error);
   }

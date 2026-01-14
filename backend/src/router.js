@@ -108,11 +108,12 @@ router.delete("/castings/:id", verifyToken, castingControllers.destroyCasting);
 
 // USERS //
 const usersControllers = require("./controllers/usersControllers/usersControllers");
+const uploadUsers = require("./Middlewares/Multer/MulterUsers");
 
 
 router.get("/users", verifyToken, usersControllers.browseUsers);
 router.get("/users/:id", verifyToken, usersControllers.readOneUser);
-router.post("/users", validateUserForm, hashPassword, usersControllers.addUser);
+router.post("/users", validateUserForm, uploadUsers.single("avatar"), hashPassword, usersControllers.addUser);
 router.put("/users/:id", updateHashPassword, usersControllers.editUser);
 router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
 router.post("/users/login", usersControllers.login);
