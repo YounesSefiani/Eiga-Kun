@@ -99,37 +99,20 @@ const editPersonality = async (req, res, next) => {
 
 // A - BREAD - ADD PERSONALITY
 const addPersonality = async (req, res, next) => {
-  try {
-    const personalityDatas = req.body;
-    personalityDatas.picture = req.file ? req.file.filename : null;
+  const personality = req.body;
+  const { file } = req;
 
-    const result = await tables.personalities.createPersonality(
+  const personalityDatas = {
+    ...personality,
+    picture: file?.picture ? file.picture[0].filename : personality.picture || null,
+  };
+  try {
+    const createPersonality = await tables.personalities.createPersonality(
       personalityDatas
     );
-
-    // result est un ResultSetHeader MySQL avec insertId
-    if (!result.insertId) {
-      // suppression image si upload
-      if (req.file) {
-        const filePath = path.join(
-          __dirname,
-          "../assets/Personalities/Pictures",
-          req.file.filename
-        );
-        fs.unlink(filePath, (err) => {
-          if (err)
-            console.error("Erreur lors de la suppression du fichier:", err);
-        });
-      }
-      return res
-        .status(400)
-        .json({ message: "Erreur lors de la création de la personnalité" });
-    }
-
-    return res.status(201).json({ id: result.insertId, personalityDatas });
-  } catch (err) {
-    next(err);
-    return res.status(500).json({ message: "Erreur interne du serveur" });
+    res.status(201).json({ id: createPersonality, personalityDatas });
+  } catch (error) {
+    next(error);
   }
 };
 

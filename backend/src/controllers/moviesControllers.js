@@ -1,4 +1,6 @@
 const tables = require("../tables");
+const fs = require("fs");
+const path = require("path");
 
 // B - BREAD - BROWSE (READ ALL)
 const browseMovies = async (req, res) => {
@@ -101,9 +103,9 @@ const addMovie = async (req, res, next) => {
     
     const movieDatas = {
         ...movie,
-        poster: files?.poster ? files.poster[0].filename: null,
-        background: files?.background ? files.background[0].filename: null,
-        logo: files?.logo ? files.logo[0].filename: null,
+        poster: files?.poster ? files.poster[0].filename: movie.poster || null,
+        background: files?.background ? files.background[0].filename: movie.background || null,
+        logo: files?.logo ? files.logo[0].filename: movie.logo || null,
     }
     try {
         const createdMovie =  await tables.movies.createMovie(movieDatas);
