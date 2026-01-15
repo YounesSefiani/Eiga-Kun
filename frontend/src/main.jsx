@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     element: <OneMoviePage />,
     loader: async ({ params }) => {
       try {
-        const res = await connexion.get(`/movies/${params.id}`);
+        const res = await connexion.get(`/movies/${params.id}/full`);
         return res.data;
       } catch (error) {
         console.error(error);
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
     element: <OnePersonalityPage />,
     loader: async ({ params }) => {
       try {
-        const res = await connexion.get(`/personalities/${params.id}`);
+        const res = await connexion.get(`/personalities/${params.id}/full`);
         return res.data;
       } catch (error) {
         console.error(error);
