@@ -127,19 +127,17 @@
     width: 100%;
     height: 100%;
     gap: 10px;
-    padding: 10px;
     margin-bottom: 10px;
-    background-color: black;
-    border: 4px solid #ffb20c;
   }
 
-  .onePersonalityFilmography h4 {
+  .onePersonalityFilmography h3 {
     width: 50%;
     height: auto;
     font-size: 25px;
     padding: 10px;
     text-align: center;
     color: #ffb20c;
+    background-color: black;
     border: 4px solid #ffb20c;
   }
 
@@ -317,19 +315,17 @@
     width: 100%;
     height: 100%;
     gap: 10px;
-    padding: 10px;
     margin-bottom: 10px;
-    background-color: black;
-    border: 4px solid #ffb20c;
   }
 
-  .onePersonalityFilmography h4 {
+  .onePersonalityFilmography h3 {
     width: 50%;
     height: auto;
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px;
     text-align: center;
     color: #ffb20c;
+    background-color: black;
     border: 4px solid #ffb20c;
   }
 

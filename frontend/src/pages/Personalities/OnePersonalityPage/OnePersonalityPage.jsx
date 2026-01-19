@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../../../components/Header/Header";
 import HeaderPhone from "../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
 import FooterPhone from "../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
+import FilmographyContainer from "../../../components/CastingFilmography/FilmographyContainer/FilmographyContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./OnePersonalityPage.css";
@@ -131,9 +132,11 @@ function OnePersonalityPage() {
         </div>
       </div>
       <div className="onePersonalityFilmography">
-        <h4>Filmographie de {personality.fullname}</h4>
-        {/* Composant de la filmographie à implémenter une fois crée */}
-        <p>Prochainement...</p>
+        <h3>Filmographie de {personality.fullname}</h3>
+        <FilmographyContainer
+          movies={personality.movies || []}
+          series={personality.series || []}
+        />
       </div>
       <div className="onePersonalityReviews">
         {/* Composant des Reviews à implémenter une fois crée */}
