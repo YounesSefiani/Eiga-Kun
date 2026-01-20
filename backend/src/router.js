@@ -87,7 +87,7 @@ const uploadPersonalities = require("./Middlewares/Multer/MulterPersonalities");
 router.get("/personalities", personalitiesControllers.browsePersonalities);
 router.get("/personalities/:id", personalitiesControllers.readOnePersonality);
 router.get(
-  "/personalities/:id/filmography",
+  "/personalities/:id/full",
   personalitiesControllers.readPersonalityFilmography
 );
 router.post("/personalities", verifyToken, uploadPersonalities.single("picture"), personalitiesControllers.addPersonality);

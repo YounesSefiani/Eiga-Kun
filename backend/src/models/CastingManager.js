@@ -54,7 +54,7 @@ class CastingManager extends AbstractManager {
 
     async readPersonalityMovies(personalityId) {
       const [movies] = await this.database.query(
-        `SELECT movies.id AS movie_id, movies.title AS movie_title, movies.poster AS movie_poster, ${this.table}.role, ${this.table}.side
+        `SELECT movies.id AS movie_id, movies.title AS movie_title, movies.release_date AS movie_release_date, movies.poster AS movie_poster, ${this.table}.role, ${this.table}.side
         FROM ${this.table}
         JOIN movies ON castings.movie_id = movies.id
         WHERE castings.personality_id = ?`,
@@ -65,7 +65,7 @@ class CastingManager extends AbstractManager {
 
     async readPersonalitySeries(personalityId) {
       const [series] = await this.database.query(
-        `SELECT series.id AS serie_id, series.title AS serie_title, series.poster AS serie_poster, ${this.table}.role, ${this.table}.side, ${this.table}.presence
+        `SELECT series.id AS serie_id, series.title AS serie_title, series.beginning_date AS serie_beginning_date, series.ending_date AS serie_ending_date, series.poster AS serie_poster, ${this.table}.role, ${this.table}.side, ${this.table}.presence
         FROM ${this.table}
         JOIN series ON castings.serie_id = series.id
         WHERE castings.personality_id = ?`,
