@@ -153,18 +153,17 @@ function OneMoviePage() {
         </div>
       </div>
       <div className="oneMovieCasting">
-        {/* Composant du Casting à implémenter une fois crée */}
-        <h4>Casting du film "{movie.title}"</h4>
+        <h3>Casting du film "{movie.title}"</h3>
         <CastingContainer casting={movie.casting} />
       </div>
       <div className="oneMovieReviewsTrailer">
         <div className="oneMovieReviews">
           {/* Composant des Reviews à implémenter une fois crée */}
-          <h4>Critiques du film "{movie.title}"</h4>
+          <h3>Critiques du film "{movie.title}"</h3>
           <p>Prochainement...</p>
         </div>
         <div className="oneMovieTrailer">
-          <h4>Bande annonce du film "{movie.title}"</h4>
+          <h3>Bande annonce du film "{movie.title}"</h3>
           {movie.trailer ? (
             <iframe
               src={movie.trailer}
