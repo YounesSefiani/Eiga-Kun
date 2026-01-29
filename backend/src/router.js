@@ -113,8 +113,8 @@ const uploadUsers = require("./Middlewares/Multer/MulterUsers");
 
 router.get("/users", verifyToken, usersControllers.browseUsers);
 router.get("/users/:id", verifyToken, usersControllers.readOneUser);
-router.post("/users", validateUserForm, uploadUsers.single("avatar"), hashPassword, usersControllers.addUser);
-router.put("/users/:id", updateHashPassword, usersControllers.editUser);
+router.post("/users", uploadUsers.single("avatar"), validateUserForm, hashPassword, usersControllers.addUser);
+router.put("/users/:id", verifyToken, uploadUsers.single("avatar"), updateHashPassword, usersControllers.editUser);
 router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
 router.post("/users/login", usersControllers.login);
 router.get("/users/verify/:token", usersControllers.validateUser);
