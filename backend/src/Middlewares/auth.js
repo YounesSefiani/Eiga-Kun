@@ -35,7 +35,9 @@ const hashPassword = (req, res, next) => {
 
 const updateHashPassword = async (req, res, next) => {
   try {
-    if (!req.body.password) {
+    // Si pas de nouveau mot de passe, on passe au middleware suivant
+    if (!req.body.password || req.body.password.trim() === "") {
+      delete req.body.password;
       return next();
     }
 
@@ -72,24 +74,50 @@ const updateHashPassword = async (req, res, next) => {
 };
 
 const validateUserForm = (req, res, next) => {
+  // Calculer la date minimum pour avoir 18 ans
+  const today = new Date();
+  const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
   const schema = joi.object({
-    username: joi.string().min(3).max(15).required(),
-    email: joi.string().email().required(),
-    birthdate: joi.date().required(),
+    username: joi.string().min(3).max(15).required().messages({
+      "string.min": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+      "string.max": "Le nom d'utilisateur ne peut pas dépasser 15 caractères",
+      "any.required": "Le nom d'utilisateur est requis",
+    }),
+    email: joi.string().email().required().messages({
+      "string.email": "L'email doit être valide",
+      "any.required": "L'email est requis",
+    }),
+    birthdate: joi.date().max(minDate).required().messages({
+      "date.base": "La date de naissance doit être valide",
+      "date.max": "Vous devez avoir au moins 18 ans pour vous inscrire",
+      "any.required": "La date de naissance est requise",
+    }),
     avatar: joi.string().optional().allow(null, ""),
     password: joi
       .string()
-      .pattern(
-        new RegExp(
-          '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=[\\]{};:"\\\\|,.<>/?]).{8,30}$'
-        )
-      )
-      .required(),
+      .min(8)
+      .max(16)
+      .pattern(/[a-z]/, "minuscule")
+      .pattern(/[A-Z]/, "majuscule")
+      .pattern(/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/, "special")
+      .required()
+      .messages({
+        "string.min": "Le mot de passe doit contenir au moins 8 caractères",
+        "string.max": "Le mot de passe ne peut pas dépasser 16 caractères",
+        "string.pattern.name":
+          "Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule et un caractère spécial",
+      }),
+    confirmPassword: joi.string().valid(joi.ref("password")).required().messages({
+      "any.only": "Les mots de passe ne se correspondent pas",
+      "any.required": "La confirmation du mot de passe est requise",
+    }),
   });
 
-  const { error } = schema.validate(req.body);
+  const { error } = schema.validate(req.body, { abortEarly: false });
   if (error) {
-    return res.status(400).json({ error: error.details[0].message });
+    const errorMessages = error.details.map((detail) => detail.message);
+    return res.status(400).json({ error: errorMessages.join(" // ") });
   }
   next();
 };

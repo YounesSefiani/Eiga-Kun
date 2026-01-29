@@ -1,0 +1,1060 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .authentificationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+  }
+
+  .authInitialView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 20px;
+    background-color: black;
+    border: 5px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authInitialView button {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .authInitialView button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .authLoginView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authRegisterView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authLoginForm,
+  .authRegisterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    overflow-y: auto;
+  }
+
+  .authLoginForm label,
+  .authRegisterForm label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: auto;
+    font-size: 21px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 3px solid #ffb20c;
+  }
+
+  .authLoginForm label p {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    font-size: 18px;
+    color: #ffb20c;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.5s ease;
+  }
+
+  .authLoginForm label p:hover {
+    color: purple;
+  }
+
+  .authLoginForm label input,
+  .authRegisterForm label input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    border: 3px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .btnSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .authLoginForm .btnSection {
+    margin-top: 40px;
+  }
+
+  .btnSection button {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .errorMessage {
+    display: block;
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* PASSWORD TOOLTIP */
+  .passwordLabelContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .passwordTooltipWrapper {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .passwordInfoIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: #ffb20c;
+    border-radius: 50%;
+    cursor: help;
+    transition: 0.3s ease;
+  }
+
+  .passwordInfoIcon:hover {
+    background-color: white;
+    color: #ffb20c;
+  }
+
+  .passwordTooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    padding: 12px;
+    font-size: 13px;
+    color: white;
+    background-color: #333;
+    border: 2px solid #ffb20c;
+    border-radius: 10px;
+    z-index: 100;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .passwordTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffb20c transparent transparent transparent;
+  }
+
+  .passwordTooltipWrapper:hover .passwordTooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .passwordTooltip ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .passwordTooltip li {
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .authentificationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+  }
+
+  .authInitialView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 20px;
+    background-color: black;
+    border: 5px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authInitialView button {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .authInitialView button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .authLoginView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authRegisterView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authLoginForm,
+  .authRegisterForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .authRegisterForm::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .authRegisterForm::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .authLoginForm label,
+  .authRegisterForm label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 3px solid #ffb20c;
+  }
+
+  .authLoginForm label p {
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    font-size: 15px;
+    color: #ffb20c;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.5s ease;
+  }
+
+  .authLoginForm label p:hover {
+    color: purple;
+  }
+
+  .authLoginForm label input,
+  .authRegisterForm label input {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+    border: 3px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .authRegisterForm input[type="file"] {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .btnSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .authLoginForm .btnSection {
+    margin-top: 20px;
+  }
+
+  .btnSection button {
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .errorMessage {
+    display: block;
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* PASSWORD TOOLTIP */
+  .passwordLabelContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .passwordTooltipWrapper {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .passwordInfoIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: #ffb20c;
+    border-radius: 50%;
+    cursor: help;
+    transition: 0.3s ease;
+  }
+
+  .passwordInfoIcon:hover {
+    background-color: white;
+    color: #ffb20c;
+  }
+
+  .passwordTooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    padding: 12px;
+    font-size: 13px;
+    color: white;
+    background-color: #333;
+    border: 2px solid #ffb20c;
+    border-radius: 10px;
+    z-index: 100;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .passwordTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffb20c transparent transparent transparent;
+  }
+
+  .passwordTooltipWrapper:hover .passwordTooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .passwordTooltip ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .passwordTooltip li {
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .authentificationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+  }
+
+  .authInitialView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 5px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authInitialView button {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .authInitialView button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .authLoginView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authRegisterView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authRegisterView::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .authRegisterView::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .authLoginForm,
+  .authRegisterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    overflow-y: auto;
+  }
+
+  .authLoginForm label,
+  .authRegisterForm label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 3px solid #ffb20c;
+  }
+
+  .authLoginForm label p {
+    position: absolute;
+    bottom: -21px;
+    right: 0;
+    font-size: 13px;
+    color: #ffb20c;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.5s ease;
+  }
+
+  .authLoginForm label p:hover {
+    color: purple;
+  }
+
+  .authLoginForm label input,
+  .authRegisterForm label input {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    text-align: center;
+    border: 3px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .btnSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto, auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .authLoginForm .btnSection {
+    margin-top: 20px;
+  }
+
+  .btnSection button:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 18px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:nth-child(3) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    font-size: 18px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .errorMessage {
+    display: block;
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* PASSWORD TOOLTIP */
+  .passwordLabelContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .passwordTooltipWrapper {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .passwordInfoIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: #ffb20c;
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+
+  .passwordInfoIcon:active {
+    background-color: white;
+    color: #ffb20c;
+  }
+
+  .passwordTooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-65%);
+    width: 15rem;
+    padding: 10px;
+    font-size: 12px;
+    color: white;
+    background-color: #333;
+    border: 2px solid #ffb20c;
+    border-radius: 10px;
+    z-index: 100;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .passwordTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 65%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffb20c transparent transparent transparent;
+  }
+
+  .passwordTooltipWrapper:active .passwordTooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .passwordTooltip ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .passwordTooltip li {
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+}
+
+/* VERSION PHONE */
+@media screen and (max-width: 767px) {
+  .authentificationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .authInitialView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 5px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authInitialView button {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .authInitialView button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .authLoginView {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authRegisterView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: auto;
+    overflow-y: auto;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .authLoginForm,
+  .authRegisterForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    overflow-y: auto;
+  }
+
+  .authLoginForm label,
+  .authRegisterForm label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    height: auto;
+    font-size: 12px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 3px solid #ffb20c;
+  }
+
+  .authLoginForm label p {
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    font-size: 13px;
+    color: #ffb20c;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.5s ease;
+  }
+
+  .authLoginForm label p:hover {
+    color: purple;
+  }
+
+  .authLoginForm label input,
+  .authRegisterForm label input {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    text-align: center;
+    border: 3px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .authRegisterForm input[type="file"] {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .authRegisterForm input[type="file"] button {
+    font-size: 10px;
+  }
+
+  .btnSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto, auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .authLoginForm .btnSection {
+    margin-top: 20px;
+  }
+
+  .btnSection button:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:nth-child(3) {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    transition: 0.5s ease;
+  }
+
+  .btnSection button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .errorMessage {
+    display: block;
+    color: #ff4444;
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* PASSWORD TOOLTIP */
+  .passwordLabelContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .passwordTooltipWrapper {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .passwordInfoIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    background-color: #ffb20c;
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+
+  .passwordInfoIcon:active {
+    background-color: white;
+    color: #ffb20c;
+  }
+
+  .passwordTooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-80%);
+    width: auto;
+    padding: 10px;
+    font-size: 10px;
+    color: white;
+    background-color: #333;
+    border: 2px solid #ffb20c;
+    border-radius: 10px;
+    z-index: 100;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .passwordTooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 65%;
+    transform: translateX(-20%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffb20c transparent transparent transparent;
+  }
+
+  .passwordTooltipWrapper:active .passwordTooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .passwordTooltip ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .passwordTooltip li {
+    margin: 4px 0;
+    line-height: 1.4;
+  }
+}
