@@ -31,4 +31,7 @@ app.use('/src/assets/Series/Episodes', express.static(path.join(__dirname, '/ass
 
 // PERSONALITIES PICTURES //
 app.use('/src/assets/Personalities/Pictures', express.static(path.join(__dirname, '/assets/Personalities/Pictures')));
+
+// USERS AVATARS //
+app.use('/src/assets/Users/Avatars', express.static(path.join(__dirname, '/assets/Users/Avatars')));
 module.exports = app;
