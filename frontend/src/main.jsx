@@ -15,6 +15,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ValidateAuthPage from "./pages/AuthentificationPage/ValidateAuthPage/ValidationAuthPage.jsx";
 import UserPage from "./pages/UserPage/UserPage.jsx";
 import { AuthProvider } from "./services/UserContext/AuthContext.jsx";
+import { UserFavoritesProvider } from "./services/UserContext/UserFavoritesContext.jsx";
 import ResetPasswordPage from "./pages/AuthentificationPage/ResetPasswordPage/ResetPasswordPage.jsx";
 
 const router = createBrowserRouter([
@@ -116,7 +117,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <UserFavoritesProvider>
+        <RouterProvider router={router} />
+      </UserFavoritesProvider>
     </AuthProvider>
   </React.StrictMode>,
 );
