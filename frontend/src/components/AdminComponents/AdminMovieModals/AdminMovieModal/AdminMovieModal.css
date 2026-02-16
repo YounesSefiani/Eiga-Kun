@@ -1,0 +1,1563 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminMovieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminMovieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalActions button {
+    width: 70px;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminMovieModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    gap: 20px;
+    padding: 0 10px 0 0;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalPoster {
+    width: 250px;
+    height: 380px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminMovieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminMoviePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 17px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMoviePosterHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieBackgroundHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalLogo img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminMovieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieLogoHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+    height: 12rem;
+    padding: 10px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminMovieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis h5 {
+    font-size: 25px;
+  }
+
+  .adminMovieModalSynopsis p {
+    width: 100%;
+    height: 12rem;
+    overflow-y: scroll;
+    text-align: justify;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer h5 {
+    font-size: 25px;
+  }
+
+  .adminMovieModalTrailer iframe {
+    width: 100%;
+    height: 12rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminMovieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection h4 {
+    width: 70%;
+    height: auto;
+    font-size: 28px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingPicture {
+    width: 230px;
+    height: 340px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieCastingCard p {
+    width: 230px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminMovieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModal::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminMovieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalActions button {
+    width: 60px;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminMovieModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+    padding: 0 10px 0 0;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalPoster {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminMovieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminMoviePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMoviePosterHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieBackgroundHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalLogo img {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminMovieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieLogoHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis h5 {
+    font-size: 20px;
+  }
+
+  .adminMovieModalSynopsis p {
+    width: 100%;
+    height: 12rem;
+    overflow-y: scroll;
+    text-align: justify;
+    padding: 5px;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer h5 {
+    font-size: 20px;
+  }
+
+  .adminMovieModalTrailer iframe {
+    width: 100%;
+    height: 12rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminMovieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection h4 {
+    width: 70%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingPicture {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieCastingCard p {
+    width: 190px;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminMovieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModal::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminMovieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalHeader h4 {
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalActions button {
+    width: 50px;
+    height: auto;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminMovieModalContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 0 0 10px 0;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalPoster {
+    width: 180px;
+    height: 15rem;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminMovieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminMoviePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMoviePosterHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 15rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieBackgroundHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalLogo img {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminMovieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieLogoHolder svg {
+    font-size: 50px !important;
+  }
+
+  .adminMovieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis h5 {
+    font-size: 17px;
+  }
+
+  .adminMovieModalSynopsis p {
+    width: 100%;
+    height: 10rem;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 5px;
+    font-size: 13px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer h5 {
+    font-size: 17px;
+  }
+
+  .adminMovieModalTrailer iframe {
+    width: 100%;
+    height: 10rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminMovieModalCasting {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection h4 {
+    width: 70%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingPicture {
+    width: 150px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieCastingCard p {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingCard:active p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminMovieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModal::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminMovieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminMovieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 17px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalActions button {
+    width: 50px;
+    height: auto;
+    font-size: 19px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminMovieModalContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieModalLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+    padding: 0 0 10px 0;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalPoster {
+    width: 200px;
+    height: 190px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminMovieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminMoviePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMoviePosterHolder svg {
+    font-size: 40px !important;
+  }
+
+  .adminMovieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieBackgroundHolder svg {
+    font-size: 40px !important;
+  }
+
+  .adminMovieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalLogo img {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminMovieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminMovieLogoHolder svg {
+    font-size: 40px !important;
+  }
+
+  .adminMovieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminMovieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis h5 {
+    font-size: 17px;
+  }
+
+  .adminMovieModalSynopsis p {
+    width: 100%;
+    height: 8rem;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 5px;
+    font-size: 13px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieModalTrailer h5 {
+    font-size: 17px;
+  }
+
+  .adminMovieModalTrailer iframe {
+    width: 100%;
+    height: 10rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminMovieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminMovieModalCasting {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingSection h4 {
+    width: 70%;
+    height: auto;
+    font-size: 17px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingPicture {
+    width: 110px;
+    height: 160px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminMovieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminMovieCastingCard p {
+    width: 110px;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminMovieCastingCard:active p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}

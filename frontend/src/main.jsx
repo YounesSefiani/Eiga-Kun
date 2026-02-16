@@ -13,6 +13,7 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ValidateAuthPage from "./pages/AuthentificationPage/ValidateAuthPage/ValidationAuthPage.jsx";
+import UserAdminPage from "./pages/UserPage/UserAdminPage/UserAdminPage.jsx";
 import UserPage from "./pages/UserPage/UserPage.jsx";
 import { AuthProvider } from "./services/UserContext/AuthContext.jsx";
 import { UserFavoritesProvider } from "./services/UserContext/UserFavoritesContext.jsx";
@@ -110,6 +111,10 @@ const router = createBrowserRouter([
   {
     path: "/user/:token",
     element: <UserPage />,
+  },
+  {
+    path: "/user/admin/:token",
+    element: <UserAdminPage />,
   }
 ]);
 
