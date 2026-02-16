@@ -1,0 +1,659 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .userPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userPageContent {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .userBar img {
+    width: 80%;
+    object-fit: fill;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar img:hover {
+    transform: scale(1.1);
+  }
+
+  .userBarSections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .userBarSections button {
+    width: 80%;
+    height: 60px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBarSections button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userBar button {
+    width: 80%;
+    height: 60px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .userProfileHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 30px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid purple;
+    border-radius: 25px;
+  }
+
+  .userAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userAvatar svg {
+    font-size: 150px;
+    text-align: center;
+  }
+
+  .userProfileHeader h3 {
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .userPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userPageContent {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .userBar img {
+    width: 70%;
+    object-fit: fill;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar img:hover {
+    transform: scale(1.1);
+  }
+
+  .userBarSections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userBarSections button {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBarSections button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userBar button {
+    width: 80%;
+    height: auto;
+    font-size: 17px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .userProfileHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid purple;
+    border-radius: 25px;
+  }
+
+  .userAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userAvatar svg {
+    font-size: 150px;
+    text-align: center;
+  }
+
+  .userProfileHeader h3 {
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userPageContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .userBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    background-color: black;
+    border-top: none;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .userBar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userBar::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userBar::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .userBarSections {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+  }
+
+  .userBarSections button {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 8px !important;
+    color: #ffb20c;
+    font-size: 20px !important;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBarSections button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userBar button {
+    width: 70%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .userProfileHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid purple;
+    border-radius: 25px;
+  }
+
+  .userAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userAvatar svg {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .userProfileHeader h3 {
+    width: 60%;
+    font-size: 22px;
+    text-align: center;
+    padding: 8px;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .userPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userPageContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .userBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    background-color: black;
+    border-top: none;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .userBar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userBar::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userBar::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .userBarSections {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    gap: 10px;
+  }
+
+  .userBarSections button {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 5px !important;
+    color: #ffb20c;
+    font-size: 14px !important;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBarSections button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userBar button {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userBar button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(300deg, #e53f31, #ffa43b, #9b0e0e, #b75b08);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .userProfileHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid purple;
+    border-radius: 25px;
+  }
+
+  .userAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAvatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userAvatar svg {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .userProfileHeader h3 {
+    width: 60%;
+    font-size: 17px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+}
