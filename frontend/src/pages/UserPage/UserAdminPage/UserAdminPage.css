@@ -1,0 +1,461 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .userAdminPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userAdminContent {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userAdminBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    background-color: black;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .userAdminHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+    height: 360px;
+    background: linear-gradient(300deg, #e5550b, #f9d76d, #943a05, #5b0602);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminAvatar {
+    width: 210px;
+    height: 210px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAdminAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .userAdminHeader p {
+    width: 80%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminProfile {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(300deg, #46039d, #8624d2, #9f0622, #47046b);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminSections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 35%;
+  }
+
+  .userAdminBar button {
+    width: 80%;
+    height: 50px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminBar button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .userAdminPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .userAdminContent {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userAdminBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-color: black;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .userAdminHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 230px;
+    height: 250px;
+    background: linear-gradient(300deg, #e5550b, #f9d76d, #943a05, #5b0602);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminAvatar {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAdminAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .userAdminHeader p {
+    width: 80%;
+    height: auto;
+    font-size: 17px;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminProfile {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(300deg, #46039d, #8624d2, #9f0622, #47046b);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminSections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+  }
+
+  .userAdminBar button {
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminBar button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userAdminPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userAdminBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    background-color: black;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .userAdminHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    background: linear-gradient(300deg, #e5550b, #f9d76d, #943a05, #5b0602);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminAvatar {
+    width: 160px;
+    height: 160px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAdminAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .userAdminHeader p {
+    width: 60%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(300deg, #46039d, #8624d2, #9f0622, #47046b);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminSections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .userAdminBar button {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminBar button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .userAdminPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .userAdminBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    background-color: black;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .userAdminHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    background: linear-gradient(300deg, #e5550b, #f9d76d, #943a05, #5b0602);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminAvatar {
+    width: 110px;
+    height: 110px;
+    border: 4px solid #ffb20c;
+    border-radius: 50%;
+  }
+
+  .userAdminAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .userAdminHeader p {
+    width: 60%;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(300deg, #46039d, #8624d2, #9f0622, #47046b);
+    background-size: 240% 240%;
+    animation: gradient-animation 24s ease infinite;
+  }
+
+  .userAdminSections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .userAdminSections button {
+    width: auto !important;
+    height: auto !important;
+    font-size: 15px !important;
+  }
+
+  .userAdminBar button {
+    width: 70%;
+    height: auto;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminBar button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+}

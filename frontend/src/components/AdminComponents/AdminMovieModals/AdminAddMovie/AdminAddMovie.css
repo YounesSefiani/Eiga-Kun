@@ -1,0 +1,1806 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminAddMovieOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminAddMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieModal h2 {
+    width: auto;
+    font-size: 30px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieForm {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddMovieForm svg {
+    font-size: 40px;
+  }
+
+  .adminAddMovieFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormHeader input {
+    width: 25rem;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .adminAddMovieFormActions button {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddMovieFormActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddMovieFormBody {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormBodyLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMoviePoster {
+    width: 250px;
+    height: 380px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminAddMoviePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminAddMoviePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .adminAddMovieBackground {
+    width: 100%;
+    height: 200px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddMovieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .adminAddMovieFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 17px;
+  }
+
+  .adminAddMovieFormBodyRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminAddMovieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminAddMovieFormInfos {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormInfos label {
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminAddMovieST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 15px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieTrailer {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieTrailer iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .adminAddMovieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .addMovieCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addCastPicture {
+    width: 230px;
+    height: 340px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addCastPicture p {
+    width: 230px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .addMovieCastingCard label input,
+  .addMovieCastingCard label select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 17px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminAddMovieOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminAddMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieModal h2 {
+    width: auto;
+    font-size: 26px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieForm {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddMovieForm svg {
+    font-size: 40px;
+  }
+
+  .adminAddMovieFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormHeader input {
+    width: 25rem;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .adminAddMovieFormActions button {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddMovieFormActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddMovieFormBody {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    gap: 10px;
+    padding: 0 10px 0 0;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormBodyLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft label input {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMoviePoster {
+    width: 200px;
+    height: 310px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminAddMoviePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminAddMoviePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .adminAddMovieBackground {
+    width: 100%;
+    height: 180px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddMovieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .adminAddMovieFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .adminAddMovieFormBodyRight label input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminAddMovieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminAddMovieFormInfos {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieST textarea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 14px;
+    text-align: justify;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieTrailer {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieTrailer iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .adminAddMovieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .addMovieCasting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .addMovieCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection h5 {
+    width: 80%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .addMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addCastPicture {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addMovieCastingCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .addMovieCastingCard label input,
+  .addMovieCastingCard label select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminAddMovieOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminAddMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieModal h2 {
+    width: auto;
+    font-size: 25px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieForm {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddMovieForm svg {
+    font-size: 30px;
+  }
+
+  .adminAddMovieFormHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormHeader input {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+  }
+
+  .adminAddMovieFormActions button {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddMovieFormActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddMovieFormBody {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormBodyLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMoviePoster {
+    width: 80%;
+    height: 280px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .adminAddMoviePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminAddMoviePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .adminAddMovieBackground {
+    width: 100%;
+    height: 180px;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddMovieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .adminAddMovieFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 17px;
+  }
+
+  .adminAddMovieFormBodyRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminAddMovieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminAddMovieFormInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormInfos label {
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminAddMovieST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieST label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea {
+    width: 100%;
+    height: 10rem;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 13px;
+    text-align: justify;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieTrailer {
+    width: 100%;
+    height: 17rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieTrailer iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .adminAddMovieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .addMovieCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+
+
+  .addMovieCastingSection h5 {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+    .addMovieCastingSection p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .addMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .addMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard p {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .addCastPicture {
+    width: 150px;
+    height: 240px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addCastPicture p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: auto;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .addMovieCastingCard label input,
+  .addMovieCastingCard label select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard button {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminAddMovieOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .adminAddMovieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieModal h2 {
+    width: auto;
+    font-size: 25px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieForm {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddMovieForm svg {
+    font-size: 30px;
+  }
+
+  .adminAddMovieFormHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormHeader input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+  }
+
+  .adminAddMovieFormActions button {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddMovieFormActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddMovieFormBody {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormBodyLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMoviePoster {
+    width: 130px;
+    height: 190px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .adminAddMoviePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminAddMoviePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .adminAddMovieBackground {
+    width: 100%;
+    height: 120px;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddMovieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .adminAddMovieFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddMovieFormBodyRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 14px;
+  }
+
+  .adminAddMovieFormBodyRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminAddMovieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminAddMovieFormInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieFormInfos label {
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminAddMovieST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea {
+    width: 100%;
+    height: 10rem;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 14px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieST textarea::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddMovieTrailer {
+    width: 100%;
+    height: 13rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddMovieTrailer iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .adminAddMovieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .addMovieCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+
+
+  .addMovieCastingSection h5 {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+    .addMovieCastingSection p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .addMovieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .addMovieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard p {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .addCastPicture {
+    width: 150px;
+    height: 240px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addCastPicture p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: auto;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .addMovieCastingCard label input,
+  .addMovieCastingCard label select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addMovieCastingCard button {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addMovieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
