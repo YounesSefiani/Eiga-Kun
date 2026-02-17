@@ -1,0 +1,612 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .userAdminSeriesPage {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminSeriesTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminSeriesTop h2 {
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriesBtnSection {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .userAdminSeriesBtnSection button {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriesBtnSection button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminSeriesSection {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-track {
+    background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .userAdminSerieCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    color: #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriePoster {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    font-size: 17px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder svg {
+    font-size: 40px;
+  }
+
+  .userAdminSerieCard h3 {
+    width: 200px;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSerieCard:hover h3 {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .userAdminSeriesPage {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminSeriesTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminSeriesTop h2 {
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriesBtnSection {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .userAdminSeriesBtnSection button {
+    width: auto;
+    height: auto;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriesBtnSection button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminSeriesSection {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-track {
+    background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminSerieCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    color: #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriePoster {
+    width: 160px;
+    height: 230px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder svg {
+    font-size: 30px;
+  }
+
+  .userAdminSerieCard h3 {
+    width: 160px;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSerieCard:hover h3 {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userAdminSeriesPage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminSeriesTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminSeriesTop h2 {
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriesBtnSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .userAdminSeriesBtnSection button {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriesBtnSection button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminSeriesSection {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-track {
+    background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminSerieCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    color: #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriePoster {
+    width: 140px;
+    height: 200px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 14px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder svg {
+    font-size: 30px;
+  }
+
+  .userAdminSerieCard h3 {
+    width: 140px;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSerieCard:active h3 {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .userAdminSeriesPage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .userAdminSeriesTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminSeriesTop h2 {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriesBtnSection {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .userAdminSeriesBtnSection button {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriesBtnSection button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminSeriesSection {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-track {
+    background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminSeriesSection::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminSerieCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    color: #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSeriePoster {
+    width: 120px;
+    height: 160px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 12px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userAdminSeriePosterHolder svg {
+    font-size: 25px;
+  }
+
+  .userAdminSerieCard h3 {
+    width: 120px;
+    height: auto;
+    font-size: 13px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminSerieCard:active h3 {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
