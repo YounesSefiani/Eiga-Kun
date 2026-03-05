@@ -3,6 +3,7 @@
   .userAdminSeriesPage {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 75%;
     height: 100%;
     gap: 10px;
@@ -306,14 +307,15 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     gap: 10px;
     padding: 10px;
   }
 
   .userAdminSeriesTop {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -322,7 +324,7 @@
   }
 
   .userAdminSeriesTop h2 {
-    width: 100%;
+    width: 80%;
     font-size: 22px;
     text-align: center;
     color: #ffb20c;
@@ -461,29 +463,30 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: auto;
-    height: 100%;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
     gap: 10px;
     padding: 5px;
   }
 
   .userAdminSeriesTop {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: auto;
-    gap: 10px;
+    gap: 5px;
   }
 
   .userAdminSeriesTop h2 {
-    width: 100%;
-    font-size: 15px;
+    width: 60%;
+    font-size: 14px;
     text-align: center;
     color: #ffb20c;
     background-color: black;
-    padding: 10px;
+    padding: 5px;
     border: 4px solid #ffb20c;
     border-radius: 10px;
   }
@@ -499,7 +502,7 @@
   .userAdminSeriesBtnSection button {
     width: 100%;
     height: auto;
-    font-size: 15px;
+    font-size: 12px;
     color: #ffb20c;
     background-color: black;
     padding: 5px;
