@@ -1,0 +1,2033 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminSerieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminSerieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 10px;
+    border: 3px solid black;
+  }
+
+  .adminSerieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalActions button {
+    width: 70px;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminSerieModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalPoster {
+    width: 250px;
+    height: 380px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .adminSerieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .adminSeriePosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalBackground {
+    width: 100%;
+    height: 200px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .adminSerieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSerieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .adminSerieBackgroundHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    gap: 15px;
+    padding: 10px 10px 10px 0;
+  }
+
+  .adminSerieModalLogo {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminSerieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieLogoHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSerieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 5px;
+    text-align: justify;
+    font-size: 16px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalTrailer iframe {
+    width: 100%;
+    height: 15rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalSeasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalSeasons h4 {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard h5 {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster {
+    width: 230px;
+    height: 340px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieSeasonPosterHolder p {
+    font-size: 16px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    border: none !important;
+  }
+
+  .adminSerieSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieSeasonCard p {
+    width: 230px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminSerieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection h5 {
+    width: 70%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingPicture {
+    width: 230px;
+    height: 340px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieCastingCard p {
+    width: 230px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminSerieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminSerieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminSerieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalActions button {
+    width: 60px;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminSerieModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+    padding: 0 10px 0 0;
+    border-right: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalPoster {
+    width: 240px;
+    height: 350px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSeriePosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalBackground {
+    width: 100%;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .adminSerieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSerieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .adminSerieBackgroundHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalLogo {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .adminSerieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieLogoHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSerieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 5px;
+    text-align: justify;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalTrailer iframe {
+    width: 100%;
+    height: 13rem;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalSeasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalSeasons h4 {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard h5 {
+    width: 210px;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster {
+    width: 210px;
+    height: 310px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieSeasonPosterHolder p {
+    font-size: 16px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    border: none !important;
+  }
+
+  .adminSerieSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieSeasonCard p {
+    width: 210px;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminSerieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection h5 {
+    width: 70%;
+    height: auto;
+    font-size: 23px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingPicture {
+    width: 210px;
+    height: 310px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieCastingCard p {
+    width: 210px;
+    height: auto;
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminSerieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminSerieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-track {
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminSerieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalHeader h4 {
+    width: 80%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalActions button {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminSerieModalContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSerieModalLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalPoster {
+    width: 230px;
+    height: 330px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSeriePosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 60%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSerieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSerieBackgroundHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .adminSerieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalLogo img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminSerieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSerieLogoHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p {
+    width: 100%;
+    height: 15vh;
+    overflow-y: scroll;
+    padding: 5px;
+    text-align: justify;
+    font-size: 16px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalTrailer iframe {
+    width: 100%;
+    height: 25vh;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalSeasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalSeasons h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard h5 {
+    width: 190px;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieSeasonPosterHolder p {
+    font-size: 16px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    border: none !important;
+  }
+
+  .adminSerieSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieSeasonCard p {
+    width: 190px;
+    height: auto;
+    padding: 5px;
+    font-size: 11px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard:active p {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminSerieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection h5 {
+    width: 70%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingPicture {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieCastingCard p {
+    width: 190px;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminSerieModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .adminSerieModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminSerieModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 20px;
+    border: 3px solid black;
+  }
+
+  .adminSerieModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalHeader h4 {
+    width: 60%;
+    height: auto;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalActions button {
+    width: 50px;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .adminSerieModalContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+    padding: 0 0 10px 0;
+    border-bottom: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalPoster {
+    width: 200px;
+    height: 190px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSeriePosterHolder {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSeriePosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminSerieBackgroundHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSerieBackgroundHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalLogo {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalLogo img {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .adminSerieLogoHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminSerieLogoHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: auto;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalInfos p {
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminSerieModalSynopsis {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p {
+    width: 100%;
+    height: 15vh;
+    overflow-y: scroll;
+    padding: 5px;
+    text-align: justify;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+  }
+
+  .adminSerieModalSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSerieModalTrailer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieModalTrailer iframe {
+    width: 100%;
+    height: 20vh;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminSerieTrailerHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieModalSeasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalSeasons h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard h5 {
+    width: 150px;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster {
+    width: 150px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminSerieSeasonPosterHolder p {
+    font-size: 16px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    border: none !important;
+  }
+
+  .adminSerieSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .adminSerieSeasonCard p {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 11px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieSeasonCard:active p {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminSerieModalCasting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminSerieModalCasting h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingSection h5 {
+    width: 70%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingPicture {
+    width: 150px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieCastingPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminSerieCastingCard p {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminSerieCastingCard:active p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}

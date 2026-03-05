@@ -1,0 +1,2386 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminEditSerieForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+  }
+
+  .adminEditSerieFormHeader input {
+    width: 40rem;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .adminEditSerieActions button {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieFormBody {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSeriePoster {
+    width: 250px;
+    height: 380px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .editSeriePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSeriePosterPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieBackground {
+    width: 100%;
+    height: 200px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .editSerieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSerieBackgroundPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .adminEditSerieFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 17px;
+  }
+
+  .adminEditSerieFormRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .editSerieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .editSerieLogoPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieInfos {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .editSerieST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .editSerieST label {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .editSerieSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 15px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailer iframe {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieSeasons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSeasonPoster {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminEditSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCasting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCasting h4 {
+    width: 70%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection h5 {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    font-size: 23px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieCastPicture {
+    width: 230px;
+    height: 340px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCastingCard p {
+    width: 230px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard input,
+  .adminEditSerieCastingCard select {
+    font-size: 16px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 17px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddSerieCast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddSerieCast label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 18px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast input,
+  .adminAddSerieCast select {
+    font-size: 16px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast button {
+    width: auto;
+    height: auto;
+    padding: 5px 15px;
+    font-size: 20px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminAddSerieCast button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminEditSerieForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+  }
+
+  .adminEditSerieFormHeader input {
+    width: 40rem;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .adminEditSerieActions button {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieFormBody {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSeriePoster {
+    width: 240px;
+    height: 350px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .editSeriePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSeriePosterPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieBackground {
+    width: 100%;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .editSerieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .editSerieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSerieBackgroundPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .adminEditSerieFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .adminEditSerieFormRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .editSerieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .editSerieLogoPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieInfos {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .editSerieST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .editSerieST label {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .editSerieSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 14px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailer iframe {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieSeasons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieSeasonsList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieSeasonCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSeasonPoster {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminEditSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCasting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCasting h4 {
+    width: 70%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection h5 {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    font-size: 23px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieCastPicture {
+    width: 210px;
+    height: 310px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCastingCard p {
+    width: 210px;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard input,
+  .adminEditSerieCastingCard select {
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddSerieCast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddSerieCast h4 {
+    font-size: 25px;
+  }
+
+  .adminAddSerieCast label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast input,
+  .adminAddSerieCast select {
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast button {
+    width: 100%;
+    height: auto;
+    padding: 5px 15px;
+    font-size: 18px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminAddSerieCast button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminEditSerieForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar-track {
+    background: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar-thumb {
+    background: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader input {
+    width: 25rem;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieActions button {
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieFormBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSeriePoster {
+    width: 230px;
+    height: 330px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .editSeriePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSeriePosterPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieBackground {
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .editSerieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .editSerieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .editSerieBackgroundPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .adminEditSerieFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .adminEditSerieFormRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .editSerieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .editSerieLogoPlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .editSerieInfos {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .editSerieST {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .editSerieST label {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .editSerieSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 14px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar-track {
+    background: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+
+  .editSerieTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonsEditList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSeasonEditCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard label {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard input,
+  .adminSeasonEditCard input[type="file"] {
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditPoster {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSeasonEditPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSeasonInfos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSeasonEditCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieSeasonCard button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .addSeason {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonPoster {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .addSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .addSeasonForm {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonForm label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonForm input,
+  .addSeasonForm input[type="file"] {
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeason button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addSeason button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieCasting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection h5 {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .adminEditSerieCastingList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieCastPicture {
+    width: 190px;
+    height: 280px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCastingCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard input,
+  .adminEditSerieCastingCard select {
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddSerieCast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast h4 {
+    font-size: 20px;
+  }
+
+  .adminAddSerieCast label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast input,
+  .adminAddSerieCast select {
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminEditSerieForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar-track {
+    background: #ffb20c;
+    border: 4px solid black;
+  }
+
+  .adminEditSerieForm::-webkit-scrollbar-thumb {
+    background: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormHeader label {
+    width: 100%;
+    height: auto;
+  }
+
+  .adminEditSerieFormHeader input {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieActions button {
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieFormBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieFormLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormLeft input {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSeriePoster {
+    width: 140px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .editSeriePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .editSeriePosterPlaceHolder svg {
+    font-size: 30px;
+  }
+
+  .editSerieBackground {
+    width: 100%;
+    height: 40%;
+    margin: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .editSerieBackground img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .editSerieBackgroundPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .editSerieBackgroundPlaceHolder svg {
+    font-size: 30px;
+  }
+
+  .adminEditSerieFormRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieFormRight label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .adminEditSerieFormRight input,
+  select {
+    width: 100%;
+    height: auto;
+    font-size: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .editSerieLogoPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .editSerieLogoPlaceHolder svg {
+    font-size: 35px;
+  }
+
+  .editSerieInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 12px;
+    border: 2px solid #ffb20c;
+  }
+
+  .editSerieInfos input, .editSerieInfos select {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieST {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .editSerieST label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .editSerieSynopsis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea {
+    width: 100%;
+    height: 15vh;
+    overflow-y: auto;
+    padding: 5px;
+    font-size: 13px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar-track {
+    background: #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieSynopsis textarea::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+
+  .editSerieTrailer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailer iframe {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieTrailerPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    gap: 10px;
+    font-size: 13px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSerieSeasonsEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonsEditList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSeasonEditCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard label {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditCard input,
+  .adminSeasonEditCard input[type="file"] {
+    font-size: 12px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminSeasonEditPoster {
+    width: 140px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminSeasonEditPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSeasonInfos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminSeasonEditCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieSeasonCard button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .addSeason {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeason h3 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonPoster {
+    width: 140px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .addSeasonPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .addSeasonPosterHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .addSeasonPosterHolder svg {
+    font-size: 40px;
+  }
+
+  .addSeasonForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    gap: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonForm label {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeasonForm input,
+  .addSeasonForm input[type="file"] {
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .addSeason button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .addSeason button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminEditSerieCasting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection h5 {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingSection p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .adminEditSerieCastingList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditSerieCastingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .editSerieCastPicture {
+    width: 160px;
+    height: 220px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .editSerieCastPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminEditSerieCastingCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard label {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard input,
+  .adminEditSerieCastingCard select {
+    font-size: 12px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditSerieCastingCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .adminEditSerieCastingCard button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminAddSerieCast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast h4 {
+    font-size: 18px;
+  }
+
+  .adminAddSerieCast label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast input,
+  .adminAddSerieCast select {
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddSerieCast button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+}
