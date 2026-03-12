@@ -3,6 +3,8 @@ import Header from '../../../components/Header/Header';
 import HeaderPhone from '../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone';
 import FooterPhone from '../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone';
 import UserAdminMoviesPage from './UserAdminMoviesPage/UserAdminMoviesPage';
+import UserAdminSeriesPage from './UserAdminSeriesPage/UserAdminSeriesPage';
+import UserAdminPersonalitiesPage from './UserAdminPersonalitiesPage/UserAdminPersonalitiesPage';
 import { AuthContext } from '../../../services/UserContext/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,8 +47,8 @@ function UserAdminPage() {
             <div className="userAdminSections">
                 <button onClick={() => navigate(`/user/${token}`)}>Ma page</button>
                 <button onClick={() => setAdminView("admin_movies")}>Les films</button>
-                <button>Les séries</button>
-                <button>Les personnalités</button>
+                <button onClick={() => setAdminView("admin_series")}>Les séries</button>
+                <button onClick={() => setAdminView("admin_personalities")}>Les personnalités</button>
             </div>
             <button type="button">Deconnexion</button>
         </div>
@@ -55,6 +57,12 @@ function UserAdminPage() {
         }
         {adminView === "admin_movies" &&        
         <UserAdminMoviesPage setAdminView={setAdminView} />
+        }
+        {adminView === "admin_series" &&        
+        <UserAdminSeriesPage setAdminView={setAdminView} />
+        }
+        {adminView === "admin_personalities" &&        
+        <UserAdminPersonalitiesPage setAdminView={setAdminView} />
         }
         </div>
         <FooterPhone />

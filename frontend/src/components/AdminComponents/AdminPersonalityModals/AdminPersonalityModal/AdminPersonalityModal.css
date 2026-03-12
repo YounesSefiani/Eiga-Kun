@@ -1,0 +1,1157 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminPersonalityOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-track {
+    background: black;
+    border: 4px solid black;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityModalActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 23px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminPersonalityModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminPersonalityModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .adminPersonalityModalPicture {
+    width: 20rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminPersonalityModalRight {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminPersonalityInfos p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio h5 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+  }
+
+  .adminPersonalityBio p {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 20px;
+    text-align: justify;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .adminPersonalityFilmographyMovies,
+  .adminPersonalityFilmographySeries {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard,
+  .adminPersonalitySerieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard h5,
+  .adminPersonalitySerieCard h5 {
+    width: 240px;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMoviePoster,
+  .adminPersonalitySeriePoster {
+    width: 240px;
+    height: 350px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMoviePoster img,
+  .adminPersonalitySeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityMovieCard p,
+  .adminPersonalitySerieCard p {
+    width: 240px;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminPersonalityOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-track {
+    background: black;
+    border: 4px solid black;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalHeader h4 {
+    width: 40%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityModalActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 22px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminPersonalityModalActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminPersonalityModalContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .adminPersonalityModalPicture {
+    width: 18rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 5px;
+  }
+
+  .adminPersonalityModalRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .adminPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminPersonalityInfos p {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio h5 {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+  }
+
+  .adminPersonalityBio p {
+    width: 100%;
+    height: 24vh;
+    overflow-y: auto;
+    font-size: 16px;
+    text-align: justify;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityBio p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 23px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .adminPersonalityFilmographyMovies,
+  .adminPersonalityFilmographySeries {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard,
+  .adminPersonalitySerieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard h5,
+  .adminPersonalitySerieCard h5 {
+    width: 210px;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMoviePoster,
+  .adminPersonalitySeriePoster {
+    width: 210px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMoviePoster img,
+  .adminPersonalitySeriePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityMovieCard p,
+  .adminPersonalitySerieCard p {
+    width: 210px;
+    height: auto;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .adminPersonalityOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 4px solid #ffb20c;
+    z-index: 1;
+  }
+
+  .adminPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    margin: auto;
+    gap: 5px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityModal::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminPersonalityModalHeader {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .adminPersonalityModalHeader h4 {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityModalActions button {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminPersonalityModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminPersonalityModalContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .adminPersonalityModalPicture {
+    width: 13rem;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityInfos p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio h5 {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+  }
+
+  .adminPersonalityBio p {
+    width: 100%;
+    height: 18vh;
+    overflow-y: auto;
+    font-size: 20px;
+    text-align: justify;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 19px;
+    text-align: center;
+  }
+
+  .adminPersonalityFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 23px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographyMovies, .adminPersonalityFilmographySeries {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard, .adminPersonalitySerieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+   .adminPersonalityMovieCard h5, .adminPersonalitySerieCard h5 {
+     width: 12rem;
+     height: auto;
+     font-size: 18px;
+     text-align: center;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     padding: 5px;
+     border: 4px solid #ffb20c;
+   }
+
+   .adminPersonalityMoviePoster, .adminPersonalitySeriePoster {
+     width: 12rem;
+     height: 18rem;
+     border: 4px solid #ffb20c;
+   }
+
+   .adminPersonalityMoviePoster img, .adminPersonalitySeriePoster img {
+     width: 100%;
+     height: 100%;
+     object-fit: fill;
+     border-radius: 10px;
+   }
+
+   .adminPersonalityMovieCard p, .adminPersonalitySerieCard p {
+     width: 12rem;
+     height: 6rem;
+     font-size: 16px;
+     text-align: center;
+     overflow-y: auto;
+     white-space: wrap;
+     padding: 5px;
+     border: 4px solid #ffb20c;
+   }
+
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminPersonalityOverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 4px solid #ffb20c;
+    z-index: 1;
+  }
+
+  .adminPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    margin: auto;
+    gap: 5px;
+    padding: 5px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalHeader {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .adminPersonalityModalHeader h4 {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityModalActions button {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminPersonalityModalActions button:active {
+    background-color: #ffb20c;
+    color: black;
+  }
+
+  .adminPersonalityModalContent {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .adminPersonalityModalPicture {
+    width: 10rem;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityModalPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .adminPersonalityModalRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityInfos p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityBio h5 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+  }
+
+  .adminPersonalityBio p {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #ffb20c;
+  }
+
+  .adminPersonalityFilmographyMovies, .adminPersonalityFilmographySeries {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminPersonalityMovieCard, .adminPersonalitySerieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+   .adminPersonalityMovieCard h5, .adminPersonalitySerieCard h5 {
+     width: 9rem;
+     height: auto;
+     font-size: 15px;
+     text-align: center;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     padding: 5px;
+     border: 4px solid #ffb20c;
+   }
+
+   .adminPersonalityMoviePoster, .adminPersonalitySeriePoster {
+     width: 9rem;
+     height: 13rem;
+     border: 4px solid #ffb20c;
+   }
+
+   .adminPersonalityMoviePoster img, .adminPersonalitySeriePoster img {
+     width: 100%;
+     height: 100%;
+     object-fit: fill;
+     border-radius: 10px;
+   }
+
+   .adminPersonalityMovieCard p, .adminPersonalitySerieCard p {
+     width: 9rem;
+     height: 5rem;
+     font-size: 14px;
+     text-align: center;
+     overflow-y: auto;
+     white-space: wrap;
+     padding: 5px;
+     border: 4px solid #ffb20c;
+   }
+}
