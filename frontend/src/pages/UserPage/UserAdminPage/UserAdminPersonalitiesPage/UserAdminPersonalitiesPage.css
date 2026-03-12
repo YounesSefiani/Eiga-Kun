@@ -1,0 +1,596 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .userAdminPersonalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    position: relative;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminPersonalitiesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminPersonalitiesHeader h2 {
+    width: auto;
+    height: auto;
+    font-size: 30px;
+    padding: 5px 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userAdminPersonalitiesActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminPersonalitiesActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalitiesActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminPersonalitiesSection {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userAdminPersnalitiesSection::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminPersonalityCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .userAdminPersonalityPicture {
+    width: 200px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .userAdminPersonalityCard p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalityCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .userAdminPersonalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminPersonalitiesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminPersonalitiesHeader h2 {
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    padding: 5px 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userAdminPersonalitiesActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminPersonalitiesActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalitiesActions button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminPersonalitiesSection {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userAdminPersnalitiesSection::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminPersonalityCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .userAdminPersonalityPicture {
+    width: 160px;
+    height: 230px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .userAdminPersonalityCard p {
+    width: 160px;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalityCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userAdminPersonalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminPersonalitiesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminPersonalitiesHeader h2 {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userAdminPersonalitiesActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminPersonalitiesActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalitiesActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminPersonalitiesSection {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: auto;
+    padding: 10px;
+    gap: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userAdminPersnalitiesSection::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminPersonalityCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .userAdminPersonalityPicture {
+    width: 140px;
+    height: 200px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .userAdminPersonalityCard p {
+    width: 140px;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalityCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .userAdminPersonalitiesPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .userAdminPersonalitiesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+  }
+
+  .userAdminPersonalitiesHeader h2 {
+    width: auto;
+    height: auto;
+    font-size: 16px;
+    padding: 5px 5px;
+    text-align: center;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userAdminPersonalitiesActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .userAdminPersonalitiesActions button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalitiesActions button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .userAdminPersonalitiesSection {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    overflow-y: scroll;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .userAdminPersonalitiesSection::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .userAdminPersnalitiesSection::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .userAdminPersonalityCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: fit-content;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .userAdminPersonalityPicture {
+    width: 100px;
+    height: 140px;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border-radius: 10px;
+  }
+
+  .userAdminPersonalityPicturePlaceHolder svg {
+    font-size: 40px;
+  }
+
+  .userAdminPersonalityCard p {
+    width: 100px;
+    height: auto;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+  }
+
+  .userAdminPersonalityCard:hover p {
+    background-color: #ffb20c;
+    color: black;
+  }
+}

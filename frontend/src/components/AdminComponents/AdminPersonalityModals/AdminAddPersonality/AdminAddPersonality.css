@@ -1,0 +1,1538 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminAddPersonalityOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .adminAddPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityHeader input {
+    width: 30%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminAddPersonalityActions button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddPersonalityActions button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminAddPersonalityBody {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityLeft {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture {
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    height: 24rem;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder svg {
+    font-size: 60px;
+  }
+
+  .adminAddPersonalityLeft label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityLeft input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: 100%;
+  }
+
+  .adminAddPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .adminAddPersonalityInfos input,
+  .adminAddPersonalityInfos select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityBiography textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10rem;
+    padding: 5px;
+    font-size: 15px;
+    resize: none;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+  }
+
+  .adminAddFilmographyForm input,
+  .adminAddFilmographyForm select {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyForm button {
+    width: 20%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddFilmographyForm button:hover {
+    color: black;
+    background-color: green;
+  }
+
+  .adminAddFilmographyList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyList p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .adminAddFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard h4 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster {
+    width: 15rem;
+    height: 20rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddFilmographyCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddFilmographyCard button:hover {
+    color: black;
+    background-color: red;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminAddPersonalityOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .adminAddPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityHeader input {
+    width: 30%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminAddPersonalityActions button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddPersonalityActions button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminAddPersonalityBody {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityLeft {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 21rem;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .adminAddPersonalityLeft label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityLeft input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .adminAddPersonalityInfos input,
+  .adminAddPersonalityInfos select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 23px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+  }
+
+  .adminAddFilmographyForm input,
+  .adminAddFilmographyForm select {
+    width: 100%;
+    height: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminAddFilmographyForm button {
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminAddFilmographyForm button:hover {
+    color: black;
+    background-color: green;
+  }
+
+  .adminAddFilmographyList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyList p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .adminAddFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard h4 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster {
+    width: 15rem;
+    height: 20rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddFilmographyCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddFilmographyCard button:hover {
+    color: black;
+    background-color: red;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .adminAddPersonalityOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .adminAddPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityHeader input {
+    width: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminAddPersonalityActions button {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddPersonalityActions button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminAddPersonalityBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 20rem;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-size: 20px;
+    background-color: black;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .adminAddPersonalityLeft label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityLeft input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 15px;
+  }
+
+  .adminAddPersonalityInfos input,
+  .adminAddPersonalityInfos select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 22px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+  }
+
+  .adminAddFilmographyForm input,
+  .adminAddFilmographyForm select {
+    width: 100%;
+    height: auto;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminAddFilmographyForm button {
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminAddFilmographyForm button:active {
+    color: black;
+    background-color: green;
+  }
+
+  .adminAddFilmographyList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyList p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .adminAddFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard h4 {
+    width: 11rem;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster {
+    width: 11rem;
+    height: 16rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddFilmographyCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddFilmographyCard button:active {
+    color: black;
+    background-color: red;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminAddPersonalityOverlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .adminAddPersonalityModal {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    gap: 10px;
+    padding: 10px;
+    color: #ffb20c;
+    background-color: black;
+    z-index: 2;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityModal::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminAddPersonalityHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityHeader input {
+    width: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminAddPersonalityActions button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddPersonalityActions button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminAddPersonalityBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityLeft {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    height: 15rem;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    background-color: black;
+  }
+
+  .adminAddPersonalityPicturePlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .adminAddPersonalityLeft label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityLeft input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 12px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 15px;
+  }
+
+  .adminAddPersonalityInfos input,
+  .adminAddPersonalityInfos select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityBiography label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    gap: 5px;
+    color: #ffb20c;
+  }
+
+  .adminAddPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddPersonalityFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminAddPersonalityFilmography h3 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 22px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+  }
+
+  .adminAddFilmographyForm input,
+  .adminAddFilmographyForm select {
+    width: 100%;
+    height: auto;
+    padding: 8px 12px;
+    font-size: 12px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminAddFilmographyForm button {
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminAddFilmographyForm button:active {
+    color: black;
+    background-color: green;
+  }
+
+  .adminAddFilmographyList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyList p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .adminAddFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard h4 {
+    width: 160px;
+    height: auto;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster {
+    width: 160px;
+    height: 230px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminAddFilmographyCard p {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminAddFilmographyCard button {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 14px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+
+  .adminAddFilmographyCard button:active {
+    color: black;
+    background-color: red;
+  }
+}

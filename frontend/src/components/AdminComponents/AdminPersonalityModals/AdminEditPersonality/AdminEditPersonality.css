@@ -1,0 +1,1547 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .adminEditPersonalityForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader label {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader input {
+    width: 30rem;
+    height: 100%;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminEditPersonalityActions button {
+    width: auto;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditPersonalityActions button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .adminEditPersonalityFormBody input,
+  .adminEditPersonalityFormBody select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: auto;
+  }
+
+  .adminEditPersonalityPicture {
+    width: 20rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditPersonalityFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography label {
+    font-size: 20px;
+    align-items: flex-start;
+  }
+
+  .adminEditPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .adminEditFilmographyList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .adminEditFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyCard h4 {
+    width: 15rem;
+    height: auto;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .adminEditFilmographyPoster {
+    width: 15rem;
+    height: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditFilmographyPosterHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard input {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  /* Formulaire d'ajout de casting */
+  .adminEditFilmographyAdd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+    border-radius: 8px;
+  }
+
+  .adminEditFilmographyAdd select,
+  .adminEditFilmographyAdd input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminEditFilmographyAdd select {
+    min-width: 200px;
+  }
+
+  .adminEditFilmographyAdd input {
+    width: 100%;
+  }
+
+  .adminEditFilmographyAdd button {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyAdd button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  /* Boutons d'action sur les cartes */
+  .adminEditFilmographyCardActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  .adminEditFilmographyCardActions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn:hover {
+    color: black;
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn:hover {
+    color: white;
+    background-color: #f44336;
+    border-color: #f44336;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .adminEditPersonalityForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityFormHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader label {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader input {
+    width: 30rem;
+    height: 100%;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    gap: 20px;
+  }
+
+  .adminEditPersonalityActions button {
+    width: auto;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditPersonalityActions button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .adminEditPersonalityFormBody input,
+  .adminEditPersonalityFormBody select {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: auto;
+  }
+
+  .adminEditPersonalityPicture {
+    width: 18rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditPersonalityFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography label {
+    font-size: 20px;
+    align-items: flex-start;
+  }
+
+  .adminEditPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .adminEditFilmographyList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .adminEditFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyCard h4 {
+    width: 210px;
+    height: auto;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .adminEditFilmographyPoster {
+    width: 210px;
+    height: 300px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditFilmographyPosterHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard input,
+  .adminEditFilmographyCard select {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  /* Formulaire d'ajout de casting */
+  .adminEditFilmographyAdd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+    border-radius: 8px;
+  }
+
+  .adminEditFilmographyAdd select,
+  .adminEditFilmographyAdd input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminEditFilmographyAdd select {
+    min-width: 200px;
+  }
+
+  .adminEditFilmographyAdd input {
+    width: 100%;
+  }
+
+  .adminEditFilmographyAdd button {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyAdd button:hover {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  /* Boutons d'action sur les cartes */
+  .adminEditFilmographyCardActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  .adminEditFilmographyCardActions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn:hover {
+    color: black;
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn:hover {
+    color: white;
+    background-color: #f44336;
+    border-color: #f44336;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .adminEditPersonalityForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityFormHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader label {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader input {
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityActions button {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditPersonalityActions button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    gap: 5px;
+  }
+
+  .adminEditPersonalityFormBody input,
+  .adminEditPersonalityFormBody select {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .adminEditPersonalityPicture {
+    width: 15rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditPersonalityFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography label {
+    font-size: 20px;
+    align-items: flex-start;
+  }
+
+  .adminEditPersonalityBiography textarea {
+    width: 100%;
+    height: 15vh;
+    overflow-y: auto;
+    font-size: 18px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .adminEditFilmographyList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .adminEditFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyCard h4 {
+    width: 11rem;
+    height: auto;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .adminEditFilmographyPoster {
+    width: 11rem;
+    height: 16rem;
+    border: 4px solid orange;
+  }
+
+  .adminEditFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditFilmographyPosterHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard input,
+  .adminEditFilmographyCard select {
+    width: 11rem;
+    height: auto;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  /* Formulaire d'ajout de casting */
+  .adminEditFilmographyAdd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+    border-radius: 8px;
+  }
+
+  .adminEditFilmographyAdd select,
+  .adminEditFilmographyAdd input {
+    padding: 5px 10px;
+    font-size: 18px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminEditFilmographyAdd select {
+    width: 100%;
+  }
+
+  .adminEditFilmographyAdd input {
+    width: 100%;
+  }
+
+  .adminEditFilmographyAdd button {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyAdd button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  /* Boutons d'action sur les cartes */
+  .adminEditFilmographyCardActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  .adminEditFilmographyCardActions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn:active {
+    color: black;
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn:active {
+    color: white;
+    background-color: #f44336;
+    border-color: #f44336;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .adminEditPersonalityForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityForm::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .adminEditPersonalityFormHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader label {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 5px;
+    font-size: 18px;
+    color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormHeader input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityActions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityActions button {
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .adminEditPersonalityActions button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBody label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    gap: 5px;
+  }
+
+  .adminEditPersonalityFormBody input,
+  .adminEditPersonalityFormBody select {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormBodyLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .adminEditPersonalityPicture {
+    width: 10rem;
+    height: auto;
+    margin: auto;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityPicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditPersonalityFormBodyRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+  }
+
+  .adminEditPersonalityInfos {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityInfos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    font-size: 14px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityBiography label {
+    font-size: 20px;
+    align-items: flex-start;
+  }
+
+  .adminEditPersonalityBiography textarea {
+    width: 100%;
+    height: 20vh;
+    overflow-y: auto;
+    font-size: 15px;
+    text-align: justify;
+    padding: 5px;
+    resize: none;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditPersonalityFormFilmography {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection h4 {
+    width: 100%;
+    height: auto;
+    font-size: 22px;
+    padding: 5px;
+    text-align: center;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographySection p {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .adminEditFilmographyList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .adminEditFilmographyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    border: 4px solid #ffb20c;
+  }
+
+  .adminEditFilmographyCard h4 {
+    width: 160px;
+    height: auto;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .adminEditFilmographyPoster {
+    width: 160px;
+    height: 230px;
+    border: 4px solid orange;
+  }
+
+  .adminEditFilmographyPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .adminEditFilmographyPosterHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    gap: 5px;
+  }
+
+  .adminEditFilmographyCard input,
+  .adminEditFilmographyCard select {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    border: 4px solid #ffb20c;
+  }
+
+  /* Formulaire d'ajout de casting */
+  .adminEditFilmographyAdd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(255, 178, 12, 0.1);
+    border: 2px dashed #ffb20c;
+    border-radius: 8px;
+  }
+
+  .adminEditFilmographyAdd select,
+  .adminEditFilmographyAdd input {
+    padding: 5px 10px;
+    font-size: 13px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+  }
+
+  .adminEditFilmographyAdd select {
+    min-width: 200px;
+  }
+
+  .adminEditFilmographyAdd input {
+    width: 100%;
+  }
+
+  .adminEditFilmographyAdd button {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyAdd button:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  /* Boutons d'action sur les cartes */
+  .adminEditFilmographyCardActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin-top: 5px;
+  }
+
+  .adminEditFilmographyCardActions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 20px;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .saveBtn:active {
+    color: black;
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn {
+    color: #ffb20c;
+    background-color: black;
+  }
+
+  .adminEditFilmographyCardActions .deleteBtn:active {
+    color: white;
+    background-color: #f44336;
+    border-color: #f44336;
+  }
+}
