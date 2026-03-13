@@ -14,7 +14,7 @@ function FooterPhone() {
     <div className="footerPhone">
       <ul>
         <li>
-          <Link to="/films">
+          <Link to="/movies">
             <FontAwesomeIcon icon={faFilm} />
             Films
           </Link>
