@@ -147,7 +147,7 @@ CREATE TABLE
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         season_number INT NOT NULL,
-        poster VARCHAR(255) NULL,
+        season_poster VARCHAR(255) NULL,
         nbEpisodesSeason INT NULL,
         episodes INT,
         first_episode_date DATE NULL,
@@ -159,7 +159,7 @@ INSERT INTO
     seasons (
         serie_id,
         season_number,
-        poster,
+        season_poster,
         nbEpisodesSeason,
         episodes,
         first_episode_date,
