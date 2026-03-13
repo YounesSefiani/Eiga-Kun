@@ -66,8 +66,8 @@ const uploadSeasons = require("./Middlewares/Multer/MulterSeasons");
 
 router.get("/seasons", seasonsControllers.browseSeasons);
 router.get("/seasons/:id", seasonsControllers.readSeason);
-router.post("/seasons", verifyToken, uploadSeasons.single("poster"), seasonsControllers.addSeason);
-router.put("/seasons/:id", verifyToken, uploadSeasons.single("poster"), seasonsControllers.editSeason);
+router.post("/seasons", verifyToken, uploadSeasons.single("season_poster"), seasonsControllers.addSeason);
+router.put("/seasons/:id", verifyToken, uploadSeasons.single("season_poster"), seasonsControllers.editSeason);
 router.delete("/seasons/:id", verifyToken, seasonsControllers.destroySeason);
 
 // EPISODES //

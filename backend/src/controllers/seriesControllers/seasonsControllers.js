@@ -15,11 +15,18 @@ const browseSeasons = async (req, res, next) => {
 // R - BREAD - READ (READ ONE SEASON)
 
 const readSeason = async (req, res, next) => {
-  const season = await tables.seasons.readSeasonId(req.params.id);
-  if (!season) {
-    return res.status(404).json({ error: "Season not found" });
-  } else {
-    res.json(season);
+  try {
+    const seasonId = req.params.id;
+    const season = await tables.seasons.readSeasonId(seasonId);
+    if (!season) {
+      return res.status(404).json({ error: "Saison non trouvée" });
+    }
+
+    const episodes = await tables.episodes.readEpisodesSeason(seasonId);
+    season.episodes = episodes || [];
+    res.status(200).json(season);
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -35,9 +42,9 @@ const editSeason = async (req, res, next) => {
     const updatedSeasonDatas = {
       serie_id: updateSeason.serie_id || season.serie_id,
       season_number: updateSeason.season_number || season.season_number || null,
-      poster: file
+      season_poster: file
         ? file.filename
-        : updateSeason.poster || season.poster || null,
+        : updateSeason.season_poster || season.season_poster || null,
       nbEpisodesSeason:
         updateSeason.nbEpisodesSeason || season.nbEpisodesSeason || null,
       episodes: updateSeason.episodes || season.episodes || null,
@@ -71,7 +78,7 @@ const addSeason = async (req, res, next) => {
 
   const seasonDatas = {
     ...season,
-    poster: file?.poster ? file.poster[0].filename : season.poster || null,
+    season_poster: file ? file.filename : season.season_poster || null,
   }
 
   try {

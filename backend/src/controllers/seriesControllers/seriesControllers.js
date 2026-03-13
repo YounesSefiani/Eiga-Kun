@@ -65,7 +65,7 @@ const editSerie = async (req, res, next) => {
     const updatedSerieDatas = {
       id,
       title: updateSerie.title || serie.title,
-      release_date: updateSerie.release_date || serie.release_date || null,
+      beginning_date: updateSerie.beginning_date || serie.beginning_date || null,
       ending_date: updateSerie.ending_date || serie.ending_date || null,
       genre: updateSerie.genre || serie.genre || null,
       theme: updateSerie.theme || serie.theme || null,

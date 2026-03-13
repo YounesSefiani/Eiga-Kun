@@ -76,11 +76,11 @@ class SeasonManager extends AbstractManager {
 
       // Création de la saison
       const [resultSeason] = await this.database.query(
-        `INSERT INTO ${this.table} (serie_id, season_number, poster, nbEpisodesSeason, episodes, first_episode_date, last_episode_date) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO ${this.table} (serie_id, season_number, season_poster, nbEpisodesSeason, episodes, first_episode_date, last_episode_date) VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [
           season.serie_id,
           season.season_number,
-          season.poster,
+          season.season_poster,
           season.nbEpisodesSeason,
           season.episodes,
           season.first_episode_date,
@@ -190,11 +190,11 @@ class SeasonManager extends AbstractManager {
       }
 
       const [resultSeason] = await this.database.query(
-        `UPDATE ${this.table} SET serie_id = ?, season_number = ?, poster = ?, nbEpisodesSeason = ?, episodes = ?, first_episode_date = ?, last_episode_date = ? WHERE id = ?`,
+        `UPDATE ${this.table} SET serie_id = ?, season_number = ?, season_poster = ?, nbEpisodesSeason = ?, episodes = ?, first_episode_date = ?, last_episode_date = ? WHERE id = ?`,
         [
           season.serie_id,
           season.season_number,
-          season.poster,
+          season.season_poster,
           season.nbEpisodesSeason,
           season.episodes,
           season.first_episode_date,

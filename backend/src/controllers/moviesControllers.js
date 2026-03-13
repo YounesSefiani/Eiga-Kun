@@ -53,26 +53,28 @@ const editMovie = async (req, res, next) => {
 
     const updatedMovieDatas = {
         id,
-      title: updateMovie.title || movie.title,
-      release_date: updateMovie.release_date || movie.release_date || null,
-      genre: updateMovie.genre || movie.genre || null,
-      theme: updateMovie.theme || movie.theme || null,
-      universe: updateMovie.universe || movie.universe || null,
-      subUniverse: updateMovie.subUniverse || movie.subUniverse || null,
-      synopsis: updateMovie.synopsis || movie.synopsis || null,
+      title: updateMovie.title !== undefined ? updateMovie.title : movie.title,
+      release_date: updateMovie.release_date !== undefined ? updateMovie.release_date || null : movie.release_date,
+      genre: updateMovie.genre !== undefined ? updateMovie.genre || null : movie.genre,
+      theme: updateMovie.theme !== undefined ? updateMovie.theme || null : movie.theme,
+      universe: updateMovie.universe !== undefined ? updateMovie.universe || null : movie.universe,
+      subUniverse: updateMovie.subUniverse !== undefined ? updateMovie.subUniverse || null : movie.subUniverse,
+      synopsis: updateMovie.synopsis !== undefined ? updateMovie.synopsis || null : movie.synopsis,
       poster: files?.poster
         ? files.poster[0].filename
-        : updateMovie.poster || movie.poster || null,
-      logo: files?.logo ? files.logo[0].filename : updateMovie.logo || movie.logo || null,
+        : updateMovie.poster !== undefined ? updateMovie.poster || null : movie.poster,
+      logo: files?.logo 
+        ? files.logo[0].filename 
+        : updateMovie.logo !== undefined ? updateMovie.logo || null : movie.logo,
       background: files?.background
         ? files.background[0].filename
-        : updateMovie.background || movie.background || null,
-      trailer: updateMovie.trailer || movie.trailer || null,
-      country: updateMovie.country || movie.country || null,
-      duration: updateMovie.duration || movie.duration || null,
-      screen: updateMovie.screen || movie.screen || null,
-      streaming: updateMovie.streaming || movie.streaming || null,
-      original: updateMovie.original || movie.original || null
+        : updateMovie.background !== undefined ? updateMovie.background || null : movie.background,
+      trailer: updateMovie.trailer !== undefined ? updateMovie.trailer || null : movie.trailer,
+      country: updateMovie.country !== undefined ? updateMovie.country || null : movie.country,
+      duration: updateMovie.duration !== undefined ? updateMovie.duration || null : movie.duration,
+      screen: updateMovie.screen !== undefined ? updateMovie.screen || null : movie.screen,
+      streaming: updateMovie.streaming !== undefined ? updateMovie.streaming || null : movie.streaming,
+      original: updateMovie.original !== undefined ? updateMovie.original || null : movie.original
     };
 
     await tables.movies.updateMovie(id, updatedMovieDatas);
