@@ -14,13 +14,19 @@
 
 /* VERSION TABLET */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .footerPhone {
+  footer, .footerPhone {
     display: flex;
-    width: auto;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
     height: auto;
+    margin-top: 0 !important;
     background-color: black;
     border: 4px solid #ffb20c;
+    flex-shrink: 0;
   }
+
+
 
   .footerPhone ul {
     display: flex;
@@ -30,7 +36,6 @@
     width: 100%;
     height: auto;
     list-style-type: none;
-    padding: 10px;
     padding: 10px;
     margin: 0;
   }
@@ -69,16 +74,16 @@
 
 /* VERSION PHONE */
 @media screen and (max-width: 767px) {
-  .footerPhone {
+  footer, .footerPhone {
     display: flex;
-    width: 100%;
-    height: 10vh;
     position: sticky;
     bottom: 0;
-    width: auto;
+    width: 100%;
     height: auto;
+    margin-top: auto !important;
     background-color: black;
     border: 4px solid #ffb20c;
+    flex-shrink: 0;
   }
 
   .footerPhone ul {
@@ -89,7 +94,6 @@
     width: 100%;
     height: auto;
     list-style-type: none;
-    padding: 10px;
     padding: 10px;
     margin: 0;
   }
