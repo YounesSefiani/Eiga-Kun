@@ -58,7 +58,7 @@ class SerieManager extends AbstractManager {
   // U - CRUD - Update
   async updateSerie(id, serie) {
     const [updatedSerie] = await this.database.query(
-      `UPDATE ${this.table} SET title = ?, poster = ?, background = ?, logo = ?, trailer = ?, synopsis = ?, genre = ?, theme = ?, universe = ?, subUniverse = ?, beginning_date = ?, ending_date = ?, serie_average_duration = ?, statut = ?, nbSeasons = ?, seasons = ?, nbEpisodesSerie = ?, episodes = ?, duration = ?, country = ?, screen = ?, streaming = ?, original = ? WHERE id = ?`,
+      `UPDATE ${this.table} SET title = ?, poster = ?, background = ?, logo = ?, trailer = ?, synopsis = ?, genre = ?, theme = ?, universe = ?, subUniverse = ?, beginning_date = ?, ending_date = ?, serie_average_duration = ?, statut = ?, nbSeasons = ?, nbEpisodesSerie = ?, duration = ?, country = ?, screen = ?, streaming = ?, original = ? WHERE id = ?`,
       [
         serie.title,
         serie.poster,
@@ -75,9 +75,7 @@ class SerieManager extends AbstractManager {
         serie.serie_average_duration,
         serie.statut,
         serie.nbSeasons,
-        serie.seasons,
         serie.nbEpisodesSerie,
-        serie.episodes,
         serie.duration,
         serie.country,
         serie.screen,

@@ -4,7 +4,7 @@ const path = require ('path');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         const folderMap = {
-            poster: '../../assets/Series/Seasons',
+            season_poster: '../../assets/Series/Seasons',
         };
 
         const destination = folderMap[file.fieldname];

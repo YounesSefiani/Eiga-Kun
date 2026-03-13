@@ -46,7 +46,7 @@ class EpisodeManager extends AbstractManager {
           `SELECT * FROM ${this.table} WHERE season_id = ? AND episode_number = ?`,
           [episode.season_id, episode.episode_number - 1]
         );
-        if (previousEpisode.length < episode.episode_number - 1) {
+        if (previousEpisode.length === 0) {
           const [episodesofSeason] = await this.database.query(
             `SELECT * FROM ${this.table} WHERE season_id = ? ORDER BY episode_number`,
             [episode.season_id]
@@ -66,6 +66,7 @@ class EpisodeManager extends AbstractManager {
         }
       }
 
+      const [result] =
       await this.database.query(
         `INSERT INTO ${this.table} (serie_id, season_id, episode_number, title, episode_image, synopsis, release_date, duration) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
         [
@@ -79,7 +80,7 @@ class EpisodeManager extends AbstractManager {
           episode.duration,
         ]
       );
-      return { success: true, message: "Episodes ajouté !" };
+      return { success: true, message: "Episodes ajouté !", id: result.insertId };
     } catch (error) {
       if (error.code === "ER_DUP_ENTRY") {
         return { success: false, message: "Episode existant !" };
@@ -163,7 +164,7 @@ class EpisodeManager extends AbstractManager {
           `SELECT * FROM ${this.table} WHERE season_id = ? AND episode_number = ?`,
           [episode.season_id, episode.episode_number - 1]
         );
-        if (previousEpisode.length < episode.episode_number - 1) {
+        if (previousEpisode.length === 0) {
           const [episodesofSeason] = await this.database.query(
             `SELECT * FROM ${this.table} WHERE season_id = ? ORDER BY episode_number`,
             [episode.season_id]

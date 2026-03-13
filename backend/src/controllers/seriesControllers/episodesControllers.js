@@ -70,13 +70,13 @@ const addEpisode = async (req, res, next) => {
 
   const episodeDatas = {
     ...episode,
-    episode_image: file?.episode_image ? file.episode_image[0].filename : episode.episode_image || null,
+    episode_image: file ? file.filename : episode.episode_image || null,
   }
 
   try {
     const createdEpisode = await tables.episodes.createEpisode(episodeDatas);
     res.status(201).json({
-      id: createdEpisode,
+      id: createdEpisode.id,
       episodeDatas,
     });
   } catch (error) {

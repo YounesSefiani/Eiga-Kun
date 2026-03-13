@@ -16,43 +16,89 @@ const browseUsers = async (req, res) => {
 
 // R - BREAD - READ ONE USER
 const readOneUser = async (req, res) => {
-  const user = await tables.users.readUserId(req.params.id);
-  if (!user) {
-    return res.status(404).json({ error: "User not found" });
-  } else {
-    res.json(user);
+  try {
+    const userId = req.params.id;
+    const user = await tables.users.readUserId(userId);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    const favoritesMovies =
+      await tables.userFavorites.getUserFavoritesMovies(userId);
+    user.favoritesMovies = favoritesMovies || [];
+
+    const favoritesSeries =
+      await tables.userFavorites.getUserFavoritesSeries(userId);
+    user.favoritesSeries = favoritesSeries || [];
+
+    const favoritesPersonalities =
+      await tables.userFavorites.getUserFavoritesPersonalities(userId);
+    user.favoritesPersonalities = favoritesPersonalities || [];
+
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
 // E - BREAD - EDIT USER
 const editUser = async (req, res, next) => {
-  const updateUser = req.body;
-  const { id } = req.params;
   try {
-    await tables.users.updateUser(id, updateUser);
-    res.status(200).json({ ...updateUser, id: parseInt(id, 10) });
-  } catch (error) {
-    next(error);
+    const { id } = req.params;
+    const updateUser = req.body;
+    const { file } = req;
+
+    const user = await tables.users.readUserId(id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    const userDatas = {
+      username: updateUser.username || user.username,
+      birthdate: updateUser.birthdate || user.birthdate,
+      avatar: file ? file.filename : updateUser.avatar || user.avatar || null,
+      email: updateUser.email || user.email,
+      password: updateUser.password || user.password,
+      role: updateUser.role || user.role,
+      isValidated: updateUser.isValidated || user.isValidated,
+    };
+
+    await tables.users.updateUser(id, userDatas);
+
+    const updatedUser = await tables.users.readUserId(id);
+
+    if (!updatedUser) {
+      return res.status(404).json({ error: "User not found after update" });
+    }
+
+    res.status(200).json({
+      message: "User mise à jour avec succès",
+      user: updatedUser,
+    });
+  } catch (err) {
+    console.error("Erreur lors de la mise à jour de l'utilisateur :", err);
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
   }
 };
 
 // A - BREAD - ADD USER
 const addUser = async (req, res, next) => {
   const user = req.body;
-  const {file} = req;
+  const { file } = req;
 
   const userDatas = {
     ...user,
-    avatar: file.avatar ? file.avatar[0].filename : user.avatar || null,
-  }
+    avatar: file ? file.filename : null,
+  };
 
   try {
-    const createdUser = await tables.users.createUser(user);
+    const createdUser = await tables.users.createUser(userDatas);
 
     const verificationToken = jwt.sign(
       { email: user.email, isValidated: user.isValidated },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "1h" },
     );
 
     const transporter = nodemailer.createTransport({
@@ -63,7 +109,7 @@ const addUser = async (req, res, next) => {
       },
     });
 
-    const validationLink = `http://localhost:3994/api/users/verify/${verificationToken}`;
+    const validationLink = `http://localhost:5173/auth/validate/${verificationToken}`;
 
     const mailOptions = {
       from: process.env.EMAIL,
@@ -73,7 +119,7 @@ const addUser = async (req, res, next) => {
     };
 
     await transporter.sendMail(mailOptions);
-    res.status(201).json({id: createdUser, userDatas});
+    res.status(201).json({ id: createdUser, userDatas });
   } catch (error) {
     next(error);
   }
@@ -107,7 +153,7 @@ const login = async (req, res, next) => {
 
     const isPasswordValid = await argon2.verify(
       user.password,
-      req.body.password
+      req.body.password,
     );
     if (!isPasswordValid) {
       return res.status(401).json({ error: "Mot de passe incorrect" });
@@ -177,7 +223,7 @@ const forgotPassword = async (req, res, next) => {
       },
     });
 
-    const resetLink = `http://localhost:3994/api/users/reset-password/${resetToken}`;
+    const resetLink = `http://localhost:5173/auth/reset-password/${resetToken}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -187,7 +233,6 @@ const forgotPassword = async (req, res, next) => {
     };
 
     await transporter.sendMail(mailOptions);
-
 
     return res.json({
       message: "Un lien de réinitialisation a été envoyé à votre boite mail.",

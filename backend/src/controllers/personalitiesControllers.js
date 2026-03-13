@@ -61,7 +61,7 @@ const editPersonality = async (req, res, next) => {
         updatePersonality,
         "deathdate"
       )
-        ? updatePersonality.deathdate
+        ? (updatePersonality.deathdate || null)
         : personality.deathdate,
       picture: file
         ? file.filename
@@ -86,6 +86,12 @@ const editPersonality = async (req, res, next) => {
         .json({ message: "Personnalité non trouvée ou mise à jour échouée." });
     }
 
+    // Inclure la filmographie dans la réponse
+    const movies = await tables.castings.readPersonalityMovies(id);
+    updatedPersonality.movies = movies || [];
+    const series = await tables.castings.readPersonalitySeries(id);
+    updatedPersonality.series = series || [];
+
     return res.status(200).json({
       message: "Personnalité mise à jour avec succès",
       updatePersonality: updatedPersonality,
@@ -104,13 +110,14 @@ const addPersonality = async (req, res, next) => {
 
   const personalityDatas = {
     ...personality,
-    picture: file?.picture ? file.picture[0].filename : personality.picture || null,
+    deathdate: personality.deathdate || null,
+    picture: file ? file.filename : personality.picture || null,
   };
   try {
     const createPersonality = await tables.personalities.createPersonality(
       personalityDatas
     );
-    res.status(201).json({ id: createPersonality, personalityDatas });
+    res.status(201).json({ id: createPersonality.insertId, personalityDatas });
   } catch (error) {
     next(error);
   }
