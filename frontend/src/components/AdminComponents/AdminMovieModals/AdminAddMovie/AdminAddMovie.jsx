@@ -138,6 +138,8 @@ function AdminAddMovie({ onClose, onMovieAdded }) {
     );
   };
 
+ 
+
   // Pour un film en cours d'ajout, pas besoin de sauvegarder en base
   // car le casting sera envoyé lors de la soumission du formulaire
   const handleRoleSave = (castId) => {
@@ -612,7 +614,7 @@ function AdminAddMovie({ onClose, onMovieAdded }) {
                         />
                       ) : (
                         <div className="castPictureHolder">
-                          <FontAwesomeIcon icon={faImage} />
+                          <FontAwesomeIcon icon={faStar} />
                         </div>
                       )}
                     </div>

@@ -28,19 +28,6 @@
     border: 4px solid #ffb20c;
   }
 
-  .adminAddMovieModal::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  .adminAddMovieModal::-webkit-scrollbar-track {
-    background: black;
-  }
-
-  .adminAddMovieModal::-webkit-scrollbar-thumb {
-    background: #ffb20c;
-    border-radius: 4px;
-  }
-
   .adminAddMovieModal h2 {
     width: auto;
     font-size: 30px;
@@ -57,6 +44,19 @@
     gap: 10px;
     padding: 5px;
     color: #ffb20c;
+  }
+
+    .adminAddMovieForm::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .adminAddMovieForm::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  .adminAddMovieForm::-webkit-scrollbar-thumb {
+    background: #ffb20c;
+    border-radius: 4px;
   }
 
   .adminAddMovieForm svg {
