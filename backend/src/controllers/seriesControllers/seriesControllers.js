@@ -38,10 +38,13 @@ const readFullSerie = async (req, res, next) => {
       })
     );
 
+    const reviews = await tables.userReviews.readSerieReviews(serie.id);
+
     const fullSerie = {
       ...serie,
       seasons: seasonsWithEpisodes,
       casting: casting || [],
+      reviews: reviews || [],
     };
 
     res.json(fullSerie);
