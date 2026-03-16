@@ -31,7 +31,9 @@ const readFullMovie = async (req, res, next) => {
         }
 
         const casting = await tables.castings.readCastingMovie(movieId);
-        movie.casting = casting || [],
+        movie.casting = casting || [];
+        const reviews = await tables.userReviews.readMovieReviews(movieId);
+        movie.reviews = reviews || [];
         res.status(200).json(movie);
     } catch (error) {
         next(error);

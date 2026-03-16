@@ -38,6 +38,8 @@ const readPersonalityFilmography = async (req, res, next) => {
     personality.movies = movies || [];
     const series = await tables.castings.readPersonalitySeries(personalityId);
     personality.series = series || [];
+    const reviews = await tables.userReviews.readPersonalityReviews(personalityId);
+    personality.reviews = reviews || [];
     res.status(200).json(personality);
   } catch (error) {
     next(error);
