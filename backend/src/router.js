@@ -241,4 +241,38 @@ router.put(
   usersReviewsControllers.editPersonalityReview
 );
 
+// SEARCH //
+router.get("/search", async (req, res) => {
+  const { q } = req.query;
+  
+  if (!q || q.trim() === "") {
+    return res.json({ movies: [], series: [], personalities: [] });
+  }
+
+  try {
+    const tables = require("./tables");
+    const searchTerm = `%${q}%`;
+
+    const [movies] = await tables.movies.database.query(
+      "SELECT id, title, poster, release_date FROM movies WHERE title LIKE ? LIMIT 5",
+      [searchTerm]
+    );
+
+    const [series] = await tables.series.database.query(
+      "SELECT id, title, poster, beginning_date, ending_date FROM series WHERE title LIKE ? LIMIT 5",
+      [searchTerm]
+    );
+
+    const [personalities] = await tables.personalities.database.query(
+      "SELECT id, fullname, picture, profession FROM personalities WHERE fullname LIKE ? LIMIT 5",
+      [searchTerm]
+    );
+
+    res.json({ movies, series, personalities });
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).json({ error: "Erreur lors de la recherche" });
+  }
+});
+
 module.exports = router;

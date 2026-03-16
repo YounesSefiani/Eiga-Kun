@@ -54,6 +54,115 @@
     background-color: #ffb20c;
     color: black;
   }
+
+      .search-container {
+    width: 80%;
+    position: relative;
+  }
+
+  .search-container input {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #ffb20c;
+  }
+
+  /* Dropdown des résultats */
+  .search-results-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: #ffb20c;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+    margin-top: 4px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar-track {
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .search-category {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 4px 0;
+    border-bottom: 2px solid #ffb20c;
+  }
+
+  .search-category:last-child {
+    border-bottom: none;
+  }
+
+  .search-category h4 {
+    padding: 4px 2px;
+    margin: 0;
+    font-size: 16px;
+    color: #ffb20c;
+    text-transform: uppercase;
+  }
+
+  .search-result-item {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    cursor: pointer;
+    border: 2px solid #ffb20c;
+    transition: background-color 0.2s;
+  }
+
+  .search-result-item:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .search-result-item img {
+    width: 100px;
+    height: 150px;
+    object-fit: fill;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    transition: 0.2s ease;
+  }
+
+  .search-result-item:active img {
+    border: 2px solid black;
+  }
+
+  .search-result-item span {
+    color: #ffb20c;
+    font-size: 18px;
+    transition: ease 0.2s;
+  }
+
+  .search-result-item:active span {
+    color: black;
+  }
 }
 
 /* VERSION PHONE */
@@ -97,6 +206,115 @@
 
   .headerPhone button:active {
     background-color: #ffb20c;
+    color: black;
+  }
+
+    .search-container {
+    width: 80%;
+    position: relative;
+  }
+
+  .search-container input {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #ffb20c;
+  }
+
+  /* Dropdown des résultats */
+  .search-results-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: #ffb20c;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 5px;
+    margin-top: 4px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .search-results-dropdown::-webkit-scrollbar-track {
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .search-category {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 4px 0;
+    border-bottom: 2px solid #ffb20c;
+  }
+
+  .search-category:last-child {
+    border-bottom: none;
+  }
+
+  .search-category h4 {
+    padding: 4px 2px;
+    margin: 0;
+    font-size: 16px;
+    color: #ffb20c;
+    text-transform: uppercase;
+  }
+
+  .search-result-item {
+    display: flex;
+    width: auto;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    cursor: pointer;
+    border: 2px solid #ffb20c;
+    transition: background-color 0.2s;
+  }
+
+  .search-result-item:active {
+    color: black;
+    background-color: #ffb20c;
+  }
+
+  .search-result-item img {
+    width: 70px;
+    height: 100px;
+    object-fit: fill;
+    border: 2px solid #ffb20c;
+    border-radius: 4px;
+    transition: 0.2s ease;
+  }
+
+  .search-result-item:active img {
+    border: 2px solid black;
+  }
+
+  .search-result-item span {
+    color: #ffb20c;
+    font-size: 14px;
+    transition: ease 0.2s;
+  }
+
+  .search-result-item:active span {
     color: black;
   }
 }
