@@ -7,12 +7,13 @@ import FooterPhone from "../../components/Header/HeaderFooterPhone/FooterPhone/F
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import EigaKunLogo from "../../assets/EigaKunLogo.png";
-import "./UserPage.css";
 import UserFavoritesMovies from "./UserFavorites/UserFavoritesMovies/UserFavoritesMovies";
 import connexion from "../../services/connexion";
 import UserFavoritesSeries from "./UserFavorites/UserFavoritesSeries/UserFavoritesSeries";
 import UserFavoritesPersonalities from "./UserFavorites/UserFavoritesPersonalities/UserFavoritesPersonalities";
+import UserReviewsRatingsPage from "./UserReviewsRatingsPage/UserReviewsRatingsPage";
 import UserUpdate from "./UserUpdate/UserUpdate";
+import "./UserPage.css";
 
 function UserPage() {
   const { user, logout, token, handleAuthError, sessionExpired, isLoading } =
@@ -23,6 +24,7 @@ function UserPage() {
   const [favoritesMovies, setFavoritesMovies] = useState([]);
   const [favoritesSeries, setFavoritesSeries] = useState([]);
   const [favoritesPersonalities, setFavoritesPersonalities] = useState([]);
+  const [reviewsRatings, setReviewsRatings] = useState([]);
   useEffect(() => {
     if ((!user || !token) && !sessionExpired) {
       navigate("/");
@@ -98,12 +100,37 @@ function UserPage() {
         }
       }
     };
+    fetchFavoritesPersonalities();
+
+    const fetchReviewsRatings = async () => {
+      if (user && token) {
+        try {
+          const response = await connexion.get(
+            `/reviews/users/${user.id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
+          setReviewsRatings(response.data);
+        } catch (error) {
+          handleAuthError(error);
+          console.error(
+            "Erreur lors de la récupération des notes et reviews:",
+            error,
+          );
+        }
+      }
+    };
+    fetchReviewsRatings();
     return () => {
       if (user && token)
         if (user && token) {
           fetchFavoritesMovies();
           fetchFavoritesSeries();
           fetchFavoritesPersonalities();
+          fetchReviewsRatings();
         }
     };
   }, [user, token, handleAuthError]);
@@ -115,13 +142,17 @@ function UserPage() {
 
   return (
     <div className="userPage">
-            <title>{`Page profil de "${user.username}" - EigaKun`}</title>
+      <title>{`Page profil de "${user.username}" - EigaKun`}</title>
       <Header />
       <HeaderPhone />
       <div className="userPageContent">
         <div className="userBar">
           <div className="userBarSections">
-            {user.role === "admin" && <button onClick={() => navigate(`/user/admin/${token}`)}>Mode Admin</button>}
+            {user.role === "admin" && (
+              <button onClick={() => navigate(`/user/admin/${token}`)}>
+                Mode Admin
+              </button>
+            )}
             <button onClick={() => setView("user")}>Mon profil</button>
             <button onClick={() => setView("favoritesMovies")}>
               Mes films
@@ -132,7 +163,7 @@ function UserPage() {
             <button onClick={() => setView("favoritesPersonalities")}>
               Mes personnalités
             </button>
-            <button>Mes reviews</button>
+            <button onClick={() => setView("userReviewsRatings")}>Mes reviews</button>
             <button onClick={() => setView("userUpdate")}>Paramètres</button>
           </div>
           <button onClick={logout}>Déconnexion</button>
@@ -172,6 +203,7 @@ function UserPage() {
             favoritesPersonalities={favoritesPersonalities}
           />
         )}
+        {view === "userReviewsRatings" && <UserReviewsRatingsPage reviewsRatings={reviewsRatings} />}
         {view === "userUpdate" && (
           <UserUpdate
             setView={setView}
