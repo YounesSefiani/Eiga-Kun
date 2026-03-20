@@ -1,0 +1,609 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .userMovieReviewsRatingsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewsRatingsSection h3 {
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    text-align: center;
+  }
+
+  .userMovieReviewsRatingsList {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35vh;
+    gap: 10px;
+    padding: 5px;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .movieReviewRatingCardPoster {
+    width: 13rem;
+    height: 100%;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieReviewRatingCardPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .userMovieReviewRatingCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieRatingSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieRatingSide span {
+    width: auto;
+    height: auto;
+    font-size: 20px !important;
+    font-style: normal !important;
+  }
+
+  .userMovieReviewRatingCardRight p {
+    width: 100%;
+    height: 20vh;
+    font-size: 16px;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight span {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-style: italic;
+    text-align: end;
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .userMovieReviewsRatingsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewsRatingsSection h3 {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    text-align: center;
+  }
+
+  .userMovieReviewsRatingsList {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 35vh;
+    gap: 5px;
+    padding: 5px;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .movieReviewRatingCardPoster {
+    width: 9rem;
+    height: 100%;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieReviewRatingCardPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .userMovieReviewRatingCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight h4 {
+    width: auto;
+    height: 15%;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+  }
+
+  .movieRatingSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieRatingSide span {
+    width: auto;
+    height: auto;
+    font-size: 14px !important;
+    font-style: normal !important;
+  }
+
+  .userMovieReviewRatingCardRight p {
+    width: 100%;
+    height: 20vh;
+    font-size: 13px;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight span {
+    width: auto;
+    height: auto;
+    font-size: 10px;
+    font-style: italic;
+    text-align: end;
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .userMovieReviewsRatingsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewsRatingsSection h3 {
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    color: #ffb20c;
+    text-align: center;
+  }
+
+  .userMovieReviewsRatingsList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+    gap: 5px;
+    padding: 5px;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .movieReviewRatingCardPoster {
+    width: 10rem;
+    height: 100%;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieReviewRatingCardPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .userMovieReviewRatingCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight h4 {
+    width: auto;
+    height: 30%;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+  }
+
+  .movieRatingSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieRatingSide span {
+    width: auto;
+    height: auto;
+    font-size: 18px !important;
+    font-style: normal !important;
+  }
+
+  .userMovieReviewRatingCardRight p {
+    width: 100%;
+    height: 20vh;
+    font-size: 16px;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight span {
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    font-style: italic;
+    text-align: end;
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .userMovieReviewsRatingsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewsRatingsSection h3 {
+    width: auto;
+    height: auto;
+    font-size: 20px;
+    color: #ffb20c;
+    text-align: center;
+  }
+
+  .userMovieReviewsRatingsList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewsRatingsList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+    gap: 5px;
+    padding: 5px;
+    margin: auto;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+  .movieReviewRatingCardPoster {
+    width: 7rem;
+    height: 100%;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieReviewRatingCardPoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .userMovieReviewRatingCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    gap: 5px;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight h4 {
+    width: auto;
+    height: 40%;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffb20c;
+  }
+
+  .movieRatingSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .movieRatingSide span {
+    width: auto;
+    height: auto;
+    font-size: 11px !important;
+    font-style: normal !important;
+  }
+
+  .userMovieReviewRatingCardRight p {
+    width: 100%;
+    height: 20vh;
+    font-size: 10px;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 5px;
+    border: 3px solid #ffb20c;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 5px;
+  }
+
+  .userMovieReviewRatingCardRight span {
+    width: auto;
+    height: auto;
+    font-size: 8px;
+    font-style: italic;
+    text-align: end;
+  }
+}
