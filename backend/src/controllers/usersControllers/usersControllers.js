@@ -35,6 +35,9 @@ const readOneUser = async (req, res) => {
       await tables.userFavorites.getUserFavoritesPersonalities(userId);
     user.favoritesPersonalities = favoritesPersonalities || [];
 
+    const userRatingsReviews = await tables.userReviews.readUserRatingsReviews(userId);
+    user.ratingsReviews = userRatingsReviews || [];
+
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });

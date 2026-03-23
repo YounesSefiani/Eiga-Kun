@@ -23,9 +23,23 @@ class UserReviewManager extends AbstractManager {
   }
 
   // R - CRUD - Read User Movie Reviews
+  async readUserRatingsReviews(userId) {
+    const [userRatingsReviews] = await this.database.query(
+      `SELECT ${this.table}.id, movies.title AS movie_title, movies.poster AS movie_poster, series.poster AS serie_poster, personalities.picture AS personality_picture, series.title AS serie_title, personalities.fullname AS personality_fullname, users.username AS user_username, movie_id, serie_id, personality_id, user_id, review, rating, ${this.table}.created_at, ${this.table}.updated_at
+        FROM ${this.table}
+        LEFT JOIN movies ON ${this.table}.movie_id = movies.id
+        LEFT JOIN series ON ${this.table}.serie_id = series.id
+        LEFT JOIN personalities ON ${this.table}.personality_id = personalities.id
+        JOIN users ON ${this.table}.user_id = users.id
+        WHERE ${this.table}.user_id = ?`,
+      [userId]
+    );
+    return userRatingsReviews;
+  }
+  
   async readMovieReviews(movieId) {
     const [movieReviews] = await this.database.query(
-      `SELECT ${this.table}.id, movie_id, movies.title AS movie_title, movies.poster AS movie_poster, users.username AS user_username, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
+      `SELECT ${this.table}.id, movie_id, movies.title AS movie_title, movies.poster AS movie_poster, users.username AS user_username, users.avatar AS user_avatar, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
         FROM ${this.table}
         JOIN movies ON ${this.table}.movie_id = movies.id
         JOIN users ON ${this.table}.user_id = users.id
@@ -49,7 +63,7 @@ class UserReviewManager extends AbstractManager {
 
   async readUserMoviesReviews(userId) {
     const [userMoviesReviews] = await this.database.query(
-      `SELECT ${this.table}.id, movies.title AS movie_title, users.username AS user_username, movie_id, user_id, review, rating, ${this.table}.created_at, ${this.table}.updated_at
+      `SELECT ${this.table}.id, movies.title AS movie_title, movies.poster AS movie_poster, users.username AS user_username, movie_id, user_id, review, rating, ${this.table}.created_at, ${this.table}.updated_at
         FROM ${this.table}
         JOIN movies ON ${this.table}.movie_id = movies.id
         JOIN users ON ${this.table}.user_id = users.id
@@ -94,7 +108,7 @@ class UserReviewManager extends AbstractManager {
   // R - CRUD - Read User Serie Reviews
   async readSerieReviews(serieId) {
     const [serieReviews] = await this.database.query(
-      `SELECT ${this.table}.id, serie_id, series.title AS serie_title, series.poster AS serie_poster, users.username AS user_username, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
+      `SELECT ${this.table}.id, serie_id, series.title AS serie_title, series.poster AS serie_poster, users.username AS user_username, users.avatar AS user_avatar, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
         FROM ${this.table}
         JOIN series ON ${this.table}.serie_id = series.id
         JOIN users ON ${this.table}.user_id = users.id
@@ -163,7 +177,7 @@ class UserReviewManager extends AbstractManager {
   // R - CRUD - Read User Personality Reviews
   async readPersonalityReviews(personalityId) {
     const [personalityReviews] = await this.database.query(
-      `SELECT ${this.table}.id, personality_id, personalities.fullname AS personality_fullname, personalities.picture AS personality_picture, users.username AS user_username, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
+      `SELECT ${this.table}.id, personality_id, personalities.fullname AS personality_fullname, personalities.picture AS personality_picture, users.username AS user_username, users.avatar AS user_avatar, ${this.table}.rating, ${this.table}.review, ${this.table}.created_at, ${this.table}.updated_at
         FROM ${this.table}
         JOIN personalities ON ${this.table}.personality_id = personalities.id
         JOIN users ON ${this.table}.user_id = users.id
