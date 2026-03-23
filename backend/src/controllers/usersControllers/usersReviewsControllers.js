@@ -13,10 +13,40 @@ const browseMovieReviews = async (req, res, next) => {
     const movieReviews = await tables.userReviews.readMovieReviews(
       req.params.movieId
     );
-    if (!movieReviews || movieReviews.length === 0) {
-      return res.status(404).json({ error: "No reviews found for this movie" });
+    
+    // Calculer la moyenne et le total
+    const totalReviews = movieReviews?.length || 0;
+    const averageRating = totalReviews > 0
+      ? movieReviews.reduce((sum, r) => sum + (r.rating || 0), 0) / totalReviews
+      : 0;
+    
+    res.json({
+      reviews: movieReviews || [],
+      totalReviews,
+      averageRating: Math.round(averageRating * 10) / 10,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const readUserRatingsReviews = async (req, res, next) => {
+  try {
+    const userId = req.params.userId;
+    const user = await tables.users.readUserId(userId);
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
-    res.json(movieReviews);
+    const userReviews = await tables.userReviews.readUserRatingsReviews(userId);
+    
+    // Formater les données par type
+    const formattedData = {
+      movies: userReviews?.filter(r => r.movie_id !== null) || [],
+      series: userReviews?.filter(r => r.serie_id !== null) || [],
+      personalities: userReviews?.filter(r => r.personality_id !== null) || [],
+    };
+    
+    res.json(formattedData);
   } catch (error) {
     next(error);
   }
@@ -164,10 +194,18 @@ const browseSerieReviews = async (req, res, next) => {
     const serieReviews = await tables.userReviews.readSerieReviews(
       req.params.serieId
     );
-    if (!serieReviews || serieReviews.length === 0) {
-      return res.status(404).json({ error: "No reviews found for this serie" });
-    }
-    res.json(serieReviews);
+    
+    // Calculer la moyenne et le total
+    const totalReviews = serieReviews?.length || 0;
+    const averageRating = totalReviews > 0
+      ? serieReviews.reduce((sum, r) => sum + (r.rating || 0), 0) / totalReviews
+      : 0;
+    
+    res.json({
+      reviews: serieReviews || [],
+      totalReviews,
+      averageRating: Math.round(averageRating * 10) / 10,
+    });
   } catch (error) {
     next(error);
   }
@@ -317,12 +355,18 @@ const browsePersonalityReviews = async (req, res, next) => {
     const personalityReviews = await tables.userReviews.readPersonalityReviews(
       req.params.personalityId
     );
-    if (!personalityReviews || personalityReviews.length === 0) {
-      return res
-        .status(404)
-        .json({ error: "No reviews found for this personality" });
-    }
-    res.json(personalityReviews);
+    
+    // Calculer la moyenne et le total
+    const totalReviews = personalityReviews?.length || 0;
+    const averageRating = totalReviews > 0
+      ? personalityReviews.reduce((sum, r) => sum + (r.rating || 0), 0) / totalReviews
+      : 0;
+    
+    res.json({
+      reviews: personalityReviews || [],
+      totalReviews,
+      averageRating: Math.round(averageRating * 10) / 10,
+    });
   } catch (error) {
     next(error);
   }
@@ -466,6 +510,7 @@ const addPersonalityReview = async (req, res, next) => {
 
 module.exports = {
   browseMovieReviews,
+  readUserRatingsReviews,
   readUserMoviesReviews,
   editMovieReview,
   addMovieReview,
