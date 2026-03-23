@@ -226,7 +226,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
     background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
     background-size: 240% 240%;
@@ -349,8 +349,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+    height: auto;
     position: relative;
     background: linear-gradient(302deg, #b70c4a, #ba10a3, #6a0984, #d6060c);
     background-size: 240% 240%;
@@ -362,7 +361,7 @@
     flex-direction: column;
     width: 100%;
     flex: 1;
-    min-height: 0;
+    height: 100%;
     border: 4px solid #ffb20c;
     border-top: none;
     border-bottom: none;

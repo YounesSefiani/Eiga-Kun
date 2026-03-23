@@ -462,7 +462,7 @@
     width: 100%;
     height: 80%;
     gap: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: black;
     border: 4px solid #ffb20c;
   }
@@ -482,14 +482,14 @@
     height: 100%;
     overflow-y: auto;
     gap: 10px;
-    padding: 10px;
+    padding: 5px;
     background-color: black;
     border: 4px solid #ffb20c;
     border-radius: 5px;
   }
 
   .userSerieReviewsRatingsList::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
 
   .userSerieReviewsRatingsList::-webkit-scrollbar-track {
@@ -506,13 +506,13 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 20vh;
+    height: 22vh;
     gap: 5px;
     padding: 5px;
     margin: auto;
     color: #ffb20c;
     background-color: black;
-    border: 4px solid #ffb20c;
+    border: 3px solid #ffb20c;
   }
 
   .userSerieReviewRatingCardLeft {
@@ -520,12 +520,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: auto;
+    width: 35%;
     height: auto;
   }
 
   .serieReviewRatingCardPoster {
-    width: 7rem;
+    width: 28vw;
     height: 100%;
     border: 3px solid #ffb20c;
   }
@@ -540,7 +540,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: auto;
+    width: 65%;
     height: auto;
     gap: 5px;
     padding: 5px;
@@ -548,9 +548,9 @@
   }
 
   .userSerieReviewRatingCardRight h4 {
-    width: auto;
-    height: 40%;
-    font-size: 14px;
+    width: 100%;
+    height: 5vh !important;
+    font-size: 12px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -564,14 +564,14 @@
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 5px;
+    padding: 3px;
     border: 3px solid #ffb20c;
   }
 
   .serieRatingSide span {
     width: auto;
     height: auto;
-    font-size: 11px !important;
+    font-size: 10px !important;
     font-style: normal !important;
   }
 

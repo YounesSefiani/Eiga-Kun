@@ -465,7 +465,7 @@
     position: relative;
     width: 100%;
     flex: 1;
-    min-height: 0;
+    height: 100%;
     gap: 10px;
     padding: 5px;
   }
@@ -538,12 +538,12 @@
   }
 
   .userAdminSeriesSection::-webkit-scrollbar-track {
-    background-color: #ffb20c;
+    background-color: black;
     border-radius: 20px;
   }
 
   .userAdminSeriesSection::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: #ffb20c;
     border-radius: 4px;
   }
 
