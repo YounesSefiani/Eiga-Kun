@@ -364,8 +364,13 @@
     width: 10px;
   }
 
-  .userAdminMoviesSection::-webkit-scrollbar-thumb {
+  .userAdminMoviesSection::-webkit-scrollbar-track {
     background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminMoviesSection::-webkit-scrollbar-thumb {
+    background-color: black;
     border-radius: 4px;
   }
 
@@ -517,8 +522,13 @@
     width: 10px;
   }
 
-  .userAdminMoviesSection::-webkit-scrollbar-thumb {
+  .userAdminMoviesSection::-webkit-scrollbar-track {
     background-color: #ffb20c;
+    border-radius: 20px;
+  }
+
+  .userAdminMoviesSection::-webkit-scrollbar-thumb {
+    background-color: black;
     border-radius: 4px;
   }
 
