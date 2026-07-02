@@ -1,0 +1,986 @@
+/* VERSION PC */
+@media screen and (min-width: 1440px) {
+  .oneMoviesGenrePage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    gap: 10px;
+    color: #ffb20c;
+    background: #833ab4;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+
+  .oneMoviesGenreHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+  }
+
+  .oneMoviesGenreHeader h2 {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreHeader button {
+    width: 15%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .oneMoviesGenreHeader button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .oneMoviesGenreContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreList {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-track {
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .oneMovieGenreCardLeft {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .oneMovieGenreCardLeft p {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .oneMovieGenrePoster {
+    display: flex;
+    width: 14rem;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenrePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .oneMovieGenrePosterPlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .oneMovieGenrePosterPlaceHolder span {
+    font-size: 15px;
+  }
+
+  .oneMovieGenrePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .oneMovieGenreCardRight {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .oneMovieGenreCardRight h3 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardDetails {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardSynopsis p {
+    width: 100%;
+    height: 120px;
+    overflow-y: auto;
+    font-size: 16px;
+    text-align: justify;
+    font-style: italic;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .oneMovieGenrePagePagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border-top: 4px solid #ffb20c;
+
+    button {
+      width: auto;
+      height: auto;
+      padding: 5px 15px;
+      font-size: 18px;
+      color: #ffb20c;
+      background-color: black;
+      border-radius: 15px;
+      border: 4px solid #ffb20c;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    button:hover {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button.active {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .oneMoviesGenrePage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    gap: 10px;
+    color: #ffb20c;
+    background: #833ab4;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+
+  .oneMoviesGenreHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+  }
+
+  .oneMoviesGenreHeader h2 {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    font-size: 22px;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreHeader button {
+    width: 10%;
+    height: auto;
+    text-align: center;
+    font-size: 22px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .oneMoviesGenreHeader button:hover {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .oneMoviesGenreContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreList {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 5px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-track {
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .oneMovieGenreCardLeft {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .oneMovieGenreCardLeft p {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .oneMovieGenrePoster {
+    display: flex;
+    width: 12rem;
+    height: 100%;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenrePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    height: 100%;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .oneMovieGenrePosterPlaceHolder svg {
+    font-size: 50px;
+  }
+
+  .oneMovieGenrePosterPlaceHolder span {
+    font-size: 15px;
+  }
+
+  .oneMovieGenrePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .oneMovieGenreCardRight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .oneMovieGenreCardRight h3 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardDetails {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 5px;
+    padding: 5px;
+    font-size: 14px;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardSynopsis p {
+    width: 100%;
+    height: 120px;
+    overflow-y: auto;
+    font-size: 14px;
+    text-align: justify;
+    font-style: italic;
+    padding: 5px;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMovieGenreCardSynopsis p::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .oneMovieGenrePagePagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border-top: 4px solid #ffb20c;
+
+    button {
+      width: auto;
+      height: auto;
+      padding: 5px 15px;
+      font-size: 18px;
+      color: #ffb20c;
+      background-color: black;
+      border-radius: 15px;
+      border: 4px solid #ffb20c;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    button:hover {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button.active {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* VERSION TABLET */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .oneMoviesGenrePage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    justify-content: space-between;
+    overflow: auto;
+    gap: 10px;
+    color: #ffb20c;
+    background: #833ab4;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+
+  .oneMoviesGenreHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .oneMoviesGenreHeader h2 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreHeader button {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .oneMoviesGenreHeader button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .oneMoviesGenreContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreList {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-track {
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .oneMovieGenreCardLeft {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .oneMovieGenreCardLeft p {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .oneMovieGenrePoster {
+    display: flex;
+    width: 13rem;
+    height: 18rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenrePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 100%;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .oneMovieGenrePosterPlaceHolder svg {
+    font-size: 25px;
+  }
+
+  .oneMovieGenrePosterPlaceHolder span {
+    font-size: 15px;
+  }
+
+  .oneMovieGenrePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .oneMovieGenreCardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .oneMovieGenreCardRight h3 {
+    width: 13rem;
+    height: auto;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardDetails {
+    display: none;
+  }
+
+  .oneMovieGenreCardSynopsis p {
+    display: none;
+  }
+
+  .oneMovieGenrePagePagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border-top: 4px solid #ffb20c;
+
+    button {
+      width: auto;
+      height: auto;
+      padding: 5px 15px;
+      font-size: 18px;
+      color: #ffb20c;
+      background-color: black;
+      border-radius: 15px;
+      border: 4px solid #ffb20c;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    button:hover {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button.active {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .pagination-ellipsis {
+      color: #ffb20c;
+      font-size: 16px;
+    }
+  }
+}
+
+/* VERSION MOBILE */
+@media screen and (max-width: 767px) {
+  .oneMoviesGenrePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    height: 100%;
+    overflow: auto;
+    gap: 10px;
+    color: #ffb20c;
+    background: #833ab4;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+
+  .oneMoviesGenreHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .oneMoviesGenreHeader h2 {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreHeader button {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    color: #ffb20c;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+  }
+
+  .oneMoviesGenreHeader button:active {
+    background-color: #ffb20c;
+    color: black;
+    border: 4px solid black;
+  }
+
+  .oneMoviesGenreContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMoviesGenreList {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-thumb {
+    background-color: #ffb20c;
+    border-radius: 4px;
+  }
+
+  .oneMoviesGenreList::-webkit-scrollbar-track {
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    padding: 5px;
+    background-color: black;
+    cursor: pointer;
+  }
+
+  .oneMovieGenreCardLeft {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  .oneMovieGenreCardLeft p {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffb20c;
+    background-color: black;
+    border: 2px solid #ffb20c;
+  }
+
+  .oneMovieGenrePoster {
+    display: flex;
+    width: 10rem;
+    height: 13rem;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenrePosterPlaceHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 100%;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .oneMovieGenrePosterPlaceHolder svg {
+    font-size: 25px;
+  }
+
+  .oneMovieGenrePosterPlaceHolder span {
+    font-size: 15px;
+  }
+
+  .oneMovieGenrePoster img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .oneMovieGenreCardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+  }
+
+  .oneMovieGenreCardRight h3 {
+    width: 10rem;
+    height: auto;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+  }
+
+  .oneMovieGenreCardDetails {
+    display: none;
+  }
+
+  .oneMovieGenreCardSynopsis p {
+    display: none;
+  }
+
+  .oneMovieGenrePagePagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: black;
+    border-top: 4px solid #ffb20c;
+
+    button {
+      width: auto;
+      height: auto;
+      padding: 5px 15px;
+      font-size: 15px;
+      color: #ffb20c;
+      background-color: black;
+      border-radius: 15px;
+      border: 4px solid #ffb20c;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+
+    button:active {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button.active {
+      color: black;
+      background-color: #ffb20c;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .pagination-ellipsis {
+    padding: 5px 10px;
+    font-size: 15px;
+    color: #ffb20c;
+    user-select: none;
+  }
+}
