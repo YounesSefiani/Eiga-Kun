@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../../../components/Header/Header";
 import HeaderPhone from "../../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
 import FooterPhone from "../../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
-import "./MoviesGenresPage.css";
+import "./GenresMoviesPage.css";
 
 
 // Liste des genres en dur (pas besoin du backend)
@@ -29,19 +29,19 @@ function MoviesGenresPage() {
   const navigate = useNavigate();
 
   const handleGenreClick = (genreName) => {
-    navigate(`/movies/genre/${encodeURIComponent(genreName)}`);
+    navigate(`/movies/genres/${encodeURIComponent(genreName)}`);
   };
 
   return (
-    <div className="moviesGenresPage">
+    <div className="moviesIndexPage moviesGenresPage">
       <Header />
       <HeaderPhone />
       <h2>Films par genres</h2>
-      <div className="moviesGenresContainer">
+      <div className="moviesIndexContainer moviesGenresContainer">
         {genresList.map((genre) => (
           <div
             key={genre.name}
-            className="moviesGenreCard"
+            className="moviesIndexCard moviesGenreCard"
             onClick={() => handleGenreClick(genre.name)}
           >
             {genre.image && <img src={genre.image} alt={genre.name} />}

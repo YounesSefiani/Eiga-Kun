@@ -6,10 +6,11 @@ import FooterPhone from "../../../../components/Header/HeaderFooterPhone/FooterP
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import connexion from "../../../../services/connexion";
-import "./OneMovieGenrePage.css";
+import "../OneMoviesCommon/OneMoviesCommon.css";
+import "./OneDecadeMoviesPage.css";
 
-function OneMovieGenrePage() {
-  const { genre } = useParams();
+function OneDecadeMoviesPage() {
+  const { startYear } = useParams();
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,10 +68,10 @@ function OneMovieGenrePage() {
     return pages;
   };
 
-  // Reset page quand le genre change
+  // Reset page quand la décennie change
   useEffect(() => {
     setCurrentPage(1);
-  }, [genre]);
+  }, [startYear]);
 
   const formatDate = (date) => {
     if (!date) return "";
@@ -96,12 +97,24 @@ function OneMovieGenrePage() {
         const response = await connexion.get("/movies");
         const allMovies = response.data;
 
-        // Filtre côté frontend
-        const decodedGenre = decodeURIComponent(genre);
+        // Filtre côté frontend par décennie (startYear param)
+        // Accept either "2020" or "2020s" as param — extract the year digits
+        const decodedStartRaw = decodeURIComponent(startYear || "");
+        const yearMatch = decodedStartRaw.match(/(\d{4})/);
+        const decadeStart = yearMatch ? parseInt(yearMatch[1], 10) : parseInt(decodedStartRaw, 10);
+        if (Number.isNaN(decadeStart)) {
+          setMovies([]);
+          return;
+        }
+        const decadeEnd = decadeStart + 9;
+
         const filteredMovies = allMovies.filter((movie) => {
-          if (!movie.genre) return false;
-          // Gère les genres multiples séparés par " / " ou ","
-          return movie.genre.toLowerCase().includes(decodedGenre.toLowerCase());
+          if (!movie.release_date) return false;
+          // release_date expected in ISO YYYY-MM-DD
+          const yearStr = String(movie.release_date).slice(0, 4);
+          const year = parseInt(yearStr, 10);
+          if (Number.isNaN(year)) return false;
+          return year >= decadeStart && year <= decadeEnd;
         });
 
         setMovies(filteredMovies);
@@ -113,33 +126,39 @@ function OneMovieGenrePage() {
     };
 
     fetchAndFilterMovies();
-  }, [genre]);
+  }, [startYear]);
+
+  // Friendly display for header: accept both "2020" and "2020s"
+  const displayDecade = startYear
+    ? startYear.toString().endsWith("s")
+      ? startYear
+      : `${startYear}s`
+    : "";
 
   if (loading) return <div>Chargement...</div>;
 
   return (
-    <div className="oneMoviesGenrePage">
+    <div className="oneMoviesPage oneMoviesDecadePage">
       <Header />
       <HeaderPhone />
-      <div className="oneMoviesGenreHeader">
+      <div className="oneMoviesHeader oneMoviesDecadeHeader">
         <h2>
-          Tous les films du genre "{decodeURIComponent(genre)}" ({movies.length}
-          )
+          Films de la décennie {displayDecade} ({movies.length})
         </h2>
-        <button onClick={() => navigate("/movies/genres")}>Retour</button>
+        <button onClick={() => navigate("/movies/decades")}>Retour</button>
       </div>
-      <div className="oneMoviesGenreContainer">
-        <div className="oneMoviesGenreList">
+      <div className="oneMoviesContainer oneMoviesDecadeContainer">
+        <div className="oneMoviesList oneMoviesDecadeList">
           {movies.length === 0 ? (
-            <p className="noMoviesFound">Aucun film trouvé pour ce genre.</p>
+            <p className="noMoviesFound">Aucun film trouvé pour cette décennie.</p>
           ) : (
             currentMovies.map((movie) => (
               <div
-                className="oneMovieGenreCard"
+                className="oneMovieCard oneMovieDecadeCard"
                 key={movie.id}
                 onClick={() => navigate(`/movies/${movie.id}`)}
               >
-                <div className="oneMovieGenreCardLeft">
+                <div className="oneMovieCardLeft oneMovieDecadeCardLeft">
                   <div className="oneMovieGenrePoster">
                     {movie.poster ? (
                       <img
@@ -153,7 +172,7 @@ function OneMovieGenrePage() {
                         alt={movie.title}
                       />
                     ) : (
-                      <div className="oneMovieGenrePosterPlaceHolder">
+                      <div className="oneMovieGenrePosterHolder">
                         <FontAwesomeIcon icon={faFilm} />
                         <span>Pas d'affiche pour le moment.</span>
                       </div>
@@ -169,9 +188,9 @@ function OneMovieGenrePage() {
                     /10
                   </p>
                 </div>
-                <div className="oneMovieGenreCardRight">
+                <div className="oneMovieCardRight oneMovieDecadeCardRight">
                   <h3 title={movie.title}>{movie.title}</h3>
-                  <div className="oneMovieGenreCardDetails">
+                  <div className="oneMovieCardDetails oneMovieDecadeCardDetails">
                     <p>Date de sortie : {formatDate(movie.release_date)}</p>
                     <p>Durée : {formatDuration(movie.duration)}</p>
                     <p>Sortie au : {movie.screen}</p>
@@ -185,7 +204,7 @@ function OneMovieGenrePage() {
                       <p>Sous-univers : {movie.subUniverse}</p>
                     )}
                   </div>
-                  <div className="oneMovieGenreCardSynopsis">
+                  <div className="oneMovieCardSynopsis oneMovieDecadeCardSynopsis">
                     <p>{movie.synopsis}</p>
                   </div>
                 </div>
@@ -193,7 +212,7 @@ function OneMovieGenrePage() {
             ))
           )}
         </div>
-        <div className="oneMovieGenrePagePagination">
+        <div className="oneMoviePagePagination oneMovieDecadePagePagination">
           <button onClick={goToPreviousPage} disabled={currentPage === 1}>
             ← Précédent
           </button>
@@ -224,4 +243,4 @@ function OneMovieGenrePage() {
   );
 }
 
-export default OneMovieGenrePage;
+export default OneDecadeMoviesPage;
