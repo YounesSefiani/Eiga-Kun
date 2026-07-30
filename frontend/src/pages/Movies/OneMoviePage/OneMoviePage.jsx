@@ -2,11 +2,14 @@ import React from "react";
 import Header from "../../../components/Header/Header";
 import HeaderPhone from "../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
 import FooterPhone from "../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
+import UserFavoritesContainer from "../../../components/UserFavoritesContainer/UserFavoritesContainer";
 import CastingContainer from "../../../components/CastingFilmography/CastingContainer/CastingContainer";
+import UserRatingsReviewsContainer from "../../../components/RatingReviewsComponents/UserRatingsReviewsContainer/UserRatingsReviewsContainer";
+import UserRatingReviewComponent from "../../../components/RatingReviewsComponents/UserRatingReviewComponent/UserRatingReviewComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faFilm } from "@fortawesome/free-solid-svg-icons";
-import "./OneMoviePage.css";
 import { useLoaderData } from "react-router-dom";
+import "./OneMoviePage.css";
 
 function OneMoviePage() {
   const movie = useLoaderData();
@@ -39,8 +42,8 @@ function OneMoviePage() {
                 movie.background && movie.background.startsWith("http")
                   ? movie.background
                   : movie.background
-                  ? `http://localhost:3994/src/assets/Movies/Backgrounds/${movie.background}`
-                  : ""
+                    ? `http://localhost:3994/src/assets/Movies/Backgrounds/${movie.background}`
+                    : ""
               }
               alt={movie.title}
             />
@@ -50,10 +53,11 @@ function OneMoviePage() {
         )}
         <div className="oneMovieHeaderContent">
           <div className="oneMovieHeaderLeft">
-            <div className="userInteractions">
-              {/* Composant des interactions utilisateur à implémenter une fois crée */}
-              <p>Prochainement...</p>
-            </div>
+            <UserFavoritesContainer
+              itemId={movie.id}
+              itemType="movie"
+              title={movie.title}
+            />
             {movie.poster ? (
               <div className="oneMoviePoster">
                 <img
@@ -61,8 +65,8 @@ function OneMoviePage() {
                     movie.poster && movie.poster.startsWith("http")
                       ? movie.poster
                       : movie.poster
-                      ? `http://localhost:3994/src/assets/Movies/Posters/${movie.poster}`
-                      : ""
+                        ? `http://localhost:3994/src/assets/Movies/Posters/${movie.poster}`
+                        : ""
                   }
                   alt={movie.title}
                 />
@@ -73,10 +77,7 @@ function OneMoviePage() {
                 <p>Aucune affiche pour le moment.</p>
               </div>
             )}
-            <div className="userReviews">
-              {/* Composant des notes et critiques des utilisateurs et utilisatrices à implémenter une fois crée */}
-              <p>Prochainement...</p>
-            </div>
+              <UserRatingsReviewsContainer ratingReviewId={movie.id} ratingReviewType="movie" title={movie.title}/>
           </div>
           <div className="oneMovieHeaderRight">
             {movie.logo ? (
@@ -85,8 +86,8 @@ function OneMoviePage() {
                   movie.logo && movie.logo.startsWith("http")
                     ? movie.logo
                     : movie.logo
-                    ? `http://localhost:3994/src/assets/Movies/Logos/${movie.logo}`
-                    : ""
+                      ? `http://localhost:3994/src/assets/Movies/Logos/${movie.logo}`
+                      : ""
                 }
                 className="oneMovieLogo"
                 alt={movie.title}
@@ -159,8 +160,12 @@ function OneMoviePage() {
       <div className="oneMovieReviewsTrailer">
         <div className="oneMovieReviews">
           {/* Composant des Reviews à implémenter une fois crée */}
-          <h3>Critiques du film "{movie.title}"</h3>
-          <p>Prochainement...</p>
+          <h3>Un avis sur le film "{movie.title}" ?</h3>
+          <UserRatingReviewComponent
+                ratingReviewId={movie.id}
+                ratingReviewType="movie"
+                title={movie.title}
+              />
         </div>
         <div className="oneMovieTrailer">
           <h3>Bande annonce du film "{movie.title}"</h3>

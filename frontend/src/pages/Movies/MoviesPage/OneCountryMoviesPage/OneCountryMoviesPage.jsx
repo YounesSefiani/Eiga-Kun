@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import connexion from "../../../../services/connexion";
 import Header from "../../../../components/Header/Header";
 import HeaderPhone from "../../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
 import FooterPhone from "../../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
+import Pagination from "../../../../components/Pagination/Pagination";
+import usePagination from "../../../../components/Pagination/usePagination";
 import "../OneMoviesCommon/OneMoviesCommon.css";
 import "./OneCountryMoviesPage.css";
 
@@ -29,62 +31,29 @@ const countryNames = {
 function OneMoviesCountryPage() {
   const { country } = useParams();
   const navigate = useNavigate();
+  const moviesListRef = useRef(null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-
-  const totalPages = Math.ceil(movies.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentMovies = movies.slice(indexOfFirstItem, indexOfLastItem);
+  const {
+    currentPage,
+    totalPages,
+    paginatedItems,
+    goToPage,
+    setCurrentPage,
+  } = usePagination(movies, 10);
 
   const countryDisplayName = countryNames[country] || decodeURIComponent(country);
 
   // Fonctions de navigation
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const handlePageChange = (pageNumber) => {
+    goToPage(pageNumber);
 
-  const goToPreviousPage = () => {
-    if (currentPage > 1) goToPage(currentPage - 1);
-  };
-
-  const goToNextPage = () => {
-    if (currentPage < totalPages) goToPage(currentPage + 1);
-  };
-
-  // Fonction pour générer les numéros de pages avec "..."
-  const getPageNumbers = () => {
-    const pages = [];
-    const maxVisiblePages = 7;
-
-    if (totalPages <= maxVisiblePages) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-
-      if (currentPage > 3) {
-        pages.push("...");
-      }
-
-      const start = Math.max(2, currentPage - 1);
-      const end = Math.min(totalPages - 1, currentPage + 1);
-
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-
-      if (currentPage < totalPages - 2) {
-        pages.push("...");
-      }
-
-      pages.push(totalPages);
+    if (moviesListRef.current) {
+      moviesListRef.current.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    return pages;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Reset page quand le country change
@@ -146,11 +115,11 @@ function OneMoviesCountryPage() {
         <button onClick={() => navigate("/movies/countries")}>Retour</button>
       </div>
       <div className="oneMoviesContainer oneMoviesCountryContainer">
-        <div className="oneMoviesList oneMoviesCountryList">
+        <div className="oneMoviesList oneMoviesCountryList" ref={moviesListRef}>
           {movies.length === 0 ? (
             <p className="noMoviesFound">Aucun film trouvé pour ce pays.</p>
           ) : (
-            currentMovies.map((movie) => (
+            paginatedItems.map((movie) => (
               <div
                 className="oneMovieCard oneMoviesCountryCard"
                 key={movie.id}
@@ -206,31 +175,15 @@ function OneMoviesCountryPage() {
             ))
           )}
         </div>
-                <div className="oneMoviePagePagination oneMoviesCountryPagePagination">
-          <button onClick={goToPreviousPage} disabled={currentPage === 1}>
-            ← Précédent
-          </button>
-
-          {getPageNumbers().map((page, index) =>
-            page === "..." ? (
-              <span key={`ellipsis-${index}`} className="pagination-ellipsis">
-                ...
-              </span>
-            ) : (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={currentPage === page ? "active" : ""}
-              >
-                {page}
-              </button>
-            ),
-          )}
-
-          <button onClick={goToNextPage} disabled={currentPage === totalPages}>
-            Suivant →
-          </button>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          containerClassName="oneMoviePagePagination oneMoviesCountryPagePagination"
+          maxVisiblePages={7}
+          previousLabel="← Précédent"
+          nextLabel="Suivant →"
+        />
 
       </div>
       <FooterPhone />
