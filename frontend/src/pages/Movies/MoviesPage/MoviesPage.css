@@ -7,72 +7,185 @@
     height: 100%;
   }
 
-  .moviesList {
+  .moviesPageContent {
     display: flex;
-    flex-direction: row;
-    width: auto;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
     height: auto;
-    overflow-x: auto;
-  }
-
-  .movieCard a {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .moviePoster {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 350px;
-    background-color: black;
-    color: #ffb20c;
-    border: 4px solid #ffb20c;
-  }
-
-  .moviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    height: 350px;
+    margin: 0 auto;
+    gap: 20px;
     padding: 10px;
-    text-align: center;
-    color: #ffb20c;
     background-color: black;
     border: 4px solid #ffb20c;
+    border-top: none;
   }
 
-  .moviePoster img {
-    width: 250px;
-    height: 350px;
-    object-fit: fill;
+  .carousel {
+    width: 90% !important;
+    height: 30rem;
+    color: #ffb20c;
     border: 4px solid #ffb20c;
+    border-radius: 10px;
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-inner {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-caption {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #ffb20c;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 80% 20%;
+    }
   }
 
-  .moviePosterHolder img {
+  .moviesSection {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: auto;
-    padding: 10px;
-    border: none;
+    gap: 10px;
+    color: #ffb20c;
+
+    h2 {
+      width: 35%;
+      height: auto;
+      font-size: 23px;
+      padding: 5px;
+      text-align: center;
+      border: 4px solid #ffb20c;
+      border-radius: 10px;
+    }
   }
 
-  .movieCard h3 {
+  .moviesSectionList {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 15px;
+  }
+
+  .movieSectionCard a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+
+    &:hover {
+      background-color: #ffb20c;
+      color: black;
+      border: 4px solid black;
+    }
+
+    h3 {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:hover h3 {
+      color: black;
+      border: 4px solid black;
+    }
+
+    &:hover p {
+      background-color: #ffb20c;
+      color: black;
+      border: 4px solid black;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 17px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+  }
+
+  .movieSectionCardPoster {
+    position: relative;
+    width: 100%;
+    height: 32vh;
+    border: 4px solid #ffb20c;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    p {
+      display: flex;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 35% !important;
+      height: auto;
+      font-size: 18px;
+      color: #ffb20c;
+      background-color: black;
+      padding: 5px;
+      border: 2px solid #ffb20c !important;
+    }
+  }
+
+  .movieSectionCardPosterHolder {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: 60px;
-    font-size: 20px;
-    color: #ffb20c;
-    background-color: black;
-    padding: 5px;
+    width: 100%;
+    height: 32vh;
+    gap: 10px;
+    padding: 10px;
     text-align: center;
-    border: 4px solid #ffb20c;
+    background-color: black;
+  }
+
+  .movieSectionCardPosterHolder img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .movieSectionCardPosterHolder span {
+    font-size: 18px;
   }
 }
 
@@ -85,71 +198,187 @@
     height: 100%;
   }
 
-  .moviesList {
+  .moviesPageContent {
     display: flex;
-    flex-direction: row;
-    width: auto;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
     height: auto;
-    overflow-x: auto;
-  }
-
-  .movieCard a {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .moviePoster {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 300px;
-    background-color: black;
-    color: #ffb20c;
-  }
-
-  .moviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 300px;
+    margin: 0 auto;
+    gap: 20px;
     padding: 10px;
-    text-align: center;
-    color: #ffb20c;
     background-color: black;
     border: 4px solid #ffb20c;
+    border-top: none;
   }
 
-  .moviePoster img {
-    width: 200px;
-    height: 300px;
-    object-fit: fill;
+    .carousel {
+    width: 90% !important;
+    height: 20rem;
+    color: #ffb20c;
     border: 4px solid #ffb20c;
+    border-radius: 10px;
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-inner {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-caption {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffb20c;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 80% 20%;
+    }
   }
 
-  .moviePosterHolder img {
+
+  .moviesSection {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: auto;
-    padding: 10px;
-    border: none;
+    gap: 10px;
+    color: #ffb20c;
+
+    h2 {
+      width: 35%;
+      height: auto;
+      font-size: 23px;
+      padding: 5px;
+      text-align: center;
+      border: 4px solid #ffb20c;
+      border-radius: 10px;
+    }
   }
 
-  .movieCard h3 {
+  .moviesSectionList {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 15px;
+  }
+
+  .movieSectionCard a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 13rem;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+
+    &:hover {
+      background-color: #ffb20c;
+      color: black;
+      border: 4px solid black;
+    }
+
+    h3 {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:hover h3 {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:hover p {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
+  }
+
+  .movieSectionCardPoster {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    border: 4px solid #ffb20c;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    p {
+      display: flex;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 35% !important;
+      height: auto;
+      font-size: 17px !important;
+      color: #ffb20c;
+      background-color: black;
+      padding: 5px;
+      border: 2px solid #ffb20c !important;
+    }
+  }
+
+  .movieSectionCardPosterHolder {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 60px;
-    font-size: 18px;
-    color: #ffb20c;
-    background-color: black;
-    padding: 5px;
+    height: 40vh;
+    gap: 10px;
+    padding: 10px;
     text-align: center;
-    border: 4px solid #ffb20c;
+    background-color: black;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 15px;
+    }
   }
 }
 
@@ -159,81 +388,202 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    height: 100%;
-  }
-
-  .moviesList {
-    display: flex;
-    flex-direction: row;
-    width: auto;
     height: auto;
-    overflow-x: auto;
   }
 
-  .movieCard a {
+  .moviesPageContent {
     display: flex;
     flex-direction: column;
-    width: auto;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+   .carousel {
+    width: 95% !important;
+    height: 18rem;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+
+         .carousel-caption {
+        position: absolute;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffb20c;
+      }
+    }
+
+    .carousel-indicators {
+      margin: 0;
+
+      button {
+        width: 25px;
+        background-color: #ffb20c;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 80% 20%;
+    }
+  }
+
+  .moviesSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: auto;
     gap: 10px;
+    color: #ffb20c;
+
+    h2 {
+      width: 50%;
+      height: auto;
+      font-size: 20px;
+      padding: 5px;
+      text-align: center;
+      border: 4px solid #ffb20c;
+      border-radius: 10px;
+    }
   }
 
-  .moviePoster {
+  .moviesSectionList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 15px;
+  }
+
+  .movieSectionCard a {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 250px;
-    background-color: black;
+    width: 13rem;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
     color: #ffb20c;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+
+    &:active {
+      background-color: #ffb20c;
+      color: black;
+      border: 4px solid black;
+    }
+
+    h3 {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:active h3 {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:hover p {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
   }
 
-  .moviePosterHolder {
+  .movieSectionCardPoster {
+    position: relative;
+    width: 100%;
+    height: 22vh;
+    border: 4px solid #ffb20c;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    p {
+      display: flex;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 40% !important;
+      height: auto;
+      font-size: 15px !important;
+      color: #ffb20c;
+      background-color: black;
+      padding: 5px;
+      border: 2px solid #ffb20c !important;
+    }
+  }
+
+  .movieSectionCardPosterHolder {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 180px !important;
-    height: 250px !important;
-    padding: 10px;
-    text-align: center;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
-
-  .moviePoster img {
-    width: 180px;
-    height: 250px;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
-
-  .moviePosterHolder img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain;
-    padding: 10px;
-    border: none;
-  }
-
-  .movieCard h3 {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 50px;
-    font-size: 16px;
-    color: #ffb20c;
-    background-color: black;
-    padding: 5px;
+    height: 22vh;
+    gap: 10px;
+    padding: 10px;
     text-align: center;
-    border: 4px solid #ffb20c;
+    background-color: black;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 15px;
+    }
   }
 }
 
-/* VERSION PHONE */
+/* VERSION MOBILE */
 @media screen and (max-width: 767px) {
   .moviesPage {
     display: flex;
@@ -242,73 +592,194 @@
     height: 100%;
   }
 
-  .moviesList {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    height: auto;
-    overflow-x: auto;
-  }
-
-  .movieCard a {
+  .moviesPageContent {
     display: flex;
     flex-direction: column;
-    width: auto;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 10px;
+    background-color: black;
+    border: 4px solid #ffb20c;
+    border-top: none;
+  }
+
+  .carousel {
+    width: 95% !important;
+    height: 13rem;
+    color: #ffb20c;
+    border: 4px solid #ffb20c;
+    border-radius: 10px;
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+
+         .carousel-caption {
+        position: absolute;
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ffb20c;
+      }
+    }
+
+    .carousel-indicators {
+      margin: 0;
+
+      button {
+        width: 25px;
+        background-color: #ffb20c;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  .moviesSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: auto;
     gap: 10px;
+    color: #ffb20c;
+
+    h2 {
+      width: 70%;
+      height: auto;
+      font-size: 18px;
+      padding: 5px;
+      text-align: center;
+      border: 4px solid #ffb20c;
+      border-radius: 10px;
+    }
   }
 
-  .moviePoster {
+  .moviesSectionList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    border: 4px solid #ffb20c;
+    border-radius: 15px;
+  }
+
+  .movieSectionCard a {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 200px;
-    background-color: black;
+    width: 9rem;
+    height: auto;
+    gap: 10px;
+    padding: 5px;
     color: #ffb20c;
+    border: 4px solid #ffb20c;
+    transition: 0.5s ease;
+
+    &:active {
+      background-color: #ffb20c;
+      color: black;
+      border: 4px solid black;
+    }
+
+    h3 {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:active h3 {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
+
+    p {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 5px;
+      border: 4px solid #ffb20c;
+      transition: 0.5s ease;
+    }
+
+    &:hover p {
+      color: black;
+      background-color: #ffb20c;
+      border: 4px solid black;
+    }
   }
 
-  .moviePosterHolder {
+  .movieSectionCardPoster {
+    position: relative;
+    width: 100%;
+    height: 22vh;
+    border: 4px solid #ffb20c;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    p {
+      display: flex;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 40% !important;
+      height: auto;
+      font-size: 14px !important;
+      color: #ffb20c;
+      background-color: black;
+      padding: 5px;
+      border: 2px solid #ffb20c !important;
+    }
+  }
+
+  .movieSectionCardPosterHolder {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 150px !important;
-    height: 200px !important;
-    padding: 10px;
-    text-align: center;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
-
-  .moviePoster img {
-    width: 150px;
-    height: 200px;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
-
-  .moviePosterHolder img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain;
-    padding: 10px;
-    border: none;
-  }
-
-  .movieCard h3 {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 50px;
-    font-size: 16px;
-    color: #ffb20c;
-    background-color: black;
-    padding: 5px;
+    height: 22vh;
+    gap: 10px;
+    padding: 10px;
     text-align: center;
-    border: 4px solid #ffb20c;
+    background-color: black;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 15px;
+    }
   }
 }

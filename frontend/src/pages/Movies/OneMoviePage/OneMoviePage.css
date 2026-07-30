@@ -4,625 +4,560 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    height: auto;
+    height: 100%;
+    color: #ffb20c;
+
+    h3 {
+      width: fit-content;
+      height: auto;
+      padding: 5px;
+      font-size: 30px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
   }
 
   .oneMovieHeader {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     position: relative;
     width: 100%;
-    height: 40rem;
-    margin-bottom: 20px;
+    height: 50rem;
     z-index: 2;
     border: 4px solid #ffb20c;
     border-top: none;
-  }
+    margin-bottom: 15px;
 
-  .oneMovieBackground {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    right: 0;
-    z-index: 1;
-  }
+    .oneMovieBackground {
+      width: 60%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      right: 0;
 
-  .oneMovieBackground img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: right;
-    right: 0;
-    z-index: 1;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
-  .oneMovieHeaderContent {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    z-index: 2;
-    color: #ffb20c;
-    background: linear-gradient(to right, black 50%, transparent 90%);
-  }
+    .oneMovieHeaderContent {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+      padding: 5px;
+      gap: 10px;
+      z-index: 3;
+      background: linear-gradient(to right, black 50%, transparent 75%);
 
-  .oneMovieHeaderLeft {
-    display: flex;
-    flex-direction: column;
-    width: 18%;
-    height: auto;
-    gap: 10px;
-  }
+      .oneMovieHeaderLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15%;
+        height: 100%;
+        gap: 10px;
 
-  .userInteractions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePoster {
+          width: 100%;
+          height: 25rem;
+          margin: 0 auto;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMoviePoster img {
-    width: 100%;
-    height: 30rem;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePoster img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
 
-  .oneMoviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    height: 30rem;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePosterHolder {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 25rem;
+          gap: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePosterHolder svg {
-    font-size: 50px;
-  }
+          svg {
+            font-size: 5rem;
+          }
 
-  .oneMoviePosterHolder p {
-    font-size: 20px;
-    text-align: center;
-  }
+          p {
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+      }
 
-  .userReviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    border: 4px solid #ffb20c;
-  }
+      .oneMovieHeaderRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 85%;
+        height: 100%;
+        gap: 10px;
 
-  .oneMovieHeaderRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 82%;
-    height: auto;
-  }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 45%;
+          height: 10rem;
+          font-size: 40px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieLogo {
-    width: 35rem;
-    height: 10rem;
-    padding: 10px;
-    object-fit: contain;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieLogo {
+          width: 45%;
+          height: 10rem;
+          object-fit: contain;
+          padding: 10px;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieHeaderRight h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40rem;
-    height: 5rem;
-    padding: 10px;
-    text-align: center;
-    font-size: 35px;
-    color: #ffb20c;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieInfos {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 45%;
+          height: 100%;
+        }
 
-  .oneMovieInfos {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    height: 15rem;
-    gap: 10px;
-  }
+        .oneMovieDetails {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          width: 100%;
+          height: 10rem;
+          padding: 5px;
+          gap: 5px;
+          overflow-y: auto;
+          border: 4px solid #ffb20c;
 
-  .oneMovieDetails {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 50%;
-    height: auto;
-    overflow-y: auto;
-    gap: 5px;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+          p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            font-size: 15px;
+            text-align: center;
+            background-color: black;
+            border: 2px solid #ffb20c;
+          }
 
-  .oneMovieDetails::-webkit-scrollbar {
-    width: 8px;
-  }
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
 
-  .oneMovieDetails::-webkit-scrollbar-thumb {
-    background-color: #ffb20c;
-    border-radius: 4px;
-  }
+          &::-webkit-scrollbar-thumb {
+            background-color: #ffb20c;
+            border-radius: 4px;
+          }
 
-  .oneMovieDetails p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    padding: 0 5px;
-    border: 4px solid #ffb20c;
-  }
+          &::-webkit-scrollbar-track {
+            background-color: black;
+            border-radius: 4px;
+          }
+        }
 
-  .oneMovieSynopsis {
-    width: 50%;
-    height: auto;
-    overflow-y: auto;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieSynopsis {
+          width: 100%;
+          height: 10rem;
+          border: 4px solid #ffb20c;
 
-  .oneMovieSynopsis::-webkit-scrollbar {
-    width: 8px;
-  }
+          p {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 5px;
+            font-size: 16px;
+            font-style: italic;
+            text-align: justify;
+            background-color: black;
 
-  .oneMovieSynopsis::-webkit-scrollbar-thumb {
-    background-color: #ffb20c;
-    border-radius: 4px;
-  }
+            &::-webkit-scrollbar {
+              width: 10px;
+            }
 
-  .oneMovieSynopsis p {
-    font-family: "Patrick Hand SC", cursive;
-    font-size: 20px;
-    line-height: normal;
-    text-align: justify;
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .oneMovieCasting {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: auto;
-    height: auto;
-    margin-bottom: 20px;
-    font-size: 30px;
+    height: 100%;
     gap: 10px;
     padding: 10px;
-    color: #ffb20c;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
-
-  .oneMovieCasting h3 {
-    width: 80%;
-    height: auto;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
+    margin-bottom: 15px;
   }
 
   .oneMovieReviewsTrailer {
     display: flex;
     flex-direction: row;
     width: auto;
-    height: auto;
-    gap: 15px;
-  }
-
-  .oneMovieReviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: auto;
+    height: 100%;
     gap: 10px;
     padding: 10px;
-    background-color: black;
-    color: #ffb20c;
-    font-size: 30px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieReviews h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 24px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieReviews {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 24px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer iframe {
-    width: 100%;
-    height: 20rem;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailerHolder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
 
-  .oneMovieTrailerHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 20rem;
-    gap: 20px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+      svg {
+        font-size: 5rem;
+      }
 
-  .oneMovieTrailerHolder svg {
-    font-size: 50px;
+      p {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
 }
 
 /* VERSION DESKTOP */
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .oneMoviePage {
+    .oneMoviePage {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: auto;
+    height: 100%;
+    color: #ffb20c;
+
+    h3 {
+      width: fit-content;
+      height: auto;
+      padding: 5px;
+      font-size: 25px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
   }
 
   .oneMovieHeader {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     position: relative;
-    width: auto;
-    height: 35rem;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 40rem;
     z-index: 2;
     border: 4px solid #ffb20c;
     border-top: none;
-  }
+    margin-bottom: 15px;
 
-  .oneMovieBackground {
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    right: 0;
-    z-index: 1;
-  }
+    .oneMovieBackground {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      right: 0;
 
-  .oneMovieBackground img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    object-position: right;
-    right: 0;
-    z-index: 1;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
-  .oneMovieHeaderContent {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    z-index: 2;
-    color: #ffb20c;
-    background: linear-gradient(to right, black 40%, transparent 80%);
-  }
+    .oneMovieHeaderContent {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+      padding: 5px;
+      gap: 10px;
+      z-index: 3;
+      background: linear-gradient(to right, black 50%, transparent 75%);
 
-  .oneMovieHeaderLeft {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: auto;
-    gap: 10px;
-  }
+      .oneMovieHeaderLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 20%;
+        height: 100%;
+        gap: 10px;
+        .oneMoviePoster {
+          width: 100%;
+          height: 25rem;
+          margin: 0 auto;
+          border: 4px solid #ffb20c;
+        }
 
-  .userInteractions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePoster img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
 
-  .oneMoviePoster img {
-    width: 100%;
-    height: 25rem;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePosterHolder {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 25rem; 
+          gap: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    height: 25rem;
-    border: 4px solid #ffb20c;
-  }
+          svg {
+            font-size: 4rem;
+          }
 
-  .oneMoviePosterHolder svg {
-    font-size: 50px;
-  }
+          p {
+            font-size: 16px;
+            text-align: center;
+          }
+        }
+      }
 
-  .oneMoviePosterHolder p {
-    font-size: 20px;
-    text-align: center;
-  }
+      .oneMovieHeaderRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 80%;
+        height: 100%;
+        gap: 10px;
 
-  .userReviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 4rem;
-    border: 4px solid #ffb20c;
-  }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 45%;
+          height: 7rem;
+          font-size: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieHeaderRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-    height: auto;
-  }
+        .oneMovieLogo {
+          width: 45%;
+          height: 7rem;
+          object-fit: contain;
+          padding: 10px;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieLogo {
-    width: 30rem;
-    height: 9rem;
-    padding: 5px;
-    object-fit: contain;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieInfos {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 45%;
+          height: 100%;
+        }
 
-  .oneMovieHeaderRight h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40rem;
-    height: 7rem;
-    padding: 5px;
-    text-align: center;
-    font-size: 30px;
-    color: #ffb20c;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieDetails {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          width: 100%;
+          height: 15rem;
+          padding: 5px;
+          gap: 5px;
+          overflow-y: auto;
+          border: 4px solid #ffb20c;
 
-  .oneMovieInfos {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    height: 10rem;
-    gap: 10px;
-  }
+          p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            font-size: 13px;
+            text-align: center;
+            background-color: black;
+            border: 2px solid #ffb20c;
+          }
 
-  .oneMovieDetails {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: 50%;
-    height: auto;
-    overflow-y: auto;
-    gap: 5px;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
 
-  .oneMovieDetails::-webkit-scrollbar {
-    width: 8px;
-  }
+          &::-webkit-scrollbar-thumb {
+            background-color: #ffb20c;
+            border-radius: 4px;
+          }
 
-  .oneMovieDetails::-webkit-scrollbar-thumb {
-    background-color: #ffb20c;
-    border-radius: 4px;
-  }
+          &::-webkit-scrollbar-track {
+            background-color: black;
+            border-radius: 4px;
+          }
+        }
 
-  .oneMovieDetails p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 13px;
-    padding: 0 5px;
-    border: 4px solid #ffb20c;
-  }
+        .oneMovieSynopsis {
+          width: 100%;
+          height: 8rem;
+          border: 4px solid #ffb20c;
 
-  .oneMovieSynopsis {
-    width: 50%;
-    height: auto;
-    overflow-y: auto;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+          p {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 5px;
+            font-size: 15px;
+            font-style: italic;
+            text-align: justify;
+            background-color: black;
 
-  .oneMovieSynopsis::-webkit-scrollbar {
-    width: 6px;
-  }
+            &::-webkit-scrollbar {
+              width: 10px;
+            }
 
-  .oneMovieSynopsis::-webkit-scrollbar-thumb {
-    background-color: #ffb20c;
-    border-radius: 4px;
-  }
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
 
-  .oneMovieSynopsis p {
-    font-family: "Patrick Hand SC", cursive;
-    font-size: 18px;
-    line-height: normal;
-    text-align: justify;
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .oneMovieCasting {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: auto;
     height: auto;
-    margin-bottom: 20px;
-    font-size: 20px;
     gap: 10px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffb20c;
-    border: 4px solid #ffb20c;
-  }
-
-  .oneMovieCasting h3 {
-    width: 80%;
-    height: auto;
-    font-size: 25px;
-    text-align: center;
-    padding: 5px;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
+    margin-bottom: 15px;
   }
 
   .oneMovieReviewsTrailer {
     display: flex;
     flex-direction: row;
     width: auto;
-    height: 20rem;
-    gap: 15px;
-  }
-
-  .oneMovieReviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: auto;
+    height: 100%;
     gap: 10px;
     padding: 10px;
-    background-color: black;
-    color: #ffb20c;
-    font-size: 30px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieReviews h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 20px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieReviews {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 20px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer iframe {
-    width: 100%;
-    height: 15rem;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailerHolder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
 
-  .oneMovieTrailerHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20rem;
-    gap: 20px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+      svg {
+        font-size: 5rem;
+      }
 
-  .oneMovieTrailerHolder svg {
-    font-size: 50px;
+      p {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
 }
 
 /* VERSION TABLET */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .oneMoviePage {
+    .oneMoviePage {
     display: flex;
     flex-direction: column;
     width: auto;
@@ -633,292 +568,264 @@
   .oneMovieHeader {
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100%;
     height: 100%;
-    gap: 10px;
-    margin-bottom: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-    border-top: none;
-  }
 
-  .oneMovieBackground {
-    width: 100%;
-  }
+    .oneMovieBackground {
+      width: 100%;
+      height: 20rem;
 
-  .oneMovieBackground img {
-    width: 100%;
-    height: 25rem;
-    object-fit: fill;
-    border-bottom: 4px solid #ffb20c;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
-  .oneMovieHeaderContent {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    gap: 10px;
-  }
+    .oneMovieHeaderContent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
 
-  .oneMovieHeaderLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    gap: 10px;
-  }
+      .oneMovieHeaderLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
 
-  .userInteractions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80% !important;
-    height: 3rem !important;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePoster {
+          width: 18rem;
+          height: 25rem;
+          margin: 0 auto;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePoster img {
-    width: 17rem;
-    height: 25rem;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
 
-  .oneMoviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 17rem !important;
-    height: 25rem !important;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePosterHolder {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 18rem;
+          height: 25rem;
+          margin: 0 auto;
+          gap: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePosterHolder svg {
-    font-size: 50px;
-  }
+          svg {
+            font-size: 5rem;
+          }
 
-  .oneMoviePosterHolder p {
-    font-size: 17px;
-    text-align: center;
-  }
+          p {
+            font-size: 18px;
+            text-align: center;
+          }
+        }
 
-  .userReviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80% !important;
-    height: 3rem !important;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+      }
 
-  .oneMovieHeaderRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    gap: 10px;
-  }
+      .oneMovieHeaderRight {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
 
-  .oneMovieLogo {
-    width: 100%;
-    height: 8rem;
-    object-fit: contain;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-    border-bottom: 4px solid #ffb20c;
-  }
+        .oneMovieLogo {
+          width: 100%;
+          height: 10rem;
+          margin: 0 auto;
+          object-fit: contain;
+          padding: 10px;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieHeaderRight h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    text-align: center;
-    font-size: 30px;
-    color: #ffb20c;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-    border-bottom: 4px solid #ffb20c;
-  }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 7rem;
+          font-size: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieInfos {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-    gap: 10px;
-    padding: 5px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-  }
+        .oneMovieInfos {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+          height: auto;
+          gap: 10px;
+          padding: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMovieDetails {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: 20rem !important;
-    overflow-y: auto;
-    gap: 5px;
-    padding: 5px;
-    border: 4px solid #ffb20c !important;
-  }
+          .oneMovieDetails {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            gap: 5px;
+            overflow-y: auto;
+            border: 4px solid #ffb20c;
 
-  .oneMovieDetails p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 18px;
-    padding: 0 5px;
-    border: 4px solid #ffb20c;
-  }
+            p {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              padding: 5px;
+              font-size: 20px;
+              text-align: center;
+              background-color: black;
+              border: 2px solid #ffb20c;
+            }
 
-  .oneMovieSynopsis {
-    width: 100%;
-    height: 15rem !important;
-    overflow-y: auto;
-    padding: 5px;
-    border: 4px solid #ffb20c !important;
-  }
+            &::-webkit-scrollbar {
+              width: 8px;
+            }
 
-  .oneMovieSynopsis p {
-    font-family: "Patrick Hand SC", cursive;
-    font-size: 24px;
-    line-height: normal;
-    text-align: justify;
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+          }
+
+          .oneMovieSynopsis {
+            width: 100%;
+            height: 10rem;
+            padding: 5px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 4px solid #ffb20c;
+
+            &::-webkit-scrollbar {
+              width: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+
+            p {
+              width: 100%;
+              height: 100%;
+              font-size: 21px;
+              font-style: italic;
+              text-align: justify;
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
   }
 
   .oneMovieCasting {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+    width: 100%;
     height: 100%;
     gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffb20c;
-    font-size: 20px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieCasting h3 {
-    width: 100%;
-    height: auto;
-    font-size: 25px;
-    text-align: center;
-    padding: 5px;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
+    h3 {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+      font-size: 30px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
   }
 
   .oneMovieReviewsTrailer {
     display: flex;
     flex-direction: column;
-    width: auto;
-    height: auto;
-    gap: 15px;
-  }
-
-  .oneMovieReviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    height: auto;
+    height: 100%;
     gap: 10px;
-    padding: 10px;
-    background-color: black;
-    color: #ffb20c;
-    font-size: 20px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieReviews h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 25px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    h3 {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+      font-size: 30px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-    border-bottom: none;
-  }
+    .oneMovieReviews {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+    }
 
-  .oneMovieTrailer h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 25px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
 
-  .oneMovieTrailer iframe {
-    width: 100%;
-    height: 15rem;
-    border: 4px solid #ffb20c;
-  }
+      iframe {
+        width: 100%;
+        height: 20rem;
+        border: 4px solid #ffb20c;
+      }
+    }
 
-  .oneMovieTrailerHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20rem;
-    gap: 20px;
-    padding: 10px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailerHolder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 20rem;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
 
-  .oneMovieTrailerHolder svg {
-    font-size: 50px;
-  }
+      svg {
+        font-size: 4rem;
+      }
 
-  .oneMovieTrailerHolder p {
-    font-size: 18px;
-    text-align: center;
+      p {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -937,292 +844,261 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-    border-top: none;
-  }
 
-  .oneMovieBackground {
-    width: 100%;
-  }
+    .oneMovieBackground {
+      width: 100%;
+      height: 15rem;
 
-  .oneMovieBackground img {
-    width: 100%;
-    height: 15rem;
-    object-fit: cover;
-    border-bottom: none;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
 
-  .oneMovieHeaderContent {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-    gap: 10px;
-  }
+    .oneMovieHeaderContent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
 
-  .oneMovieHeaderLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-    border-bottom: 4px solid #ffb20c;
-  }
+      .oneMovieHeaderLeft {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
 
-  .userInteractions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80% !important;
-    height: 4rem;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePoster {
+          width: 12rem;
+          height: 18rem;
+          margin: 0 auto;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePoster img {
-    width: 14rem;
-    height: 21rem;
-    object-fit: fill;
-    border: 4px solid #ffb20c;
-  }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
 
-  .oneMoviePosterHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 14rem !important;
-    height: 21rem !important;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+        .oneMoviePosterHolder {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 12rem;
+          height: 18rem;
+          margin: 0 auto;
+          gap: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMoviePosterHolder svg {
-    font-size: 50px;
-  }
+          svg {
+            font-size: 5rem;
+          }
 
-  .oneMoviePosterHolder p {
-    font-size: 16px;
-    text-align: center;
-  }
+          p {
+            font-size: 18px;
+            text-align: center;
+          }
+        }
 
-  .userReviews {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80% !important;
-    height: 4rem;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+      }
 
-  .oneMovieHeaderRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    gap: 10px;
-  }
+      .oneMovieHeaderRight {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
 
-  .oneMovieLogo {
-    width: 100%;
-    height: 5rem;
-    object-fit: contain;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-    border-bottom: 4px solid #ffb20c;
-  }
+        .oneMovieLogo {
+          width: 100%;
+          height: 7rem;
+          margin: 0 auto;
+          object-fit: contain;
+          padding: 10px;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieHeaderRight h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    text-align: center;
-    font-size: 22px;
-    color: #ffb20c;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-    border-bottom: 4px solid #ffb20c;
-  }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 7rem;
+          font-size: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          border: 4px solid #ffb20c;
+        }
 
-  .oneMovieInfos {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-    gap: 10px;
-    padding: 5px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-top: 4px solid #ffb20c;
-  }
+        .oneMovieInfos {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+          height: auto;
+          gap: 10px;
+          padding: 10px;
+          border: 4px solid #ffb20c;
 
-  .oneMovieDetails {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    height: 20rem !important;
-    overflow-y: auto;
-    gap: 5px;
-    padding: 5px;
-    border: 4px solid #ffb20c !important;
-  }
+          .oneMovieDetails {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            gap: 5px;
+            overflow-y: auto;
+            border: 4px solid #ffb20c;
 
-  .oneMovieDetails p {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 16px;
-    padding: 0 5px;
-    border: 4px solid #ffb20c;
-  }
+            p {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              padding: 5px;
+              font-size: 13px;
+              text-align: center;
+              background-color: black;
+              border: 2px solid #ffb20c;
+            }
 
-  .oneMovieSynopsis {
-    width: 100%;
-    height: 15rem !important;
-    overflow-y: auto;
-    padding: 5px;
-    border: 4px solid #ffb20c !important;
-  }
+            &::-webkit-scrollbar {
+              width: 8px;
+            }
 
-  .oneMovieSynopsis p {
-    font-family: "Patrick Hand SC", cursive;
-    font-size: 18px;
-    line-height: normal;
-    text-align: justify;
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+          }
+
+          .oneMovieSynopsis {
+            width: 100%;
+            height: 6rem;
+            padding: 5px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 4px solid #ffb20c;
+
+            &::-webkit-scrollbar {
+              width: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: #ffb20c;
+              border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: black;
+              border-radius: 4px;
+            }
+
+            p {
+              width: 100%;
+              height: 100%;
+              font-size: 13px;
+              font-style: italic;
+              text-align: justify;
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
   }
 
   .oneMovieCasting {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+    width: 100%;
     height: 100%;
     gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffb20c;
-    font-size: 20px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieCasting h3 {
-    width: 100%;
-    height: auto;
-    font-size: 22px;
-    text-align: center;
-    padding: 5px;
-    color: #ffb20c;
-    background-color: black;
-    border: 4px solid #ffb20c;
+    h3 {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+      font-size: 20px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
   }
 
   .oneMovieReviewsTrailer {
     display: flex;
     flex-direction: column;
-    width: auto;
-    height: auto;
-    gap: 15px;
-  }
-
-  .oneMovieReviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    height: auto;
+    height: 100%;
     gap: 10px;
-    padding: 10px;
-    background-color: black;
-    color: #ffb20c;
-    font-size: 20px;
-    border: 4px solid #ffb20c;
-  }
 
-  .oneMovieReviews h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 22px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    h3 {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+      font-size: 20px;
+      text-align: center;
+      background-color: black;
+      border: 4px solid #ffb20c;
+    }
 
-  .oneMovieTrailer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    gap: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 4px solid #ffb20c;
-    border-bottom: none;
-  }
+    .oneMovieReviews {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
+    }
 
-  .oneMovieTrailer h3 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 22px;
-    color: #ffb20c;
-    padding: 5px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
 
-  .oneMovieTrailer iframe {
-    width: 100%;
-    height: 15rem;
-    border: 4px solid #ffb20c;
-  }
+      iframe {
+        width: 100%;
+        height: 20rem;
+        border: 4px solid #ffb20c;
+      }
+    }
 
-  .oneMovieTrailerHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20rem;
-    gap: 20px;
-    padding: 10px;
-    color: #ffb20c;
-    font-size: 20px;
-    background-color: black;
-    border: 4px solid #ffb20c;
-  }
+    .oneMovieTrailerHolder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 20rem;
+      gap: 10px;
+      padding: 10px;
+      background-color: black;
+      border: 4px solid #ffb20c;
 
-  .oneMovieTrailerHolder svg {
-    font-size: 50px;
-  }
+      svg {
+        font-size: 4rem;
+      }
 
-  .oneMovieTrailerHolder p {
-    font-size: 18px;
-    text-align: center;
+      p {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
 }

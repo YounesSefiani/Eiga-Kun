@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../../../components/Header/Header";
 import HeaderPhone from "../../../../components/Header/HeaderFooterPhone/HeaderPhone/HeaderPhone";
 import FooterPhone from "../../../../components/Header/HeaderFooterPhone/FooterPhone/FooterPhone";
+import Pagination from "../../../../components/Pagination/Pagination";
+import usePagination from "../../../../components/Pagination/usePagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 import connexion from "../../../../services/connexion";
@@ -12,60 +14,27 @@ import "./OneDecadeMoviesPage.css";
 function OneDecadeMoviesPage() {
   const { startYear } = useParams();
   const navigate = useNavigate();
+  const moviesListRef = useRef(null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Nombre d'éléments par page
-
-  const totalPages = Math.ceil(movies.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentMovies = movies.slice(indexOfFirstItem, indexOfLastItem);
+  const {
+    currentPage,
+    totalPages,
+    paginatedItems,
+    goToPage,
+    setCurrentPage,
+  } = usePagination(movies, 10);
 
   // Fonctions de navigation
-  const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const handlePageChange = (pageNumber) => {
+    goToPage(pageNumber);
 
-  const goToPreviousPage = () => {
-    if (currentPage > 1) goToPage(currentPage - 1);
-  };
-
-  const goToNextPage = () => {
-    if (currentPage < totalPages) goToPage(currentPage + 1);
-  };
-
-  // Fonction pour générer les numéros de pages avec "..."
-  const getPageNumbers = () => {
-    const pages = [];
-    const maxVisiblePages = 3;
-
-    if (totalPages <= maxVisiblePages) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1);
-
-      if (currentPage > 3) {
-        pages.push("...");
-      }
-
-      const start = Math.max(2, currentPage - 1);
-      const end = Math.min(totalPages - 1, currentPage + 1);
-
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
-
-      if (currentPage < totalPages - 2) {
-        pages.push("...");
-      }
-
-      pages.push(totalPages);
+    if (moviesListRef.current) {
+      moviesListRef.current.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    return pages;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Reset page quand la décennie change
@@ -148,11 +117,11 @@ function OneDecadeMoviesPage() {
         <button onClick={() => navigate("/movies/decades")}>Retour</button>
       </div>
       <div className="oneMoviesContainer oneMoviesDecadeContainer">
-        <div className="oneMoviesList oneMoviesDecadeList">
+        <div className="oneMoviesList oneMoviesDecadeList" ref={moviesListRef}>
           {movies.length === 0 ? (
             <p className="noMoviesFound">Aucun film trouvé pour cette décennie.</p>
           ) : (
-            currentMovies.map((movie) => (
+            paginatedItems.map((movie) => (
               <div
                 className="oneMovieCard oneMovieDecadeCard"
                 key={movie.id}
@@ -212,31 +181,15 @@ function OneDecadeMoviesPage() {
             ))
           )}
         </div>
-        <div className="oneMoviePagePagination oneMovieDecadePagePagination">
-          <button onClick={goToPreviousPage} disabled={currentPage === 1}>
-            ← Précédent
-          </button>
-
-          {getPageNumbers().map((page, index) =>
-            page === "..." ? (
-              <span key={`ellipsis-${index}`} className="pagination-ellipsis">
-                ...
-              </span>
-            ) : (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={currentPage === page ? "active" : ""}
-              >
-                {page}
-              </button>
-            ),
-          )}
-
-          <button onClick={goToNextPage} disabled={currentPage === totalPages}>
-            Suivant →
-          </button>
-        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          containerClassName="oneMoviePagePagination oneMovieDecadePagePagination"
+          maxVisiblePages={3}
+          previousLabel="← Précédent"
+          nextLabel="Suivant →"
+        />
       </div>
       <FooterPhone />
     </div>

@@ -8,6 +8,7 @@ import MoviesDecadesPage from "./pages/Movies/MoviesPage/DecadesMoviesPage/Decad
 import OneDecadeMoviesPage from "./pages/Movies/MoviesPage/OneDecadeMoviesPage/OneDecadeMoviesPage.jsx";
 import MoviesCountriesPage from "./pages/Movies/MoviesPage/CountriesMoviesPage/CountriesMoviesPage.jsx";
 import OneCountryMoviesPage from "./pages/Movies/MoviesPage/OneCountryMoviesPage/OneCountryMoviesPage.jsx";
+import EveryMoviesPage from "./pages/Movies/MoviesPage/EveryMoviesPage/EveryMoviesPage.jsx";
 import OneMoviePage from "./pages/Movies/OneMoviePage/OneMoviePage.jsx";
 import SeriesPage from "./pages/Series/SeriesPage/SeriesPage.jsx";
 import OneSeriePage from "./pages/Series/OneSeriePage/OneSeriePage.jsx";
@@ -66,6 +67,18 @@ const router = createBrowserRouter([
   {
     path: "/movies/countries/:country",
     element: <OneCountryMoviesPage />,
+  },
+  {
+    path: "/movies/all",
+    element: <EveryMoviesPage />,
+    loader: async () => {
+      try {
+        const res = await connexion.get("/movies");
+        return res.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
   {
     path: "/movies/:id",
