@@ -72,8 +72,14 @@ function Header() {
         <img src={EigaKunLogo} alt="Eiga-Kun Logo" />
       </Link>
       <ul>
-        <li>
+        <li className="itemDropdown">
           <Link to="/movies">Films</Link>
+          <div className="dropdown-menu">
+      <Link to="/movies/genres">Films par genres</Link>
+      <Link to="/movies/countries">Films par pays</Link>
+      <Link to="/movies/decades">Films par années</Link>
+      <Link to="/movies/all">Tous les films</Link>
+    </div>
         </li>
         <li>
           <Link to="/series">Séries</Link>
