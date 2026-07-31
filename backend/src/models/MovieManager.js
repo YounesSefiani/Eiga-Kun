@@ -33,9 +33,14 @@ class MovieManager extends AbstractManager {
 
   // R - CRUD - Read
   async readMovies() {
-    const [movies] = await this.database.query(`SELECT * FROM ${this.table}`);
-    return movies;
-  }
+  const [movies] = await this.database.query(
+    `SELECT ${this.table}.*, AVG(userReviews.rating) AS average_rating 
+     FROM ${this.table} 
+     LEFT JOIN userReviews ON ${this.table}.id = userReviews.movie_id 
+     GROUP BY ${this.table}.id`
+  );
+  return movies;
+}
 
   async readMovieId(id) {
     const [movie] = await this.database.query(
