@@ -60,7 +60,7 @@
     /* Use flexible columns so gaps/borders don't force overflow */
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow-y: auto;
     margin: 0 auto;
     padding: 10px;
@@ -274,7 +274,7 @@
     /* Use flexible columns so gaps/borders don't force overflow */
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow-y: auto;
     margin: 0 auto;
     padding: 10px;
@@ -423,45 +423,6 @@
     &::-webkit-scrollbar-track {
       background-color: black;
       border-radius: 4px;
-    }
-  }
-
-  .oneMovieDecadePagePagination {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: auto;
-    height: auto;
-    gap: 20px;
-    padding: 10px;
-    border-top: 4px solid #ffb20c;
-
-    button {
-      width: 15rem;
-      height: auto;
-      padding: 5px;
-      font-size: 17px;
-      color: #ffb20c;
-      background-color: black;
-      border: 4px solid #ffb20c;
-      border-radius: 10px;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: black;
-        background-color: #ffb20c;
-      }
-
-      &.active {
-        color: black;
-        background-color: #ffb20c;
-        border-radius: 10px;
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
     }
   }
 
@@ -658,49 +619,6 @@
     display: none;
   }
 
-  .oneMovieDecadePagePagination {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 10px;
-    border-top: 4px solid #ffb20c;
-
-    button {
-      width: 10rem;
-      height: auto;
-      padding: 5px;
-      font-size: 16px;
-      color: #ffb20c;
-      background-color: black;
-      border: 4px solid #ffb20c;
-      border-radius: 10px;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: black;
-        background-color: #ffb20c;
-      }
-
-      &.active {
-        width: auto;
-        height: auto;
-        font-size: 15px;
-        text-align: center;
-        margin: 0 auto;
-        color: black;
-        background-color: #ffb20c;
-        border-radius: 10px;
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
-    }
-  }
 }
 
 /* VERSION MOBILE */
@@ -766,7 +684,7 @@
     /* Use flexible columns so gaps/borders don't force overflow */
     grid-template-columns: repeat(2, auto);
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0 auto;
@@ -892,47 +810,4 @@
     display: none;
   }
 
-  .oneMovieDecadePagePagination {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 10px;
-    border-top: 4px solid #ffb20c;
-
-    button {
-      width: 10rem;
-      height: auto;
-      padding: 5px;
-      font-size: 16px;
-      color: #ffb20c;
-      background-color: black;
-      border: 4px solid #ffb20c;
-      border-radius: 10px;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        color: black;
-        background-color: #ffb20c;
-      }
-
-      &.active {
-        width: auto;
-        height: auto;
-        font-size: 15px;
-        text-align: center;
-        margin: 0 auto;
-        color: black;
-        background-color: #ffb20c;
-        border-radius: 10px;
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
-    }
-  }
 }

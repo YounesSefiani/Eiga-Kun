@@ -167,10 +167,7 @@ function OneGenreMoviesPage() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
-          containerClassName="oneMoviePagePagination oneMovieGenrePagePagination"
           maxVisiblePages={3}
-          previousLabel="←"
-          nextLabel="→"
         />
       </div>
       <FooterPhone />
