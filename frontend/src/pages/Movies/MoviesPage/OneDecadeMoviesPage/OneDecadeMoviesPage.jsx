@@ -185,10 +185,7 @@ function OneDecadeMoviesPage() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
-          containerClassName="oneMoviePagePagination oneMovieDecadePagePagination"
           maxVisiblePages={3}
-          previousLabel="← Précédent"
-          nextLabel="Suivant →"
         />
       </div>
       <FooterPhone />

@@ -18,7 +18,7 @@ function CastingContainer({ casting }) {
           <div className="realisationList">
             <HorizontalScroll>
               {realisation.map((cast) => (
-                <div className="realisationCard" key={cast.id}>
+                <div className="realisationCard" key={cast.id} title={cast.personality_fullname}>
                   <Link to={`/personalities/${cast.personality_id}`}>
                     <h4>{cast.personality_fullname}</h4>
                     <div className="realisationPicture">
@@ -70,7 +70,7 @@ function CastingContainer({ casting }) {
           <div className="actingList">
             <HorizontalScroll>
               {acting.map((cast) => (
-                <div className="actingCard" key={cast.id}>
+                <div className="actingCard" key={cast.id} title={cast.personality_fullname}>
                   <Link to={`/personalities/${cast.personality_id}`}>
                     <h4>{cast.personality_fullname}</h4>
                     <div className="actingPicture">

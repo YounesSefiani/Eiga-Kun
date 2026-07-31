@@ -104,28 +104,28 @@ function OneMoviesCountryPage() {
   if (loading) return <div className="loadingScreen">Chargement...</div>;
 
   return (
-    <div className="oneMoviesPage oneMoviesCountryPage">
+    <div className="oneMoviesCountryPage">
         <title>{`Films de ${countryDisplayName} - Eiga-Kun`}</title>
       <Header />
       <HeaderPhone />
-      <div className="oneMoviesHeader oneMoviesCountryHeader">
+      <div className="oneMoviesCountryHeader">
         <h2>
           Films de {countryDisplayName} ({movies.length})
         </h2>
         <button onClick={() => navigate("/movies/countries")}>Retour</button>
       </div>
-      <div className="oneMoviesContainer oneMoviesCountryContainer">
-        <div className="oneMoviesList oneMoviesCountryList" ref={moviesListRef}>
+      <div className="oneMoviesCountryContainer">
+        <div className="oneMoviesCountryList" ref={moviesListRef}>
           {movies.length === 0 ? (
             <p className="noMoviesFound">Aucun film trouvé pour ce pays.</p>
           ) : (
             paginatedItems.map((movie) => (
               <div
-                className="oneMovieCard oneMoviesCountryCard"
+                className="oneMoviesCountryCard"
                 key={movie.id}
                 onClick={() => navigate(`/movies/${movie.id}`)}
               >
-                <div className="oneMovieCardLeft oneMoviesCountryCardLeft">
+                <div className="oneMoviesCountryCardLeft">
                   <div className="oneMoviesCountryPoster">
                     {movie.poster ? (
                       <img
@@ -154,9 +154,9 @@ function OneMoviesCountryPage() {
                     /10
                   </p>
                 </div>
-                <div className="oneMovieCardRight oneMoviesCountryCardRight">
+                <div className="oneMoviesCountryCardRight">
                   <h3 title={movie.title}>{movie.title}</h3>
-                  <div className="oneMovieCardDetails oneMoviesCountryCardDetails">
+                  <div className="oneMoviesCountryCardDetails">
                     <p>Date de sortie : {formatDate(movie.release_date)}</p>
                     <p>Durée : {formatDuration(movie.duration)}</p>
                     <p>Sortie au : {movie.screen}</p>
@@ -179,10 +179,7 @@ function OneMoviesCountryPage() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}
-          containerClassName="oneMoviePagePagination oneMoviesCountryPagePagination"
           maxVisiblePages={7}
-          previousLabel="← Précédent"
-          nextLabel="Suivant →"
         />
 
       </div>
