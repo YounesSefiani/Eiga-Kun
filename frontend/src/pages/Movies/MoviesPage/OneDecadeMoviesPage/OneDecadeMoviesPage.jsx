@@ -40,7 +40,7 @@ function OneDecadeMoviesPage() {
   // Reset page quand la décennie change
   useEffect(() => {
     setCurrentPage(1);
-  }, [startYear]);
+  }, [setCurrentPage, startYear]);
 
   const formatDate = (date) => {
     if (!date) return "";

@@ -59,7 +59,7 @@ function OneMoviesCountryPage() {
   // Reset page quand le country change
   useEffect(() => {
     setCurrentPage(1);
-  }, [country]);
+  }, [country, setCurrentPage]);
 
   const formatDate = (date) => {
     if (!date) return "";
