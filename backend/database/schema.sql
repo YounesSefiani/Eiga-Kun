@@ -7,16 +7,16 @@ CREATE TABLE
         logo VARCHAR(255) NULL,
         trailer VARCHAR(255) NULL,
         synopsis TEXT NULL,
-        genre VARCHAR(255) NULL,
-        theme VARCHAR(255) NULL,
+        genre INT NULL,
+        theme INT NULL,
         release_date DATE NULL,
         screen ENUM ('Cinema', 'TV', 'DVD', 'Streaming') NULL,
         streaming VARCHAR(255) NULL,
         original VARCHAR(255) NULL,
         duration TIME NULL,
-        country VARCHAR(255) NULL,
-        universe VARCHAR(255) NULL,
-        subUniverse VARCHAR(255) NULL
+        nationality INT NULL,
+        universe INT NULL,
+        subUniverse INT NULL
     );
 
 INSERT INTO
@@ -34,7 +34,7 @@ INSERT INTO
         streaming,
         original,
         duration,
-        country,
+        nationality,
         universe,
         subUniverse
     )
@@ -46,15 +46,15 @@ VALUES
         "https://image.tmdb.org/t/p/original/lzC2mzjGp09SbWyGf868tlrJ7Xs.png",
         "https://www.youtube.com/embed/EEuEavdbmhY?si=EkEccJfHHoxxaw-8",
         "De plus en plus souvent, la petite Sharon rêve d'une ville abandonnée, Silent Hill. Sa mère, Rose, décidée à comprendre l'étrange mal dont souffre son enfant, décide de l'accompagner sur place. Alors qu'elles pénètrent dans cet univers lugubre, Sharon disparaît. Rose se lance à sa poursuite, mais se rend vite compte que ce lieu étrange ne ressemble à rien de normal. Noyée dans le brouillard, peuplée d'étranges créatures, hantée par des ténèbres vivantes qui dévorent littéralement tout ce qu'elles touchent, cette dimension va peu à peu livrer ses terrifiants secrets... Avec l'aide de Cybil, de la police locale, Rose se jette dans une quête éperdue pour arracher sa fille au monde de Silent Hill. D'indices en épreuves, elle va découvrir tout ce que Sharon risque et ce qu'elle représente dans une malédiction qui dépasse tout... Adaptation cinématographique du jeu vidéo éponyme",
-        "Horreur",
-        "Adaptation, Jeux vidéo, Mystères",
+        7,
+        5,
         "2006-04-26",
         "Cinéma",
         null,
         null,
         "2:05:00",
-        "USA, France",
-        "Silent Hill",
+        1,
+        null,
         null
     );
 
@@ -78,6 +78,7 @@ CREATE TABLE
             'En cours',
             'Terminée',
             'Fin de saison',
+            'Prochaine saison à venir',
             'Annulée'
         ) NULL,
         nbSeasons INT,
@@ -259,7 +260,7 @@ VALUES
         "Actrice de la série Silent Hill"
     );
 
-    INSERT INTO
+INSERT INTO
     personalities (
         fullname,
         picture,
@@ -283,6 +284,320 @@ VALUES
         "Male",
         "Acteur de la série Marvel's Daredevil"
     );
+
+CREATE TABLE
+    genres (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        imageGenre VARCHAR(255) NULL
+    );
+
+INSERT INTO
+    genres (name, imageGenre)
+VALUES
+    (
+        "Action",
+        "https://image.tmdb.org/t/p/original/r17jFHAemzcWPPtoO0UxjIX0xas.jpg"
+    ),
+    (
+        "Aventure",
+        "https://image.tmdb.org/t/p/original/9lm7drIvSPANclGcbVUYJlK4ivh.jpg"
+    ),
+    (
+        "Comédie",
+        "https://image.tmdb.org/t/p/original/bQlw59HncOXX9alFlOYKHAvSnm.jpg"
+    ),
+    (
+        "Musical",
+        "https://image.tmdb.org/t/p/original/qhRbhkw9aQMM3uqCt1F06vz5xXu.jpg"
+    ),
+    (
+        "Romance",
+        "https://image.tmdb.org/t/p/original/sCzcYW9h55WcesOqA12cgEr9Exw.jpg"
+    ),
+    (
+        "Drame",
+        "https://image.tmdb.org/t/p/original/esIkb7Wkfk016ZNpqX24w0gbgkb.jpg"
+    ),
+    (
+        "Horreur",
+        "https://image.tmdb.org/t/p/original/7sK1fJTh6ndhI7gRg1L9VS4260r.jpg"
+    ),
+    (
+        "Fantastique",
+        "https://image.tmdb.org/t/p/original/pZIiPOoNhhzVpBuVEpDK7vbBz4l.jpg"
+    ),
+    (
+        "Science-Fiction",
+        "https://image.tmdb.org/t/p/original/h3HsfV8Kn9Sz2QWUYYdP5ya23hx.jpg"
+    ),
+    (
+        "Thriller",
+        "https://image.tmdb.org/t/p/original/8eihUxjQsJ7WvGySkVMC0EwbPAD.jpg"
+    ),
+    (
+        "Animation",
+        "https://image.tmdb.org/t/p/original/19SRdYFaxTbqG8rc9CpXmfLpPoM.jpg"
+    ),
+    (
+        "Documentaire",
+        "https://image.tmdb.org/t/p/original/f589RGsnKpDvHu9qvELM6LZBEbG.jpg"
+    ),
+    (
+        "Western",
+        "https://image.tmdb.org/t/p/original/x4biAVdPVCghBlsVIzB6NmbghIz.jpg"
+    ),
+    (
+        "Biopic",
+        "https://image.tmdb.org/t/p/original/bBdYxkiDVGjKHmlyGa5WG1EVTI4.jpg"
+    ),
+    (
+        "Guerre",
+        "https://image.tmdb.org/t/p/original/z2NFCCvH3joRoTWHuNDS499FypC.jpg"
+    );
+
+CREATE TABLE
+    themes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        imageTheme VARCHAR(255) NULL
+    );
+
+INSERT INTO
+    themes (name, imageTheme)
+VALUES
+    (
+        "Super-Héros",
+        "https://image.tmdb.org/t/p/original/mDfJG3LC3Dqb67AZ52x3Z0jU0uB.jpg"
+    ),
+    (
+        "Arts Martiaux",
+        "https://image.tmdb.org/t/p/original/b9G01LQzVhxgxdFOgopYlShM4L5.jpg"
+    ),
+    (
+        "Enquêtes",
+        "https://image.tmdb.org/t/p/original/i5H7zusQGsysGQ8i6P361Vnr0n2.jpg"
+    ),
+    (
+        "Adaptation de livres",
+        "https://image.tmdb.org/t/p/original/gEHDCtR9PNZvLG70sFBYJCFznRY.jpg"
+    ),
+    (
+        "Adaptation de jeux vidéos",
+        "https://image.tmdb.org/t/p/original/WcmrlndXAPw3a2l9VJw9hHeKOo.jpg"
+    ),
+    (
+        "Adaptation de bande dessinés",
+        "https://image.tmdb.org/t/p/original/1FxwuCdaMmCEsl3hSlafKRHR8Th.jpg"
+    ),
+    (
+        "Paranormal",
+        "https://image.tmdb.org/t/p/original/1AXNgpcJ4Ks4vZ6MlpyyRNw5OGD.jpg"
+    ),
+    (
+        "Voyages",
+        "https://image.tmdb.org/t/p/original/m4TUa2ciEWSlk37rOsjiSIvZDXE.jpg"
+    ),
+    (
+        "Adaptation de comics",
+        "https://image.tmdb.org/t/p/original/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg"
+    ),
+    (
+        "Found-Footage",
+        "https://image.tmdb.org/t/p/original/xs0A4iWEg0cy65hBTyJRLrA3kNS.jpg"
+    ),
+    (
+        "Peplum",
+        "https://image.tmdb.org/t/p/original/jhk6D8pim3yaByu1801kMoxXFaX.jpg"
+    );
+
+CREATE TABLE
+    universes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        imageUniverse VARCHAR(255) NULL
+    );
+
+INSERT INTO
+    universes (name, imageUniverse)
+VALUES
+    (
+        "Marvel",
+        "https://upload.wikimedia.org/wikipedia/commons/9/90/Marvel_Studios_logo.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original"
+    ),
+    (
+        "DC",
+        "https://sm.ign.com/ign_fr/news/d/dc-studios/dc-studios-logo-has-been-revealed-and-its-a-nod-to-a-classic_7he9.jpg"
+    ),
+    (
+        "Harry Potter",
+        "https://image.tmdb.org/t/p/original/zNV7PLIKRaqi7zXNKYljyAaVShZ.png"
+    ),
+    (
+        "Star Wars",
+        "https://image.tmdb.org/t/p/original/uuYGkf8rGl7nJ92jaXt7f9plL4p.png"
+    ),
+    (
+        "Terminator",
+        "https://image.tmdb.org/t/p/original/ipgDUr7fD8adbqHfCssloIultfN.png"
+    );
+
+CREATE TABLE
+    subUniverses (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        universe_id INT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        imageSubUniverse VARCHAR(255) NULL,
+        FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    subUniverses (universe_id, name, imageSubUniverse)
+VALUES
+    (
+        1,
+        "Spider-Man",
+        "https://image.tmdb.org/t/p/original/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg"
+    ),
+    (
+        1,
+        "Daredevil",
+        "https://image.tmdb.org/t/p/original/jy8zlPPD3LQZa2Cq41iRg6IXD7u.jpg"
+    ),
+    (
+        1,
+        "Avengers",
+        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
+    ),
+    (
+        2,
+        "Batman",
+        "https://image.tmdb.org/t/p/original/zlsaQEE26TS34ziXAiNIAqa0MLX.jpg"
+    ),
+    (
+        2,
+        "Superman",
+        "https://image.tmdb.org/t/p/original/bWZwiaJSXwYILxi3bE5Quwy5UXC.jpg"
+    );
+
+CREATE TABLE
+    nationalities (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        code VARCHAR(10) NULL,
+        imageNationality VARCHAR(255) NULL
+    );
+
+INSERT INTO
+    nationalities (name, code, imageNationality)
+VALUES
+    (
+        "France",
+        "fr",
+        "https://www.drapeauxdespays.fr/data/flags/w580/fr.webp"
+    ),
+    (
+        "USA",
+        "us",
+        "https://www.drapeauxdespays.fr/data/flags/w580/us.webp"
+    ),
+    (
+        "Canada",
+        "ca",
+        "https://www.drapeauxdespays.fr/data/flags/w580/ca.webp"
+    ),
+    (
+        "Royaume-Uni",
+        "gb",
+        "https://www.drapeauxdespays.fr/data/flags/w580/gb.webp"
+    ),
+    (
+        "Allemagne",
+        "de",
+        "https://www.drapeauxdespays.fr/data/flags/w580/de.webp"
+    ),
+    (
+        "Italie",
+        "it",
+        "https://www.drapeauxdespays.fr/data/flags/w580/it.webp"
+    ),
+    (
+        "Espagne",
+        "es",
+        "https://www.drapeauxdespays.fr/data/flags/w580/es.webp"
+    ),
+    (
+        "Japon",
+        "jp",
+        "https://www.drapeauxdespays.fr/data/flags/w580/jp.webp"
+    ),
+    (
+        "Chine",
+        "cn",
+        "https://www.drapeauxdespays.fr/data/flags/w580/cn.webp"
+    ),
+    (
+        "Inde",
+        "in",
+        "https://www.drapeauxdespays.fr/data/flags/w580/in.webp"
+    ),
+    (
+        "Brésil",
+        "br",
+        "https://www.drapeauxdespays.fr/data/flags/w580/br.webp"
+    ),
+    (
+        "Australie",
+        "au",
+        "https://www.drapeauxdespays.fr/data/flags/w580/au.webp"
+    ),
+    (
+        "Russie",
+        "ru",
+        "https://www.drapeauxdespays.fr/data/flags/w580/ru.webp"
+    ),
+    (
+        "Mexique",
+        "mx",
+        "https://www.drapeauxdespays.fr/data/flags/w580/mx.webp"
+    ),
+    (
+        "Argentine",
+        "ar",
+        "https://www.drapeauxdespays.fr/data/flags/w580/ar.webp"
+    ),
+    (
+        "Afrique du Sud",
+        "za",
+        "https://www.drapeauxdespays.fr/data/flags/w580/za.webp"
+    ),
+    (
+        "Corée du Sud",
+        "kr",
+        "https://www.drapeauxdespays.fr/data/flags/w580/kr.webp"
+    ),
+    (
+        "Turquie",
+        "tr",
+        "https://www.drapeauxdespays.fr/data/flags/w580/tr.webp"
+    ),
+    (
+        "Pays-Bas",
+        "nl",
+        "https://www.drapeauxdespays.fr/data/flags/w580/nl.webp"
+    ),
+    (
+        "Suède",
+        "se",
+        "https://www.drapeauxdespays.fr/data/flags/w580/se.webp"
+    );
+
+ALTER TABLE movies
+    ADD FOREIGN KEY (genre) REFERENCES genres (id) ON DELETE SET NULL,
+    ADD FOREIGN KEY (theme) REFERENCES themes (id) ON DELETE SET NULL,
+    ADD FOREIGN KEY (nationality) REFERENCES nationalities (id) ON DELETE SET NULL,
+    ADD FOREIGN KEY (universe) REFERENCES universes (id) ON DELETE SET NULL,
+    ADD FOREIGN KEY (subUniverse) REFERENCES subUniverses (id) ON DELETE SET NULL;
 
 CREATE TABLE
     castings (
@@ -317,7 +632,7 @@ VALUES
         NULL
     );
 
-    INSERT INTO
+INSERT INTO
     castings (
         personality_id,
         movie_id,
@@ -378,13 +693,13 @@ CREATE TABLE
         UNIQUE (user_id, movie_id, status),
         UNIQUE (user_id, serie_id, status),
         UNIQUE (user_id, personality_id, status),
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-        FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE,
-        FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
-        FOREIGN KEY (personality_id) REFERENCES personalities(id) ON DELETE CASCADE
+        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (personality_id) REFERENCES personalities (id) ON DELETE CASCADE
     );
 
-    INSERT INTO 
+INSERT INTO
     userFavorites (user_id, movie_id, status)
 VALUES
     ("1", "1", "favorite");
