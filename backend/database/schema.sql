@@ -415,31 +415,42 @@ CREATE TABLE
     universes (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(255) NOT NULL UNIQUE,
-        imageUniverse VARCHAR(255) NULL
+        imageUniverse VARCHAR(255) NULL,
+        universe_description TEXT NULL
     );
 
 INSERT INTO
-    universes (name, imageUniverse)
+    universes (name, imageUniverse, universe_description)
 VALUES
     (
         "Marvel",
-        "https://upload.wikimedia.org/wikipedia/commons/9/90/Marvel_Studios_logo.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original"
+        "https://upload.wikimedia.org/wikipedia/commons/9/90/Marvel_Studios_logo.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original",
+        "L'univers cinématographique de Marvel (MCU) est une franchise de films et de séries télévisées interconnectés basée sur les personnages de Marvel Comics. Il a été lancé en 2008."
     ),
     (
         "DC",
-        "https://sm.ign.com/ign_fr/news/d/dc-studios/dc-studios-logo-has-been-revealed-and-its-a-nod-to-a-classic_7he9.jpg"
+        "https://sm.ign.com/ign_fr/news/d/dc-studios/dc-studios-logo-has-been-revealed-and-its-a-nod-to-a-classic_7he9.jpg",
+        null
     ),
     (
         "Harry Potter",
-        "https://image.tmdb.org/t/p/original/zNV7PLIKRaqi7zXNKYljyAaVShZ.png"
+        "https://image.tmdb.org/t/p/original/zNV7PLIKRaqi7zXNKYljyAaVShZ.png",
+        null
     ),
     (
         "Star Wars",
-        "https://image.tmdb.org/t/p/original/uuYGkf8rGl7nJ92jaXt7f9plL4p.png"
+        "https://image.tmdb.org/t/p/original/uuYGkf8rGl7nJ92jaXt7f9plL4p.png",
+        null
     ),
     (
         "Terminator",
-        "https://image.tmdb.org/t/p/original/ipgDUr7fD8adbqHfCssloIultfN.png"
+        "https://image.tmdb.org/t/p/original/ipgDUr7fD8adbqHfCssloIultfN.png",
+        null
+    ),
+    (
+        "Silent Hill",
+        "https://image.tmdb.org/t/p/original/q3OJ9BiFF3DZme2hXRZ1mbDnr36.png",
+        null
     );
 
 CREATE TABLE
@@ -448,36 +459,42 @@ CREATE TABLE
         universe_id INT NOT NULL,
         name VARCHAR(255) NOT NULL UNIQUE,
         imageSubUniverse VARCHAR(255) NULL,
+        subUniverse_description TEXT NULL,
         FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
     );
 
 INSERT INTO
-    subUniverses (universe_id, name, imageSubUniverse)
+    subUniverses (universe_id, name, imageSubUniverse, subUniverse_description)
 VALUES
     (
         1,
         "Spider-Man",
-        "https://image.tmdb.org/t/p/original/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg"
+        "https://image.tmdb.org/t/p/original/zQ8AxTPiCiS5nnwXpwTBPBHSaa5.jpg",
+        "Spider-Man est un être bien singulier."
     ),
     (
         1,
         "Daredevil",
-        "https://image.tmdb.org/t/p/original/jy8zlPPD3LQZa2Cq41iRg6IXD7u.jpg"
+        "https://image.tmdb.org/t/p/original/jy8zlPPD3LQZa2Cq41iRg6IXD7u.jpg",
+        null
     ),
     (
         1,
         "Avengers",
-        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
+        "https://image.tmdb.org/t/p/original/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+        null
     ),
     (
         2,
         "Batman",
-        "https://image.tmdb.org/t/p/original/zlsaQEE26TS34ziXAiNIAqa0MLX.jpg"
+        "https://image.tmdb.org/t/p/original/zlsaQEE26TS34ziXAiNIAqa0MLX.jpg",
+        null
     ),
     (
         2,
         "Superman",
-        "https://image.tmdb.org/t/p/original/bWZwiaJSXwYILxi3bE5Quwy5UXC.jpg"
+        "https://image.tmdb.org/t/p/original/bWZwiaJSXwYILxi3bE5Quwy5UXC.jpg",
+        null
     );
 
 CREATE TABLE
@@ -592,12 +609,122 @@ VALUES
         "https://www.drapeauxdespays.fr/data/flags/w580/se.webp"
     );
 
-ALTER TABLE movies
-    ADD FOREIGN KEY (genre) REFERENCES genres (id) ON DELETE SET NULL,
-    ADD FOREIGN KEY (theme) REFERENCES themes (id) ON DELETE SET NULL,
-    ADD FOREIGN KEY (nationality) REFERENCES nationalities (id) ON DELETE SET NULL,
-    ADD FOREIGN KEY (universe) REFERENCES universes (id) ON DELETE SET NULL,
-    ADD FOREIGN KEY (subUniverse) REFERENCES subUniverses (id) ON DELETE SET NULL;
+CREATE TABLE
+    movie_genres (
+        movie_id INT NOT NULL,
+        genre_id INT NOT NULL,
+        PRIMARY KEY (movie_id, genre_id),
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_genres (movie_id, genre_id)
+VALUES
+    (1, 7),
+    (1, 8);
+
+CREATE TABLE
+    serie_genres (
+        serie_id INT NOT NULL,
+        genre_id INT NOT NULL,
+        PRIMARY KEY (serie_id, genre_id),
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_genres (serie_id, genre_id)
+VALUES
+    (1, 1),
+    (1, 10);
+
+CREATE TABLE
+    movie_themes (
+        movie_id INT NOT NULL,
+        theme_id INT NOT NULL,
+        PRIMARY KEY (movie_id, theme_id),
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (theme_id) REFERENCES themes (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_themes (movie_id, theme_id)
+VALUES
+    (1, 5),
+    (1, 7);
+
+CREATE TABLE
+    serie_themes (
+        serie_id INT NOT NULL,
+        theme_id INT NOT NULL,
+        PRIMARY KEY (serie_id, theme_id),
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (theme_id) REFERENCES themes (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_themes (serie_id, theme_id)
+VALUES
+    (1, 1),
+    (1, 3),
+    (1, 9);
+
+CREATE TABLE
+    movie_universes (
+        movie_id INT NOT NULL,
+        universe_id INT NOT NULL,
+        PRIMARY KEY (movie_id, universe_id),
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_universes (movie_id, universe_id)
+VALUES
+    (1, 6);
+
+CREATE TABLE
+    movie_subUniverses (
+        movie_id INT NOT NULL,
+        subUniverse_id INT NOT NULL,
+        PRIMARY KEY (movie_id, subUniverse_id),
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (subUniverse_id) REFERENCES subUniverses (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_subUniverses (movie_id, subUniverse_id)
+VALUES
+    (1, 1);
+
+CREATE TABLE
+    serie_universes (
+        serie_id INT NOT NULL,
+        universe_id INT NOT NULL,
+        PRIMARY KEY (serie_id, universe_id),
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_universes (serie_id, universe_id)
+VALUES
+    (1, 1);
+
+CREATE TABLE
+    serie_subUniverses (
+        serie_id INT NOT NULL,
+        subUniverse_id INT NOT NULL,
+        PRIMARY KEY (serie_id, subUniverse_id),
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (subUniverse_id) REFERENCES subUniverses (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_subUniverses (serie_id, subUniverse_id)
+VALUES
+    (1, 2);
 
 CREATE TABLE
     castings (
