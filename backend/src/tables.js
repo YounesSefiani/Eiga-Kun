@@ -2,6 +2,10 @@ const MovieManager = require("./models/MovieManager");
 const SerieManager = require("./models/SeriesModels/SerieManager");
 const SeasonManager = require("./models/SeriesModels/SeasonManager");
 const EpisodeManager = require("./models/SeriesModels/EpisodeManager");
+const GenreManager = require("./models/GenreManager");
+const ThemeManager = require("./models/ThemeManager");
+const UniverseManager = require("./models/UniverseManager");
+const SubUniverseManager = require("./models/SubUniverseManager");
 const PersonalityManager = require("./models/PersonalityManager");
 const CastingManager = require("./models/CastingManager");
 const UserManager = require("./models/UsersModels/UserManager");
@@ -13,6 +17,10 @@ const managers = [
     SerieManager,
     SeasonManager,
     EpisodeManager,
+    GenreManager,
+    ThemeManager,
+    UniverseManager,
+    SubUniverseManager,
     PersonalityManager,
     CastingManager,
     UserManager,

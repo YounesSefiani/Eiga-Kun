@@ -105,6 +105,30 @@ router.put(
 );
 router.delete("/episodes/:id", verifyToken, episodesControllers.destroyEpisode);
 
+// GENRES //
+const genresControllers = require("./controllers/genresControllers");
+router.get("/genres", genresControllers.browseGenres);
+router.get("/genres/:id", genresControllers.readOneGenre);
+router.get("/genres/:id/movies", genresControllers.readOneMoviesGenre);
+
+// THEMES //
+const themesControllers = require("./controllers/themesControllers");
+router.get("/themes", themesControllers.browseThemes);
+router.get("/themes/:id", themesControllers.readOneTheme);
+router.get("/themes/:id/movies", themesControllers.readOneMoviesTheme);
+router.get("/themes/:id/series", themesControllers.readOneSeriesTheme);
+
+// UNIVERSE //
+const universesControllers = require("./controllers/universesControllers");
+router.get("/universes", universesControllers.browseUniverses);
+router.get("/universes/:id", universesControllers.readOneUniverse);
+router.get("/universes/:id/sub-universes", universesControllers.readAllSubUniverseInUniverse);
+
+// SUB-UNIVERSE //
+const subUniversesControllers = require("./controllers/subUniversesControllers");
+router.get("/sub-universes", subUniversesControllers.browseSubUniverses);
+router.get("/sub-universes/:id", subUniversesControllers.readOneSubUniverse);
+
 // PERSONALITIES //
 const personalitiesControllers = require("./controllers/personalitiesControllers");
 const uploadPersonalities = require("./Middlewares/Multer/MulterPersonalities");

@@ -34,6 +34,22 @@ const readFullMovie = async (req, res, next) => {
     movie.casting = casting || [];
     const reviews = await tables.userReviews.readMovieReviews(movieId);
     movie.reviews = reviews || [];
+    const genres = await tables.genres.readGenresInMovie(movieId);
+    movie.genres = genres || [];
+    const themes = await tables.themes.readThemesInMovie(movieId);
+    movie.themes = themes || [];
+    const universes = await tables.universes.readUniversesInMovie(movieId);
+    movie.universes = universes || [];
+    const subUniverses =
+      await tables.subUniverses.readSubUniversesInMovie(movieId);
+    movie.subUniverses = subUniverses || [];
+
+    // Supprimer les champs ID bruts
+    delete movie.genre;
+    delete movie.theme;
+    delete movie.universe;
+    delete movie.subUniverse;
+
     res.status(200).json(movie);
   } catch (error) {
     next(error);
