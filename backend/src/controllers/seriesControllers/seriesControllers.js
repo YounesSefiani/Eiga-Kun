@@ -40,8 +40,26 @@ const readFullSerie = async (req, res, next) => {
 
     const reviews = await tables.userReviews.readSerieReviews(serie.id);
 
+    const genres = await tables.genres.readGenresInSerie(serie.id);
+    const themes = await tables.themes.readThemesInSerie(serie.id);
+    const universes = await tables.universes.readUniversesInSerie(serie.id);
+    const subUniverses = await tables.subUniverses.readSubUniversesInSerie(
+      serie.id
+    );
+
+    delete serie.genre;
+    delete serie.theme;
+    delete serie.universe;
+    delete serie.subUniverse;
+    delete serie.seasons;
+    delete serie.episodes;
+
     const fullSerie = {
       ...serie,
+      genres: genres || [],
+      themes: themes || [],
+      universes: universes || [],
+      subUniverses: subUniverses || [],
       seasons: seasonsWithEpisodes,
       casting: casting || [],
       reviews: reviews || [],
