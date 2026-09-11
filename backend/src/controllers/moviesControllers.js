@@ -38,6 +38,9 @@ const readFullMovie = async (req, res, next) => {
     movie.genres = genres || [];
     const themes = await tables.themes.readThemesInMovie(movieId);
     movie.themes = themes || [];
+    const nationalities =
+      await tables.nationalities.readNationalitiesInMovie(movieId);
+    movie.nationalities = nationalities || [];
     const universes = await tables.universes.readUniversesInMovie(movieId);
     movie.universes = universes || [];
     const subUniverses =
@@ -47,6 +50,7 @@ const readFullMovie = async (req, res, next) => {
     // Supprimer les champs ID bruts
     delete movie.genre;
     delete movie.theme;
+    delete movie.nationality;
     delete movie.universe;
     delete movie.subUniverse;
 

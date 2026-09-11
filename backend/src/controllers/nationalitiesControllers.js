@@ -3,35 +3,38 @@ const fs = require("fs");
 const path = require("path");
 
 // B - BREAD - BROWSE (READ ALL)
-const browseThemes = async (req, res) => {
+const browseNationalities = async (req, res) => {
     try {
-        const themes = await tables.themes.readThemes();
-        res.status(200).json(themes);
+        const nationalities = await tables.nationalities.readNationalities();
+        res.status(200).json(nationalities);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-const readOneTheme = async (req, res) => {
-    const theme = await tables.themes.readThemeId(req.params.id);
-    if (!theme) {
-        return res.status(404).json({ error: "Theme not found" });
+// R - BREAD - READ ONE
+const readOneNationality = async (req, res) => {
+    const nationality = await tables.nationalities.readNationalityId(req.params.id);
+    if (!nationality) {
+        return res.status(404).json({ error: "Nationality not found" });
     } else {
-        res.json(theme);
+        res.json(nationality);
     }
 };
 
-const readOneMoviesTheme = async (req, res, next) => {
+const readOneNationalityInMovie = async (req, res, next) => {
     try {
-        const themeId = req.params.id;
-        const movies = await tables.themes.readOneThemeMovies(themeId);
+        const nationalityId = req.params.id;
+        const movies = await tables.nationalities.readOneNationalityMovies(nationalityId);
         if (!movies || movies.length === 0) {
-            return res.status(404).json({ error: "No movies found for this theme" });
+            return res.status(404).json({ error: "No movies found for this nationality" });
         }
         
-        // Enrichir chaque film avec themes, thèmes, univers, etc.
         const enrichedMovies = await Promise.all(
             movies.map(async (movie) => {
+                const nationalities = await tables.nationalities.readNationalitiesInMovie(movie.id);
+                movie.nationalities = nationalities || [];
+
                 const genres = await tables.genres.readGenresInMovie(movie.id);
                 movie.genres = genres || [];
                 
@@ -40,11 +43,12 @@ const readOneMoviesTheme = async (req, res, next) => {
                 
                 const universes = await tables.universes.readUniversesInMovie(movie.id);
                 movie.universes = universes || [];
-
+                
                 const subUniverses = await tables.subUniverses.readSubUniversesInMovie(movie.id);
                 movie.subUniverses = subUniverses || [];
                 
                 // Supprimer les champs ID bruts
+                delete movie.nationality;
                 delete movie.genre;
                 delete movie.theme;
                 delete movie.universe;
@@ -56,21 +60,25 @@ const readOneMoviesTheme = async (req, res, next) => {
         
         res.status(200).json(enrichedMovies);
     } catch (error) {
-        next(error);
+        next(
+            res.status(500).json({ error: error.message })
+        )
     }
 }
 
-const readOneSeriesTheme = async (req, res, next) => {
+const readOneNationalityInSerie = async (req, res, next) => {
     try {
-        const themeId = req.params.id;
-        const series = await tables.themes.readOneThemeSeries(themeId);
+        const nationalityId = req.params.id;
+        const series = await tables.nationalities.readOneNationalitySeries(nationalityId);
         if (!series || series.length === 0) {
-            return res.status(404).json({ error: "No series found for this theme" });
+            return res.status(404).json({ error: "No series found for this nationality" });
         }
         
-        // Enrichir chaque film avec themes, thèmes, univers, etc.
         const enrichedSeries = await Promise.all(
             series.map(async (serie) => {
+                const nationalities = await tables.nationalities.readNationalitiesInSerie(serie.id);
+                serie.nationalities = nationalities || [];
+
                 const genres = await tables.genres.readGenresInSerie(serie.id);
                 serie.genres = genres || [];
                 
@@ -79,17 +87,16 @@ const readOneSeriesTheme = async (req, res, next) => {
                 
                 const universes = await tables.universes.readUniversesInSerie(serie.id);
                 serie.universes = universes || [];
-
+                
                 const subUniverses = await tables.subUniverses.readSubUniversesInSerie(serie.id);
                 serie.subUniverses = subUniverses || [];
                 
                 // Supprimer les champs ID bruts
-                delete serie.theme;
+                delete serie.nationality;
+                delete serie.genre;
                 delete serie.theme;
                 delete serie.universe;
                 delete serie.subUniverse;
-                delete serie.seasons;
-                delete serie.episodes;
                 
                 return serie;
             })
@@ -97,52 +104,52 @@ const readOneSeriesTheme = async (req, res, next) => {
         
         res.status(200).json(enrichedSeries);
     } catch (error) {
-        next(error);
+        next(
+            res.status(500).json({ error: error.message })
+        )
     }
-
 }
 
 // E - BREAD - EDIT
-const editTheme = async (req, res, next) => {
-    const updateTheme = req.body;
+const editNationality = async (req, res) => {
+    const updateNationality = req.body;
     const { id } = req.params;
     try {
-        await tables.themes.updateTheme(id, updateTheme);
-        res.status(200).json({ ...updateTheme, id: parseInt(id, 10) });
+        await tables.nationalities.updateNationality(id, updateNationality);
+        res.status(200).json({ ...updateNationality, id: parseInt(id, 10) });
     } catch (error) {
-        next(error);
+        res.status(500).json({ error: error.message });
     }
-}
+};
 
 // A - BREAD - ADD
-const addTheme = async (req, res, next) => {
-    const theme = req.body;
+const addNationality = async (req, res) => {
+    const nationality = req.body;
     try {
-        const createdTheme = await tables.themes.createTheme(theme);
-        res.status(201).json({ ...theme, id: createdTheme.insertId });
+        const result = await tables.nationalities.addNationality(nationality);
+        res.status(201).json({ ...nationality, id: result.insertId });
     } catch (error) {
-        next(error);
+        res.status(500).json({ error: error.message });
     }
 };
 
 // D - BREAD - DELETE
-const destroyTheme = async (req, res, next) => {
+const destroyNationality = async (req, res, next) => {
     const { id } = req.params;
     try {
-        await tables.themes.deleteTheme(id);
+        await tables.nationalities.deleteNationality(id);
         res.status(204).json();
     } catch (error) {
         next(error);
     }
 };
 
-
 module.exports = {
-    browseThemes,
-    readOneTheme,
-    readOneMoviesTheme,
-    readOneSeriesTheme,
-    editTheme,
-    addTheme,
-    destroyTheme
+    browseNationalities,
+    readOneNationality,
+    readOneNationalityInMovie,
+    readOneNationalityInSerie,
+    editNationality,
+    addNationality,
+    destroyNationality,
 };
