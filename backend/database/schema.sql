@@ -45,7 +45,7 @@ VALUES
         "https://image.tmdb.org/t/p/original/fVxGOuEtac6By43qoVArpER2JCS.jpg",
         "https://image.tmdb.org/t/p/original/lzC2mzjGp09SbWyGf868tlrJ7Xs.png",
         "https://www.youtube.com/embed/EEuEavdbmhY?si=EkEccJfHHoxxaw-8",
-        "De plus en plus souvent, la petite Sharon rêve d'une ville abandonnée, Silent Hill. Sa mère, Rose, décidée à comprendre l'étrange mal dont souffre son enfant, décide de l'accompagner sur place. Alors qu'elles pénètrent dans cet univers lugubre, Sharon disparaît. Rose se lance à sa poursuite, mais se rend vite compte que ce lieu étrange ne ressemble à rien de normal. Noyée dans le brouillard, peuplée d'étranges créatures, hantée par des ténèbres vivantes qui dévorent littéralement tout ce qu'elles touchent, cette dimension va peu à peu livrer ses terrifiants secrets... Avec l'aide de Cybil, de la police locale, Rose se jette dans une quête éperdue pour arracher sa fille au monde de Silent Hill. D'indices en épreuves, elle va découvrir tout ce que Sharon risque et ce qu'elle représente dans une malédiction qui dépasse tout... Adaptation cinématographique du jeu vidéo éponyme",
+        "De plus en plus souvent, la petite Sharon rêve d'une ville abandonnée, Silent Hill. Sa mère, Rose, décidée à comprendre l'étrange mal dont souffre son enfant, décide de l'accompagner sur place. Alors qu'elles pénètrent dans cet univers lugubre, Sharon disparaît. Rose se lance à sa poursuite, mais se rend vite compte que ce lieu étrange ne ressemble à rien de normal. Noyée dans le brouillard, peuplée d'étranges créatures, hantée par des ténèbres vivantes qui dévorent littéralement tout ce qu'elles touchent, cette dimension va peu à peu livrer ses terrifiants secrets... Avec l'aide de Cybil, de la police locale, Rose se jette dans une quête éperdue pour arracher sa fille au monde de Silent Hill. D'indices en épreuves, elle va découvrir tout ce que Sharon risque et ce qu'elle représente dans une malédiction qui dépasse tout.",
         7,
         5,
         "2006-04-26",
@@ -85,8 +85,7 @@ CREATE TABLE
         seasons INT,
         nbEpisodesSerie INT,
         episodes INT,
-        duration VARCHAR(255),
-        country VARCHAR(255),
+        nationalities VARCHAR(255),
         screen ENUM ('TV', 'Streaming'),
         streaming VARCHAR(255),
         original VARCHAR(255)
@@ -112,7 +111,7 @@ INSERT INTO
         seasons,
         nbEpisodesSerie,
         episodes,
-        country,
+        nationalities,
         screen,
         streaming,
         original
@@ -464,7 +463,12 @@ CREATE TABLE
     );
 
 INSERT INTO
-    subUniverses (universe_id, name, imageSubUniverse, subUniverse_description)
+    subUniverses (
+        universe_id,
+        name,
+        imageSubUniverse,
+        subUniverse_description
+    )
 VALUES
     (
         1,
@@ -611,9 +615,9 @@ VALUES
 
 CREATE TABLE
     movie_genres (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         movie_id INT NOT NULL,
         genre_id INT NOT NULL,
-        PRIMARY KEY (movie_id, genre_id),
         FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
         FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE CASCADE
     );
@@ -626,9 +630,9 @@ VALUES
 
 CREATE TABLE
     serie_genres (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         genre_id INT NOT NULL,
-        PRIMARY KEY (serie_id, genre_id),
         FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
         FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE CASCADE
     );
@@ -641,9 +645,9 @@ VALUES
 
 CREATE TABLE
     movie_themes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         movie_id INT NOT NULL,
         theme_id INT NOT NULL,
-        PRIMARY KEY (movie_id, theme_id),
         FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
         FOREIGN KEY (theme_id) REFERENCES themes (id) ON DELETE CASCADE
     );
@@ -656,9 +660,9 @@ VALUES
 
 CREATE TABLE
     serie_themes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         theme_id INT NOT NULL,
-        PRIMARY KEY (serie_id, theme_id),
         FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
         FOREIGN KEY (theme_id) REFERENCES themes (id) ON DELETE CASCADE
     );
@@ -672,9 +676,9 @@ VALUES
 
 CREATE TABLE
     movie_universes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         movie_id INT NOT NULL,
         universe_id INT NOT NULL,
-        PRIMARY KEY (movie_id, universe_id),
         FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
         FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
     );
@@ -686,9 +690,9 @@ VALUES
 
 CREATE TABLE
     movie_subUniverses (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         movie_id INT NOT NULL,
         subUniverse_id INT NOT NULL,
-        PRIMARY KEY (movie_id, subUniverse_id),
         FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
         FOREIGN KEY (subUniverse_id) REFERENCES subUniverses (id) ON DELETE CASCADE
     );
@@ -700,9 +704,9 @@ VALUES
 
 CREATE TABLE
     serie_universes (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         universe_id INT NOT NULL,
-        PRIMARY KEY (serie_id, universe_id),
         FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
         FOREIGN KEY (universe_id) REFERENCES universes (id) ON DELETE CASCADE
     );
@@ -714,9 +718,9 @@ VALUES
 
 CREATE TABLE
     serie_subUniverses (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         subUniverse_id INT NOT NULL,
-        PRIMARY KEY (serie_id, subUniverse_id),
         FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
         FOREIGN KEY (subUniverse_id) REFERENCES subUniverses (id) ON DELETE CASCADE
     );
@@ -724,6 +728,36 @@ CREATE TABLE
 INSERT INTO
     serie_subUniverses (serie_id, subUniverse_id)
 VALUES
+    (1, 2);
+
+CREATE TABLE
+    movie_nationalities (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        movie_id INT NOT NULL,
+        nationality_id INT NOT NULL,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (nationality_id) REFERENCES nationalities (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_nationalities (movie_id, nationality_id)
+VALUES
+    (1, 1),
+    (1, 2);
+
+CREATE TABLE
+    serie_nationalities (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        serie_id INT NOT NULL,
+        nationality_id INT NOT NULL,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (nationality_id) REFERENCES nationalities (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_nationalities (serie_id, nationality_id)
+VALUES
+    (1, 1),
     (1, 2);
 
 CREATE TABLE
