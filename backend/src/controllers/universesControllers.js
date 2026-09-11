@@ -35,9 +35,46 @@ const readAllSubUniverseInUniverse = async (req, res, next) => {
     }
 };
 
+// E - BREAD - EDIT //
+const editUniverse = async (req, res, next) => {
+    const updateUniverse = req.body;
+    const { id } = req.params;
+    try {
+        await tables.universes.updateUniverse(id, updateUniverse);
+        res.status(200).json({ ...updateUniverse, id: parseInt(id, 10) });
+    } catch (error) {
+        next(error);
+    }
+};
+
+// A - BREAD - ADD //
+const addUniverse = async (req, res, next) => {
+    const newUniverse = req.body;
+    try {
+        const createdUniverse = await tables.universes.createUniverse(newUniverse);
+        res.status(201).json({ ...newUniverse, id: createdUniverse.insertId });
+    } catch (error) {
+        next(error);
+    }
+};
+
+// D - BREAD - DELETE //
+const destroyUniverse = async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        await tables.universes.deleteUniverse(id);
+        res.status(204).json();
+    } catch (error) {
+        next(error);
+    }
+};
+
 
 module.exports = {
     browseUniverses,
     readOneUniverse,
-    readAllSubUniverseInUniverse
+    readAllSubUniverseInUniverse,
+    editUniverse,
+    addUniverse,
+    destroyUniverse
 };

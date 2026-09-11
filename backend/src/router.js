@@ -7,6 +7,7 @@ const {
   validateUserForm,
   verifyToken,
 } = require("./Middlewares/auth");
+
 // MOVIES //
 const moviesControllers = require("./controllers/moviesControllers");
 const uploadMovies = require("./Middlewares/Multer/MulterMovies");
@@ -14,6 +15,191 @@ const uploadMovies = require("./Middlewares/Multer/MulterMovies");
 router.get("/movies", moviesControllers.browseMovies);
 router.get("/movies/:id", moviesControllers.readOneMovie);
 router.get("/movies/:id/full", moviesControllers.readFullMovie);
+
+// SERIES //
+const seriesControllers = require("./controllers/seriesControllers/seriesControllers");
+const uploadSeries = require("./Middlewares/Multer/MulterSeries");
+
+router.get("/series", seriesControllers.browseSeries);
+router.get("/series/:id/full", seriesControllers.readFullSerie);
+router.get("/series/:id", seriesControllers.readOneSerie);
+
+// SEASONS //
+const seasonsControllers = require("./controllers/seriesControllers/seasonsControllers");
+const uploadSeasons = require("./Middlewares/Multer/MulterSeasons");
+
+router.get("/seasons", seasonsControllers.browseSeasons);
+router.get("/seasons/:id", seasonsControllers.readSeason);
+
+// EPISODES //
+const episodesControllers = require("./controllers/seriesControllers/episodesControllers");
+const uploadEpisodes = require("./Middlewares/Multer/MulterEpisodes");
+
+router.get("/episodes", episodesControllers.browseEpisodes);
+router.get("/episodes/:id", episodesControllers.readEpisode);
+
+// GENRES //
+const genresControllers = require("./controllers/genresControllers");
+router.get("/genres", genresControllers.browseGenres);
+router.get("/genres/:id/movies", genresControllers.readOneMoviesGenre);
+router.get("/genres/:id", genresControllers.readOneGenre);
+
+// MOVIES GENRES //
+const moviesGenresControllers = require("./controllers/moviesGenresControllers");
+router.get("/movies-genres", moviesGenresControllers.browseMoviesGenres);
+router.get("/movies-genres/:id", moviesGenresControllers.readOneMovieGenre);
+
+// SERIES GENRES //
+const seriesGenresControllers = require("./controllers/seriesGenresControllers");
+router.get("/series-genres", seriesGenresControllers.browseSeriesGenres);
+router.get("/series-genres/:id", seriesGenresControllers.readOneSerieGenre);
+
+// THEMES //
+const themesControllers = require("./controllers/themesControllers");
+router.get("/themes", themesControllers.browseThemes);
+router.get("/themes/:id", themesControllers.readOneTheme);
+router.get("/themes/:id/movies", themesControllers.readOneMoviesTheme);
+router.get("/themes/:id/series", themesControllers.readOneSeriesTheme);
+
+// MOVIES THEME //
+const moviesThemesControllers = require("./controllers/moviesThemesControllers");
+router.get("/movies-themes", moviesThemesControllers.browseMoviesThemes);
+router.get("/movies-themes/:id", moviesThemesControllers.readOneMovieTheme);
+
+// SERIES THEME //
+const seriesThemesControllers = require("./controllers/seriesThemesControllers");
+router.get("/series-themes", seriesThemesControllers.browseSeriesThemes);
+router.get("/series-themes/:id", seriesThemesControllers.readOneSerieTheme);
+
+// UNIVERSE //
+const universesControllers = require("./controllers/universesControllers");
+router.get("/universes", universesControllers.browseUniverses);
+router.get("/universes/:id", universesControllers.readOneUniverse);
+router.get("/universes/:id/sub-universes", universesControllers.readAllSubUniverseInUniverse);
+
+// MOVIES UNIVERSE //
+const moviesUniversesControllers = require("./controllers/moviesUniversesControllers");
+router.get("/movies-universes", moviesUniversesControllers.browseMoviesUniverses);
+router.get("/movies-universes/:id", moviesUniversesControllers.readOneMovieUniverse);
+
+// SERIES UNIVERSE //
+const seriesUniversesControllers = require("./controllers/seriesUniversesControllers");
+router.get("/series-universes", seriesUniversesControllers.browseSeriesUniverses);
+router.get("/series-universes/:id", seriesUniversesControllers.readOneSerieUniverse);
+
+// SUB-UNIVERSE //
+const subUniversesControllers = require("./controllers/subUniversesControllers");
+router.get("/sub-universes", subUniversesControllers.browseSubUniverses);
+router.get("/sub-universes/:id", subUniversesControllers.readOneSubUniverse);
+
+// MOVIES SUB-UNIVERSE //
+const moviesSubUniversesControllers = require("./controllers/moviesSubUniversesControllers");
+router.get("/movies-subuniverses", moviesSubUniversesControllers.browseMoviesSubUniverses);
+router.get("/movies-subuniverses/:id", moviesSubUniversesControllers.readOneMovieSubUniverse);
+
+// SERIES SUB-UNIVERSE //
+const seriesSubUniversesControllers = require("./controllers/seriesSubUniversesControllers");
+router.get("/series-subuniverses", seriesSubUniversesControllers.browseSeriesSubUniverses);
+router.get("/series-subuniverses/:id", seriesSubUniversesControllers.readOneSerieSubUniverse);
+
+// NATIONALITIES //
+const nationalitiesControllers = require("./controllers/nationalitiesControllers");
+router.get("/nationalities", nationalitiesControllers.browseNationalities);
+router.get("/nationalities/:id", nationalitiesControllers.readOneNationality);
+router.get(
+  "/nationalities/:id/movies",
+  nationalitiesControllers.readOneNationalityInMovie,
+);
+router.get(
+  "/nationalities/:id/series",
+  nationalitiesControllers.readOneNationalityInSerie,
+);
+
+// MOVIES NATIONALITIES //
+const moviesNationalitiesControllers = require("./controllers/moviesNationalitiesControllers");
+router.get("/movies-nationalities", moviesNationalitiesControllers.browseMoviesNationalities);
+router.get("/movies-nationalities/:id", moviesNationalitiesControllers.readOneMovieNationality);
+
+// SERIES NATIONALITIES //
+const seriesNationalitiesControllers = require("./controllers/seriesNationalitiesControllers");
+router.get("/series-nationalities", seriesNationalitiesControllers.browseSeriesNationalities);
+router.get("/series-nationalities/:id", seriesNationalitiesControllers.readOneSerieNationality);
+
+// PERSONALITIES //
+const personalitiesControllers = require("./controllers/personalitiesControllers");
+const uploadPersonalities = require("./Middlewares/Multer/MulterPersonalities");
+
+router.get("/personalities", personalitiesControllers.browsePersonalities);
+router.get("/personalities/:id", personalitiesControllers.readOnePersonality);
+router.get(
+  "/personalities/:id/full",
+  personalitiesControllers.readPersonalityFilmography,
+);
+
+// CASTINGS //
+const castingControllers = require("./controllers/castingsControllers");
+
+router.get("/castings", castingControllers.browseCastings);
+router.get("/castings/:id", castingControllers.readOneCasting);
+
+// USERS //
+const usersControllers = require("./controllers/usersControllers/usersControllers");
+const uploadUsers = require("./Middlewares/Multer/MulterUsers");
+
+router.get("/users", verifyToken, usersControllers.browseUsers);
+router.get("/users/:id", verifyToken, usersControllers.readOneUser);
+router.post(
+  "/users",
+  uploadUsers.single("avatar"),
+  validateUserForm,
+  hashPassword,
+  usersControllers.addUser,
+);
+router.post("/users/login", usersControllers.login);
+router.get("/users/verify/:token", usersControllers.validateUser);
+router.post("/users/forgot-password", usersControllers.forgotPassword);
+router.post(
+  "/users/reset-password/:resetToken",
+  usersControllers.resetPassword,
+);
+
+// SEARCH //
+router.get("/search", async (req, res) => {
+  const { q } = req.query;
+
+  if (!q || q.trim() === "") {
+    return res.json({ movies: [], series: [], personalities: [] });
+  }
+
+  try {
+    const tables = require("./tables");
+    const searchTerm = `%${q}%`;
+
+    const [movies] = await tables.movies.database.query(
+      "SELECT id, title, poster, release_date FROM movies WHERE title LIKE ? LIMIT 5",
+      [searchTerm],
+    );
+
+    const [series] = await tables.series.database.query(
+      "SELECT id, title, poster, beginning_date, ending_date FROM series WHERE title LIKE ? LIMIT 5",
+      [searchTerm],
+    );
+
+    const [personalities] = await tables.personalities.database.query(
+      "SELECT id, fullname, picture, profession FROM personalities WHERE fullname LIKE ? LIMIT 5",
+      [searchTerm],
+    );
+
+    res.json({ movies, series, personalities });
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).json({ error: "Erreur lors de la recherche" });
+  }
+});
+
+router.use(verifyToken);
+
+// MOVIES //
 router.post(
   "/movies",
   verifyToken,
@@ -37,12 +223,6 @@ router.put(
 router.delete("/movies/:id", verifyToken, moviesControllers.destroyMovie);
 
 // SERIES //
-const seriesControllers = require("./controllers/seriesControllers/seriesControllers");
-const uploadSeries = require("./Middlewares/Multer/MulterSeries");
-
-router.get("/series", seriesControllers.browseSeries);
-router.get("/series/:id/full", seriesControllers.readFullSerie);
-router.get("/series/:id", seriesControllers.readOneSerie);
 router.post(
   "/series",
   verifyToken,
@@ -66,11 +246,6 @@ router.put(
 router.delete("/series/:id", verifyToken, seriesControllers.destroySerie);
 
 // SEASONS //
-const seasonsControllers = require("./controllers/seriesControllers/seasonsControllers");
-const uploadSeasons = require("./Middlewares/Multer/MulterSeasons");
-
-router.get("/seasons", seasonsControllers.browseSeasons);
-router.get("/seasons/:id", seasonsControllers.readSeason);
 router.post(
   "/seasons",
   verifyToken,
@@ -86,11 +261,6 @@ router.put(
 router.delete("/seasons/:id", verifyToken, seasonsControllers.destroySeason);
 
 // EPISODES //
-const episodesControllers = require("./controllers/seriesControllers/episodesControllers");
-const uploadEpisodes = require("./Middlewares/Multer/MulterEpisodes");
-
-router.get("/episodes", episodesControllers.browseEpisodes);
-router.get("/episodes/:id", episodesControllers.readEpisode);
 router.post(
   "/episodes",
   verifyToken,
@@ -105,40 +275,65 @@ router.put(
 );
 router.delete("/episodes/:id", verifyToken, episodesControllers.destroyEpisode);
 
-// GENRES //
-const genresControllers = require("./controllers/genresControllers");
-router.get("/genres", genresControllers.browseGenres);
-router.get("/genres/:id", genresControllers.readOneGenre);
-router.get("/genres/:id/movies", genresControllers.readOneMoviesGenre);
+// MOVIES GENRES //
+router.post("/movies-genres", verifyToken, moviesGenresControllers.addMovieGenre);
+router.put("/movies-genres/:id", verifyToken, moviesGenresControllers.editMovieGenre);
+router.delete("/movies-genres/:id", verifyToken, moviesGenresControllers.destroyMovieGenre);
+
+// SERIES GENRES //
+router.post("/series-genres", verifyToken, seriesGenresControllers.addSerieGenre);
+router.put("/series-genres/:id", verifyToken, seriesGenresControllers.editSerieGenre);
+router.delete("/series-genres/:id", verifyToken, seriesGenresControllers.destroySerieGenre);
+
+// MOVIES THEMES //
+router.post("/movies-themes", verifyToken, moviesThemesControllers.addMovieTheme);
+router.put("/movies-themes/:id", verifyToken, moviesThemesControllers.editMovieTheme);
+router.delete("/movies-themes/:id", verifyToken, moviesThemesControllers.destroyMovieTheme);
+
+// SERIES THEMES //
+router.post("/series-themes", verifyToken, seriesThemesControllers.addSerieTheme);
+router.put("/series-themes/:id", verifyToken, seriesThemesControllers.editSerieTheme);
+router.delete("/series-themes/:id", verifyToken, seriesThemesControllers.destroySerieTheme);
+
+// MOVIES NATIONALITIES //
+router.post("/movies-nationalities", verifyToken, moviesNationalitiesControllers.addMovieNationality);
+router.put("/movies-nationalities/:id", verifyToken, moviesNationalitiesControllers.editMovieNationality);
+router.delete("/movies-nationalities/:id", verifyToken, moviesNationalitiesControllers.destroyMovieNationality);
+
+// SERIES NATIONALITIES //
+router.post("/series-nationalities", verifyToken, seriesNationalitiesControllers.addSerieNationality);
+router.put("/series-nationalities/:id", verifyToken, seriesNationalitiesControllers.editSerieNationality);
+router.delete("/series-nationalities/:id", verifyToken, seriesNationalitiesControllers.destroySerieNationality);
+
+// UNIVERSES //
+router.post("/universes", verifyToken, universesControllers.addUniverse);
+router.put("/universes/:id", verifyToken, universesControllers.editUniverse);
+router.delete("/universes/:id", verifyToken, universesControllers.destroyUniverse);
 
 // THEMES //
-const themesControllers = require("./controllers/themesControllers");
-router.get("/themes", themesControllers.browseThemes);
-router.get("/themes/:id", themesControllers.readOneTheme);
-router.get("/themes/:id/movies", themesControllers.readOneMoviesTheme);
-router.get("/themes/:id/series", themesControllers.readOneSeriesTheme);
+router.post("/themes", verifyToken, themesControllers.addTheme);
+router.put("/themes/:id", verifyToken, themesControllers.editTheme);
+router.delete("/themes/:id", verifyToken, themesControllers.destroyTheme);
 
-// UNIVERSE //
-const universesControllers = require("./controllers/universesControllers");
-router.get("/universes", universesControllers.browseUniverses);
-router.get("/universes/:id", universesControllers.readOneUniverse);
-router.get("/universes/:id/sub-universes", universesControllers.readAllSubUniverseInUniverse);
+// MOVIES UNIVERSES & SUB-UNIVERSES //
+router.post("/movies-universes", verifyToken, moviesUniversesControllers.addMovieUniverse);
+router.put("/movies-universes/:id", verifyToken, moviesUniversesControllers.editMovieUniverse);
+router.delete("/movies-universes/:id", verifyToken, moviesUniversesControllers.destroyMovieUniverse);
 
-// SUB-UNIVERSE //
-const subUniversesControllers = require("./controllers/subUniversesControllers");
-router.get("/sub-universes", subUniversesControllers.browseSubUniverses);
-router.get("/sub-universes/:id", subUniversesControllers.readOneSubUniverse);
+router.post("/movies-subuniverses", verifyToken, moviesSubUniversesControllers.addMovieSubUniverse);
+router.put("/movies-subuniverses/:id", verifyToken, moviesSubUniversesControllers.editMovieSubUniverse);
+router.delete("/movies-subuniverses/:id", verifyToken, moviesSubUniversesControllers.destroyMovieSubUniverse);
+
+// SERIES UNIVERSES & SUB-UNIVERSES //
+router.post("/series-universes", verifyToken, seriesUniversesControllers.addSerieUniverse);
+router.put("/series-universes/:id", verifyToken, seriesUniversesControllers.editSerieUniverse);
+router.delete("/series-universes/:id", verifyToken, seriesUniversesControllers.destroySerieUniverse);
+
+router.post("/series-subuniverses", verifyToken, seriesSubUniversesControllers.addSerieSubUniverse);
+router.put("/series-subuniverses/:id", verifyToken, seriesSubUniversesControllers.editSerieSubUniverse);
+router.delete("/series-subuniverses/:id", verifyToken, seriesSubUniversesControllers.destroySerieSubUniverse);
 
 // PERSONALITIES //
-const personalitiesControllers = require("./controllers/personalitiesControllers");
-const uploadPersonalities = require("./Middlewares/Multer/MulterPersonalities");
-
-router.get("/personalities", personalitiesControllers.browsePersonalities);
-router.get("/personalities/:id", personalitiesControllers.readOnePersonality);
-router.get(
-  "/personalities/:id/full",
-  personalitiesControllers.readPersonalityFilmography,
-);
 router.post(
   "/personalities",
   verifyToken,
@@ -157,43 +352,10 @@ router.delete(
   personalitiesControllers.destroyPersonality,
 );
 
-// CASTINGS //
-const castingControllers = require("./controllers/castingsControllers");
-
-router.get("/castings", castingControllers.browseCastings);
-router.get("/castings/:id", castingControllers.readOneCasting);
+// CASTING //
 router.post("/castings", verifyToken, castingControllers.addCasting);
 router.put("/castings/:id", verifyToken, castingControllers.editCasting);
 router.delete("/castings/:id", verifyToken, castingControllers.destroyCasting);
-
-// USERS //
-const usersControllers = require("./controllers/usersControllers/usersControllers");
-const uploadUsers = require("./Middlewares/Multer/MulterUsers");
-
-router.get("/users", verifyToken, usersControllers.browseUsers);
-router.get("/users/:id", verifyToken, usersControllers.readOneUser);
-router.post(
-  "/users",
-  uploadUsers.single("avatar"),
-  validateUserForm,
-  hashPassword,
-  usersControllers.addUser,
-);
-router.put(
-  "/users/:id",
-  verifyToken,
-  uploadUsers.single("avatar"),
-  updateHashPassword,
-  usersControllers.editUser,
-);
-router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
-router.post("/users/login", usersControllers.login);
-router.get("/users/verify/:token", usersControllers.validateUser);
-router.post("/users/forgot-password", usersControllers.forgotPassword);
-router.post(
-  "/users/reset-password/:resetToken",
-  usersControllers.resetPassword,
-);
 
 // USERS FAVORITES / INTERACTIONS //
 const usersFavoritesControllers = require("./controllers/usersControllers/usersFavoritesControllers");
@@ -247,8 +409,6 @@ router.delete(
   verifyToken,
   usersFavoritesControllers.removingFavoritePersonality,
 );
-
-// USERS REVIEWS //
 
 // USER MOVIES REVIEWS //
 const usersReviewsControllers = require("./controllers/usersControllers/usersReviewsControllers");
@@ -320,38 +480,15 @@ router.put(
   usersReviewsControllers.editPersonalityReview,
 );
 
-// SEARCH //
-router.get("/search", async (req, res) => {
-  const { q } = req.query;
+// USERS //
+router.put(
+  "/users/:id",
+  verifyToken,
+  uploadUsers.single("avatar"),
+  updateHashPassword,
+  usersControllers.editUser,
+);
+router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
 
-  if (!q || q.trim() === "") {
-    return res.json({ movies: [], series: [], personalities: [] });
-  }
-
-  try {
-    const tables = require("./tables");
-    const searchTerm = `%${q}%`;
-
-    const [movies] = await tables.movies.database.query(
-      "SELECT id, title, poster, release_date FROM movies WHERE title LIKE ? LIMIT 5",
-      [searchTerm],
-    );
-
-    const [series] = await tables.series.database.query(
-      "SELECT id, title, poster, beginning_date, ending_date FROM series WHERE title LIKE ? LIMIT 5",
-      [searchTerm],
-    );
-
-    const [personalities] = await tables.personalities.database.query(
-      "SELECT id, fullname, picture, profession FROM personalities WHERE fullname LIKE ? LIMIT 5",
-      [searchTerm],
-    );
-
-    res.json({ movies, series, personalities });
-  } catch (error) {
-    console.error("Search error:", error);
-    res.status(500).json({ error: "Erreur lors de la recherche" });
-  }
-});
 
 module.exports = router;
