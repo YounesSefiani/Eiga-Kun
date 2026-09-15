@@ -7,16 +7,9 @@ CREATE TABLE
         logo VARCHAR(255) NULL,
         trailer VARCHAR(255) NULL,
         synopsis TEXT NULL,
-        genre INT NULL,
-        theme INT NULL,
         release_date DATE NULL,
         screen ENUM ('Cinema', 'TV', 'DVD', 'Streaming') NULL,
-        streaming VARCHAR(255) NULL,
-        original VARCHAR(255) NULL,
-        duration TIME NULL,
-        nationality INT NULL,
-        universe INT NULL,
-        subUniverse INT NULL
+        duration TIME NULL
     );
 
 INSERT INTO
@@ -27,16 +20,9 @@ INSERT INTO
         logo,
         trailer,
         synopsis,
-        genre,
-        theme,
         release_date,
         screen,
-        streaming,
-        original,
-        duration,
-        nationality,
-        universe,
-        subUniverse
+        duration
     )
 VALUES
     (
@@ -46,16 +32,9 @@ VALUES
         "https://image.tmdb.org/t/p/original/lzC2mzjGp09SbWyGf868tlrJ7Xs.png",
         "https://www.youtube.com/embed/EEuEavdbmhY?si=EkEccJfHHoxxaw-8",
         "De plus en plus souvent, la petite Sharon rêve d'une ville abandonnée, Silent Hill. Sa mère, Rose, décidée à comprendre l'étrange mal dont souffre son enfant, décide de l'accompagner sur place. Alors qu'elles pénètrent dans cet univers lugubre, Sharon disparaît. Rose se lance à sa poursuite, mais se rend vite compte que ce lieu étrange ne ressemble à rien de normal. Noyée dans le brouillard, peuplée d'étranges créatures, hantée par des ténèbres vivantes qui dévorent littéralement tout ce qu'elles touchent, cette dimension va peu à peu livrer ses terrifiants secrets... Avec l'aide de Cybil, de la police locale, Rose se jette dans une quête éperdue pour arracher sa fille au monde de Silent Hill. D'indices en épreuves, elle va découvrir tout ce que Sharon risque et ce qu'elle représente dans une malédiction qui dépasse tout.",
-        7,
-        5,
         "2006-04-26",
         "Cinéma",
-        null,
-        null,
-        "2:05:00",
-        1,
-        null,
-        null
+        "2:05:00"
     );
 
 CREATE TABLE
@@ -67,10 +46,6 @@ CREATE TABLE
         logo VARCHAR(255),
         trailer VARCHAR(255),
         synopsis TEXT,
-        genre VARCHAR(255),
-        theme VARCHAR(255),
-        universe VARCHAR(255),
-        subUniverse VARCHAR(255),
         beginning_date DATE,
         ending_date DATE,
         serie_average_duration VARCHAR(255),
@@ -85,10 +60,7 @@ CREATE TABLE
         seasons INT,
         nbEpisodesSerie INT,
         episodes INT,
-        nationalities VARCHAR(255),
-        screen ENUM ('TV', 'Streaming'),
-        streaming VARCHAR(255),
-        original VARCHAR(255)
+        screen ENUM ('TV', 'Streaming')
     );
 
 INSERT INTO
@@ -99,10 +71,6 @@ INSERT INTO
         logo,
         trailer,
         synopsis,
-        genre,
-        theme,
-        universe,
-        subUniverse,
         beginning_date,
         ending_date,
         serie_average_duration,
@@ -111,10 +79,7 @@ INSERT INTO
         seasons,
         nbEpisodesSerie,
         episodes,
-        nationalities,
-        screen,
-        streaming,
-        original
+        screen
     )
 VALUES
     (
@@ -124,10 +89,6 @@ VALUES
         "https://image.tmdb.org/t/p/original/jbYIbMDDMP6gTA4VjBfoMDJ3L85.png",
         "https://www.youtube.com/embed/-g8fSUNeYIE?si=oy9p_w--BZUydVx0",
         "Victime d'un accident sur la route pendant son enfance, Matt Murdock perd la vue mais ses sens se sont décuplés d'une grande ampleur. Aujourd'hui, Matt Murdock partage une double vie et combat pour la justice de deux manières. Avocat de jour, et justicier masqué de nuit sous le nom de Daredevil.",
-        "Action / Thriller",
-        "Super-Héros / Enquêtes",
-        "Marvel",
-        "Daredevil",
         "2015-04-10",
         "2018-10-19",
         "~ 45 - 60 minutes",
@@ -136,10 +97,7 @@ VALUES
         null,
         "39",
         null,
-        "USA",
-        "TV",
-        "Disney +",
-        "Netflix"
+        "TV"
     );
 
 CREATE TABLE
@@ -411,6 +369,49 @@ VALUES
     );
 
 CREATE TABLE
+    streamings (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        name VARCHAR(255) NOT NULL UNIQUE,
+        imageStreaming VARCHAR(255) NULL,
+        iconStreaming VARCHAR(255) NULL,
+        description TEXT NULL
+    );
+
+INSERT INTO
+    streamings (name, imageStreaming, iconStreaming, description)
+VALUES
+    (
+        "Netflix",
+        "https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=940",
+        "https://e1.pngegg.com/pngimages/10/90/png-clipart-clay-os-6-a-macos-icon-netflix-netflix-logo-thumbnail.png",
+        "Netflix est une entreprise de streaming de films et de séries televisives américaine, lancée en 1997 par Reed Hastings et Marc Randolph."
+    ),
+    (
+        "Amazon Prime Video",
+        "https://fr.web.img6.acsta.net/newsv7/20/04/05/14/42/4093868.jpg",
+        "https://cdn2.steamgriddb.com/icon/cfa31d8130bef0e6643e5de9d0a0cac9/24/512x512.png",
+        "Amazon Prime Video est une entreprise de streaming de films et de séries televisives américaine, lancée en 2006 par Jeff Bezos."
+    ),
+    (
+        "Disney +",
+        "https://siecledigital.fr/wp-content/uploads/2019/10/Disney-plus.jpg",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Disney_plus_icon.png/1280px-Disney_plus_icon.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20231225065415",
+        "Disney + est une entreprise de streaming de films et de séries televisives américaine, lancée en 2019 par Walt Disney Studios."
+    ),
+    (
+        "HBO MAX",
+        "https://sm.ign.com/ign_fr/news/m/max-changi/max-changing-its-name-back-to-hbo-max-warner-bros-discovery_suaz.jpg",
+        "https://m.media-amazon.com/images/I/717+-1StDDL.png",
+        "HBO Max est une entreprise de streaming de films et de séries televisives américaine, lancée en 2019 par Warner Bros. Discovery."
+    ),
+    (
+        "Apple TV +",
+        "https://siecledigital.fr/wp-content/uploads/2019/10/Apple-TV.jpg",
+        "https://www.freeiconspng.com/thumbs/apple-logo-png/apple-logo-png-2.png",
+        "Apple TV + est une entreprise de streaming de films et de séries televisives américaine, lancée en 2019 par Apple."
+    );
+
+CREATE TABLE
     universes (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(255) NOT NULL UNIQUE,
@@ -673,6 +674,36 @@ VALUES
     (1, 1),
     (1, 3),
     (1, 9);
+
+CREATE TABLE
+    movie_streamings (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        movie_id INT NOT NULL,
+        streaming_id INT NOT NULL,
+        movieIsOriginal BOOLEAN NOT NULL DEFAULT FALSE,
+        FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE,
+        FOREIGN KEY (streaming_id) REFERENCES streamings (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    movie_streamings (movie_id, streaming_id, movieIsOriginal)
+VALUES
+    (1, 1, FALSE);
+
+CREATE TABLE
+    serie_streamings (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        serie_id INT NOT NULL,
+        streaming_id INT NOT NULL,
+        serieIsOriginal BOOLEAN NOT NULL DEFAULT FALSE,
+        FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+        FOREIGN KEY (streaming_id) REFERENCES streamings (id) ON DELETE CASCADE
+    );
+
+INSERT INTO
+    serie_streamings (serie_id, streaming_id, serieIsOriginal)
+VALUES
+    (1, 1, TRUE);
 
 CREATE TABLE
     movie_universes (
