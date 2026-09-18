@@ -42,6 +42,10 @@ const readFullSerie = async (req, res, next) => {
 
     const genres = await tables.genres.readGenresInSerie(serie.id);
     const themes = await tables.themes.readThemesInSerie(serie.id);
+    const streamings = await tables.streamings.readSeriesByStreaming(serie.id);
+    const nationalities = await tables.nationalities.readNationalitiesInSerie(
+      serie.id
+    )
     const universes = await tables.universes.readUniversesInSerie(serie.id);
     const subUniverses = await tables.subUniverses.readSubUniversesInSerie(
       serie.id
@@ -58,6 +62,8 @@ const readFullSerie = async (req, res, next) => {
       ...serie,
       genres: genres || [],
       themes: themes || [],
+      streamings: streamings || [],
+      nationalities: nationalities || [],
       universes: universes || [],
       subUniverses: subUniverses || [],
       seasons: seasonsWithEpisodes,

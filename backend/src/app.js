@@ -28,6 +28,24 @@ app.use('/src/assets/Series/Logos', express.static(path.join(__dirname, '/assets
 app.use('/src/assets/Series/Seasons', express.static(path.join(__dirname, '/assets/Series/Seasons')));
 app.use('/src/assets/Series/Episodes', express.static(path.join(__dirname, '/assets/Series/Episodes')));
 
+// GENRES PICTURES //
+app.use('/src/assets/Genres', express.static(path.join(__dirname, '/assets/Genres')));
+
+// THEMES PICTURES //
+app.use('/src/assets/Themes', express.static(path.join(__dirname, '/assets/Themes')));
+
+// NATIONALITIES PICTURES //
+app.use('/src/assets/Nationalities', express.static(path.join(__dirname, '/assets/Nationalities')));
+
+// STREAMINGS PICTURES //
+app.use('/src/assets/Streamings/Brands', express.static(path.join(__dirname, '/assets/Streamings/Brands')));
+app.use('/src/assets/Streamings/Icons', express.static(path.join(__dirname, '/assets/Streamings/Icons')));
+
+// UNIVERSES PICTURES //
+app.use('/src/assets/Universes', express.static(path.join(__dirname, '/assets/Universes')));
+
+// SUBUNIVERSES PICTURES //
+app.use('/src/assets/SubUniverses', express.static(path.join(__dirname, '/assets/SubUniverses')));
 
 // PERSONALITIES PICTURES //
 app.use('/src/assets/Personalities/Pictures', express.static(path.join(__dirname, '/assets/Personalities/Pictures')));

@@ -72,11 +72,13 @@ class SubUniverseManager extends AbstractManager {
   async updateSubUniverse(id, subUniverse) {
     const [subUniverseUpdated] = await this.database.query(
       `UPDATE ${this.table} SET universe_id = ?, name = ?, imageSubUniverse = ?, subUniverse_description = ? WHERE id = ?`,
-      subUniverse.universe_id,
-      subUniverse.name,
-      subUniverse.imageSubUniverse,
-      subUniverse.subUniverse_description,
-      id,
+      [
+        subUniverse.universe_id,
+        subUniverse.name,
+        subUniverse.imageSubUniverse,
+        subUniverse.subUniverse_description,
+        id,
+      ],
     );
     return subUniverseUpdated.affectedRows;
   }

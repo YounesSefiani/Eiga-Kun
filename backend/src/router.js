@@ -9,7 +9,7 @@ const {
 } = require("./Middlewares/auth");
 
 // MOVIES //
-const moviesControllers = require("./controllers/moviesControllers");
+const moviesControllers = require("./controllers/moviesControllers/moviesControllers");
 const uploadMovies = require("./Middlewares/Multer/MulterMovies");
 
 router.get("/movies", moviesControllers.browseMovies);
@@ -45,12 +45,12 @@ router.get("/genres/:id/movies", genresControllers.readOneMoviesGenre);
 router.get("/genres/:id", genresControllers.readOneGenre);
 
 // MOVIES GENRES //
-const moviesGenresControllers = require("./controllers/moviesGenresControllers");
+const moviesGenresControllers = require("./controllers/moviesControllers/moviesGenresControllers");
 router.get("/movies-genres", moviesGenresControllers.browseMoviesGenres);
 router.get("/movies-genres/:id", moviesGenresControllers.readOneMovieGenre);
 
 // SERIES GENRES //
-const seriesGenresControllers = require("./controllers/seriesGenresControllers");
+const seriesGenresControllers = require("./controllers/seriesControllers/seriesGenresControllers");
 router.get("/series-genres", seriesGenresControllers.browseSeriesGenres);
 router.get("/series-genres/:id", seriesGenresControllers.readOneSerieGenre);
 
@@ -61,46 +61,117 @@ router.get("/themes/:id", themesControllers.readOneTheme);
 router.get("/themes/:id/movies", themesControllers.readOneMoviesTheme);
 router.get("/themes/:id/series", themesControllers.readOneSeriesTheme);
 
-// MOVIES THEME //
-const moviesThemesControllers = require("./controllers/moviesThemesControllers");
+// MOVIES THEMES //
+const moviesThemesControllers = require("./controllers/moviesControllers/moviesThemesControllers");
 router.get("/movies-themes", moviesThemesControllers.browseMoviesThemes);
 router.get("/movies-themes/:id", moviesThemesControllers.readOneMovieTheme);
 
-// SERIES THEME //
-const seriesThemesControllers = require("./controllers/seriesThemesControllers");
+// SERIES THEMES //
+const seriesThemesControllers = require("./controllers/seriesControllers/seriesThemesControllers");
 router.get("/series-themes", seriesThemesControllers.browseSeriesThemes);
 router.get("/series-themes/:id", seriesThemesControllers.readOneSerieTheme);
 
-// UNIVERSE //
+// STREAMINGS //
+const streamingsControllers = require("./controllers/streamingsControllers");
+const uploadStreamings = require("./Middlewares/Multer/MulterStreamings");
+router.get("/streamings", streamingsControllers.browseStreamings);
+router.get("/streamings/:id", streamingsControllers.readOneStreaming);
+router.get(
+  "/streamings/:id/movies",
+  streamingsControllers.browseMoviesByStreaming,
+);
+router.get(
+  "/streamings/:id/series",
+  streamingsControllers.browseSeriesByStreaming,
+);
+
+// MOVIES STREAMINGS //
+const moviesStreamingsControllers = require("./controllers/moviesControllers/moviesStreamingsControllers");
+router.get(
+  "/movies-streamings",
+  moviesStreamingsControllers.browseMoviesStreamings,
+);
+router.get(
+  "/movies-streamings/:id",
+  moviesStreamingsControllers.readOneMovieStreaming,
+);
+router.get(
+  "/movies-streamings/:id/streamings",
+  moviesStreamingsControllers.browseMovieByStreamings,
+);
+
+// SERIES STREAMINGS //
+const seriesStreamingsControllers = require("./controllers/seriesControllers/seriesStreamingsControllers");
+router.get(
+  "/series-streamings",
+  seriesStreamingsControllers.browseSeriesStreamings,
+);
+router.get(
+  "/series-streamings/:id",
+  seriesStreamingsControllers.readOneSerieStreaming,
+);
+router.get(
+  "/series-streamings/:id/streamings",
+  seriesStreamingsControllers.browseSerieByStreamings,
+);
+
+// UNIVERSES //
 const universesControllers = require("./controllers/universesControllers");
 router.get("/universes", universesControllers.browseUniverses);
 router.get("/universes/:id", universesControllers.readOneUniverse);
-router.get("/universes/:id/sub-universes", universesControllers.readAllSubUniverseInUniverse);
+router.get(
+  "/universes/:id/sub-universes",
+  universesControllers.readAllSubUniverseInUniverse,
+);
 
-// MOVIES UNIVERSE //
-const moviesUniversesControllers = require("./controllers/moviesUniversesControllers");
-router.get("/movies-universes", moviesUniversesControllers.browseMoviesUniverses);
-router.get("/movies-universes/:id", moviesUniversesControllers.readOneMovieUniverse);
+// MOVIES UNIVERSES //
+const moviesUniversesControllers = require("./controllers/moviesControllers/moviesUniversesControllers");
+router.get(
+  "/movies-universes",
+  moviesUniversesControllers.browseMoviesUniverses,
+);
+router.get(
+  "/movies-universes/:id",
+  moviesUniversesControllers.readOneMovieUniverse,
+);
 
-// SERIES UNIVERSE //
-const seriesUniversesControllers = require("./controllers/seriesUniversesControllers");
-router.get("/series-universes", seriesUniversesControllers.browseSeriesUniverses);
-router.get("/series-universes/:id", seriesUniversesControllers.readOneSerieUniverse);
+// SERIES UNIVERSES //
+const seriesUniversesControllers = require("./controllers/seriesControllers/seriesUniversesControllers");
+router.get(
+  "/series-universes",
+  seriesUniversesControllers.browseSeriesUniverses,
+);
+router.get(
+  "/series-universes/:id",
+  seriesUniversesControllers.readOneSerieUniverse,
+);
 
-// SUB-UNIVERSE //
+// SUB-UNIVERSES //
 const subUniversesControllers = require("./controllers/subUniversesControllers");
 router.get("/sub-universes", subUniversesControllers.browseSubUniverses);
 router.get("/sub-universes/:id", subUniversesControllers.readOneSubUniverse);
 
-// MOVIES SUB-UNIVERSE //
-const moviesSubUniversesControllers = require("./controllers/moviesSubUniversesControllers");
-router.get("/movies-subuniverses", moviesSubUniversesControllers.browseMoviesSubUniverses);
-router.get("/movies-subuniverses/:id", moviesSubUniversesControllers.readOneMovieSubUniverse);
+// MOVIES SUB-UNIVERSES //
+const moviesSubUniversesControllers = require("./controllers/moviesControllers/moviesSubUniversesControllers");
+router.get(
+  "/movies-subuniverses",
+  moviesSubUniversesControllers.browseMoviesSubUniverses,
+);
+router.get(
+  "/movies-subuniverses/:id",
+  moviesSubUniversesControllers.readOneMovieSubUniverse,
+);
 
-// SERIES SUB-UNIVERSE //
-const seriesSubUniversesControllers = require("./controllers/seriesSubUniversesControllers");
-router.get("/series-subuniverses", seriesSubUniversesControllers.browseSeriesSubUniverses);
-router.get("/series-subuniverses/:id", seriesSubUniversesControllers.readOneSerieSubUniverse);
+// SERIES SUB-UNIVERSES //
+const seriesSubUniversesControllers = require("./controllers/seriesControllers/seriesSubUniversesControllers");
+router.get(
+  "/series-subuniverses",
+  seriesSubUniversesControllers.browseSeriesSubUniverses,
+);
+router.get(
+  "/series-subuniverses/:id",
+  seriesSubUniversesControllers.readOneSerieSubUniverse,
+);
 
 // NATIONALITIES //
 const nationalitiesControllers = require("./controllers/nationalitiesControllers");
@@ -116,14 +187,26 @@ router.get(
 );
 
 // MOVIES NATIONALITIES //
-const moviesNationalitiesControllers = require("./controllers/moviesNationalitiesControllers");
-router.get("/movies-nationalities", moviesNationalitiesControllers.browseMoviesNationalities);
-router.get("/movies-nationalities/:id", moviesNationalitiesControllers.readOneMovieNationality);
+const moviesNationalitiesControllers = require("./controllers/moviesControllers/moviesNationalitiesControllers");
+router.get(
+  "/movies-nationalities",
+  moviesNationalitiesControllers.browseMoviesNationalities,
+);
+router.get(
+  "/movies-nationalities/:id",
+  moviesNationalitiesControllers.readOneMovieNationality,
+);
 
 // SERIES NATIONALITIES //
-const seriesNationalitiesControllers = require("./controllers/seriesNationalitiesControllers");
-router.get("/series-nationalities", seriesNationalitiesControllers.browseSeriesNationalities);
-router.get("/series-nationalities/:id", seriesNationalitiesControllers.readOneSerieNationality);
+const seriesNationalitiesControllers = require("./controllers/seriesControllers/seriesNationalitiesControllers");
+router.get(
+  "/series-nationalities",
+  seriesNationalitiesControllers.browseSeriesNationalities,
+);
+router.get(
+  "/series-nationalities/:id",
+  seriesNationalitiesControllers.readOneSerieNationality,
+);
 
 // PERSONALITIES //
 const personalitiesControllers = require("./controllers/personalitiesControllers");
@@ -275,63 +358,272 @@ router.put(
 );
 router.delete("/episodes/:id", verifyToken, episodesControllers.destroyEpisode);
 
+// GENRES //
+const uploadGenres = require("./Middlewares/Multer/MulterGenres");
+
+router.post("/genres", verifyToken, uploadGenres.single("imageGenre"), genresControllers.addGenre);
+router.put("/genres/:id", verifyToken, uploadGenres.single("imageGenre"), genresControllers.editGenre);
+router.delete("/genres/:id", verifyToken, genresControllers.destroyGenre);
+
+// THEMES //
+const uploadThemes = require("./Middlewares/Multer/MulterThemes");
+
+router.post("/themes", verifyToken, uploadThemes.single("imageTheme"), themesControllers.addTheme);
+router.put("/themes/:id", verifyToken, uploadThemes.single("imageTheme"), themesControllers.editTheme);
+router.delete("/themes/:id", verifyToken, themesControllers.destroyTheme);
+
 // MOVIES GENRES //
-router.post("/movies-genres", verifyToken, moviesGenresControllers.addMovieGenre);
-router.put("/movies-genres/:id", verifyToken, moviesGenresControllers.editMovieGenre);
-router.delete("/movies-genres/:id", verifyToken, moviesGenresControllers.destroyMovieGenre);
+router.post(
+  "/movies-genres",
+  verifyToken,
+  moviesGenresControllers.addMovieGenre,
+);
+router.put(
+  "/movies-genres/:id",
+  verifyToken,
+  moviesGenresControllers.editMovieGenre,
+);
+router.delete(
+  "/movies-genres/:id",
+  verifyToken,
+  moviesGenresControllers.destroyMovieGenre,
+);
 
 // SERIES GENRES //
-router.post("/series-genres", verifyToken, seriesGenresControllers.addSerieGenre);
-router.put("/series-genres/:id", verifyToken, seriesGenresControllers.editSerieGenre);
-router.delete("/series-genres/:id", verifyToken, seriesGenresControllers.destroySerieGenre);
+router.post(
+  "/series-genres",
+  verifyToken,
+  seriesGenresControllers.addSerieGenre,
+);
+router.put(
+  "/series-genres/:id",
+  verifyToken,
+  seriesGenresControllers.editSerieGenre,
+);
+router.delete(
+  "/series-genres/:id",
+  verifyToken,
+  seriesGenresControllers.destroySerieGenre,
+);
 
 // MOVIES THEMES //
-router.post("/movies-themes", verifyToken, moviesThemesControllers.addMovieTheme);
-router.put("/movies-themes/:id", verifyToken, moviesThemesControllers.editMovieTheme);
-router.delete("/movies-themes/:id", verifyToken, moviesThemesControllers.destroyMovieTheme);
+router.post(
+  "/movies-themes",
+  verifyToken,
+  moviesThemesControllers.addMovieTheme,
+);
+router.put(
+  "/movies-themes/:id",
+  verifyToken,
+  moviesThemesControllers.editMovieTheme,
+);
+router.delete(
+  "/movies-themes/:id",
+  verifyToken,
+  moviesThemesControllers.destroyMovieTheme,
+);
 
 // SERIES THEMES //
-router.post("/series-themes", verifyToken, seriesThemesControllers.addSerieTheme);
-router.put("/series-themes/:id", verifyToken, seriesThemesControllers.editSerieTheme);
-router.delete("/series-themes/:id", verifyToken, seriesThemesControllers.destroySerieTheme);
+router.post(
+  "/series-themes",
+  verifyToken,
+  seriesThemesControllers.addSerieTheme,
+);
+router.put(
+  "/series-themes/:id",
+  verifyToken,
+  seriesThemesControllers.editSerieTheme,
+);
+router.delete(
+  "/series-themes/:id",
+  verifyToken,
+  seriesThemesControllers.destroySerieTheme,
+);
 
 // MOVIES NATIONALITIES //
-router.post("/movies-nationalities", verifyToken, moviesNationalitiesControllers.addMovieNationality);
-router.put("/movies-nationalities/:id", verifyToken, moviesNationalitiesControllers.editMovieNationality);
-router.delete("/movies-nationalities/:id", verifyToken, moviesNationalitiesControllers.destroyMovieNationality);
+router.post(
+  "/movies-nationalities",
+  verifyToken,
+  moviesNationalitiesControllers.addMovieNationality,
+);
+router.put(
+  "/movies-nationalities/:id",
+  verifyToken,
+  moviesNationalitiesControllers.editMovieNationality,
+);
+router.delete(
+  "/movies-nationalities/:id",
+  verifyToken,
+  moviesNationalitiesControllers.destroyMovieNationality,
+);
 
 // SERIES NATIONALITIES //
-router.post("/series-nationalities", verifyToken, seriesNationalitiesControllers.addSerieNationality);
-router.put("/series-nationalities/:id", verifyToken, seriesNationalitiesControllers.editSerieNationality);
-router.delete("/series-nationalities/:id", verifyToken, seriesNationalitiesControllers.destroySerieNationality);
+router.post(
+  "/series-nationalities",
+  verifyToken,
+  seriesNationalitiesControllers.addSerieNationality,
+);
+router.put(
+  "/series-nationalities/:id",
+  verifyToken,
+  seriesNationalitiesControllers.editSerieNationality,
+);
+router.delete(
+  "/series-nationalities/:id",
+  verifyToken,
+  seriesNationalitiesControllers.destroySerieNationality,
+);
 
 // UNIVERSES //
-router.post("/universes", verifyToken, universesControllers.addUniverse);
-router.put("/universes/:id", verifyToken, universesControllers.editUniverse);
-router.delete("/universes/:id", verifyToken, universesControllers.destroyUniverse);
+const uploadUniverses = require("./Middlewares/Multer/MulterUniverses");
+
+router.post("/universes", verifyToken, uploadUniverses.single("imageUniverse"), universesControllers.addUniverse);
+router.put("/universes/:id", verifyToken, uploadUniverses.single("imageUniverse"), universesControllers.editUniverse);
+router.delete(
+  "/universes/:id",
+  verifyToken,
+  universesControllers.destroyUniverse,
+);
+
+// SUB-UNIVERSES //
+const uploadSubUniverses = require("./Middlewares/Multer/MulterSubUniverses");
+router.post("/sub-universes", verifyToken, uploadSubUniverses.single("imageSubUniverse"), subUniversesControllers.addSubUniverse);
+router.put("/sub-universes/:id", verifyToken, uploadSubUniverses.single("imageSubUniverse"), subUniversesControllers.editSubUniverse);
+router.delete("/sub-universes/:id", verifyToken, subUniversesControllers.destroySubUniverse);
 
 // THEMES //
 router.post("/themes", verifyToken, themesControllers.addTheme);
 router.put("/themes/:id", verifyToken, themesControllers.editTheme);
 router.delete("/themes/:id", verifyToken, themesControllers.destroyTheme);
 
-// MOVIES UNIVERSES & SUB-UNIVERSES //
-router.post("/movies-universes", verifyToken, moviesUniversesControllers.addMovieUniverse);
-router.put("/movies-universes/:id", verifyToken, moviesUniversesControllers.editMovieUniverse);
-router.delete("/movies-universes/:id", verifyToken, moviesUniversesControllers.destroyMovieUniverse);
+// STREAMINGS //
+router.post(
+  "/streamings",
+  verifyToken,
+  uploadStreamings.fields([
+    { name: "imageStreaming", maxCount: 1 },
+    { name: "iconStreaming", maxCount: 1 },
+  ]),
+  streamingsControllers.addStreaming,
+);
+router.put(
+  "/streamings/:id",
+  verifyToken,
+  uploadStreamings.fields([
+    { name: "imageStreaming", maxCount: 1 },
+    { name: "iconStreaming", maxCount: 1 },
+  ]),
+  streamingsControllers.editStreaming,
+);
+router.delete(
+  "/streamings/:id",
+  verifyToken,
+  streamingsControllers.destroyStreaming,
+);
 
-router.post("/movies-subuniverses", verifyToken, moviesSubUniversesControllers.addMovieSubUniverse);
-router.put("/movies-subuniverses/:id", verifyToken, moviesSubUniversesControllers.editMovieSubUniverse);
-router.delete("/movies-subuniverses/:id", verifyToken, moviesSubUniversesControllers.destroyMovieSubUniverse);
+// MOVIES STREAMINGS //
+router.post(
+  "/movies-streamings",
+  verifyToken,
+  moviesStreamingsControllers.addMovieStreaming,
+);
+router.put(
+  "/movies-streamings/:id",
+  verifyToken,
+  moviesStreamingsControllers.editMovieStreaming,
+);
+router.delete(
+  "/movies-streamings/:id",
+  verifyToken,
+  moviesStreamingsControllers.destroyMovieStreaming,
+);
+
+// MOVIES UNIVERSES & SUB-UNIVERSES //
+router.post(
+  "/movies-universes",
+  verifyToken,
+  moviesUniversesControllers.addMovieUniverse,
+);
+router.put(
+  "/movies-universes/:id",
+  verifyToken,
+  moviesUniversesControllers.editMovieUniverse,
+);
+router.delete(
+  "/movies-universes/:id",
+  verifyToken,
+  moviesUniversesControllers.destroyMovieUniverse,
+);
+
+router.post(
+  "/movies-subuniverses",
+  verifyToken,
+  moviesSubUniversesControllers.addMovieSubUniverse,
+);
+router.put(
+  "/movies-subuniverses/:id",
+  verifyToken,
+  moviesSubUniversesControllers.editMovieSubUniverse,
+);
+router.delete(
+  "/movies-subuniverses/:id",
+  verifyToken,
+  moviesSubUniversesControllers.destroyMovieSubUniverse,
+);
 
 // SERIES UNIVERSES & SUB-UNIVERSES //
-router.post("/series-universes", verifyToken, seriesUniversesControllers.addSerieUniverse);
-router.put("/series-universes/:id", verifyToken, seriesUniversesControllers.editSerieUniverse);
-router.delete("/series-universes/:id", verifyToken, seriesUniversesControllers.destroySerieUniverse);
+router.post(
+  "/series-universes",
+  verifyToken,
+  seriesUniversesControllers.addSerieUniverse,
+);
+router.put(
+  "/series-universes/:id",
+  verifyToken,
+  seriesUniversesControllers.editSerieUniverse,
+);
+router.delete(
+  "/series-universes/:id",
+  verifyToken,
+  seriesUniversesControllers.destroySerieUniverse,
+);
 
-router.post("/series-subuniverses", verifyToken, seriesSubUniversesControllers.addSerieSubUniverse);
-router.put("/series-subuniverses/:id", verifyToken, seriesSubUniversesControllers.editSerieSubUniverse);
-router.delete("/series-subuniverses/:id", verifyToken, seriesSubUniversesControllers.destroySerieSubUniverse);
+router.post(
+  "/series-subuniverses",
+  verifyToken,
+  seriesSubUniversesControllers.addSerieSubUniverse,
+);
+router.put(
+  "/series-subuniverses/:id",
+  verifyToken,
+  seriesSubUniversesControllers.editSerieSubUniverse,
+);
+router.delete(
+  "/series-subuniverses/:id",
+  verifyToken,
+  seriesSubUniversesControllers.destroySerieSubUniverse,
+);
+
+// NATIONALITIES //
+const uploadNationalities = require("./Middlewares/Multer/MulterNationalities");
+
+router.post(
+  "/nationalities",
+  verifyToken,
+  uploadNationalities.single("imageNationality"),
+  nationalitiesControllers.addNationality,
+);
+router.put(
+  "/nationalities/:id",
+  verifyToken,
+  uploadNationalities.single("imageNationality"),
+  nationalitiesControllers.editNationality,
+);
+router.delete(
+  "/nationalities/:id",
+  verifyToken,
+  nationalitiesControllers.destroyNationality,
+);
 
 // PERSONALITIES //
 router.post(
@@ -489,6 +781,5 @@ router.put(
   usersControllers.editUser,
 );
 router.delete("/users/:id", verifyToken, usersControllers.deleteUser);
-
 
 module.exports = router;
