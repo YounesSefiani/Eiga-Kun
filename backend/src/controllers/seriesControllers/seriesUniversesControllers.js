@@ -1,4 +1,4 @@
-const tables = require("../tables");
+const tables = require("../../tables");
 const fs = require("fs");
 const path = require("path");
 

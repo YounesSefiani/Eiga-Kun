@@ -1,4 +1,4 @@
-const tables = require("../tables");
+const tables = require("../../tables");
 const fs = require("fs");
 const path = require("path");
 
@@ -38,6 +38,8 @@ const readFullMovie = async (req, res, next) => {
     movie.genres = genres || [];
     const themes = await tables.themes.readThemesInMovie(movieId);
     movie.themes = themes || [];
+    const streamings = await tables.movies_streamings.readMovieByStreamings(movieId);
+    movie.streamings = streamings || [];
     const nationalities =
       await tables.nationalities.readNationalitiesInMovie(movieId);
     movie.nationalities = nationalities || [];
@@ -46,14 +48,6 @@ const readFullMovie = async (req, res, next) => {
     const subUniverses =
       await tables.subUniverses.readSubUniversesInMovie(movieId);
     movie.subUniverses = subUniverses || [];
-
-    // Supprimer les champs ID bruts
-    delete movie.genre;
-    delete movie.theme;
-    delete movie.nationality;
-    delete movie.universe;
-    delete movie.subUniverse;
-
     res.status(200).json(movie);
   } catch (error) {
     next(error);

@@ -5,6 +5,15 @@ class ThemeManager extends AbstractManager {
         super({ table: "themes" });
     }
 
+    // C - CRUD - Create
+  async createTheme(theme) {
+    const [themeCreated] = await this.database.query(
+      `INSERT INTO ${this.table} (name, imageTheme) VALUES (?, ?)`,
+      [theme.name, theme.imageTheme],
+    );
+    return themeCreated.insertId;
+  }
+
     // R - CRUD - Read
     async readThemes() {
         const [themes] = await this.database.query(
@@ -64,6 +73,24 @@ class ThemeManager extends AbstractManager {
         );
         return series;
     }
+
+      // U - CRUD - Update
+  async updateTheme(id, theme) {
+    const [themeUpdated] = await this.database.query(
+      `UPDATE ${this.table} SET name = ?, imageTheme = ? WHERE ${this.table}.id = ?`,
+      [theme.name, theme.imageTheme, id],
+    );
+    return themeUpdated.affectedRows;
+  }
+
+  // D - CRUD - Delete
+  async deleteTheme(id) {
+    const [themeDeleted] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id],
+    );
+    return themeDeleted.affectedRows;
+  }
 }
 
 module.exports = ThemeManager;

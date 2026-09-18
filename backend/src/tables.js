@@ -1,22 +1,25 @@
-const MovieManager = require("./models/MovieManager");
+const MovieManager = require("./models/MoviesModels/MovieManager");
 const SerieManager = require("./models/SeriesModels/SerieManager");
 const SeasonManager = require("./models/SeriesModels/SeasonManager");
 const EpisodeManager = require("./models/SeriesModels/EpisodeManager");
 const GenreManager = require("./models/GenreManager");
-const MovieGenreManager = require("./models/MovieGenreManager");
-const SerieGenreManager = require("./models/SerieGenreManager");
+const MovieGenreManager = require("./models/MoviesModels/MovieGenreManager");
+const SerieGenreManager = require("./models/SeriesModels/SerieGenreManager");
 const ThemeManager = require("./models/ThemeManager");
-const MovieThemeManager = require("./models/MovieThemeManager");
-const SerieThemeManager = require("./models/SerieThemeManager");
+const MovieThemeManager = require("./models/MoviesModels/MovieThemeManager");
+const SerieThemeManager = require("./models/SeriesModels/SerieThemeManager");
+const StreamingManager = require("./models/StreamingManager");
+const MovieStreamingManager = require("./models/MoviesModels/MovieStreamingManager");
+const SerieStreamingManager = require("./models/SeriesModels/SerieStreamingManager");
 const UniverseManager = require("./models/UniverseManager");
-const MovieUniverseManager = require("./models/MovieUniverseManager");
-const SerieUniverseManager = require("./models/SerieUniverseManager");
+const MovieUniverseManager = require("./models/MoviesModels/MovieUniverseManager");
+const SerieUniverseManager = require("./models/SeriesModels/SerieUniverseManager");
 const SubUniverseManager = require("./models/SubUniverseManager");
-const MovieSubUniverseManager = require("./models/MovieSubUniverseManager");
-const SerieSubUniverseManager = require("./models/SerieSubUniverseManager");
+const MovieSubUniverseManager = require("./models/MoviesModels/MovieSubUniverseManager");
+const SerieSubUniverseManager = require("./models/SeriesModels/SerieSubUniverseManager");
 const NationalityManager = require("./models/NationalityManager");
-const MovieNationalityManager = require("./models/MovieNationalityManager");
-const SerieNationalityManager = require("./models/SerieNationalityManager");
+const MovieNationalityManager = require("./models/MoviesModels/MovieNationalityManager");
+const SerieNationalityManager = require("./models/SeriesModels/SerieNationalityManager");
 const PersonalityManager = require("./models/PersonalityManager");
 const CastingManager = require("./models/CastingManager");
 const UserManager = require("./models/UsersModels/UserManager");
@@ -34,6 +37,9 @@ const managers = [
     ThemeManager,
     MovieThemeManager,
     SerieThemeManager,
+    StreamingManager,
+    MovieStreamingManager,
+    SerieStreamingManager,
     NationalityManager,
     MovieNationalityManager,
     SerieNationalityManager,

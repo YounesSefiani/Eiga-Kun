@@ -32,7 +32,7 @@ const readOneMoviesTheme = async (req, res, next) => {
         // Enrichir chaque film avec themes, thèmes, univers, etc.
         const enrichedMovies = await Promise.all(
             movies.map(async (movie) => {
-                const genres = await tables.genres.readGenresInMovie(movie.id);
+                const genres = await tables.genres.readThemesInMovie(movie.id);
                 movie.genres = genres || [];
                 
                 const themes = await tables.themes.readThemesInMovie(movie.id);
@@ -71,7 +71,7 @@ const readOneSeriesTheme = async (req, res, next) => {
         // Enrichir chaque film avec themes, thèmes, univers, etc.
         const enrichedSeries = await Promise.all(
             series.map(async (serie) => {
-                const genres = await tables.genres.readGenresInSerie(serie.id);
+                const genres = await tables.genres.readThemesInSerie(serie.id);
                 serie.genres = genres || [];
                 
                 const themes = await tables.themes.readThemesInSerie(serie.id);
@@ -102,24 +102,56 @@ const readOneSeriesTheme = async (req, res, next) => {
 
 }
 
-// E - BREAD - EDIT
+// E - BREAD - EDIT PERSONALITY
 const editTheme = async (req, res, next) => {
-    const updateTheme = req.body;
+  try {
     const { id } = req.params;
-    try {
-        await tables.themes.updateTheme(id, updateTheme);
-        res.status(200).json({ ...updateTheme, id: parseInt(id, 10) });
-    } catch (error) {
-        next(error);
+    const updateTheme = req.body;
+    const { file } = req;
+
+    const theme = await tables.themes.readThemeId(id);
+
+    const updatedThemeDatas = {
+      id,
+      name: updateTheme.name || theme.name || null,
+      imageTheme: file
+        ? file.filename
+        : updateTheme.imageTheme || theme.imageTheme || null,
+    };
+
+    await tables.themes.updateTheme(id, updatedThemeDatas);
+
+    const updatedTheme = await tables.themes.readThemeId(id);
+
+    if (!updatedTheme) {
+      return res
+        .status(404)
+        .json({ message: "Theme non trouvé ou mise à jour échouée." });
     }
-}
+
+    return res.status(200).json({
+      message: "Theme mise à jour avec succès",
+      updateTheme: updatedTheme,
+    });
+  } catch (err) {
+    console.error("Erreur lors de la mise à jour du theme :", err);
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
+  }
+};
 
 // A - BREAD - ADD
 const addTheme = async (req, res, next) => {
     const theme = req.body;
+    const { file } = req;
+
+    const themeDatas = {
+        ...theme,
+        imageTheme: file ? file.filename : theme.imageTheme || null,
+    };
     try {
-        const createdTheme = await tables.themes.createTheme(theme);
-        res.status(201).json({ ...theme, id: createdTheme.insertId });
+        const createdTheme = await tables.themes.createTheme(themeDatas);
+        res.status(201).json({ ...theme, id: createdTheme.insertId, themeDatas });
     } catch (error) {
         next(error);
     }

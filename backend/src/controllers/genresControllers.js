@@ -12,6 +12,7 @@ const browseGenres = async (req, res) => {
     }
 };
 
+// R - BREAD - READ ONE
 const readOneGenre = async (req, res) => {
     const genre = await tables.genres.readGenreId(req.params.id);
     if (!genre) {
@@ -103,11 +104,82 @@ const readOneSeriesGenre = async (req, res, next) => {
     }
 }
 
+// E - BREAD - EDIT
+const editGenre = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updateGenre = req.body;
+    const { file } = req;
+
+    const genre = await tables.genres.readGenreId(id);
+
+    const updatedGenreDatas = {
+      id,
+      name: updateGenre.name || genre.name || null,
+      imageGenre: file
+        ? file.filename
+        : updateGenre.imageGenre || genre.imageGenre || null,
+    };
+
+    await tables.genres.updateGenre(id, updatedGenreDatas);
+
+    const updatedGenre = await tables.genres.readGenreId(id);
+
+    if (!updatedGenre) {
+      return res
+        .status(404)
+        .json({ message: "Genre non trouvé ou mise à jour échouée." });
+    }
+
+    return res.status(200).json({
+      message: "Genre mise à jour avec succès",
+      updateGenre: updatedGenre,
+    });
+  } catch (err) {
+    console.error("Erreur lors de la mise à jour du genre :", err);
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
+  }
+};
+
+// A - BREAD - ADD
+const addGenre = async (req, res, next) => {
+  const genre = req.body;
+  const { file } = req;
+
+  const genreDatas = {
+    ...genre,
+    imageGenre: file ? file.filename : genre.imageGenre || null,
+  };
+  try {
+    const createGenre = await tables.genres.createGenre(
+      genreDatas
+    );
+    res.status(201).json({ id: createGenre.insertId, genreDatas });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// D - BREAD - DESTROY
+const destroyGenre = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    await tables.genres.deleteGenre(id);
+    res.status(204).json();
+  } catch (error) {
+    next(error);
+  }
+};
+
 
 
 module.exports = {
     browseGenres,
     readOneGenre,
     readOneMoviesGenre,
-    readOneSeriesGenre
+    readOneSeriesGenre,
+    editGenre,
+    addGenre,
+    destroyGenre
 };

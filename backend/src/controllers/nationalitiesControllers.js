@@ -35,8 +35,8 @@ const readOneNationalityInMovie = async (req, res, next) => {
                 const nationalities = await tables.nationalities.readNationalitiesInMovie(movie.id);
                 movie.nationalities = nationalities || [];
 
-                const genres = await tables.genres.readGenresInMovie(movie.id);
-                movie.genres = genres || [];
+                const nationalitys = await tables.nationalitys.readNationalitysInMovie(movie.id);
+                movie.nationalitys = nationalitys || [];
                 
                 const themes = await tables.themes.readThemesInMovie(movie.id);
                 movie.themes = themes || [];
@@ -49,7 +49,7 @@ const readOneNationalityInMovie = async (req, res, next) => {
                 
                 // Supprimer les champs ID bruts
                 delete movie.nationality;
-                delete movie.genre;
+                delete movie.nationality;
                 delete movie.theme;
                 delete movie.universe;
                 delete movie.subUniverse;
@@ -79,8 +79,8 @@ const readOneNationalityInSerie = async (req, res, next) => {
                 const nationalities = await tables.nationalities.readNationalitiesInSerie(serie.id);
                 serie.nationalities = nationalities || [];
 
-                const genres = await tables.genres.readGenresInSerie(serie.id);
-                serie.genres = genres || [];
+                const nationalitys = await tables.nationalitys.readNationalitysInSerie(serie.id);
+                serie.nationalitys = nationalitys || [];
                 
                 const themes = await tables.themes.readThemesInSerie(serie.id);
                 serie.themes = themes || [];
@@ -93,7 +93,7 @@ const readOneNationalityInSerie = async (req, res, next) => {
                 
                 // Supprimer les champs ID bruts
                 delete serie.nationality;
-                delete serie.genre;
+                delete serie.nationality;
                 delete serie.theme;
                 delete serie.universe;
                 delete serie.subUniverse;
@@ -111,26 +111,61 @@ const readOneNationalityInSerie = async (req, res, next) => {
 }
 
 // E - BREAD - EDIT
-const editNationality = async (req, res) => {
-    const updateNationality = req.body;
+const editNationality = async (req, res, next) => {
+  try {
     const { id } = req.params;
-    try {
-        await tables.nationalities.updateNationality(id, updateNationality);
-        res.status(200).json({ ...updateNationality, id: parseInt(id, 10) });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    const updateNationality = req.body;
+    const { file } = req;
+
+    const nationality = await tables.nationalities.readNationalityId(id);
+
+    const updatedNationalityDatas = {
+      id,
+      name: updateNationality.name || nationality.name || null,
+      code: updateNationality.code || nationality.code || null,
+      imageNationality: file
+        ? file.filename
+        : updateNationality.imageNationality || nationality.imageNationality || null,
+    };
+
+    await tables.nationalities.updateNationality(id, updatedNationalityDatas);
+
+    const updatedNationality = await tables.nationalities.readNationalityId(id);
+
+    if (!updatedNationality) {
+      return res
+        .status(404)
+        .json({ message: "Nationalité non trouvée ou mise à jour échouée." });
     }
+
+    return res.status(200).json({
+      message: "Nationalité mise à jour avec succès",
+      updateNationality: updatedNationality,
+    });
+  } catch (err) {
+    console.error("Erreur lors de la mise à jour de la nationalité :", err);
+    next(err);
+    return res.status(500).json({ message: "Erreur interne du serveur" });
+  }
 };
 
 // A - BREAD - ADD
-const addNationality = async (req, res) => {
-    const nationality = req.body;
-    try {
-        const result = await tables.nationalities.addNationality(nationality);
-        res.status(201).json({ ...nationality, id: result.insertId });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+const addNationality = async (req, res, next) => {
+  const nationality = req.body;
+  const { file } = req;
+
+  const nationalityDatas = {
+    ...nationality,
+    imageNationality: file ? file.filename : nationality.imageNationality || null,
+  };
+  try {
+    const createNationality = await tables.nationalities.createNationality(
+      nationalityDatas
+    );
+    res.status(201).json({ id: createNationality.insertId, nationalityDatas });
+  } catch (error) {
+    next(error);
+  }
 };
 
 // D - BREAD - DELETE

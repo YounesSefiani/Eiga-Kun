@@ -9,7 +9,7 @@ class GenreManager extends AbstractManager {
   async createGenre(genre) {
     const [genreCreated] = await this.database.query(
       `INSERT INTO ${this.table} (name, imageGenre) VALUES (?, ?)`,
-      [genre.name],
+      [genre.name, genre.imageGenre],
     );
     return genreCreated.insertId;
   }
@@ -59,6 +59,24 @@ class GenreManager extends AbstractManager {
       [serieId],
     );
     return genres;
+  }
+
+  // U - CRUD - Update
+  async updateGenre(id, genre) {
+    const [genreUpdated] = await this.database.query(
+      `UPDATE ${this.table} SET name = ?, imageGenre = ? WHERE ${this.table}.id = ?`,
+      [genre.name, genre.imageGenre, id],
+    );
+    return genreUpdated.affectedRows;
+  }
+
+  // D - CRUD - Delete
+  async deleteGenre(id) {
+    const [genreDeleted] = await this.database.query(
+      `DELETE FROM ${this.table} WHERE id = ?`,
+      [id],
+    );
+    return genreDeleted.affectedRows;
   }
 }
 

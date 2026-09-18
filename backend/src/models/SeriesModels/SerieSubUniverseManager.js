@@ -1,4 +1,4 @@
-const AbstractManager = require("./AbstractManager");
+const AbstractManager = require("../AbstractManager");
 
 class SerieSubUniverseManager extends AbstractManager {
     constructor() {
