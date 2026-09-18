@@ -676,7 +676,7 @@ VALUES
     (1, 9);
 
 CREATE TABLE
-    movie_streamings (
+    movies_streamings (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         movie_id INT NOT NULL,
         streaming_id INT NOT NULL,
@@ -686,12 +686,12 @@ CREATE TABLE
     );
 
 INSERT INTO
-    movie_streamings (movie_id, streaming_id, movieIsOriginal)
+    movies_streamings (movie_id, streaming_id, movieIsOriginal)
 VALUES
     (1, 1, FALSE);
 
 CREATE TABLE
-    serie_streamings (
+    series_streamings (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         serie_id INT NOT NULL,
         streaming_id INT NOT NULL,
@@ -701,7 +701,7 @@ CREATE TABLE
     );
 
 INSERT INTO
-    serie_streamings (serie_id, streaming_id, serieIsOriginal)
+    series_streamings (serie_id, streaming_id, serieIsOriginal)
 VALUES
     (1, 1, TRUE);
 
