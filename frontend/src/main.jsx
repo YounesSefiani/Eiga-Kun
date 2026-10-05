@@ -2,8 +2,8 @@ import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import MoviesPage from "./pages/Movies/MoviesPage/MoviesPage.jsx";
-import MoviesGenresPage from "./pages/Movies/MoviesPage/GenresMoviesPage/GenresMoviesPage.jsx";
-import OneGenreMoviesPage from "./pages/Movies/MoviesPage/OneGenreMoviesPage/OneGenreMoviesPage.jsx";
+import MoviesGenresPage from "./pages/Movies/MoviesPage/MoviesGenresPages/MoviesGenresPage.jsx";
+import OneGenreMoviesPage from "./pages/Movies/MoviesPage/MoviesGenresPages/OneGenreMoviesPage/OneGenreMoviesPage.jsx";
 import MoviesDecadesPage from "./pages/Movies/MoviesPage/DecadesMoviesPage/DecadesMoviesPage.jsx";
 import OneDecadeMoviesPage from "./pages/Movies/MoviesPage/OneDecadeMoviesPage/OneDecadeMoviesPage.jsx";
 import MoviesCountriesPage from "./pages/Movies/MoviesPage/CountriesMoviesPage/CountriesMoviesPage.jsx";
@@ -47,10 +47,37 @@ const router = createBrowserRouter([
   {
     path: "/movies/genres/",
     element: <MoviesGenresPage />,
+    loader: async() => {
+      try {
+        const res = await connexion.get("/genres");
+        return res.data;
+      } catch (error) {
+        console.error(error);
+      }
+    }
   },
   {
-    path: "/movies/genres/:genre",
+    path: "/movies/genres/:id",
     element: <OneGenreMoviesPage />,
+    loader: async ({ params }) => {
+      try {
+        const [genreRes, moviesRes] = await Promise.all([
+          connexion.get(`/genres/${params.id}`),
+          connexion.get(`/genres/${params.id}/movies`).catch((error) => {
+            if (error.response?.status === 404) return { data: [] };
+            throw error;
+          }),
+        ]);
+
+        return {
+          genre: genreRes.data,
+          movies: moviesRes.data,
+        };
+      } catch (error) {
+        console.error(error);
+        return { genre: null, movies: [] };
+      }
+    },
   },
   {
     path: "/movies/decades",
