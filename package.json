@@ -1,0 +1,25 @@
+{
+  "name": "eiga-kun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YounesSefiani/Eiga-Kun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/YounesSefiani/Eiga-Kun/issues"
+  },
+  "homepage": "https://github.com/YounesSefiani/Eiga-Kun#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
