@@ -30,4 +30,34 @@ router.post(
   moviesControllers.addMovie,
 );
 router.delete("/movies/:id", moviesControllers.destroyMovie);
+
+// SERIES //
+const seriesControllers = require("./controllers/seriesControllers");
+const uploadSeries = require("./Middlewares/Multer/MulterSeries");
+
+router.get("/series", seriesControllers.browseSeries);
+router.get("/series/:id", seriesControllers.readSerie);
+router.put(
+  "/series/:id",
+  uploadSeries.fields([
+    { name: "poster", maxCount: 1 },
+    { name: "original_poster", maxCount: 1 },
+    { name: "background", maxCount: 1 },
+    { name: "logo", maxCount: 1 },
+    { name: "original_logo", maxCount: 1 },
+  ]),
+  seriesControllers.editSerie,
+);
+router.post(
+  "/series",
+  uploadSeries.fields([
+    { name: "poster", maxCount: 1 },
+    { name: "original_poster", maxCount: 1 },
+    { name: "background", maxCount: 1 },
+    { name: "logo", maxCount: 1 },
+    { name: "original_logo", maxCount: 1 },
+  ]),
+  seriesControllers.addSerie,
+);
+router.delete("/series/:id", seriesControllers.destroySerie);
 module.exports = router;
