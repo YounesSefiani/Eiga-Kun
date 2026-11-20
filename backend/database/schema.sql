@@ -167,58 +167,189 @@ CREATE TABLE series (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO series (title, original_title, poster, original_poster, background, logo, original_logo, trailer, beginning_date, ending_date, statut, average_episode_duration, nb_total_seasons, nb_total_episodes, SCREEN, synopsis)
+INSERT INTO
+    series (
+        title,
+        original_title,
+        poster,
+        original_poster,
+        background,
+        logo,
+        original_logo,
+        trailer,
+        beginning_date,
+        ending_date,
+        statut,
+        average_episode_duration,
+        nb_total_seasons,
+        nb_total_episodes,
+        SCREEN,
+        synopsis
+    )
 VALUES (
-    "Malcolm",
-    "Malcolm in the Middle",
-    "https://image.tmdb.org/t/p/original/aRd5NJafhAAPXupmTamJGBXonSq.jpg",
-    "https://image.tmdb.org/t/p/original/2epY7KDCEHwJw1H9TTRKUVer5S3.jpg",
-    "https://image.tmdb.org/t/p/original/ponVeVEpjAoG35LY9aX9kfajlEd.jpg",
-    "https://image.tmdb.org/t/p/original/zRW7kuxXsccKOmt7WQUCLadE3Zo.png",
-    "https://image.tmdb.org/t/p/original/7aXcNVcQpKYkz07j6pmwyBBiRG3.png",
-    "https://www.youtube.com/embed/huobWvHP7qg?si=FZIgcoCK9qOIfGlh",
-    "2000-01-09",
-    "2006-05-14",
-    "Achevée",
-    "~ 20 - 30 min",
-    7,
-    151,
-    "TV",
-    "Malcolm, un jeune garçon surdoué vit avec sa famille aussi banale que dysfonctionnelle, dans un monde où il se sent incompris, que ce soit chez lui, à l'école, ou ailleurs."
-),
-(
-    "Cobra Kai",
-    NULL,
-    "https://image.tmdb.org/t/p/original/aMiiVx3rVMMf8VzdcTXIH8PyE06.jpg",
-    NULL,
-    "https://image.tmdb.org/t/p/original/5NrSIzfcBOFI9HRGV4nRYgMGhDU.jpg",
-    "https://image.tmdb.org/t/p/original/pkNOYbuOrm2CcyJcpqRLHN3ZW2m.png",
-    NULL,
-    "https://www.youtube.com/embed/lYGKnQaPEaY?si=aroZkwuP6HAFvhSn",
-    "2018-05-02",
-    "2025-02-13",
-    "Achevée",
-    "~ 30 - 45 min",
-    6,
-    65,
-    "Streaming",
-    "34 ans après sa défaite au tournoi de karaté, Johnny Lawrence, la cinquantaine vit une vie modeste mais à la dérive. Toujours hanté par son passé et confronté à son rival, Daniel Larusso, qui vit une vie paisible avec sa famille, Johnny décide de relancer le dojo 'Cobra Kai' pour retrouver un sens à sa vie."
-),
-(
-    "Yu-Gi-Oh!",
-    "遊☆戯☆王デュエルモンスターズ",
-    "https://image.tmdb.org/t/p/original/mM6c5ISlyKWtie2hGiZWo6hmlhU.jpg",
-    "https://image.tmdb.org/t/p/original/gv3hNh1kgkedKyEJMiTRvYl46OQ.jpg",
-    "https://image.tmdb.org/t/p/original/gJYZBM200Flldo6im3EEdXslR1j.jpg",
-    "https://image.tmdb.org/t/p/original/sgZSJdgFU11RqT9GZEE4ZnWPm2G.png",
-    "https://image.tmdb.org/t/p/original/cGnmj3eaGyLrLUzMmE8WoAAJeRy.png",
-    "https://www.youtube.com/embed/bfELtLWydL0?si=zvSPBKOjT1I2bNI1",
-    "2000-04-18",
-    "2004-09-29",
-    "Achevée",
-    "~ 20 - 30 min",
-    4,
-    224,
-    "TV",
-    "Le jeune Yugi Mutou voit sa vie changer lorsqu'il assemble le puzzle millénaire, un artefact de plusieurs milliers d'années qui enferme l'esprit d'un pharaon. Depuis ce jour, le destin de Yugi et de ses amis et le sort de l'humanité se reposent sur un jeu de cartes nommé 'Duel Monsters'."
+        "Malcolm",
+        "Malcolm in the Middle",
+        "https://image.tmdb.org/t/p/original/aRd5NJafhAAPXupmTamJGBXonSq.jpg",
+        "https://image.tmdb.org/t/p/original/2epY7KDCEHwJw1H9TTRKUVer5S3.jpg",
+        "https://image.tmdb.org/t/p/original/ponVeVEpjAoG35LY9aX9kfajlEd.jpg",
+        "https://image.tmdb.org/t/p/original/zRW7kuxXsccKOmt7WQUCLadE3Zo.png",
+        "https://image.tmdb.org/t/p/original/7aXcNVcQpKYkz07j6pmwyBBiRG3.png",
+        "https://www.youtube.com/embed/huobWvHP7qg?si=FZIgcoCK9qOIfGlh",
+        "2000-01-09",
+        "2006-05-14",
+        "Achevée",
+        "~ 20 - 30 min",
+        7,
+        151,
+        "TV",
+        "Malcolm, un jeune garçon surdoué vit avec sa famille aussi banale que dysfonctionnelle, dans un monde où il se sent incompris, que ce soit chez lui, à l'école, ou ailleurs."
+    ),
+    (
+        "Cobra Kai",
+        NULL,
+        "https://image.tmdb.org/t/p/original/aMiiVx3rVMMf8VzdcTXIH8PyE06.jpg",
+        NULL,
+        "https://image.tmdb.org/t/p/original/5NrSIzfcBOFI9HRGV4nRYgMGhDU.jpg",
+        "https://image.tmdb.org/t/p/original/pkNOYbuOrm2CcyJcpqRLHN3ZW2m.png",
+        NULL,
+        "https://www.youtube.com/embed/lYGKnQaPEaY?si=aroZkwuP6HAFvhSn",
+        "2018-05-02",
+        "2025-02-13",
+        "Achevée",
+        "~ 30 - 45 min",
+        6,
+        65,
+        "Streaming",
+        "34 ans après sa défaite au tournoi de karaté, Johnny Lawrence, la cinquantaine vit une vie modeste mais à la dérive. Toujours hanté par son passé et confronté à son rival, Daniel Larusso, qui vit une vie paisible avec sa famille, Johnny décide de relancer le dojo 'Cobra Kai' pour retrouver un sens à sa vie."
+    ),
+    (
+        "Yu-Gi-Oh!",
+        "遊☆戯☆王デュエルモンスターズ",
+        "https://image.tmdb.org/t/p/original/mM6c5ISlyKWtie2hGiZWo6hmlhU.jpg",
+        "https://image.tmdb.org/t/p/original/gv3hNh1kgkedKyEJMiTRvYl46OQ.jpg",
+        "https://image.tmdb.org/t/p/original/gJYZBM200Flldo6im3EEdXslR1j.jpg",
+        "https://image.tmdb.org/t/p/original/sgZSJdgFU11RqT9GZEE4ZnWPm2G.png",
+        "https://image.tmdb.org/t/p/original/cGnmj3eaGyLrLUzMmE8WoAAJeRy.png",
+        "https://www.youtube.com/embed/bfELtLWydL0?si=zvSPBKOjT1I2bNI1",
+        "2000-04-18",
+        "2004-09-29",
+        "Achevée",
+        "~ 20 - 30 min",
+        4,
+        224,
+        "TV",
+        "Le jeune Yugi Mutou voit sa vie changer lorsqu'il assemble le puzzle millénaire, un artefact de plusieurs milliers d'années qui enferme l'esprit d'un pharaon. Depuis ce jour, le destin de Yugi et de ses amis et le sort de l'humanité se reposent sur un jeu de cartes nommé 'Duel Monsters'."
+    );
+
+CREATE TABLE seasons (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    serie_id INT NOT NULL,
+    season_number INT NOT NULL,
+    season_poster VARCHAR(255) NULL,
+    nb_episodes INT NULL,
+    first_episode_date DATE NULL,
+    last_episode_date DATE NULL,
+    FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+    UNIQUE (serie_id, season_number)
 );
+
+INSERT INTO
+    seasons (
+        serie_id,
+        season_number,
+        season_poster,
+        nb_episodes,
+        first_episode_date,
+        last_episode_date
+    )
+VALUES (
+        1,
+        1,
+        "https://image.tmdb.org/t/p/original/lnZ50D05WNk9Xk9fwjORRTQp8JP.jpg",
+        16,
+        "2000-01-09",
+        "2000-05-21"
+    ),
+    (
+        1,
+        2,
+        "https://image.tmdb.org/t/p/original/2coMBkg5mqaqdwfjWgibZTACQdj.jpg",
+        25,
+        "2000-10-05",
+        "2001-05-20"
+    ),
+    (
+        2,
+        1,
+        "https://image.tmdb.org/t/p/original/ylssltQhODJGbtox6h2JgOH6qjd.jpg",
+        49,
+        "2000-04-18",
+        "2001-04-03"
+    );
+
+CREATE TABLE episodes (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    serie_id INT NOT NULL,
+    season_id INT NOT NULL,
+    episode_number INT NOT NULL,
+    episode_image VARCHAR(255) NULL,
+    episode_title VARCHAR(255) NULL,
+    episode_synopsis TEXT NULL,
+    episode_air_date DATE NULL,
+    episode_duration TIME NULL,
+    FOREIGN KEY (serie_id) REFERENCES series (id) ON DELETE CASCADE,
+    FOREIGN KEY (season_id) REFERENCES seasons (id) ON DELETE CASCADE,
+    UNIQUE (serie_id, season_id, episode_number)
+);
+
+INSERT INTO
+    episodes (
+        serie_id,
+        season_id,
+        episode_number,
+        episode_image,
+        episode_title,
+        episode_synopsis,
+        episode_air_date,
+        episode_duration
+    )
+VALUES (
+        1,
+        1,
+        1,
+        "https://image.tmdb.org/t/p/original/c4RC8fo5DilQjAKqsyCbJIdwjKX.jpg",
+        "Je ne suis pas un monstre",
+        "Malcolm est transféré, malgré lui, à l'école des surdoués que tout le monde appelle 'Les Têtes d'ampoules' suite à son quotient intellectuel incroyable. Ce qui contraint Malcolm car faire partie de cette classe changerait son quotidien à l'école en enfer.",
+        "2000-01-09",
+        "00:22:00"
+    ),
+    (
+        1,
+        1,
+        2,
+        "https://image.tmdb.org/t/p/original/oRXFOVvzfbcVGwPSF7MhnmduRjL.jpg",
+        "Alerte rouge",
+        "Loïs et Hal fête leur anniversaire de marriage, mais la soirée  ne sera pas de tout repos pour Loïs et les garçons à cause d'une robe brûlée et finie dans les toilettes.",
+        "2000-01-16",
+        "00:22:00"
+    ),
+    (
+        2,
+        1,
+        1,
+        "https://image.tmdb.org/t/p/original/uYXbZEtcQikL2Gh9uCErlmHw77f.jpg",
+        "L'âme des cartes",
+        "Yugi fait découvrir à ses amis le fameux jeu de cartes de 'Duel de Monstres'. Lorsque Yugi fait mention d'une carte rare détenue par son grand-père, un jeune homme veut la posséder, par n'importe quel moyen...",
+        "2000-04-18",
+        "00:22:00"
+    ),
+    (
+        2,
+        1,
+        2,
+        "https://image.tmdb.org/t/p/original/7m9cnAnOY4XH9J01zAuvRUoPBl9.jpg",
+        "Le gant est jeté",
+        "Maximilen Pegasus, fondateur d'Illusion Industriel et inventeur des Duel des monstres, invite Yugi à un duel, d'une manière insolite.",
+        "2000-04-25",
+        "00:22:00"
+    );
