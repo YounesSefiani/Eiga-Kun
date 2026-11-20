@@ -17,4 +17,11 @@ app.use('/src/assets/Movies/Backgrounds', express.static(path.join(__dirname, 'a
 app.use('/src/assets/Movies/Logos', express.static(path.join(__dirname, 'assets/Movies/Logos')));
 app.use('/src/assets/Movies/Original_Logos', express.static(path.join(__dirname, 'assets/Movies/Original_Logos')));
 
+// SERIES PICTURES //
+app.use('/src/assets/Series/Posters', express.static(path.join(__dirname, 'assets/Series/Posters')));
+app.use('/src/assets/Series/Original_Posters', express.static(path.join(__dirname, 'assets/Series/Original_Posters')));
+app.use('/src/assets/Series/Backgrounds', express.static(path.join(__dirname, 'assets/Series/Backgrounds')));
+app.use('/src/assets/Series/Logos', express.static(path.join(__dirname, 'assets/Series/Logos')));
+app.use('/src/assets/Series/Original_Logos', express.static(path.join(__dirname, 'assets/Series/Original_Logos')));
+
 module.exports = app;
