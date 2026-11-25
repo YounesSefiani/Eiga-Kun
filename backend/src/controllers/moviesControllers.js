@@ -120,10 +120,45 @@ const addMovie = async (req, res, next) => {
       id: createdMovie,
       movieDatas,
     });
-  } catch (err) {
-    console.error("Erreur lors de l'ajout du film :", err);
-    next(err);
-    res.status(500).json({ error: "Erreur lors de l'ajout du film." });
+  } catch (error) {
+if (files?.poster) {
+       files.poster.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.original_poster) {
+       files.original_poster.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.background) {
+       files.background.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.logo) {
+       files.logo.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.original_logo) {
+       files.original_logo.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     res.status(500).json({ error: "Erreur lors de la création du film", details: error.message });
+     next(error);
+     console.error(error);
   }
 };
 

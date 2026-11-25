@@ -22,6 +22,34 @@ const readSerie = async (req, res) => {
   }
 };
 
+const readFullSerie = async (req, res) => {
+  try {
+    const serie = await tables.series.readSerieById(req.params.id);
+    if (!serie) {
+      return res.status(404).json({ error: "Serie not found"});
+    }
+
+    const seasons = await tables.seasons.readSeasonsBySerie(serie.id);
+    const seasonsWithEpisodes = await Promise.all(
+      seasons.map(async (season) => {
+        const episodes = await tables.episodes.readEpisodesBySeason(season.id);
+        return {
+          ...season,
+          episodes : episodes || season.episodes }
+      })
+    );
+
+    const fullSerie = {
+      ...serie,
+      seasons: seasonsWithEpisodes
+
+    };
+    res.status(200).json(fullSerie);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 // E - BREAD - EDIT
 const editSerie = async (req, res, next) => {
   try {
@@ -32,7 +60,7 @@ const editSerie = async (req, res, next) => {
     const serie = await tables.series.readSerieById(id);
 
     if (!serie) {
-      return res.status(404).json({ message: "Film non trouvé." });
+      return res.status(404).json({ message: "Série non trouvée." });
     }
 
     const updatedSerieDatas = {
@@ -144,10 +172,45 @@ const addSerie = async (req, res, next) => {
       id: createdSerie,
       serieDatas,
     });
-  } catch (err) {
-    console.error("Erreur lors de l'ajout de la série :", err);
-    next(err);
-    res.status(500).json({ error: "Erreur lors de l'ajout de la série." });
+ } catch (error) {
+     if (files?.poster) {
+       files.poster.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.original_poster) {
+       files.original_poster.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.background) {
+       files.background.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.logo) {
+       files.logo.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     if (files?.original_logo) {
+       files.original_logo.forEach((file) => {
+         fs.unlink(file.path, (err) => {
+           if (err) console.error('Erreur suppression fichier:', err);
+         });
+       });
+     }
+     res.status(500).json({ error: "Erreur lors de la création de la série", details: error.message });
+     next(error);
+     console.error(error);
   }
 };
 
@@ -167,6 +230,7 @@ const destroySerie = async (req, res, next) => {
 module.exports = {
   browseSeries,
   readSerie,
+  readFullSerie,
   editSerie,
   addSerie,
   destroySerie,

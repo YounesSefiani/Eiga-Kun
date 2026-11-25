@@ -34,14 +34,14 @@ class SerieManager extends AbstractManager {
     // R - CRUD - READ
     async readSeries() {
         const [series] = await this.database.query(
-            `SELECT ${this.table}.* FROM ${this.table}`
+            `SELECT * FROM ${this.table}`
         );
         return series;
     }
     // R - CRUD - READ ONE MOVIE
     async readSerieById(id) {
         const [serie] = await this.database.query(
-            `SELECT ${this.table}.* FROM ${this.table} WHERE id = ?`,
+            `SELECT * FROM ${this.table} WHERE id = ?`,
             [id]
         );
         return serie[0];
