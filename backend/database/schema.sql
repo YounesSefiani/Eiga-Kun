@@ -353,3 +353,46 @@ VALUES (
         "2000-04-25",
         "00:22:00"
     );
+
+    CREATE TABLE personalities (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        fullname VARCHAR(255) NOT NULL,
+        personality_picture VARCHAR(255) NULL,
+        birth_date DATE NULL,
+        death_date DATE NULL,
+        notable_movies VARCHAR(255) NULL,
+        notable_series VARCHAR(255) NULL,
+        profession VARCHAR(255) NULL,
+        biography TEXT NULL
+    );
+
+    INSERT INTO personalities (
+        fullname,
+        personality_picture,
+        birth_date,
+        death_date,
+        notable_movies,
+        notable_series,
+        profession,
+        biography
+    )
+    VALUES (
+        "Tobey Maguire",
+        "https://image.tmdb.org/t/p/original/dvnElosRaSHzek06edIk7VHCrV5.jpg",
+        "1975-06-27",
+        NULL,
+        "Spider-Man 1, Spider-Man 2, Spider-Man 3, Pleasantville....",
+        NULL,
+        "Acteur, Producteur",
+        "Tobey Maguire est un acteur et producteur américain, révélé dans les années 90 par les films 'Pleasantville', 'Ice Storm', et 'Wonder Boys'. C'est dans les années 2000 que Tobey Maguire acquiert une grande notoriété mondiale grâce à son interprétation de Peter Parker, alias Spider-Man, dans la trilogie des films 'Spider-Man', de Sam Raimi, 2002 à 2007. Il a retrouvé son rôle mythique pour le film 'Spider-Man: No Way Home', aux côtés de son successeur Andrew Garfield (The Amazing Spider-Man 1 & 2, en 2012 et 2014) et l'actuel interprète de Spidey : Tom Holland."
+    ),
+    (
+        "Kirsten Dunst",
+        "https://image.tmdb.org/t/p/original/sFYHUU1gWd57pttD8732tkBsXV5.jpg",
+        "1982-04-30",
+        NULL,
+        "Spider-Man 1, Spider-Man 2, Spider-Man 3, Jumanji, Entretien avec un vampire...",
+        NULL,
+        "Actrice",
+        "Kirsten Dunst est une actrice et mannequin américano-allemande, révélée dans les années 90 par les films 'Jumanji', 'Entretien avec un vampire', et 'Virgin Suicide'. Elle se fait connaître dans le monde grâce à son rôle de Mary-Jane Watson dans la trilogie Spider-Man de Sam Raimi de 2002 à 2007, aux côtés de Tobey Maguire et James Franco."
+    );
