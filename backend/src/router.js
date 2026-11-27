@@ -99,4 +99,22 @@ router.post(
   episodesControllers.addEpisode,
 );
 router.delete("/episodes/:id", episodesControllers.destroyEpisode);
+
+// PERSONALITIES //
+const personalitiesControllers = require("./controllers/personalitiesControllers");
+const uploadPersonalities = require("./Middlewares/Multer/MulterPersonnalities");
+
+router.get("/personalities", personalitiesControllers.browsePersonalities);
+router.get("/personalities/:id", personalitiesControllers.readPersonality);
+router.put(
+  "/personalities/:id",
+  uploadPersonalities.fields([{ name: "personality_picture", maxCount: 1 }]),
+  personalitiesControllers.editPersonality,
+);
+router.post(
+  "/personalities",
+  uploadPersonalities.fields([{ name: "personality_picture", maxCount: 1 }]),
+  personalitiesControllers.addPersonality,
+);
+router.delete("/personalities/:id", personalitiesControllers.destroyPersonality);
 module.exports = router;

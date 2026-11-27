@@ -124,35 +124,35 @@ const addMovie = async (req, res, next) => {
 if (files?.poster) {
        files.poster.forEach((file) => {
          fs.unlink(file.path, (err) => {
-           if (err) console.error('Erreur suppression fichier:', err);
+           if (err) console.error('Erreur lors de la suppression du fichier:', err);
          });
        });
      }
      if (files?.original_poster) {
        files.original_poster.forEach((file) => {
          fs.unlink(file.path, (err) => {
-           if (err) console.error('Erreur suppression fichier:', err);
+           if (err) console.error('Erreur lors de la suppression du fichier:', err);
          });
        });
      }
      if (files?.background) {
        files.background.forEach((file) => {
          fs.unlink(file.path, (err) => {
-           if (err) console.error('Erreur suppression fichier:', err);
+           if (err) console.error('Erreur lors de la suppression du fichier:', err);
          });
        });
      }
      if (files?.logo) {
        files.logo.forEach((file) => {
          fs.unlink(file.path, (err) => {
-           if (err) console.error('Erreur suppression fichier:', err);
+           if (err) console.error('Erreur lors de la suppression du fichier:', err);
          });
        });
      }
      if (files?.original_logo) {
        files.original_logo.forEach((file) => {
          fs.unlink(file.path, (err) => {
-           if (err) console.error('Erreur suppression fichier:', err);
+           if (err) console.error('Erreur lors de la suppression du fichier:', err);
          });
        });
      }
