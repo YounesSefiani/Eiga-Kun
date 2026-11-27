@@ -3,6 +3,7 @@ const SerieManager = require("./models/SerieManager");
 const SeasonManager = require("./models/SeasonManager");
 const EpisodeManager = require("./models/EpisodeManager");
 const PersonalityManager = require("./models/PersonalityManager");
+const CastingManager = require("./models/CastingManager");
 
 const managers = [
     MovieManager,
@@ -10,6 +11,7 @@ const managers = [
     SeasonManager,
     EpisodeManager,
     PersonalityManager,
+    CastingManager,
 ];
 
 const tables = {};
@@ -26,4 +28,4 @@ module.exports = new Proxy(tables, {
         }
         throw new Error(`Table "${prop}" does not exist. Did you register it in ${__filename}?`);
     }
-})
+});

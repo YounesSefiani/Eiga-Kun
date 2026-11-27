@@ -7,6 +7,7 @@ const uploadMovies = require("./Middlewares/Multer/MulterMovies");
 
 router.get("/movies", moviesControllers.browseMovies);
 router.get("/movies/:id", moviesControllers.readMovie);
+router.get("/movies/:id/full", moviesControllers.readFullMovie);
 router.put(
   "/movies/:id",
   uploadMovies.fields([
@@ -106,6 +107,7 @@ const uploadPersonalities = require("./Middlewares/Multer/MulterPersonnalities")
 
 router.get("/personalities", personalitiesControllers.browsePersonalities);
 router.get("/personalities/:id", personalitiesControllers.readPersonality);
+router.get("/personalities/:id/full", personalitiesControllers.readPersonalityFull);
 router.put(
   "/personalities/:id",
   uploadPersonalities.fields([{ name: "personality_picture", maxCount: 1 }]),
@@ -117,4 +119,13 @@ router.post(
   personalitiesControllers.addPersonality,
 );
 router.delete("/personalities/:id", personalitiesControllers.destroyPersonality);
+
+// CASTINGS //
+const castingsControllers = require("./controllers/castingsControllers");
+
+router.get("/castings", castingsControllers.browseCastings);
+router.get("/castings/:id", castingsControllers.readCasting);
+router.put("/castings/:id", castingsControllers.editCasting);
+router.post("/castings", castingsControllers.addCasting);
+router.delete("/castings/:id", castingsControllers.deleteCasting);
 module.exports = router;

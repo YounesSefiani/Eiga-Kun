@@ -21,6 +21,21 @@ const readPersonality = async (req, res) => {
         res.status(200).json(personality);
     }
 }
+
+const readPersonalityFull = async (req, res) => {
+    const personality = await tables.personalities.readPersonalityById(req.params.id);
+    if (!personality) {
+        return res.status(404).json({ error: "Personality not found"});
+    }
+    const personalityMovies = await tables.castings.readPersonalityMovies(personality.id);
+    const personalitySeries = await tables.castings.readPersonalitySeries(personality.id);
+    const fullPersonality = {
+        ...personality,
+        movies: personalityMovies || [],
+        series: personalitySeries || []
+    };
+    res.status(200).json(fullPersonality);
+}
 // E - BREAD - EDIT
 const editPersonality = async (req, res, next) => {
     try {
@@ -107,6 +122,7 @@ const destroyPersonality = async (req, res, next) => {
 module.exports = {
     browsePersonalities,
     readPersonality,
+    readPersonalityFull,
     editPersonality,
     addPersonality,
     destroyPersonality,
