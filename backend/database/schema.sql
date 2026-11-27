@@ -396,3 +396,38 @@ VALUES (
         "Actrice",
         "Kirsten Dunst est une actrice et mannequin américano-allemande, révélée dans les années 90 par les films 'Jumanji', 'Entretien avec un vampire', et 'Virgin Suicide'. Elle se fait connaître dans le monde grâce à son rôle de Mary-Jane Watson dans la trilogie Spider-Man de Sam Raimi de 2002 à 2007, aux côtés de Tobey Maguire et James Franco."
     );
+
+    CREATE TABLE casting (
+        id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        personality_id INT NOT NULL,
+        movie_id INT NULL,
+        serie_id INT NULL,
+        side ENUM('Acting', 'Directing') NOT NULL,
+        role VARCHAR(255) NOT NULL,
+        presence_serie VARCHAR(255) NULL
+    );
+
+    INSERT INTO casting (
+        personality_id,
+        movie_id,
+        serie_id,
+        side,
+        role,
+        presence_serie
+    )
+    VALUES (
+        1,
+        1,
+        NULL,
+        'Acting',
+        'Peter Parker / Spider-Man',
+        NULL
+    ),
+    (
+        2,
+        1,
+        NULL,
+        'Acting',
+        'Mary-Jane Watson',
+        NULL
+    );
