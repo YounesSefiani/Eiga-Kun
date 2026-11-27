@@ -404,7 +404,10 @@ VALUES (
         serie_id INT NULL,
         side ENUM('Acting', 'Directing') NOT NULL,
         role VARCHAR(255) NOT NULL,
-        presence_serie VARCHAR(255) NULL
+        presence_serie VARCHAR(255) NULL,
+        FOREIGN KEY (personality_id) REFERENCES personalities(id),
+        FOREIGN KEY (movie_id) REFERENCES movies(id),
+        FOREIGN KEY (serie_id) REFERENCES series(id)
     );
 
     INSERT INTO casting (
