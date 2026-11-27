@@ -335,7 +335,7 @@ VALUES (
     ),
     (
         3,
-        1,
+        3,
         1,
         "https://image.tmdb.org/t/p/original/uYXbZEtcQikL2Gh9uCErlmHw77f.jpg",
         "L'âme des cartes",
@@ -345,7 +345,7 @@ VALUES (
     ),
     (
         3,
-        1,
+        3,
         2,
         "https://image.tmdb.org/t/p/original/7m9cnAnOY4XH9J01zAuvRUoPBl9.jpg",
         "Le gant est jeté",
@@ -397,7 +397,7 @@ VALUES (
         "Kirsten Dunst est une actrice et mannequin américano-allemande, révélée dans les années 90 par les films 'Jumanji', 'Entretien avec un vampire', et 'Virgin Suicide'. Elle se fait connaître dans le monde grâce à son rôle de Mary-Jane Watson dans la trilogie Spider-Man de Sam Raimi de 2002 à 2007, aux côtés de Tobey Maguire et James Franco."
     );
 
-    CREATE TABLE casting (
+    CREATE TABLE castings (
         id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
         personality_id INT NOT NULL,
         movie_id INT NULL,
@@ -410,7 +410,7 @@ VALUES (
         FOREIGN KEY (serie_id) REFERENCES series(id)
     );
 
-    INSERT INTO casting (
+    INSERT INTO castings (
         personality_id,
         movie_id,
         serie_id,
@@ -427,8 +427,40 @@ VALUES (
         NULL
     ),
     (
+        1,
+        2,
+        NULL,
+        'Acting',
+        'Peter Parker / Spider-Man',
+        NULL
+    ),
+    (
+        1,
+        3,
+        NULL,
+        'Acting',
+        'Peter Parker / Spider-Man',
+        NULL
+    ),
+    (
         2,
         1,
+        NULL,
+        'Acting',
+        'Mary-Jane Watson',
+        NULL
+    ),
+    (
+        2,
+        2,
+        NULL,
+        'Acting',
+        'Mary-Jane Watson',
+        NULL
+    ),
+    (
+        2,
+        3,
         NULL,
         'Acting',
         'Mary-Jane Watson',
